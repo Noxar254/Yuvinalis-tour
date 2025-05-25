@@ -1,0 +1,142 @@
+/* Fallback and Browser Compatibility Enhancements */
+
+/* Fallback for browsers that don't support perspective/3D transforms */
+@supports not (perspective: 1000px) {
+    .hotel-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    .hotels-wrapper {
+        perspective: none !important;
+        transform-style: flat !important;
+    }
+}
+
+/* Focus visible styles for keyboard navigation */
+.hotel-card:focus {
+    outline: none;
+}
+
+.hotel-card:focus-visible {
+    outline: 3px solid #27ae60;
+    outline-offset: 3px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .hotel-card,
+    .hotel-card:hover,
+    .scroll-arrow,
+    .scroll-arrow:hover,
+    .hotel-card.reveal,
+    .hotel-image img,
+    .view-details-btn,
+    .view-details-btn:hover,
+    .view-details-btn i {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+    
+    .hotels-wrapper {
+        scroll-behavior: auto !important;
+    }
+    
+    .hotel-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .scroll-dot.active {
+        width: 10px !important;
+        border-radius: 50% !important;
+    }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    .hotel-badge,
+    .scroll-dot.active,
+    .scroll-progress-bar,
+    .view-details-btn {
+        border: 1px solid currentColor;
+    }
+    
+    .scroll-arrow {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Better Touch Support */
+@media (hover: none) and (pointer: coarse) {
+    .hotels-wrapper {
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .hotel-card {
+        scroll-snap-align: center;
+    }
+    
+    .scroll-arrow {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* IE11 Fallback */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .hotel-card {
+        margin-right: 20px;
+        float: left;
+    }
+    
+    .hotels-wrapper::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    
+    .hotels-wrapper {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Loading State */
+.hotels-wrapper.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.7);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hotels-wrapper.loading::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #27ae60;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    z-index: 11;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

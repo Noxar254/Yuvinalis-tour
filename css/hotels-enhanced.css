@@ -1,0 +1,213 @@
+/* Enhanced Desktop Scrolling Effects for Hotels Section */
+
+/* Card Preview Effect - Show part of next card */
+.hotels-wrapper {
+    padding: 30px 10px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* Enhanced card hover effect with 3D rotation */
+.hotel-card {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s ease, 
+                opacity 0.4s ease;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+.hotel-card:hover {
+    transform: translateY(-8px) rotateY(2deg);
+}
+
+/* Improved scroll arrows */
+.scroll-arrow {
+    width: 45px;
+    height: 45px;
+    opacity: 0.9;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+.scroll-arrow:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(39, 174, 96, 0.4);
+}
+
+.scroll-arrow.scroll-left {
+    left: 15px;
+}
+
+.scroll-arrow.scroll-right {
+    right: 15px;
+}
+
+/* Active card effect */
+.hotel-card.active-card {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    z-index: 5;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+    position: relative;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.05);
+    width: 60%;
+    margin: 15px auto 0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.scroll-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Enhanced scroll dots */
+.scroll-indicator {
+    margin-top: 15px;
+}
+
+.scroll-dot {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scroll-dot:hover {
+    transform: scale(1.2);
+    background-color: #99d4b5;
+}
+
+.scroll-dot.active {
+    width: 25px;
+    background-color: #27ae60;
+    box-shadow: 0 2px 6px rgba(39, 174, 96, 0.3);
+}
+
+/* Card focus effect - dim siblings */
+.hotels-wrapper:hover .hotel-card:not(:hover) {
+    opacity: 0.8;
+    filter: blur(0.5px);
+}
+
+/* Enhanced card appearance animation */
+@keyframes enhancedCardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hotel-card {
+    animation: enhancedCardAppear 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* Keyboard navigation focus style */
+.hotel-card:focus-visible {
+    outline: 3px solid #27ae60;
+    transform: translateY(-8px);
+}
+
+/* Scroll shadow indicators */
+.hotels-scroll-container::before,
+.hotels-scroll-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.hotels-scroll-container::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0));
+}
+
+.hotels-scroll-container::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0));
+}
+
+/* Enhanced card reveal animation */
+@keyframes enhancedScrollReveal {
+    from {
+        opacity: 0;
+        transform: translateX(50px) scale(0.9);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.hotel-card.reveal {
+    animation: enhancedScrollReveal 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Add visual cue for scrollable content */
+.hotels-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 60px;
+    background: radial-gradient(ellipse at right, rgba(39, 174, 96, 0.1), transparent 70%);
+    pointer-events: none;
+    opacity: 0.7;
+    animation: pulseGradient 2s infinite alternate;
+}
+
+@keyframes pulseGradient {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+/* Enhanced hotel image effect */
+.hotel-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), transparent 70%);
+    pointer-events: none;
+}
+
+/* Hide shadow indicators on mobile */
+@media (max-width: 768px) {
+    .hotels-scroll-container::before,
+    .hotels-scroll-container::after,
+    .hotels-wrapper::after {
+        display: none;
+    }
+    
+    .scroll-progress {
+        display: none;
+    }
+}

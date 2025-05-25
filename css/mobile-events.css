@@ -1,0 +1,142 @@
+/* Mobile Events Card Layout Improvements */
+
+/* Landscape mode - Single column for events */
+@media (max-width: 992px) and (orientation: landscape) {
+    /* Container styling */
+    .upcoming-events {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        width: 100%;
+    }
+    
+    .upcoming-events .container {
+        padding: 0 20px; /* Increased side padding */
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Grid layout adjustment for landscape */
+    .events-grid {
+        grid-template-columns: 1fr !important; /* Force single column */
+        gap: 20px;
+        padding: 0;
+        width: 100%;
+        overflow: visible;
+        margin: 0 auto;
+    }
+    
+    /* Card styling */
+    .event-card {
+        border-radius: 8px;
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    /* Image sizing */
+    .event-image {
+        height: 180px;
+    }
+    
+    /* Content styling */
+    .event-content {
+        padding: 15px;
+    }
+    
+    .event-content h3 {
+        font-size: 1.1rem;
+        text-align: left;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+    
+    /* Details section */
+    .event-details {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .detail-item {
+        margin-bottom: 5px;
+    }
+    
+    /* Footer styling */
+    .event-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+    
+    .book-event-btn {
+        width: auto;
+        min-width: 120px;
+    }
+}
+
+/* Portrait mode improvements */
+@media (max-width: 576px) {
+    /* Container styling */
+    .upcoming-events {
+        padding: 40px 0 0 0;
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .upcoming-events .container {
+        padding: 0 20px;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .upcoming-events .section-header {
+        padding: 0;
+        margin-bottom: 25px;
+    }
+    
+    /* Grid layout */
+    .events-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 100%;
+        margin: 0;
+        gap: 20px;
+        padding: 0;
+        width: 100%;
+        overflow: visible;
+    }
+    
+    /* Card styling */
+    .event-card {
+        border-radius: 8px;
+        margin: 0 0 15px 0;
+        height: auto;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 100%;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+    .upcoming-events .container {
+        padding: 0 15px;
+    }
+    
+    .event-image {
+        height: 160px;
+    }
+    
+    .event-content h3 {
+        font-size: 1rem;
+    }
+    
+    .book-event-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+}

@@ -140,3 +140,73 @@
         font-size: 0.8rem;
     }
 }
+
+/* View All Events Button Styles */
+.view-all-events-btn {
+    display: block;
+    max-width: 320px;
+    margin: 30px auto;
+    padding: 15px 25px;
+    background-color: #2ecc71;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.view-all-events-btn i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.view-all-events-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+.view-all-events-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 769px) {
+    .view-all-events-btn {
+        margin: 40px auto;
+        font-size: 1.1em;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .view-all-events-btn {
+        width: calc(100% - 40px);
+        margin: 20px auto;
+        padding: 12px 20px;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 375px) {
+    .view-all-events-btn {
+        width: calc(100% - 30px);
+        margin: 15px auto;
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Remove old styles */
+.mobile-view-all-events,
+.section-header .view-all-btn {
+    display: none;
+}
+
+/* Remove the pseudo-element button */
+.events-grid::after {
+    display: none;
+}

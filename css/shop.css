@@ -33,15 +33,18 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 12px 24px;
+    border-radius: 4px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
 }
 
 .shop-section .view-all-btn:hover {
     background: #388E3C;
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
 
 .shop-section .view-all-btn i {
@@ -50,7 +53,7 @@
 }
 
 .shop-section .view-all-btn:hover i {
-    transform: translateX(5px);
+    transform: translateX(4px);
 }
 
 .shop-scroll-container {
@@ -264,12 +267,28 @@
     }
 
     .mobile-view-all .view-all-btn {
-        display: inline-flex;
-        color: #4CAF50;
+        background: #4CAF50;
+        color: #fff;
         text-decoration: none;
         font-weight: 500;
+        display: inline-flex;
         align-items: center;
         gap: 8px;
+        padding: 12px 24px;
+        border-radius: 4px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+        width: 100%;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .mobile-view-all .view-all-btn:hover {
+        background: #388E3C;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
     }
 
     .product-card {

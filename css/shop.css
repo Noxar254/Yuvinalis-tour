@@ -29,16 +29,16 @@
     background: #4CAF50;
     color: #fff;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
     border-radius: 4px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
 }
 
 .shop-section .view-all-btn:hover {
@@ -48,7 +48,7 @@
 }
 
 .shop-section .view-all-btn i {
-    font-size: 0.9em;
+    font-size: 0.9rem;
     transition: transform 0.3s ease;
 }
 
@@ -263,32 +263,42 @@
     .mobile-view-all {
         display: block;
         text-align: center;
-        margin-top: 20px;
+        margin: 25px auto;
+        max-width: 200px; /* Reduced max-width for smaller appearance */
     }
 
     .mobile-view-all .view-all-btn {
         background: #4CAF50;
         color: #fff;
         text-decoration: none;
-        font-weight: 500;
-        display: inline-flex;
+        font-weight: 600;
+        display: flex;
         align-items: center;
-        gap: 8px;
-        padding: 12px 24px;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 16px; /* Reduced padding */
         border-radius: 4px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 0.5px;
-        box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+        box-shadow: 0 2px 6px rgba(76, 175, 80, 0.2);
         width: 100%;
-        justify-content: center;
-        margin-top: 20px;
+        font-size: 0.85rem; /* Smaller font size */
     }
 
     .mobile-view-all .view-all-btn:hover {
         background: #388E3C;
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        box-shadow: 0 3px 8px rgba(76, 175, 80, 0.3);
+    }
+
+    .mobile-view-all .view-all-btn i {
+        font-size: 0.8rem; /* Smaller icon */
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-view-all .view-all-btn:hover i {
+        transform: translateX(4px);
     }
 
     .product-card {
@@ -300,8 +310,19 @@
     }
 }
 
-@media (min-width: 769px) {
+@media (max-width: 480px) {
     .mobile-view-all {
-        display: none;
+        margin: 20px auto;
+        max-width: 180px; /* Even smaller on very small screens */
+    }
+    
+    .mobile-view-all .view-all-btn {
+        padding: 8px 14px; /* Further reduced padding */
+        font-size: 0.8rem; /* Smaller font */
+        gap: 4px;
+    }
+
+    .mobile-view-all .view-all-btn i {
+        font-size: 0.75rem; /* Smaller icon */
     }
 }

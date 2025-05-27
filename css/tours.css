@@ -209,12 +209,14 @@
     padding-top: 12px;
     border-top: 1px solid #eee;
     height: 50px;
+    gap: 10px; /* Added gap for better spacing */
 }
 
 .tour-price {
     display: flex;
     flex-direction: column;
     min-width: 0;
+    flex: 1; /* Allow price to take available space */
 }
 
 .price {

@@ -1,0 +1,736 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Events & Hikes | Beyond Miles Adventures</title>
+    <meta name="description" content="Explore all hiking events, nature walks, and outdoor adventures offered by Beyond Miles Adventures. Join our community of adventure enthusiasts.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mobile-events.css">
+    <link rel="stylesheet" href="css/event-buttons.css">
+    <style>
+        /* Events Page Specific Styles */
+        .events-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background .png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .events-hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+        
+        .events-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .events-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .events-filter {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-option {
+            padding: 10px 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .filter-option:hover, .filter-option.active {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+        
+        .filter-option i {
+            margin-right: 8px;
+        }
+        
+        .search-container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-container input {
+            width: 100%;
+            padding: 15px 20px;
+            padding-left: 50px;
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .search-container input:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+        
+        .search-container i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+        
+        .events-section {
+            padding: 60px 0;
+        }
+        
+        .events-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .month-header {
+            grid-column: 1 / -1;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .month-header:first-child {
+            margin-top: 0;
+        }
+        
+        .month-header h2 {
+            font-size: 2rem;
+            color: #333;
+            display: inline-block;
+            background-color: white;
+            padding-right: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .month-header::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background-color: #ddd;
+            z-index: 0;
+        }
+        
+        .load-more-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .load-more-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+        }
+        
+        .load-more-btn:hover {
+            background-color: #3d8b40;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4);
+        }
+        
+        .load-more-btn i {
+            margin-left: 10px;
+        }
+        
+        /* Event card styles inherited from existing CSS */
+        
+        @media (max-width: 768px) {
+            .events-hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .events-hero-content p {
+                font-size: 1rem;
+            }
+            
+            .events-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+            
+            .month-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Beyond Miles Adventures Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="full-text">Beyond Miles Adventures</span>
+                    <span class="short-text">BMA</span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-controls">
+            <div class="notification-bell-mobile">
+                <button class="bell-btn-mobile" aria-label="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+                <a href="events.html" class="nav-link dropdown-toggle active">Events & Hikes <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="dropdown-link">All Events</a></li>
+                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Events</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#tours" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
+                    <li><a href="index.html#international-tours" class="dropdown-link">International Tours</a></li>
+                    <li><a href="index.html#maasai-mara-tours" class="dropdown-link">Maasai Mara Tours</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#hotels" class="dropdown-link">Hotels</a></li>
+                    <li><a href="index.html#airbnb" class="dropdown-link">Airbnb</a></li>
+                </ul>
+            </li>
+            <li class="book-tour-mobile">
+                <a href="booking.html?booking=tour" class="book-tour-btn-mobile">
+                    <span class="btn-text">Book Tour</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </a>
+            </li>
+        </ul>
+        <div class="notification-bell">
+            <button class="bell-btn" aria-label="Notifications">
+                <i class="fas fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+        </div>
+        <div class="nav-cta">
+            <a href="booking.html?booking=tour" class="book-tour-btn">
+                <span class="btn-text">Book Tour</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                <div class="btn-shine"></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Events Hero Section -->
+    <section class="events-hero">
+        <div class="events-hero-content">
+            <h1>All Events & Hikes</h1>
+            <p>Discover a world of adventures with our carefully curated events and hikes. From beginner-friendly walks to challenging summit expeditions.</p>
+        </div>
+    </section>
+
+    <!-- Events Filter Section -->
+    <section class="events-filter">
+        <div class="filter-container">
+            <div class="filter-options">
+                <div class="filter-option active"><i class="fas fa-calendar-alt"></i> All Events</div>
+                <div class="filter-option"><i class="fas fa-mountain"></i> Hiking</div>
+                <div class="filter-option"><i class="fas fa-tree"></i> Nature Walks</div>
+                <div class="filter-option"><i class="fas fa-campground"></i> Camping</div>
+                <div class="filter-option"><i class="fas fa-users"></i> Team Building</div>
+                <div class="filter-option"><i class="fas fa-flag-checkered"></i> Adventure Race</div>
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search events by name, location, or date...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section class="events-section">
+        <div class="events-container">
+            <div class="events-grid">
+                <!-- May 2025 -->
+                <div class="month-header">
+                    <h2>May 2025</h2>
+                </div>
+                
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/background .png" alt="Mountain Trail Hike">
+                        <div class="event-date">
+                            <span class="day">28</span>
+                            <span class="month">May</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Kilimanjaro Base Camp Trek</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Machame Gate, Tanzania</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>6:00 AM - 8:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>24 people booked</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">KES 10,965</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Event</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/background .png" alt="Mountain Bike Trail">
+                        <div class="event-date">
+                            <span class="day">30</span>
+                            <span class="month">May</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Karura Forest Biking Adventure</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Karura Forest, Nairobi</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>8:00 AM - 2:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>15 people booked</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">KES 3,500</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Event</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- June 2025 -->
+                <div class="month-header">
+                    <h2>June 2025</h2>
+                </div>
+                
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/background .png" alt="Forest Trail Adventure">
+                        <div class="event-date">
+                            <span class="day">02</span>
+                            <span class="month">Jun</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Aberdare Forest Adventure</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Aberdare National Park</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>7:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>18 people booked</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">KES 8,385</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Event</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event Card 4 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/background .png" alt="Team Building">
+                        <div class="event-date">
+                            <span class="day">10</span>
+                            <span class="month">Jun</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Corporate Team Building Retreat</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Naivasha, Great Rift Valley</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>40 people booked</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">KES 5,200</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Event</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event Card 5 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/background .png" alt="Coastal Hiking Trail">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">Jun</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Mombasa Coastal Trail</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Nyali Beach, Mombasa</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>5:30 AM - 7:30 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>32 people booked</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">KES 12,255</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Event</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event Card 6 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/background .png" alt="Mount Kenya Climbing">
+                        <div class="event-date">
+                            <span class="day">25</span>
+                            <span class="month">Jun</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Mount Kenya Summit Challenge</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Nanyuki, Mount Kenya</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>4:00 AM - 9:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>15 people booked</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">KES 15,480</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Event</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- July 2025 -->
+                <div class="month-header">
+                    <h2>July 2025</h2>
+                </div>
+                
+                <!-- Event Card 7 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/background .png" alt="Ngong Hills Hike">
+                        <div class="event-date">
+                            <span class="day">05</span>
+                            <span class="month">Jul</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Ngong Hills Traverse</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Ngong Hills, Kajiado</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>7:00 AM - 3:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>27 people booked</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">KES 4,200</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Event</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event Card 8 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/background .png" alt="Camping Adventure">
+                        <div class="event-date">
+                            <span class="day">12</span>
+                            <span class="month">Jul</span>
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Weekend Wilderness Camping</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Hell's Gate, Naivasha</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Sat 9:00 AM - Sun 5:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>22 people booked</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">KES 7,800</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Event</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more-container">
+                <button class="load-more-btn">Load More Events <i class="fas fa-sync-alt"></i></button>
+            </div>
+        </div>    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Beyond Miles Adventures Logo">
+                    <h3>Beyond Miles Adventures</h3>
+                </div>
+                <p>Adventure awaits. Explore. Discover. Conquer.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="index.html#tours">Tours</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                    <li><i class="fas fa-phone"></i> +254 712 345 678</li>
+                    <li><i class="fas fa-envelope"></i> info@beyondmilesadventures.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Subscribe</h3>
+                <p>Get updates on our latest adventures and exclusive offers.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" aria-label="Subscribe">
+                        <span>Subscribe</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Beyond Miles Adventures. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="js/hero-navbar.js"></script>
+    <script>
+        // Event filter functionality
+        document.querySelectorAll('.filter-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.filter-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+                // Filter logic would go here
+            });
+        });
+        
+        // Load more button functionality
+        document.querySelector('.load-more-btn').addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            // Simulate loading more events
+            setTimeout(() => {
+                this.innerHTML = 'Load More Events <i class="fas fa-sync-alt"></i>';
+                alert('All events loaded!');
+            }, 1500);
+        });
+        
+        // Book event buttons
+        document.querySelectorAll('.book-event-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                window.location.href = 'booking.html?booking=event';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Adventure | Beyond Miles</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/booking.css">
+    <link rel="stylesheet" href="css/booking-responsive.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Beyond Miles Adventures Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="full-text">Beyond Miles Adventures</span>
+                    <span class="short-text">BMA</span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-controls">
+            <div class="notification-bell-mobile">
+                <button class="bell-btn-mobile" aria-label="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+                <a href="index.html#events" class="nav-link dropdown-toggle">Events & Hikes <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="dropdown-link">All Events</a></li>
+                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Events</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#tours" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
+                    <li><a href="index.html#international-tours" class="dropdown-link">International Tours</a></li>
+                    <li><a href="index.html#maasai-mara-tours" class="dropdown-link">Maasai Mara Tours</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#hotels" class="dropdown-link">Hotels</a></li>
+                    <li><a href="index.html#airbnb" class="dropdown-link">Airbnb</a></li>
+                </ul>
+            </li>            <li class="book-tour-mobile">
+                <a href="?booking=tour" class="book-tour-btn-mobile active">
+                    <span class="btn-text">Book Tour</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </a>
+            </li>
+        </ul>
+        <div class="notification-bell">
+            <button class="bell-btn" aria-label="Notifications">
+                <i class="fas fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+        </div>        <div class="nav-cta">
+            <a href="?booking=tour" class="book-tour-btn active">
+                <span class="btn-text">Book Tour</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                <div class="btn-shine"></div>
+            </a>
+        </div>
+    </nav><!-- Hero Section -->
+    <section class="booking-hero">
+        <div class="booking-hero-content">
+            <h1>Book Your Next Adventure</h1>
+            <p>From mountain hikes to safari experiences, secure your spot on our incredible journeys</p>
+            <div class="booking-options">
+                <button class="booking-option-btn active" data-form="tour-booking">
+                    <i class="fas fa-globe-africa"></i> Book a Tour
+                </button>
+                <button class="booking-option-btn" data-form="event-booking">
+                    <i class="fas fa-calendar-day"></i> Book an Event
+                </button>
+            </div>
+            <div class="booking-hero-badges">
+                <div class="badge"><i class="fas fa-calendar-check"></i> Easy Booking</div>
+                <div class="badge"><i class="fas fa-users"></i> Small Groups</div>
+                <div class="badge"><i class="fas fa-shield-alt"></i> Safe Adventures</div>
+                <div class="badge"><i class="fas fa-handshake"></i> 100% Satisfaction</div>
+            </div>
+        </div>
+    </section>    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Tour Booking Form (visible by default) -->
+                <div class="booking-content" id="tour-booking">
+                    <div class="booking-flex">
+                        <!-- Form Section -->
+                        <div class="booking-form-section">
+                            <div class="form-header">
+                                <h2>Reserve Your Tour</h2>
+                                <p>Fill in your details below to book your adventure</p>
+                            </div>
+                            <form id="tour-form" class="booking-form">
+                                <div class="form-group">
+                                    <label for="tour">Select Tour</label>
+                                    <select id="tour" name="tour" required>                                        <option value="" disabled selected>Choose your tour adventure</option>
+                                        <option value="maasai">Maasai Mara Safari Experience</option>
+                                        <option value="amboseli">Amboseli Kilimanjaro View</option>
+                                        <option value="diani">Diani Beach Coastal Getaway</option>
+                                        <option value="mtkenya">Mt. Kenya Climbing Expedition</option>
+                                        <option value="nakuru">Lake Nakuru National Park</option>
+                                        <option value="naivasha">Lake Naivasha Adventure</option>
+                                        <option value="tanzania">Tanzania Explorer Safari</option>
+                                        <option value="uganda">Uganda Gorilla Trekking</option>
+                                        <option value="southafrica">South Africa Explorer</option>
+                                        <option value="city">City Explorer Walk</option>
+                                        <option value="nature">Nature Adventure Trail</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="tour-date">Date</label>
+                                        <input type="date" id="tour-date" name="date" required min="2025-05-27">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tour-guests">Number of Guests</label>
+                                        <div class="guest-counter">
+                                            <button type="button" class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                            <input type="number" id="tour-guests" name="guests" value="2" min="1" max="20" readonly>
+                                            <button type="button" class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="tour-name">Full Name</label>
+                                        <input type="text" id="tour-name" name="name" placeholder="Enter your full name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tour-phone">Phone Number</label>
+                                        <input type="tel" id="tour-phone" name="phone" placeholder="Your contact number" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tour-email">Email Address</label>
+                                    <input type="email" id="tour-email" name="email" placeholder="Your email address" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tour-requests">Special Requests</label>
+                                    <textarea id="tour-requests" name="specialRequests" rows="3" placeholder="Any special requirements or requests?"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="primary-btn">
+                                        <span>Complete Tour Booking</span>
+                                        <i class="fas fa-check-circle"></i>
+                                    </button>
+                                    <a href="https://wa.me/254123456789" class="whatsapp-btn" id="tour-whatsapp-book">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>Book via WhatsApp</span>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Tour Details Section -->
+                        <div class="tour-details-section">
+                            <div class="tour-placeholder" id="tour-placeholder">
+                                <div class="placeholder-icon">
+                                    <i class="fas fa-mountain"></i>
+                                </div>
+                                <h2>Tour Details</h2>
+                                <p>Select a tour to see details</p>
+                            </div>
+                            <div class="tour-details-content" id="tour-details">
+                                <div class="tour-image">
+                                    <img src="images/background .png" alt="Tour Image" id="tour-img">
+                                </div>
+                                <h2 class="tour-title" id="tour-title">Tour Title</h2>
+                                <div class="tour-description" id="tour-desc">
+                                    Select a tour to see description
+                                </div>
+                                <div class="tour-info">
+                                    <h3>Tour Details</h3>
+                                    <div class="info-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span id="tour-duration">Duration</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-users"></i>
+                                        <span id="tour-group">Group Size</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span id="tour-availability">Availability</span>
+                                    </div>
+                                    <h3>Highlights</h3>
+                                    <div id="tour-highlights"></div>
+                                    <h3>What's Included</h3>
+                                    <div id="tour-includes"></div>
+                                </div>
+                                <div class="tour-price" id="tour-price">
+                                    Select a tour to see pricing
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Booking Form (hidden by default) -->
+                <div class="booking-content" id="event-booking" style="display: none;">
+                    <div class="booking-flex">
+                        <!-- Form Section -->
+                        <div class="booking-form-section">
+                            <div class="form-header">
+                                <h2>Book Your Event</h2>
+                                <p>Secure your spot for our upcoming events and hikes</p>
+                            </div>
+                            <form id="event-form" class="booking-form">
+                                <div class="form-group">
+                                    <label for="event">Select Event</label>
+                                    <select id="event" name="event" required>
+                                        <option value="" disabled selected>Choose your event</option>
+                                        <option value="kilimanjaro">Kilimanjaro Base Camp Trek</option>
+                                        <option value="aberdare">Aberdare Forest Adventure</option>
+                                        <option value="mombasa">Mombasa Coastal Trail</option>
+                                        <option value="mtkenya">Mount Kenya Summit Challenge</option>
+                                        <option value="hiking">Weekend Hiking Experience</option>
+                                        <option value="teambuilding">Corporate Team Building</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="event-date">Event Date</label>
+                                        <select id="event-date" name="eventDate" required>
+                                            <option value="" disabled selected>Select available date</option>
+                                            <!-- Event dates will be populated by JavaScript -->
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="event-guests">Number of Participants</label>
+                                        <div class="guest-counter">
+                                            <button type="button" class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                            <input type="number" id="event-guests" name="guests" value="1" min="1" max="10" readonly>
+                                            <button type="button" class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="event-name">Full Name</label>
+                                        <input type="text" id="event-name" name="name" placeholder="Enter your full name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="event-phone">Phone Number</label>
+                                        <input type="tel" id="event-phone" name="phone" placeholder="Your contact number" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event-email">Email Address</label>
+                                    <input type="email" id="event-email" name="email" placeholder="Your email address" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fitness-level">Fitness Level</label>
+                                    <select id="fitness-level" name="fitnessLevel">
+                                        <option value="beginner">Beginner - New to hiking/outdoor activities</option>
+                                        <option value="intermediate" selected>Intermediate - Some experience</option>
+                                        <option value="advanced">Advanced - Regular hiker/Very active</option>
+                                        <option value="expert">Expert - Experienced mountaineer/athlete</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event-requests">Special Requirements</label>
+                                    <textarea id="event-requests" name="specialRequests" rows="3" placeholder="Any special requirements or medical conditions we should know about?"></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="primary-btn">
+                                        <span>Complete Event Booking</span>
+                                        <i class="fas fa-check-circle"></i>
+                                    </button>
+                                    <a href="https://wa.me/254123456789" class="whatsapp-btn" id="event-whatsapp-book">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>Book via WhatsApp</span>
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Event Details Section -->
+                        <div class="tour-details-section">
+                            <div class="tour-placeholder" id="event-placeholder">
+                                <div class="placeholder-icon">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <h2>Event Details</h2>
+                                <p>Select an event to see details</p>
+                            </div>
+                            <div class="tour-details-content" id="event-details">
+                                <div class="tour-image">
+                                    <img src="images/background .png" alt="Event Image" id="event-img">
+                                    <div class="event-date-badge">
+                                        <span class="month" id="event-month">May</span>
+                                        <span class="day" id="event-day">28</span>
+                                    </div>
+                                </div>
+                                <h2 class="tour-title" id="event-title">Event Title</h2>
+                                <div class="tour-description" id="event-desc">
+                                    Select an event to see description
+                                </div>
+                                <div class="tour-info">
+                                    <h3>Event Details</h3>
+                                    <div class="info-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span id="event-location">Location</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-clock"></i>
+                                        <span id="event-time">Time</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-users"></i>
+                                        <span id="event-participants">Participants</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <i class="fas fa-hiking"></i>
+                                        <span id="event-difficulty">Difficulty</span>
+                                    </div>
+                                    <h3>What to Bring</h3>
+                                    <div id="event-items"></div>
+                                </div>
+                                <div class="tour-price" id="event-price">
+                                    Select an event to see pricing
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Success Message (Hidden by default) -->
+                <div class="booking-success" id="booking-success">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Booking Successful!</h2>
+                    <p>Thank you for booking with Beyond Miles Adventures. We've sent a confirmation email with all the details. Our team will contact you shortly to finalize arrangements.</p>
+                    <div class="success-actions">
+                        <a href="index.html" class="return-btn">
+                            <i class="fas fa-home"></i>
+                            <span>Return to Homepage</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="booking-features">
+        <div class="container">
+            <h2>Why Book With Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Easy Scheduling</h3>
+                    <p>Flexible dates and simple booking process</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Expert Guides</h3>
+                    <p>Experienced and knowledgeable local guides</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Personalized Experience</h3>
+                    <p>Tailored adventures to match your preferences</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3>No Hidden Costs</h3>
+                    <p>Transparent pricing with all essentials included</p>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/254123456789" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-text">Chat with us</div>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Beyond Miles Adventures Logo">
+                    <h3>Beyond Miles Adventures</h3>
+                </div>
+                <p>Adventure awaits. Explore. Discover. Conquer.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#events">Events</a></li>
+                    <li><a href="index.html#tours">Tours</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                    <li><i class="fas fa-phone"></i> +254 712 345 678</li>
+                    <li><i class="fas fa-envelope"></i> info@beyondmilesadventures.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Subscribe</h3>
+                <p>Get updates on our latest adventures and exclusive offers.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" aria-label="Subscribe">
+                        <span>Subscribe</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Beyond Miles Adventures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/hero-navbar.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

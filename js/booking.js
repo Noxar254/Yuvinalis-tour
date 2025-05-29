@@ -133,8 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             highlights: ['Mountain gorilla trekking', 'Golden monkey tracking', 'Cultural encounters', 'Forest exploration'],
             includes: ['Gorilla permits', 'Professional guide', 'Accommodation', 'All meals', 'Transport', 'Park fees'],
             image: 'images/background .png'
-        },
-        southafrica: {
+        },        southafrica: {
             title: 'South Africa Explorer',
             desc: 'Explore the diverse beauty of South Africa from the cosmopolitan city of Cape Town to the world-renowned Kruger National Park. This comprehensive tour showcases the best of South African culture, wildlife, and landscapes.',
             duration: '10 Days',
@@ -143,6 +142,292 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 'KES 150,000',
             highlights: ['Cape Town city tour', 'Wine tasting', 'Kruger Big Five safari', 'Panorama Route'],
             includes: ['Luxury accommodation', 'All meals', 'Professional guide', 'Transport', 'Park fees', 'Wine tastings'],
+            image: 'images/background .png'
+        },
+        // Dubai Tours & Attractions
+        desertsafari: {
+            title: 'Desert Safari',
+            desc: 'Experience the thrill of the Dubai desert with dune bashing, camel riding, and a traditional Bedouin-style dinner under the stars. This comprehensive desert experience includes sandboarding and cultural entertainment.',
+            duration: '6 hours',
+            maxGroup: '20 people',
+            availability: 'Daily, 3:00 PM - 9:00 PM',
+            price: 'AED 199',
+            highlights: ['Dune bashing adventure', 'Camel riding', 'Sandboarding', 'BBQ dinner', 'Cultural shows'],
+            includes: ['Hotel pickup/drop-off', 'Professional driver', 'BBQ dinner', 'Soft drinks', 'Entertainment'],
+            image: 'images/background .png'
+        },
+        creekdhow: {
+            title: 'Creek Dhow Cruise',
+            desc: 'Sail along the historic Dubai Creek on a traditional wooden dhow while enjoying a delicious dinner and stunning views of old and new Dubai. Experience the charm of traditional Dubai from the water.',
+            duration: '3 hours',
+            maxGroup: '50 people',
+            availability: 'Daily, 7:00 PM - 10:00 PM',
+            price: 'AED 89',
+            highlights: ['Traditional dhow boat', 'Dinner buffet', 'Creek views', 'Live entertainment', 'Cultural experience'],
+            includes: ['Dhow cruise', 'International buffet', 'Welcome drink', 'Entertainment', 'Hotel transfers'],
+            image: 'images/background .png'
+        },
+        marinadhow: {
+            title: 'Marina Dhow Cruise',
+            desc: 'Enjoy a luxurious dining experience aboard a traditional dhow while cruising through Dubai Marina. Marvel at the stunning skyline and modern architecture of Dubai\'s newest district.',
+            duration: '3 hours',
+            maxGroup: '50 people',
+            availability: 'Daily, 8:00 PM - 11:00 PM',
+            price: 'AED 165',
+            highlights: ['Marina skyline views', 'International buffet', 'Live entertainment', 'Air-conditioned dhow', 'Photography spots'],
+            includes: ['Marina dhow cruise', 'International buffet', 'Soft drinks', 'Entertainment', 'Hotel transfers'],
+            image: 'images/background .png'
+        },
+        burjkhalifa: {
+            title: 'Burj Khalifa at the Top',
+            desc: 'Visit the world\'s tallest building and enjoy breathtaking 360-degree views of Dubai from the observation decks on levels 124 & 125. Experience Dubai from the clouds.',
+            duration: '2 hours',
+            maxGroup: '25 people',
+            availability: 'Daily, Flexible timing',
+            price: 'AED 159',
+            highlights: ['World\'s tallest building', '360-degree city views', 'High-speed elevators', 'Multimedia presentation', 'Photography opportunities'],
+            includes: ['Skip-the-line tickets', 'Access to levels 124 & 125', 'Multimedia presentation', 'Souvenir photo'],
+            image: 'images/background .png'
+        },
+        dubaitour: {
+            title: 'Dubai City Tour',
+            desc: 'Discover the highlights of Dubai with our comprehensive city tour covering both traditional and modern attractions. Visit iconic landmarks, cultural sites, and architectural marvels.',
+            duration: '7 hours',
+            maxGroup: '15 people',
+            availability: 'Daily, 9:00 AM - 4:00 PM',
+            price: 'AED 199',
+            highlights: ['Burj Al Arab photo stop', 'Jumeirah Mosque visit', 'Gold & Spice Souks', 'Dubai Museum', 'Dubai Frame'],
+            includes: ['Air-conditioned vehicle', 'Professional guide', 'Hotel pickup/drop-off', 'Entrance fees', 'Refreshments'],
+            image: 'images/background .png'
+        },
+        globalvillage: {
+            title: 'Global Village',
+            desc: 'Experience the world in one place at Global Village, featuring pavilions from over 90 countries, cultural shows, shopping, and international cuisine. A truly multicultural experience.',
+            duration: '4-5 hours',
+            maxGroup: '30 people',
+            availability: 'Oct-Apr, 4:00 PM - 12:00 AM',
+            price: 'AED 59',
+            highlights: ['90+ country pavilions', 'Cultural performances', 'International shopping', 'Global cuisine', 'Family entertainment'],
+            includes: ['Entry tickets', 'Cultural show access', 'Map and guide', 'Shopping assistance'],
+            image: 'images/background .png'
+        },
+        atlantis: {
+            title: 'Atlantis Aquaventure',
+            desc: 'Enjoy a full day of aquatic adventures at Atlantis Aquaventure Waterpark, featuring thrilling water slides, marine animal encounters, and pristine beaches.',
+            duration: 'Full day',
+            maxGroup: '20 people',
+            availability: 'Daily, 10:00 AM - 6:00 PM',
+            price: 'AED 315',
+            highlights: ['Thrilling water slides', 'Lost Chambers Aquarium', 'Private beach access', 'Marine animal encounters', 'Adventure activities'],
+            includes: ['Full day access', 'Locker rental', 'Beach access', 'Lost Chambers visit', 'Safety equipment'],
+            image: 'images/background .png'
+        },
+        imgworld: {
+            title: 'IMG Worlds of Adventure',
+            desc: 'Experience the world\'s largest indoor theme park with thrilling rides, immersive experiences, and attractions based on popular cartoon and superhero characters.',
+            duration: 'Full day',
+            maxGroup: '25 people',
+            availability: 'Daily, 11:00 AM - 8:00 PM',
+            price: 'AED 345',
+            highlights: ['World\'s largest indoor theme park', 'Marvel and Cartoon Network zones', 'Thrilling rides', 'Live shows', 'Dining options'],
+            includes: ['Full day access', 'All rides and attractions', 'Shows and entertainment', 'Parking'],
+            image: 'images/background .png'
+        },
+        dubaiframe: {
+            title: 'Dubai Frame',
+            desc: 'Visit the iconic Dubai Frame for spectacular views of old and new Dubai. This architectural marvel offers a unique perspective of the city\'s transformation.',
+            duration: '2 hours',
+            maxGroup: '30 people',
+            availability: 'Daily, 9:00 AM - 9:00 PM',
+            price: 'AED 50',
+            highlights: ['Panoramic city views', 'Golden bridge experience', 'Museum exhibition', 'Sky deck', 'Photo opportunities'],
+            includes: ['Skip-the-line entry', 'Museum access', 'Sky deck access', 'Souvenir photo'],
+            image: 'images/background .png'
+        },        miraclegarden: {
+            title: 'Dubai Miracle Garden',
+            desc: 'Explore the world\'s largest natural flower garden featuring over 150 million flowers in stunning arrangements and unique designs. A paradise for nature lovers.',
+            duration: '3 hours',
+            maxGroup: '35 people',
+            availability: 'Oct-May, 9:00 AM - 9:00 PM',
+            price: 'AED 75',
+            highlights: ['150+ million flowers', 'Unique floral arrangements', 'Instagram-worthy spots', 'Themed gardens', 'Seasonal displays'],
+            includes: ['Garden entry', 'Map and guide', 'Photography spots', 'Rest areas'],
+            image: 'images/background .png'
+        },
+        jetski: {
+            title: 'Jet Ski Experience',
+            desc: 'Feel the adrenaline rush as you speed across Dubai\'s pristine waters on a high-powered jet ski. Perfect for adventure seekers and water sports enthusiasts.',
+            duration: '30 minutes - 2 hours',
+            maxGroup: '10 people',
+            availability: 'Daily, 9:00 AM - 6:00 PM',
+            price: 'AED 299',
+            highlights: ['High-speed water adventure', 'Dubai coastline views', 'Professional instruction', 'Safety equipment included', 'Photo opportunities'],
+            includes: ['Jet ski rental', 'Safety briefing', 'Life jacket', 'Insurance', 'Basic instruction'],
+            image: 'images/background .png'
+        },
+        wildwadi: {
+            title: 'Wild Wadi Water Park',
+            desc: 'Experience the ultimate water adventure at Wild Wadi, featuring thrilling water slides, wave pools, and family-friendly attractions in a Sinbad-themed setting.',
+            duration: 'Full day',
+            maxGroup: '25 people',
+            availability: 'Daily, 10:00 AM - 6:00 PM',
+            price: 'AED 280',
+            highlights: ['Thrilling water slides', 'Surfing simulator', 'Lazy river', 'Kids play area', 'Beach access'],
+            includes: ['Full day access', 'Locker rental', 'Towel service', 'Beach access', 'Safety equipment'],
+            image: 'images/background .png'
+        },
+        museumlakesafari: {
+            title: 'Museum of the Future & Lake Safari',
+            desc: 'Combine futuristic innovation with natural beauty by visiting the iconic Museum of the Future and enjoying a serene lake safari experience.',
+            duration: '5 hours',
+            maxGroup: '15 people',
+            availability: 'Daily, 10:00 AM - 5:00 PM',
+            price: 'AED 450',
+            highlights: ['Future technology exhibits', 'Interactive displays', 'Lake boat ride', 'Wildlife spotting', 'Photography'],
+            includes: ['Museum entry', 'Lake safari', 'Professional guide', 'Refreshments', 'Transportation'],
+            image: 'images/background .png'
+        },
+        dubaioperashow: {
+            title: 'Dubai Opera Show',
+            desc: 'Experience world-class performances at the stunning Dubai Opera, featuring international artists, classical music, ballet, and contemporary shows.',
+            duration: '2-3 hours',
+            maxGroup: '20 people',
+            availability: 'Schedule varies',
+            price: 'AED 150-500',
+            highlights: ['World-class performances', 'Stunning architecture', 'Premium seating', 'Cultural experience', 'Evening entertainment'],
+            includes: ['Show tickets', 'Venue access', 'Program guide', 'Pre-show refreshments'],
+            image: 'images/background .png'
+        },
+        dubaiaquarium: {
+            title: 'Dubai Aquarium & Underwater Zoo',
+            desc: 'Explore one of the world\'s largest suspended aquariums featuring over 33,000 aquatic animals and immersive underwater experiences.',
+            duration: '2-3 hours',
+            maxGroup: '30 people',
+            availability: 'Daily, 10:00 AM - 10:00 PM',
+            price: 'AED 149',
+            highlights: ['33,000+ marine animals', 'Underwater tunnel', 'Shark encounters', 'Interactive exhibits', 'Educational programs'],
+            includes: ['Aquarium entry', 'Underwater zoo access', 'Tunnel walkthrough', 'Interactive experiences'],
+            image: 'images/background .png'
+        },
+        zabeel: {
+            title: 'Zabeel Park & Dubai Garden Glow',
+            desc: 'Discover the magical Dubai Garden Glow in Zabeel Park, featuring illuminated installations, themed gardens, and entertainment for the whole family.',
+            duration: '3-4 hours',
+            maxGroup: '25 people',
+            availability: 'Oct-May, 4:00 PM - 11:00 PM',
+            price: 'AED 65',
+            highlights: ['Illuminated art installations', 'Themed gardens', 'Family entertainment', 'Food courts', 'Shopping area'],
+            includes: ['Park entry', 'Garden glow access', 'Map and guide', 'Parking'],
+            image: 'images/background .png'
+        },
+        goldenframeart: {
+            title: 'Golden Frame Art Gallery',
+            desc: 'Visit Dubai\'s premier art gallery showcasing contemporary Middle Eastern art, international exhibitions, and cultural collections.',
+            duration: '1.5-2 hours',
+            maxGroup: '20 people',
+            availability: 'Daily, 9:00 AM - 9:00 PM',
+            price: 'AED 89',
+            highlights: ['Contemporary art collections', 'International exhibitions', 'Cultural displays', 'Interactive tours', 'Gift shop'],
+            includes: ['Gallery entry', 'Audio guide', 'Brochure', 'Photography allowed'],
+            image: 'images/background .png'
+        },
+        traditionalsouks: {
+            title: 'Traditional Souks Tour',
+            desc: 'Explore Dubai\'s historic souks including the Gold Souk, Spice Souk, and Textile Souk. Experience traditional trading culture and bargaining.',
+            duration: '3-4 hours',
+            maxGroup: '15 people',
+            availability: 'Daily, 9:00 AM - 6:00 PM',
+            price: 'AED 120',
+            highlights: ['Historic trading areas', 'Gold and spice markets', 'Traditional architecture', 'Cultural immersion', 'Shopping opportunities'],
+            includes: ['Guided tour', 'Transportation', 'Cultural insights', 'Shopping assistance'],
+            image: 'images/background .png'
+        },
+        heliride: {
+            title: 'Helicopter Ride over Dubai',
+            desc: 'Experience Dubai from the sky with a breathtaking helicopter tour showcasing iconic landmarks, coastline, and architectural marvels from above.',
+            duration: '15-45 minutes',
+            maxGroup: '6 people',
+            availability: 'Daily, 9:00 AM - 5:00 PM',
+            price: 'AED 695',
+            highlights: ['Aerial city views', 'Iconic landmarks', 'Professional pilot', 'Photo opportunities', 'Luxury experience'],
+            includes: ['Helicopter flight', 'Pilot commentary', 'Safety briefing', 'Insurance', 'Certificate'],
+            image: 'images/background .png'
+        },
+        luxuryyacht: {
+            title: 'Luxury Yacht Party',
+            desc: 'Sail in style aboard a luxury yacht with professional crew, gourmet dining, and stunning views of Dubai\'s coastline and skyline.',
+            duration: '3-8 hours',
+            maxGroup: '20 people',
+            availability: 'Daily, flexible timing',
+            price: 'AED 1200',
+            highlights: ['Luxury yacht experience', 'Professional crew', 'Gourmet dining', 'Water activities', 'Premium service'],
+            includes: ['Yacht charter', 'Crew service', 'Refreshments', 'Water sports equipment', 'Music system'],
+            image: 'images/background .png'
+        },
+        skydiving: {
+            title: 'Skydiving Experience',
+            desc: 'Experience the ultimate adrenaline rush with a tandem skydive over Dubai\'s iconic landmarks and pristine coastline.',
+            duration: '3-4 hours',
+            maxGroup: '8 people',
+            availability: 'Daily, weather permitting',
+            price: 'AED 2199',
+            highlights: ['Tandem skydiving', 'Professional instructors', 'Aerial views', 'Safety certified', 'Video recording'],
+            includes: ['Tandem jump', 'Training session', 'Safety equipment', 'Certificate', 'Photos/video option'],
+            image: 'images/background .png'
+        },
+        hotairballoon: {
+            title: 'Hot Air Balloon Ride',
+            desc: 'Float peacefully over the Dubai desert at sunrise, enjoying panoramic views and a unique perspective of the desert landscape.',
+            duration: '4-5 hours',
+            maxGroup: '12 people',
+            availability: 'Daily, sunrise timing',
+            price: 'AED 995',
+            highlights: ['Sunrise desert views', 'Peaceful flight', 'Wildlife spotting', 'Traditional breakfast', 'Certificate'],
+            includes: ['Hot air balloon ride', 'Hotel transfers', 'Light breakfast', 'Flight certificate', 'Photos'],
+            image: 'images/background .png'
+        },
+        privatebeach: {
+            title: 'Private Beach Experience',
+            desc: 'Enjoy exclusive access to pristine private beaches with luxury amenities, water sports, and personalized service.',
+            duration: 'Full day',
+            maxGroup: '15 people',
+            availability: 'Daily, 9:00 AM - 6:00 PM',
+            price: 'AED 350',
+            highlights: ['Private beach access', 'Luxury amenities', 'Water sports', 'Beachside dining', 'Relaxation areas'],
+            includes: ['Beach access', 'Sunbeds and umbrellas', 'Towel service', 'Water sports equipment', 'Refreshments'],
+            image: 'images/background .png'
+        },
+        quadbiking: {
+            title: 'Quad Biking Adventure',
+            desc: 'Navigate through Dubai\'s desert dunes on powerful quad bikes for an exhilarating off-road adventure experience.',
+            duration: '2-4 hours',
+            maxGroup: '12 people',
+            availability: 'Daily, 8:00 AM - 5:00 PM',
+            price: 'AED 180',
+            highlights: ['Desert quad biking', 'Professional guides', 'Safety equipment', 'Desert exploration', 'Photo stops'],
+            includes: ['Quad bike rental', 'Safety gear', 'Professional guide', 'Desert route', 'Refreshments'],
+            image: 'images/background .png'
+        },
+        camelriding: {
+            title: 'Camel Riding Experience',
+            desc: 'Experience traditional desert transportation with a peaceful camel ride through the Dubai desert landscape.',
+            duration: '1-2 hours',
+            maxGroup: '20 people',
+            availability: 'Daily, sunrise and sunset',
+            price: 'AED 85',
+            highlights: ['Traditional camel ride', 'Desert scenery', 'Cultural experience', 'Photo opportunities', 'Peaceful journey'],
+            includes: ['Camel ride', 'Safety briefing', 'Traditional attire option', 'Photos', 'Light refreshments'],
+            image: 'images/background .png'
+        },
+        sandboarding: {
+            title: 'Sand Boarding',
+            desc: 'Surf the golden sand dunes of Dubai with this exciting sandboarding adventure, perfect for thrill-seekers and adventure enthusiasts.',
+            duration: '2-3 hours',
+            maxGroup: '15 people',
+            availability: 'Daily, 8:00 AM - 5:00 PM',
+            price: 'AED 120',
+            highlights: ['Sand dune surfing', 'Professional instruction', 'Safety equipment', 'Desert adventure', 'Group activities'],
+            includes: ['Sandboarding equipment', 'Safety gear', 'Instruction', 'Desert transport', 'Refreshments'],
             image: 'images/background .png'
         }
     };
@@ -208,8 +493,7 @@ document.addEventListener('DOMContentLoaded', function() {
             items: ['Comfortable shoes', 'Water bottle', 'Light snacks', 'Hat', 'Sunscreen', 'Light jacket'],
             image: 'images/background .png',
             dates: ['2025-06-12', '2025-06-26', '2025-07-10', '2025-07-24', '2025-08-07', '2025-08-21', '2025-09-04', '2025-09-18']
-        },
-        teambuilding: {
+        },        teambuilding: {
             title: 'Corporate Team Building',
             desc: 'Strengthen your team\'s bond with our specially designed team building events that combine outdoor activities, problem-solving challenges, and adventure in natural settings.',
             location: 'Various locations near Nairobi',
@@ -220,6 +504,55 @@ document.addEventListener('DOMContentLoaded', function() {
             items: ['Comfortable clothing', 'Team spirit', 'Notebook', 'Water bottle', 'Cap/hat', 'Sunscreen'],
             image: 'images/background .png',
             dates: ['Custom dates available - contact for scheduling']
+        },
+        // Dubai Events & Attractions
+        desertsafarievent: {
+            title: 'Dubai Desert Safari',
+            desc: 'Experience the thrill of the Dubai desert with dune bashing, camel riding, and a traditional Bedouin-style dinner under the stars.',
+            location: 'Dubai Desert Conservation Reserve',
+            time: '6 hours, 3:00 PM - 9:00 PM',
+            participants: '20 max',
+            difficulty: 'Easy to Moderate',
+            price: 'AED 199',
+            items: ['Comfortable clothing', 'Sunglasses', 'Camera', 'Light jacket', 'Closed shoes'],
+            image: 'images/background .png',
+            dates: ['Daily availability']
+        },
+        burjkhalifaevent: {
+            title: 'Burj Khalifa At The Top',
+            desc: 'Visit the world\'s tallest building and enjoy breathtaking 360-degree views of Dubai from levels 124 & 125.',
+            location: 'Downtown Dubai',
+            time: '2 hours, Flexible timing',
+            participants: '25 max',
+            difficulty: 'Easy',
+            price: 'AED 159',
+            items: ['Camera', 'Comfortable shoes', 'Light clothing'],
+            image: 'images/background .png',
+            dates: ['Daily availability']
+        },
+        marinadhowevent: {
+            title: 'Marina Dhow Cruise',
+            desc: 'Enjoy a luxurious dining experience aboard a traditional dhow while cruising through Dubai Marina.',
+            location: 'Dubai Marina',
+            time: '3 hours, 8:00 PM - 11:00 PM',
+            participants: '50 max',
+            difficulty: 'Easy',
+            price: 'AED 165',
+            items: ['Camera', 'Light jacket', 'Formal casual attire'],
+            image: 'images/background .png',
+            dates: ['Daily availability']
+        },
+        globalvillageevent: {
+            title: 'Global Village Experience',
+            desc: 'Experience the world in one place with pavilions from over 90 countries, cultural shows, shopping, and international cuisine.',
+            location: 'Global Village, Dubai',
+            time: '4-5 hours, 4:00 PM - 12:00 AM',
+            participants: '30 max',
+            difficulty: 'Easy',
+            price: 'AED 59',
+            items: ['Comfortable walking shoes', 'Camera', 'Light clothing', 'Shopping bag'],
+            image: 'images/background .png',
+            dates: ['October to April season']
         }
     };
 

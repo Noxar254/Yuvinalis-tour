@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freight Services - Yuvinalis Tourism</title>
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .freight-hero {
+            background: linear-gradient(135deg, rgba(253, 187, 45, 0.9), rgba(255, 165, 0, 0.8)), url('images/background\ .png');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 100px 20px 80px;
+        }
+
+        .freight-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .freight-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #FDBB2D, #FFA500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .service-features li i {
+            color: #FDBB2D;
+            margin-right: 10px;
+            width: 16px;
+        }
+
+        .ship-btn {
+            background: linear-gradient(45deg, #FDBB2D, #FFA500);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(253, 187, 45, 0.3);
+        }
+
+        .ship-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(253, 187, 45, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Tracking Section */
+        .tracking-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .tracking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tracking-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tracking-header h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .tracking-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .tracking-form {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tracking-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .tracking-input:focus {
+            outline: none;
+            border-color: #FDBB2D;
+        }
+
+        .track-btn {
+            background: linear-gradient(45deg, #FDBB2D, #FFA500);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .track-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(253, 187, 45, 0.3);
+        }
+
+        .tracking-result {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .tracking-result.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .shipment-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .tracking-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        .timeline-item:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: -22px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% - 10px);
+            background: #e1e5e9;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #FDBB2D;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #FDBB2D;
+        }
+
+        .timeline-dot.completed {
+            background: #28a745;
+            box-shadow: 0 0 0 2px #28a745;
+        }
+
+        .timeline-content h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .timeline-content p {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .timeline-date {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .quote-form {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #FDBB2D;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #FDBB2D, #FFA500);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(253, 187, 45, 0.3);
+        }
+
+        /* Error and Loading States */
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #f5c6cb;
+            display: none;
+            margin-top: 20px;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 40px;
+            color: #666;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e1e5e9;
+            border-top: 2px solid #FDBB2D;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .freight-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tracking-form {
+                flex-direction: column;
+            }
+
+            .tracking-input {
+                min-width: 100%;
+            }
+
+            .track-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="full-text">Yuvinalis Tourism</span>
+                    <span class="short-text">YT</span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-controls">
+            <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+                <a href="index.html#services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#visa-processing" class="dropdown-link">Visa Processing</a></li>
+                    <li><a href="flight-booking.html" class="dropdown-link">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html" class="dropdown-link">Hotel Booking</a></li>
+                    <li><a href="index.html#airport-pickups" class="dropdown-link">Airport Pickups</a></li>
+                    <li><a href="index.html#tour-services" class="dropdown-link">Tour Services</a></li>
+                    <li><a href="index.html#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
+                    <li><a href="index.html#dubai-business-setup" class="dropdown-link">Dubai Business Set Up</a></li>
+                    <li><a href="freight-services.html" class="dropdown-link">Freight Services</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#events" class="nav-link dropdown-toggle">Events & Hikes <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="dropdown-link">All Events</a></li>
+                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Events</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#tours" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#dubai-tours" class="dropdown-link">Dubai Tours</a></li>
+                    <li><a href="index.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
+                    <li><a href="index.html#international-tours" class="dropdown-link">International Tours</a></li>
+                    <li><a href="index.html#maasai-mara-tours" class="dropdown-link">Maasai Mara Tours</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="accommodations.html" class="dropdown-link">Hotels</a></li>
+                    <li><a href="index.html#bedspaces" class="dropdown-link">Bedspaces</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#freight" class="nav-link dropdown-toggle">Freight <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#dubai-to-kenya" class="dropdown-link">Dubai to Kenya</a></li>
+                    <li><a href="index.html#kenya-to-dubai" class="dropdown-link">Kenya to Dubai</a></li>
+                    <li><a href="index.html#other-countries" class="dropdown-link">Other Countries</a></li>
+                </ul>
+            </li>
+            <li class="book-tour-mobile">
+                <a href="booking.html?booking=tour" class="book-tour-btn-mobile">
+                    <span class="btn-text">Book Tour</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-cta">
+            <a href="booking.html?booking=tour" class="book-tour-btn">
+                <span class="btn-text">Book Tour</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                <div class="btn-shine"></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="freight-hero">
+        <div class="container">
+            <h1>Freight Services</h1>
+            <p>Reliable cargo shipping solutions between Dubai, Kenya, and worldwide destinations</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px;">Our Freight Services</h2>
+                <p style="color: #666; font-size: 1.1rem;">Professional cargo shipping with competitive rates and reliable delivery</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Dubai to Kenya -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Dubai to Kenya</h3>
+                    <p>Efficient cargo transportation from Dubai to Kenya with door-to-door delivery options and customs clearance assistance.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Air and sea freight options</li>
+                        <li><i class="fas fa-check"></i> Door-to-door delivery</li>
+                        <li><i class="fas fa-check"></i> Customs clearance included</li>
+                        <li><i class="fas fa-check"></i> Real-time tracking</li>
+                        <li><i class="fas fa-check"></i> Insurance coverage available</li>
+                    </ul>
+                    <a href="#quote-form" class="ship-btn">
+                        <span>Get Quote</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Kenya to Dubai -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Kenya to Dubai</h3>
+                    <p>Express cargo shipping from Kenya to Dubai with reliable tracking and expedited processing for urgent shipments.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Express delivery options</li>
+                        <li><i class="fas fa-check"></i> Competitive pricing</li>
+                        <li><i class="fas fa-check"></i> Secure packaging</li>
+                        <li><i class="fas fa-check"></i> Documentation assistance</li>
+                        <li><i class="fas fa-check"></i> Priority handling</li>
+                    </ul>
+                    <a href="#quote-form" class="ship-btn">
+                        <span>Get Quote</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Worldwide Shipping -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Worldwide Shipping</h3>
+                    <p>Global freight solutions to major destinations worldwide with competitive rates and reliable service networks.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 200+ destinations</li>
+                        <li><i class="fas fa-check"></i> Multiple carrier options</li>
+                        <li><i class="fas fa-check"></i> Consolidated shipping</li>
+                        <li><i class="fas fa-check"></i> Volume discounts</li>
+                        <li><i class="fas fa-check"></i> 24/7 support</li>
+                    </ul>
+                    <a href="#quote-form" class="ship-btn">
+                        <span>Get Quote</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Section -->
+    <section class="tracking-section">
+        <div class="container">
+            <div class="tracking-container">
+                <div class="tracking-header">
+                    <h2>Track Your Shipment</h2>
+                    <p>Enter your waybill number to get real-time updates on your cargo</p>
+                </div>
+
+                <div class="tracking-form">
+                    <input type="text" class="tracking-input" id="waybillNumber" placeholder="Enter your waybill number (e.g., YT123456789)">
+                    <button class="track-btn" onclick="trackShipment()">
+                        <i class="fas fa-search"></i>
+                        Track Shipment
+                    </button>
+                </div>
+
+                <div class="error-message" id="errorMessage"></div>
+
+                <div class="tracking-result" id="trackingResult">
+                    <div class="shipment-info">
+                        <div class="info-item">
+                            <div class="info-label">Waybill Number</div>
+                            <div class="info-value" id="shipmentNumber">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Status</div>
+                            <div class="info-value" id="shipmentStatus">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Origin</div>
+                            <div class="info-value" id="shipmentOrigin">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Destination</div>
+                            <div class="info-value" id="shipmentDestination">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Estimated Delivery</div>
+                            <div class="info-value" id="estimatedDelivery">-</div>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Shipment Timeline</h3>
+                    <div class="tracking-timeline" id="trackingTimeline">
+                        <!-- Timeline items will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="quote-section" id="quote-form">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px;">Get a Quote</h2>
+                <p style="color: #666; font-size: 1.1rem;">Fill out the form below and we'll provide you with a competitive freight quote</p>
+            </div>
+
+            <form class="quote-form" id="freightQuoteForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="senderName">Sender Name *</label>
+                        <input type="text" id="senderName" name="senderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senderEmail">Email Address *</label>
+                        <input type="email" id="senderEmail" name="senderEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senderPhone">Phone Number *</label>
+                        <input type="tel" id="senderPhone" name="senderPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="originCity">Origin City *</label>
+                        <select id="originCity" name="originCity" required>
+                            <option value="">Select origin</option>
+                            <option value="dubai">Dubai, UAE</option>
+                            <option value="nairobi">Nairobi, Kenya</option>
+                            <option value="mombasa">Mombasa, Kenya</option>
+                            <option value="other">Other (specify in notes)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="destinationCity">Destination City *</label>
+                        <select id="destinationCity" name="destinationCity" required>
+                            <option value="">Select destination</option>
+                            <option value="dubai">Dubai, UAE</option>
+                            <option value="nairobi">Nairobi, Kenya</option>
+                            <option value="mombasa">Mombasa, Kenya</option>
+                            <option value="other">Other (specify in notes)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="cargoType">Cargo Type *</label>
+                        <select id="cargoType" name="cargoType" required>
+                            <option value="">Select cargo type</option>
+                            <option value="general">General Cargo</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing & Textiles</option>
+                            <option value="machinery">Machinery & Equipment</option>
+                            <option value="automotive">Automotive Parts</option>
+                            <option value="food">Food & Beverages</option>
+                            <option value="personal">Personal Effects</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="shipmentType">Shipment Type *</label>
+                        <select id="shipmentType" name="shipmentType" required>
+                            <option value="">Select shipment type</option>
+                            <option value="air">Air Freight</option>
+                            <option value="sea">Sea Freight</option>
+                            <option value="express">Express Delivery</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="weight">Approximate Weight (kg) *</label>
+                        <input type="number" id="weight" name="weight" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dimensions">Dimensions (L x W x H cm)</label>
+                        <input type="text" id="dimensions" name="dimensions" placeholder="e.g., 100 x 50 x 30">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Please provide any additional information about your shipment, special handling requirements, or questions you may have."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Request Quote
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo">
+                    <h3>Yuvinalis Tourism</h3>
+                </div>
+                <p>Your Gateway to Dubai and Beyond</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/yuvinalistourism" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yuvinalistourism" class="social-icon twitter-custom" aria-label="X (Twitter)" target="_blank">
+                        <img src="./images/Xlogo.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://instagram.com/yuvinalistourism" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@yuvinalistourism" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://threads.net/@yuvinalistourism" class="social-icon threads-custom" aria-label="Threads" target="_blank">
+                        <img src="./images/Thread Logo.png" alt="Threads">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="index.html#upcoming-events">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="index.html#get-in-touch">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="visa-services.html">Visa Processing</a></li>
+                    <li><a href="flight-booking.html">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html">Hotel Booking</a></li>
+                    <li><a href="index.html#tour-services">Tour Services</a></li>
+                    <li><a href="freight-services.html">Freight Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="accommodations.html">Dubai Hotels</a></li>
+                    <li><a href="index.html#hotels">Bedspaces</a></li>
+                    <li><a href="events.html">Dubai Tours</a></li>
+                    <li><a href="index.html#dubai-business-setup">Business Setup</a></li>
+                </ul>
+                <!-- Jobs in UAE Button -->
+                <div class="jobs-button-container">
+                    <a href="index.html#jobs-uae" class="jobs-uae-btn">
+                        <i class="fas fa-briefcase"></i>
+                        Jobs in UAE
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yuvinalis Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/hero-navbar.js"></script>
+    <script>
+        // Sample tracking data for demonstration
+        const trackingData = {
+            'YT123456789': {
+                number: 'YT123456789',
+                status: 'In Transit',
+                origin: 'Dubai, UAE',
+                destination: 'Nairobi, Kenya',
+                estimatedDelivery: 'June 2, 2025',
+                timeline: [
+                    {
+                        status: 'Shipment Created',
+                        description: 'Shipment booking confirmed and waybill generated',
+                        date: 'May 28, 2025 - 2:30 PM',
+                        completed: true
+                    },
+                    {
+                        status: 'Picked Up',
+                        description: 'Package collected from sender location in Dubai',
+                        date: 'May 29, 2025 - 9:15 AM',
+                        completed: true
+                    },
+                    {
+                        status: 'At Origin Facility',
+                        description: 'Arrived at Dubai cargo facility for processing',
+                        date: 'May 29, 2025 - 11:45 AM',
+                        completed: true
+                    },
+                    {
+                        status: 'In Transit',
+                        description: 'Departed Dubai facility en route to destination',
+                        date: 'May 29, 2025 - 6:20 PM',
+                        completed: true
+                    },
+                    {
+                        status: 'At Destination Facility',
+                        description: 'Arrived at Nairobi sorting facility',
+                        date: 'Expected: June 1, 2025',
+                        completed: false
+                    },
+                    {
+                        status: 'Out for Delivery',
+                        description: 'Package loaded for final delivery',
+                        date: 'Expected: June 2, 2025',
+                        completed: false
+                    },
+                    {
+                        status: 'Delivered',
+                        description: 'Package delivered to recipient',
+                        date: 'Expected: June 2, 2025',
+                        completed: false
+                    }
+                ]
+            },
+            'YT987654321': {
+                number: 'YT987654321',
+                status: 'Delivered',
+                origin: 'Nairobi, Kenya',
+                destination: 'Dubai, UAE',
+                estimatedDelivery: 'Delivered',
+                timeline: [
+                    {
+                        status: 'Shipment Created',
+                        description: 'Shipment booking confirmed and waybill generated',
+                        date: 'May 25, 2025 - 1:15 PM',
+                        completed: true
+                    },
+                    {
+                        status: 'Picked Up',
+                        description: 'Package collected from sender location in Nairobi',
+                        date: 'May 26, 2025 - 8:30 AM',
+                        completed: true
+                    },
+                    {
+                        status: 'At Origin Facility',
+                        description: 'Arrived at Nairobi cargo facility for processing',
+                        date: 'May 26, 2025 - 10:20 AM',
+                        completed: true
+                    },
+                    {
+                        status: 'In Transit',
+                        description: 'Departed Nairobi facility en route to destination',
+                        date: 'May 27, 2025 - 3:45 PM',
+                        completed: true
+                    },
+                    {
+                        status: 'At Destination Facility',
+                        description: 'Arrived at Dubai sorting facility',
+                        date: 'May 28, 2025 - 11:10 AM',
+                        completed: true
+                    },
+                    {
+                        status: 'Out for Delivery',
+                        description: 'Package loaded for final delivery',
+                        date: 'May 29, 2025 - 7:00 AM',
+                        completed: true
+                    },
+                    {
+                        status: 'Delivered',
+                        description: 'Package successfully delivered to recipient',
+                        date: 'May 29, 2025 - 2:30 PM',
+                        completed: true
+                    }
+                ]
+            }
+        };
+
+        function trackShipment() {
+            const waybillNumber = document.getElementById('waybillNumber').value.trim().toUpperCase();
+            const errorMessage = document.getElementById('errorMessage');
+            const trackingResult = document.getElementById('trackingResult');
+
+            // Clear previous results
+            errorMessage.style.display = 'none';
+            trackingResult.classList.remove('show');
+
+            if (!waybillNumber) {
+                showError('Please enter a waybill number');
+                return;
+            }
+
+            // Show loading state
+            showLoading();
+
+            // Simulate API call delay
+            setTimeout(() => {
+                const shipmentData = trackingData[waybillNumber];
+
+                if (shipmentData) {
+                    displayTrackingResult(shipmentData);
+                } else {
+                    showError('Waybill number not found. Please check your number and try again.');
+                }
+            }, 1500);
+        }
+
+        function showLoading() {
+            const trackingResult = document.getElementById('trackingResult');
+            trackingResult.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <span>Tracking your shipment...</span>
+                </div>
+            `;
+            trackingResult.classList.add('show');
+        }
+
+        function displayTrackingResult(data) {
+            // Update shipment info
+            document.getElementById('shipmentNumber').textContent = data.number;
+            document.getElementById('shipmentStatus').textContent = data.status;
+            document.getElementById('shipmentOrigin').textContent = data.origin;
+            document.getElementById('shipmentDestination').textContent = data.destination;
+            document.getElementById('estimatedDelivery').textContent = data.estimatedDelivery;
+
+            // Generate timeline
+            const timeline = document.getElementById('trackingTimeline');
+            timeline.innerHTML = data.timeline.map(item => `
+                <div class="timeline-item">
+                    <div class="timeline-dot ${item.completed ? 'completed' : ''}"></div>
+                    <div class="timeline-content">
+                        <h4>${item.status}</h4>
+                        <p>${item.description}</p>
+                        <div class="timeline-date">${item.date}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            const trackingResult = document.getElementById('trackingResult');
+            trackingResult.innerHTML = `
+                <div class="shipment-info">
+                    <div class="info-item">
+                        <div class="info-label">Waybill Number</div>
+                        <div class="info-value">${data.number}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Status</div>
+                        <div class="info-value">${data.status}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Origin</div>
+                        <div class="info-value">${data.origin}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Destination</div>
+                        <div class="info-value">${data.destination}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Estimated Delivery</div>
+                        <div class="info-value">${data.estimatedDelivery}</div>
+                    </div>
+                </div>
+                <h3 style="color: #2c3e50; margin-bottom: 20px;">Shipment Timeline</h3>
+                <div class="tracking-timeline">${timeline.innerHTML}</div>
+            `;
+            trackingResult.classList.add('show');
+        }
+
+        function showError(message) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+        }
+
+        // Handle Enter key in tracking input
+        document.getElementById('waybillNumber').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                trackShipment();
+            }
+        });
+
+        // Quote form submission
+        document.getElementById('freightQuoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.senderName || !data.senderEmail || !data.senderPhone || !data.originCity || !data.destinationCity || !data.cargoType || !data.shipmentType || !data.weight) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<div class="spinner"></div> Sending Request...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Quote request submitted successfully! We will contact you within 24 hours with a competitive quote.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Add demo waybill numbers as suggestions
+        document.getElementById('waybillNumber').addEventListener('focus', function() {
+            if (!this.value) {
+                this.placeholder = 'Try: YT123456789 or YT987654321';
+            }
+        });
+
+        document.getElementById('waybillNumber').addEventListener('blur', function() {
+            if (!this.value) {
+                this.placeholder = 'Enter your waybill number (e.g., YT123456789)';
+            }
+        });
+    </script>
+</body>
+</html>

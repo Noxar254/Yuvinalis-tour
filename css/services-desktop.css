@@ -2,7 +2,7 @@
 @media (min-width: 1200px) {
     .service-card {
         flex: 0 0 350px;
-        min-height: 420px;
+        min-height: 300px;
     }
     
     .services-slider {
@@ -10,42 +10,42 @@
     }
     
     .service-content {
-        padding: 22px;
+        padding: 18px;
     }
     
     .service-features {
-        padding: 18px;
-        margin-bottom: 22px;
+        padding: 10px 12px;
+        margin-bottom: 15px;
     }
     
     .feature-item {
-        padding: 6px 14px;
+        padding: 4px 8px;
     }
     
     .feature-item span {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
     
     .service-btn {
-        padding: 12px 18px;
-        font-size: 0.9rem;
+        padding: 10px 15px;
+        font-size: 0.85rem;
     }
 }
 
 /* Service Card Layout Fixes */
 .service-features {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    gap: 4px;
+    justify-content: space-between;
+    margin-bottom: 12px;
 }
 
 .feature-item span {
-    white-space: normal;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100%;
+    min-width: 0;
 }
 
 /* Ensure optimal display of service cards content */

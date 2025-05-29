@@ -10,16 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Define the scroll amount (width of one card + margin)
     const scrollAmount = 360; // 340px card width + 20px margin
-    
-    // Ensure all cards have optimal height
+      // Ensure all cards have optimal height
     function optimizeCardHeights() {
         // Reset heights to auto first
         serviceCards.forEach(card => {
             card.style.minHeight = 'auto';
         });
         
-        // Get the tallest card height
-        let maxHeight = 0;
+        // Get the tallest card height (with a minimum for compact design)
+        let maxHeight = 280; // Minimum height for compact design
         serviceCards.forEach(card => {
             const cardHeight = card.offsetHeight;
             if (cardHeight > maxHeight) {
@@ -28,24 +27,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Set all cards to at least the tallest height
-        if (maxHeight > 0) {
-            serviceCards.forEach(card => {
-                card.style.minHeight = maxHeight + 'px';
-            });
-        }
+        serviceCards.forEach(card => {
+            card.style.minHeight = maxHeight + 'px';
+        });
     }
-    
-    // Optimize feature items for better display
+      // Optimize feature items for better display
     function optimizeFeatureItems() {
         featureItems.forEach(item => {
             const span = item.querySelector('span');
             if (span) {
-                // Check if text is too long
-                if (span.textContent.length > 20) {
-                    item.style.maxWidth = '100%';
-                    span.style.whiteSpace = 'normal';
+                // Ensure features are compact and horizontal
+                span.style.whiteSpace = 'nowrap';
+                span.style.textOverflow = 'ellipsis';
+                span.style.overflow = 'hidden';
+                
+                // Adjust max width for very long text
+                if (span.textContent.length > 15) {
+                    span.style.maxWidth = '80px';
                 } else {
-                    item.style.maxWidth = 'auto';
+                    span.style.maxWidth = 'none';
                 }
             }
         });

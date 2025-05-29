@@ -612,15 +612,14 @@
                                 <option value="Family Visa">Family Visa</option>
                                 <option value="Business Visa">Business Visa</option>
                                 <option value="Student Visa">Student Visa</option>
-                            </select>
-                              <div id="touristVisaOptions" class="tourist-visa-options">
+                            </select>                              <div id="touristVisaOptions" class="tourist-visa-options">
                                 <div class="option-label">Tourist Visa Duration:</div>
                                 <div class="radio-options">
                                     <label class="radio-option">
-                                        <input type="radio" name="touristVisaDuration" value="14 days"> 14 Days
+                                        <input type="radio" name="touristVisaDuration" value="30 days"> 30 Days
                                     </label>
                                     <label class="radio-option">
-                                        <input type="radio" name="touristVisaDuration" value="30 days" checked> 30 Days
+                                        <input type="radio" name="touristVisaDuration" value="60 days" checked> 60 Days
                                     </label>
                                     <label class="radio-option">
                                         <input type="radio" name="touristVisaDuration" value="90 days"> 90 Days
@@ -783,10 +782,9 @@
         <div class="footer-bottom">
             <p>&copy; 2025 Yuvinalis Tourism. All rights reserved.</p>
         </div>
-    </footer>
-
-    <!-- Scripts -->
+    </footer>    <!-- Scripts -->
     <script src="js/hero-navbar.js"></script>
+    <script src="js/google-sheets-api.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const visaTypeSelect = document.getElementById('visaType');
@@ -805,9 +803,8 @@
                 } else {
                     touristVisaOptions.classList.remove('visible');
                 }
-            });
-              // Form submission handler
-            visaApplicationForm.addEventListener('submit', function(e) {
+            });            // Form submission handler
+            visaApplicationForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
                 // Hide any existing messages
@@ -823,63 +820,49 @@
                     formDataObj[key] = value;
                 });
                 
-                // Add submission message to inform user where data is being sent
+                // Update submit button
                 const submissionBtn = document.querySelector('.submit-btn');
                 const originalBtnText = submissionBtn.innerHTML;
                 submissionBtn.innerHTML = '<span>Processing...</span> <i class="fas fa-spinner fa-spin"></i>';
                 submissionBtn.disabled = true;
                 
-                // Log form data (would be replaced with actual submission in production)
-                console.log('Form data being sent to info@yuvinalistourism.com:', formDataObj);
-                
-                // Simulate form submission
-                setTimeout(() => {
-                    // Show success message
-                    successMessage.style.display = 'block';
-                    successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Your visa application has been submitted successfully! We will contact you shortly at the email address you provided. A copy has been sent to info@yuvinalistourism.com.';
+                try {
+                    // Submit to Google Sheets
+                    const result = await window.GoogleSheetsAPI.submitVisaApplication(formDataObj);
                     
-                    // Scroll to success message
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    if (result.success) {
+                        // Show success message
+                        successMessage.style.display = 'block';
+                        successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Your visa application has been submitted successfully! We will contact you shortly at the email address you provided. A copy has been sent to info@yuvinalistourism.com.';
+                        
+                        // Scroll to success message
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        
+                        // Reset form after successful submission
+                        visaApplicationForm.reset();
+                        touristVisaOptions.classList.remove('visible');
+                        
+                        // Log submission for development
+                        console.log('Visa application submitted successfully:', formDataObj);
+                    } else {
+                        throw new Error('Submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error submitting visa application:', error);
                     
-                    // Reset form after successful submission
-                    visaApplicationForm.reset();
-                    touristVisaOptions.classList.remove('visible');
+                    // Show error message
+                    errorMessage.style.display = 'block';
+                    errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> There was an error submitting your application. Please try again or contact us directly at info@yuvinalistourism.com.';
                     
+                    // Scroll to error message
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });                } finally {
                     // Reset button
                     submissionBtn.innerHTML = originalBtnText;
                     submissionBtn.disabled = false;
-                    
-                    // In production, you would send this data to your server or email service
-                    // The data would be sent to info@yuvinalistourism.com
-                }, 1500);
-                  // Example of how to send an actual email (would be implemented server-side)
-                /*
-                Email.send({
-                    Host: "smtp.yourserver.com",
-                    Username: "username",
-                    Password: "password",
-                    To: 'info@yuvinalistourism.com',
-                    From: 'no-reply@yuvinalistourism.com',
-                    ReplyTo: formDataObj.email,
-                    Subject: `Visa Application - ${formDataObj.visaType} - ${formDataObj.firstName} ${formDataObj.lastName}`,
-                    Body: generateEmailBody(formDataObj)
-                }).then(
-                    message => {
-                        if (message === "OK") {
-                            successMessage.style.display = 'block';
-                            visaApplicationForm.reset();
-                            submissionBtn.innerHTML = originalBtnText;
-                            submissionBtn.disabled = false;
-                        } else {
-                            errorMessage.style.display = 'block';
-                            submissionBtn.innerHTML = originalBtnText;
-                            submissionBtn.disabled = false;
-                        }
-                    }
-                );
-                */
+                }
             });
-              // Helper function to generate email body
+
+            // Helper function to generate email body
             function generateEmailBody(data) {
                 let body = `
                     <h2>New Visa Application Submission to Yuvinalis Tourism</h2>
@@ -936,13 +919,11 @@
                     }
                 }
             }
-            
-            // Call the function to pre-fill form
-            fillFormFromURL();        });
-    </script>
-
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener">
+              // Call the function to pre-fill form
+            fillFormFromURL();
+        });
+    </script>    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener" title="Contact us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>

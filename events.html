@@ -239,20 +239,17 @@
                 <span></span>
                 <span></span>
             </div>
-        </div>
-        <ul class="nav-menu" id="nav-menu">            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+        </div>        <ul class="nav-menu" id="nav-menu">            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
             <li class="nav-item dropdown">
-                <a href="index.html#services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-menu">
+                <a href="index.html#services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>                <ul class="dropdown-menu">
                     <li><a href="index.html#visa-processing" class="dropdown-link">Visa Processing</a></li>
-                    <li><a href="index.html#flight-ticketing" class="dropdown-link">Flight Ticketing</a></li>
-                    <li><a href="index.html#hotel-bookings" class="dropdown-link">Hotel Bookings</a></li>
+                    <li><a href="flight-booking.html" class="dropdown-link">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html" class="dropdown-link">Hotel Booking</a></li>
                     <li><a href="index.html#airport-pickups" class="dropdown-link">Airport Pickups</a></li>
                     <li><a href="index.html#tour-services" class="dropdown-link">Tour Services</a></li>
                     <li><a href="index.html#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
                     <li><a href="index.html#dubai-business-setup" class="dropdown-link">Dubai Business Set Up</a></li>
-                    <li><a href="index.html#freight-services" class="dropdown-link">Freight Services</a></li>
+                    <li><a href="freight-services.html" class="dropdown-link">Freight Services</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
@@ -270,12 +267,9 @@
                     <li><a href="index.html#maasai-mara-tours" class="dropdown-link">Maasai Mara Tours</a></li>
                 </ul>
             </li>            <li class="nav-item dropdown">
-                <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-menu">                    <li><a href="index.html#hotels" class="dropdown-link">Hotels</a></li>
+                <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>                <ul class="dropdown-menu">                    <li><a href="index.html#hotels" class="dropdown-link">Hotels</a></li>
                     <li><a href="index.html#bedspaces" class="dropdown-link">Bedspaces</a></li>
-                    <li><a href="index.html#bedspaces" class="dropdown-link">Bedspaces</a></li>
-                </ul>
-            </li>
+                    <li><a href="index.html#bedspaces" class="dropdown-link">Bedspaces</a></li></ul>            </li>
             <li class="nav-item dropdown">
                 <a href="index.html#freight" class="nav-link dropdown-toggle">Freight <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
@@ -283,8 +277,7 @@
                     <li><a href="index.html#kenya-to-dubai" class="dropdown-link">Kenya to Dubai</a></li>
                     <li><a href="index.html#other-countries" class="dropdown-link">Other Countries</a></li>
                 </ul>
-            </li>
-            <li class="book-tour-mobile">
+            </li><li class="book-tour-mobile">
                 <a href="booking.html?booking=tour" class="book-tour-btn-mobile">
                     <span class="btn-text">Book Tour</span>
                     <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
@@ -1150,7 +1143,12 @@
     </footer>
     
     <!-- JavaScript Files -->
-    <script src="js/hero-navbar.js"></script>    <script>
+    <script src="js/hero-navbar.js"></script>    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
         // Event filter functionality
         document.querySelectorAll('.filter-option').forEach(option => {
             option.addEventListener('click', function() {

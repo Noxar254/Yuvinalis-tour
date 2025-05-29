@@ -274,6 +274,72 @@ footer::before {
     margin: 0;
 }
 
+/* Jobs in UAE Button Styling */
+.jobs-button-container {
+    margin-top: 15px;
+    padding-top: 10px;
+}
+
+.jobs-uae-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f1c40f, #f39c12);
+    color: #2c3e50;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(241, 196, 15, 0.3);
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.jobs-uae-btn:hover {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.jobs-uae-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(241, 196, 15, 0.3);
+}
+
+.jobs-uae-btn i {
+    font-size: 12px;
+}
+
+/* Responsive adjustments for Jobs button */
+@media (max-width: 768px) {
+    .jobs-uae-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+        min-width: 100px;
+    }
+    
+    .jobs-button-container {
+        margin-top: 10px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .jobs-uae-btn {
+        font-size: 11px;
+        padding: 5px 10px;
+        min-width: 90px;
+        gap: 6px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .footer-container {

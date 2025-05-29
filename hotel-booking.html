@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking - Yuvinalis Tourism</title>
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .booking-hero {
+            background: linear-gradient(135deg, rgba(0, 74, 173, 0.9), rgba(0, 123, 191, 0.8)), url('images/background\ .png');
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 100px 20px 80px;
+        }
+
+        .booking-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .booking-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .booking-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .booking-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .booking-info {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-info h2 {
+            color: #004AAD;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .features-list li i {
+            color: #004AAD;
+            margin-right: 15px;
+            width: 20px;
+        }
+
+        .enquiry-form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .enquiry-form-container h3 {
+            color: #004AAD;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .enquiry-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #004AAD;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .enquire-btn {
+            background: linear-gradient(135deg, #004AAD, #007BBF);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .enquire-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 74, 173, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .booking-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .booking-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .booking-info,
+            .enquiry-form-container {
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo">
+            <span>Yuvinalis Tourism</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li><a href="accommodations.html">Hotels</a></li>
+            <li><a href="tours.html">Tours</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="index.html#get-in-touch">Contact</a></li>
+        </ul>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="booking-hero">
+        <div class="container">
+            <h1>Hotel Booking</h1>
+            <p>Discover luxury accommodations in Dubai and beyond</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-content">
+                <!-- Hotel Information -->
+                <div class="booking-info">
+                    <h2>Premium Hotel Accommodations</h2>
+                    <p>Experience the finest hospitality with our carefully selected hotel partners across Dubai, Kenya, and other destinations. From luxury resorts to comfortable business hotels, we ensure your stay exceeds expectations.</p>
+                    
+                    <ul class="features-list">
+                        <li><i class="fas fa-star"></i> Luxury 4-5 star hotels</li>
+                        <li><i class="fas fa-wifi"></i> Complimentary WiFi access</li>
+                        <li><i class="fas fa-swimming-pool"></i> Pool and spa facilities</li>
+                        <li><i class="fas fa-utensils"></i> Restaurant and room service</li>
+                        <li><i class="fas fa-car"></i> Airport transfer included</li>
+                        <li><i class="fas fa-headset"></i> 24/7 customer support</li>
+                        <li><i class="fas fa-shield-alt"></i> Secure booking guarantee</li>
+                        <li><i class="fas fa-percent"></i> Best price guarantee</li>
+                    </ul>
+                </div>
+
+                <!-- Enquiry Form -->
+                <div class="enquiry-form-container">
+                    <h3>Hotel Booking Enquiry</h3>
+                    <form class="enquiry-form" id="hotelEnquiryForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="destination">Destination *</label>
+                                <select id="destination" name="destination" required>
+                                    <option value="">Select Destination</option>
+                                    <option value="dubai">Dubai, UAE</option>
+                                    <option value="nairobi">Nairobi, Kenya</option>
+                                    <option value="mombasa">Mombasa, Kenya</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkin">Check-in Date *</label>
+                                <input type="date" id="checkin" name="checkin" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout">Check-out Date *</label>
+                                <input type="date" id="checkout" name="checkout" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Number of Guests *</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Select Guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5+">5+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select Budget</option>
+                                    <option value="budget">Budget ($50-100/night)</option>
+                                    <option value="mid-range">Mid-range ($100-200/night)</option>
+                                    <option value="luxury">Luxury ($200+/night)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="requirements">Special Requirements</label>
+                            <textarea id="requirements" name="requirements" rows="3" placeholder="Any special requests, room preferences, or additional services..."></textarea>
+                        </div>
+
+                        <button type="submit" class="enquire-btn">
+                            <span>Enquire Now</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo">
+                    <h3>Yuvinalis Tourism</h3>
+                </div>
+                <p>Your Gateway to Dubai and Beyond</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/yuvinalistourism" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yuvinalistourism" class="social-icon twitter-custom" aria-label="X (Twitter)" target="_blank">
+                        <img src="./images/Xlogo.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://instagram.com/yuvinalistourism" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@yuvinalistourism" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://threads.net/@yuvinalistourism" class="social-icon threads-custom" aria-label="Threads" target="_blank">
+                        <img src="./images/Thread Logo.png" alt="Threads">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="#upcoming-events">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#get-in-touch">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="visa-services.html">Visa Processing</a></li>
+                    <li><a href="flight-booking.html">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html">Hotel Booking</a></li>
+                    <li><a href="#tour-services">Tour Services</a></li>
+                    <li><a href="#freight-services">Freight Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="accommodations.html">Dubai Hotels</a></li>
+                    <li><a href="#hotels">Bedspaces</a></li>
+                    <li><a href="events.html">Dubai Tours</a></li>
+                    <li><a href="#dubai-business-setup">Business Setup</a></li>
+                </ul>
+                <!-- Jobs in UAE Button -->
+                <div class="jobs-button-container">
+                    <a href="#jobs-uae" class="jobs-uae-btn">
+                        <i class="fas fa-briefcase"></i>
+                        Jobs in UAE
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yuvinalis Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/hero-navbar.js"></script>
+    <script>
+        // Form submission handling
+        document.getElementById('hotelEnquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.fullName || !data.email || !data.phone || !data.destination || !data.checkin || !data.checkout || !data.guests) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Check dates
+            const checkinDate = new Date(data.checkin);
+            const checkoutDate = new Date(data.checkout);
+            if (checkoutDate <= checkinDate) {
+                alert('Check-out date must be after check-in date.');
+                return;
+            }
+            
+            // Success message
+            alert('Thank you for your enquiry! We will contact you within 24 hours with hotel options and pricing.');
+            this.reset();
+        });
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkin').setAttribute('min', today);
+        document.getElementById('checkout').setAttribute('min', today);
+
+        // Update checkout minimum when checkin changes
+        document.getElementById('checkin').addEventListener('change', function() {
+            const checkinDate = this.value;
+            document.getElementById('checkout').setAttribute('min', checkinDate);
+        });
+    </script>
+</body>
+</html>

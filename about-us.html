@@ -19,23 +19,33 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/about-us-page.css">
 </head>
-<body>
-    <!-- Navigation -->
+<body>    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-brand">
-            <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo">
-            <span>Yuvinalis Tourism</span>
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="full-text">Yuvinalis Tourism</span>
+                    <span class="short-text">YT</span>
+                </div>
+            </div>
         </div>
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="index.html" class="nav-link">Home</a>
-            </li>
+        <div class="mobile-controls">
+            <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link active">About Us</a></li>
             <li class="nav-item dropdown">
                 <a href="index.html#services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="visa-services.html" class="dropdown-link">Visa Processing</a></li>
-                    <li><a href="index.html#flight-ticketing" class="dropdown-link">Flight Ticketing</a></li>
-                    <li><a href="index.html#hotel-bookings" class="dropdown-link">Hotel Bookings</a></li>
+                    <li><a href="index.html#visa-processing" class="dropdown-link">Visa Processing</a></li>
+                    <li><a href="flight-booking.html" class="dropdown-link">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html" class="dropdown-link">Hotel Booking</a></li>
                     <li><a href="index.html#airport-pickups" class="dropdown-link">Airport Pickups</a></li>
                     <li><a href="index.html#tour-services" class="dropdown-link">Tour Services</a></li>
                     <li><a href="index.html#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
@@ -44,14 +54,14 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="events.html" class="nav-link dropdown-toggle">Events & Hikes <i class="fas fa-chevron-down"></i></a>
+                <a href="index.html#events" class="nav-link dropdown-toggle">Events & Hikes <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="events.html" class="dropdown-link">All Events</a></li>
                     <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Events</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="tours.html" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>
+                <a href="index.html#tours" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="index.html#dubai-tours" class="dropdown-link">Dubai Tours</a></li>
                     <li><a href="index.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
@@ -61,7 +71,8 @@
             </li>
             <li class="nav-item dropdown">
                 <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-menu">                    <li><a href="index.html#hotels" class="dropdown-link">Hotels</a></li>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#hotels" class="dropdown-link">Hotels</a></li>
                     <li><a href="index.html#bedspaces" class="dropdown-link">Bedspaces</a></li>
                     <li><a href="index.html#bedspaces" class="dropdown-link">Bedspaces</a></li>
                 </ul>
@@ -73,9 +84,6 @@
                     <li><a href="index.html#kenya-to-dubai" class="dropdown-link">Kenya to Dubai</a></li>
                     <li><a href="index.html#other-countries" class="dropdown-link">Other Countries</a></li>
                 </ul>
-            </li>
-            <li class="nav-item">
-                <a href="about-us.html" class="nav-link active">About Us</a>
             </li>
             <li class="book-tour-mobile">
                 <a href="booking.html?booking=tour" class="book-tour-btn-mobile">
@@ -518,7 +526,7 @@
                 </div>
             </div>
         </div>
-    </section><!-- Footer -->
+    </section>    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -530,9 +538,9 @@
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="X"><img src="images/x-icon.png" alt="X" style="width: 20px; height: 20px;"></a>
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" aria-label="Threads"><img src="images/threads-icon.png" alt="Threads" style="width: 20px; height: 20px;"></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -541,37 +549,33 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="visa-services.html">Visa Services</a></li>
-                    <li><a href="tours.html">Tours</a></li>
-                    <li><a href="events.html">Events</a></li>
+                    <li><a href="accommodations.html">Accommodation</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul class="footer-links">
+                    <li><a href="flight-booking.html">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html">Hotel Booking</a></li>
                     <li><a href="visa-services.html">Visa Processing</a></li>
-                    <li><a href="index.html#flight-ticketing">Flight Ticketing</a></li>
-                    <li><a href="index.html#hotel-bookings">Hotel Bookings</a></li>
-                    <li><a href="index.html#tour-services">Tour Services</a></li>
-                    <li><a href="index.html#dubai-business-setup">Business Setup</a></li>                    <li><a href="index.html#freight-services">Freight Services</a></li>
-                    <li><a href="index.html#jobs-dubai">Jobs in UAE</a></li>
+                    <li><a href="tours.html">Tour Packages</a></li>
+                    <li><a href="events.html">Events & Hikes</a></li>
+                    <li><a href="index.html#business-setup">Business Setup</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Contact Info</h3>
-                <div class="contact-info">
-                    <div class="office-info">
-                        <h4>Dubai Office</h4>
-                        <p><i class="fas fa-map-marker-alt"></i> Centurion Star Tower, Deira</p>
-                        <p><i class="fas fa-phone"></i> +971567570931</p>
-                    </div>
-                    <div class="office-info">
-                        <h4>Nairobi Office</h4>
-                        <p><i class="fas fa-map-marker-alt"></i> Madonna House, Westlands</p>
-                        <p><i class="fas fa-phone"></i> +254722314217</p>
-                    </div>
-                    <p><i class="fas fa-envelope"></i> info@yuvinalistourism.com</p>
+                <h3>Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="more-attractions.html">Dubai Attractions</a></li>
+                    <li><a href="index.html#popular-destinations">UAE Tours</a></li>
+                    <li><a href="index.html#international-packages">International Packages</a></li>
+                    <li><a href="index.html#weekend-getaways">Weekend Getaways</a></li>
+                </ul>
+                <div class="jobs-uae-btn">
+                    <a href="index.html#jobs-dubai" class="jobs-btn">Jobs in UAE</a>
                 </div>
             </div>
         </div>

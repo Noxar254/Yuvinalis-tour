@@ -1,0 +1,179 @@
+/* Freight Services Section Styling */
+.freight-services-section {
+    padding: 60px 0 40px;
+    background: #f8f9fa;
+    overflow: hidden;
+    position: relative;
+}
+
+.freight-services-section .section-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.freight-services-section .section-header h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.freight-services-section .section-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.freight-services-section .view-all-btn {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(253, 187, 45, 0.3);
+}
+
+.freight-services-section .view-all-btn:hover {
+    background: linear-gradient(45deg, #FFA500, #FDBB2D);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(253, 187, 45, 0.4);
+}
+
+.freight-services-section .view-all-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.freight-services-section .view-all-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* Freight services layout improvements */
+.freight-services-section .shop-scroll-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.freight-services-section .shop-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    padding: 0 50px;
+}
+
+/* Desktop - Horizontal layout with 3 cards */
+@media (min-width: 769px) {
+    .freight-services-section .shop-wrapper {
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+    
+    .freight-services-section .freight-card {
+        flex: 0 0 calc(33.333% - 13.333px);
+        max-width: 350px;
+        min-height: 400px;
+    }
+}
+
+/* Adjustments for the freight cards */
+.freight-card .product-badge {
+    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+}
+
+.freight-card .product-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.ship-now-btn {
+    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.ship-now-btn:hover {
+    background: linear-gradient(45deg, #FFA500, #FDBB2D);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(253, 187, 45, 0.3);
+}
+
+.ship-now-btn i {
+    font-size: 1rem;
+}
+
+/* Override scroll arrow colors for freight section */
+.freight-services-section .scroll-arrow {
+    border: 2px solid #FDBB2D;
+}
+
+.freight-services-section .scroll-arrow:hover {
+    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+}
+
+.freight-services-section .scroll-arrow i {
+    color: #FDBB2D;
+}
+
+.freight-services-section .scroll-arrow:hover i {
+    color: #fff;
+}
+
+/* Hide scroll arrows on desktop for 3 cards */
+@media (min-width: 769px) {
+    .freight-services-section .scroll-arrow {
+        display: none;
+    }
+}
+
+/* Mobile - Vertical layout */
+@media (max-width: 768px) {
+    .freight-services-section .view-all-btn {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 15px auto 0;
+        display: inline-flex;
+    }
+    
+    .freight-services-section .section-header {
+        text-align: center;
+    }
+    
+    .freight-services-section .shop-wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .freight-services-section .freight-card {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+    
+    .freight-services-section .scroll-arrow {
+        display: none;
+    }
+}

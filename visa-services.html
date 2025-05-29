@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Services | Yuvinalis Tourism</title>
+    <meta name="description" content="Explore various visa services offered by Yuvinalis Tourism, including tourist visas, residence visas, partner visas, family visas, business visas, and student visas.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/services.css">
+    <style>
+        /* Visa Services Page Specific Styles */
+        .visa-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background .png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .visa-hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+        
+        .visa-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .visa-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }        .visa-types-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .visa-types-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .visa-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .visa-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .visa-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(253, 187, 45, 0.1), rgba(255, 203, 66, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .visa-card:hover::before {
+            opacity: 1;
+        }
+
+        .visa-card-header {
+            background: linear-gradient(45deg, #FDBB2D, #FFA500);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visa-card-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .visa-card-header h3 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .visa-card-header .visa-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .visa-card-header .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 134" xmlns="http://www.w3.org/2000/svg"><path d="M0 98.3l50-21.5C100 55.2 200 12.6 300 6.5c100-6 200 24.4 300 33.4 100 9 200-3.6 300-6 100-2.5 200 4.1 250 7.4l50 3.3v94H0z" fill="rgba(255, 255, 255, 0.2)"/></svg>');
+            background-size: 1200px 134px;
+            background-repeat: repeat-x;
+            opacity: 0.6;
+        }
+
+        .visa-card-body {
+            padding: 25px;
+        }
+
+        .visa-card-body p {
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .visa-requirements {
+            margin-bottom: 25px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 15px;
+        }
+
+        .visa-requirements h4 {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .visa-requirements h4::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 10px;
+            color: #FDBB2D;
+            font-size: 0.9rem;
+        }
+
+        .visa-requirements ul {
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+
+        .visa-requirements li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+            list-style: none;
+        }
+
+        .visa-requirements li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #4099ff;
+            box-shadow: 0 0 0 2px rgba(64, 153, 255, 0.2);
+        }
+
+        .enquire-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #4099ff, #73b4ff);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(64, 153, 255, 0.3);
+        }
+
+        .enquire-button span {
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .enquire-button i {
+            margin-left: 8px;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .enquire-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #73b4ff, #4099ff);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
+        }
+
+        .enquire-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(64, 153, 255, 0.4);
+        }
+
+        .enquire-button:hover::after {
+            transform: translateX(100%);
+        }
+
+        .enquire-button:hover i {
+            transform: translateX(4px);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .header-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #FDBB2D, #FFA500);
+            margin: 15px auto 30px;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 992px) {
+            .visa-types-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .visa-types-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .visa-hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="full-text">Yuvinalis Tourism</span>
+                    <span class="short-text">YT</span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-controls">
+            <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+                <a href="index.html#services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#visa-processing" class="dropdown-link">Visa Processing</a></li>
+                    <li><a href="index.html#flight-ticketing" class="dropdown-link">Flight Ticketing</a></li>
+                    <li><a href="index.html#hotel-bookings" class="dropdown-link">Hotel Bookings</a></li>
+                    <li><a href="index.html#airport-pickups" class="dropdown-link">Airport Pickups</a></li>
+                    <li><a href="index.html#tour-services" class="dropdown-link">Tour Services</a></li>
+                    <li><a href="index.html#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
+                    <li><a href="index.html#dubai-business-setup" class="dropdown-link">Dubai Business Set Up</a></li>
+                    <li><a href="index.html#freight-services" class="dropdown-link">Freight Services</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#events" class="nav-link dropdown-toggle">Events & Hikes <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="dropdown-link">All Events</a></li>
+                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Events</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#tours" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#dubai-tours" class="dropdown-link">Dubai Tours</a></li>
+                    <li><a href="index.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
+                    <li><a href="index.html#international-tours" class="dropdown-link">International Tours</a></li>
+                    <li><a href="index.html#maasai-mara-tours" class="dropdown-link">Maasai Mara Tours</a></li>
+                </ul>
+            </li>
+            <li class="book-tour-mobile">
+                <a href="booking.html?booking=tour" class="book-tour-btn-mobile">
+                    <span class="btn-text">Book Tour</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-cta">
+            <a href="booking.html?booking=tour" class="book-tour-btn">
+                <span class="btn-text">Book Tour</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                <div class="btn-shine"></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="visa-hero">
+        <div class="visa-hero-content">
+            <h1>Visa Services</h1>
+            <p>Expert visa processing services for Dubai, UAE and beyond with 99% success rate</p>
+        </div>
+    </header>
+
+    <!-- Visa Types Section -->
+    <section class="visa-types-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Visa Services</h2>
+                <div class="header-line"></div>
+                <p>We provide hassle-free visa application services with expert guidance and high approval rates</p>
+            </div>
+            
+            <div class="visa-types-container">                <!-- Tourist Visa Card -->
+                <div class="visa-card">
+                    <div class="visa-card-header">
+                        <i class="fas fa-plane visa-icon"></i>
+                        <h3>Tourist Visa</h3>
+                        <div class="wave"></div>
+                    </div>
+                    <div class="visa-card-body">
+                        <p>Experience the wonders of Dubai and the UAE with our fast and reliable tourist visa service. Perfect for holidays, family visits, or short business trips.</p>
+                        
+                        <div class="visa-requirements">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>14, 30 and 90-day options available</li>
+                                <li>Express processing within 24-48 hours</li>
+                                <li>Simple document requirements</li>
+                                <li>Visa extension assistance</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="booking.html?service=visa&type=tourist" class="enquire-button">
+                            <span>Enquire Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Residence Visa Card -->
+                <div class="visa-card">
+                    <div class="visa-card-header">
+                        <i class="fas fa-home visa-icon"></i>
+                        <h3>Residence Visa</h3>
+                        <div class="wave"></div>
+                    </div>
+                    <div class="visa-card-body">
+                        <p>Make Dubai your home with our comprehensive residence visa services. We handle the entire process to ensure a smooth transition to your new life in the UAE.</p>
+                        
+                        <div class="visa-requirements">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>1, 2 and 3-year residence options</li>
+                                <li>Complete documentation assistance</li>
+                                <li>Medical examination coordination</li>
+                                <li>Emirates ID processing</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="booking.html?service=visa&type=residence" class="enquire-button">
+                            <span>Enquire Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Partner Visa Card -->
+                <div class="visa-card">
+                    <div class="visa-card-header">
+                        <i class="fas fa-heart visa-icon"></i>
+                        <h3>Partner Visa</h3>
+                        <div class="wave"></div>
+                    </div>
+                    <div class="visa-card-body">
+                        <p>Reunite with your partner in Dubai with our specialized partner visa service. We ensure all requirements are met for a successful application.</p>
+                        
+                        <div class="visa-requirements">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Spouse and life partner options</li>
+                                <li>Document legalization assistance</li>
+                                <li>Translation services</li>
+                                <li>Legal guidance on requirements</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="booking.html?service=visa&type=partner" class="enquire-button">
+                            <span>Enquire Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Family Visa Card -->
+                <div class="visa-card">
+                    <div class="visa-card-header">
+                        <i class="fas fa-users visa-icon"></i>
+                        <h3>Family Visa</h3>
+                        <div class="wave"></div>
+                    </div>
+                    <div class="visa-card-body">
+                        <p>Bring your family together in Dubai with our family visa service. We handle applications for spouses, children, and parents with care and attention to detail.</p>
+                        
+                        <div class="visa-requirements">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Spouse and dependent children</li>
+                                <li>Parent and extended family options</li>
+                                <li>Salary and housing requirement guidance</li>
+                                <li>Education certificate attestation</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="booking.html?service=visa&type=family" class="enquire-button">
+                            <span>Enquire Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Business Visa Card -->
+                <div class="visa-card">
+                    <div class="visa-card-header">
+                        <i class="fas fa-briefcase visa-icon"></i>
+                        <h3>Business Visa</h3>
+                        <div class="wave"></div>
+                    </div>
+                    <div class="visa-card-body">
+                        <p>Explore business opportunities in Dubai with our business visa service. Perfect for entrepreneurs, investors, and professionals looking to establish connections in the UAE.</p>
+                        
+                        <div class="visa-requirements">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>Multiple entry options</li>
+                                <li>Extended stay periods</li>
+                                <li>Business license consultation</li>
+                                <li>Corporate setup guidance</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="booking.html?service=visa&type=business" class="enquire-button">
+                            <span>Enquire Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Student Visa Card -->
+                <div class="visa-card">
+                    <div class="visa-card-header">
+                        <i class="fas fa-graduation-cap visa-icon"></i>
+                        <h3>Student Visa</h3>
+                        <div class="wave"></div>
+                    </div>
+                    <div class="visa-card-body">
+                        <p>Pursue your education in Dubai with our student visa service. We work with accredited educational institutions to ensure a smooth application process.</p>
+                        
+                        <div class="visa-requirements">
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>University and college student visas</li>
+                                <li>Language school options</li>
+                                <li>Education verification assistance</li>
+                                <li>Accommodation guidance</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="booking.html?service=visa&type=student" class="enquire-button">
+                            <span>Enquire Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Visa Process Section -->
+    <section class="visa-process-section" style="padding: 100px 0; background-color: white; position: relative; overflow: hidden;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2;">
+            <div class="section-header">
+                <h2>Our Visa Process</h2>
+                <div class="header-line"></div>
+                <p>Simple, transparent, and efficient visa application process</p>
+            </div>
+            
+            <div class="process-steps" style="display: flex; justify-content: space-between; flex-wrap: wrap; margin-top: 50px;">
+                <div class="process-step" style="flex: 1; min-width: 200px; text-align: center; padding: 30px 20px; position: relative; transition: all 0.3s ease;">
+                    <div class="step-icon" style="width: 100px; height: 100px; background: linear-gradient(45deg, #FDBB2D, #FFA500); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 35px; box-shadow: 0 10px 25px rgba(253, 187, 45, 0.3); transition: all 0.3s ease;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 style="margin-bottom: 15px; color: #333; font-size: 1.4rem; font-weight: 600;">1. Application</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">Submit your basic details and requirements through our simple application form.</p>
+                    <div class="step-line" style="position: absolute; top: 100px; right: 0; width: calc(50% + 30px); height: 3px; background: linear-gradient(90deg, rgba(253, 187, 45, 0.8), rgba(255, 165, 0, 0.8)); display: none;"></div>
+                </div>
+                
+                <div class="process-step" style="flex: 1; min-width: 200px; text-align: center; padding: 30px 20px; position: relative; transition: all 0.3s ease;">
+                    <div class="step-icon" style="width: 100px; height: 100px; background: linear-gradient(45deg, #FDBB2D, #FFA500); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 35px; box-shadow: 0 10px 25px rgba(253, 187, 45, 0.3); transition: all 0.3s ease;">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 style="margin-bottom: 15px; color: #333; font-size: 1.4rem; font-weight: 600;">2. Documentation</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">Our team will guide you through the required documents for your specific visa type.</p>
+                    <div class="step-line" style="position: absolute; top: 100px; left: 0; width: calc(50% + 30px); height: 3px; background: linear-gradient(90deg, rgba(255, 165, 0, 0.8), rgba(253, 187, 45, 0.8)); display: none;"></div>
+                </div>
+                
+                <div class="process-step" style="flex: 1; min-width: 200px; text-align: center; padding: 30px 20px; position: relative; transition: all 0.3s ease;">
+                    <div class="step-icon" style="width: 100px; height: 100px; background: linear-gradient(45deg, #FDBB2D, #FFA500); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 35px; box-shadow: 0 10px 25px rgba(253, 187, 45, 0.3); transition: all 0.3s ease;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 style="margin-bottom: 15px; color: #333; font-size: 1.4rem; font-weight: 600;">3. Verification</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">We thoroughly review your application to ensure everything is in order before submission.</p>
+                    <div class="step-line" style="position: absolute; top: 100px; right: 0; width: calc(50% + 30px); height: 3px; background: linear-gradient(90deg, rgba(253, 187, 45, 0.8), rgba(255, 165, 0, 0.8)); display: none;"></div>
+                </div>
+                
+                <div class="process-step" style="flex: 1; min-width: 200px; text-align: center; padding: 30px 20px; position: relative; transition: all 0.3s ease;">
+                    <div class="step-icon" style="width: 100px; height: 100px; background: linear-gradient(45deg, #FDBB2D, #FFA500); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 35px; box-shadow: 0 10px 25px rgba(253, 187, 45, 0.3); transition: all 0.3s ease;">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3 style="margin-bottom: 15px; color: #333; font-size: 1.4rem; font-weight: 600;">4. Submission</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">We submit your application to the relevant authorities and track its progress.</p>
+                    <div class="step-line" style="position: absolute; top: 100px; left: 0; width: calc(50% + 30px); height: 3px; background: linear-gradient(90deg, rgba(255, 165, 0, 0.8), rgba(253, 187, 45, 0.8)); display: none;"></div>
+                </div>
+                
+                <div class="process-step" style="flex: 1; min-width: 200px; text-align: center; padding: 30px 20px; position: relative; transition: all 0.3s ease;">
+                    <div class="step-icon" style="width: 100px; height: 100px; background: linear-gradient(45deg, #FDBB2D, #FFA500); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; color: white; font-size: 35px; box-shadow: 0 10px 25px rgba(253, 187, 45, 0.3); transition: all 0.3s ease;">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3 style="margin-bottom: 15px; color: #333; font-size: 1.4rem; font-weight: 600;">5. Approval</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">Once approved, we deliver your visa documentation directly to you, ready for travel.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="background-decoration" style="position: absolute; top: -150px; right: -150px; width: 400px; height: 400px; background: linear-gradient(45deg, rgba(253, 187, 45, 0.1), rgba(255, 203, 66, 0.1)); border-radius: 50%; z-index: 1;"></div>
+        <div class="background-decoration" style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: linear-gradient(45deg, rgba(64, 153, 255, 0.1), rgba(115, 180, 255, 0.1)); border-radius: 50%; z-index: 1;"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo">
+                    <div class="company-info">
+                        <h3>Yuvinalis Tourism</h3>
+                        <p>Your trusted travel partner in Dubai and East Africa</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#home">Home</a></li>
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="index.html#tours">Tours</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="visa-services.html">Visa Services</a></li>
+                            <li><a href="index.html#flight-ticketing">Flight Ticketing</a></li>
+                            <li><a href="index.html#hotel-bookings">Hotel Bookings</a></li>
+                            <li><a href="index.html#tour-services">Tour Services</a></li>
+                            <li><a href="index.html#dubai-business-setup">Business Setup</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h4>Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Deira, Dubai, UAE</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Westlands, Nairobi, Kenya</li>
+                            <li><i class="fas fa-phone"></i> +971 50 123 4567</li>
+                            <li><i class="fas fa-phone"></i> +254 700 123 456</li>
+                            <li><i class="fas fa-envelope"></i> info@yuvinalistourism.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="copyright">© 2025 Yuvinalis Tourism. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/hero-navbar.js"></script>
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

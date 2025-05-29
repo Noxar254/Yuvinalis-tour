@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Dubai Attractions | Beyond Miles Adventures</title>
+    <meta name="description" content="Explore more exciting Dubai attractions and experiences including Dubai Miracle Garden, Ferrari World, and many more must-visit destinations.">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mobile-events.css">
+    <link rel="stylesheet" href="css/event-buttons.css">
+    <style>
+        /* Events Page Specific Styles */
+        .events-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background .png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .events-hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+        
+        .events-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .events-hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .events-section {
+            padding: 60px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: #15616d;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .filter-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+        
+        .filter-option {
+            padding: 8px 16px;
+            background-color: #fff;
+            border: 2px solid #15616d;
+            border-radius: 30px;
+            color: #15616d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-option.active, .filter-option:hover {
+            background-color: #15616d;
+            color: white;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .event-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .event-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Show category label when filtering */
+        .event-card.show-category::before {
+            display: block;
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .event-card:hover .event-image img {
+            transform: scale(1.1);
+        }
+        
+        .event-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+        
+        .event-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .event-details {
+            margin-bottom: 15px;
+            background-color: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        .detail-item i {
+            margin-right: 10px;
+            color: #15616d;
+            width: 16px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .detail-item span {
+            font-size: 0.9rem;
+        }
+        
+        .event-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .event-price {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #15616d;
+            line-height: 1.2;
+        }
+        
+        .per-person {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .book-event-btn {
+            background-color: #15616d;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: 500;
+        }
+        
+        .book-event-btn:hover {
+            background-color: #0e4550;
+            transform: translateY(-2px);
+        }
+        
+        .load-more-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .load-more-btn, .back-to-main-btn {
+            background-color: #15616d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .load-more-btn:hover, .back-to-main-btn:hover {
+            background-color: #0e4550;
+        }            /* Add category label to cards */
+            .event-card::before {
+                content: attr(data-category);
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background-color: rgba(21, 97, 109, 0.85);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 20px;
+                font-size: 0.7rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                z-index: 1;
+                display: none; /* Hidden by default, shown by JS when filtering */
+            }
+            
+            /* Media Queries */
+        @media (max-width: 768px) {
+            .events-hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .events-hero-content p {
+                font-size: 1rem;
+            }
+            
+            .event-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="events-hero">
+        <div class="events-hero-content">
+            <h1>More Dubai Attractions</h1>
+            <p>Discover additional breathtaking attractions and unforgettable experiences in the vibrant city of Dubai</p>
+        </div>
+    </header>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore More Dubai Attractions</h2>
+                <p>Continue your journey through the wonders of Dubai with these additional must-visit attractions</p>
+            </div>
+            
+            <div class="filter-options">
+                <div class="filter-option active" data-filter="all">All Attractions</div>
+                <div class="filter-option" data-filter="family">Family-Friendly</div>
+                <div class="filter-option" data-filter="cultural">Cultural</div>
+                <div class="filter-option" data-filter="adventure">Adventure</div>
+                <div class="filter-option" data-filter="nature">Nature & Outdoors</div>
+            </div>
+            
+            <div class="events-grid">
+                <!-- More Attractions - Row 1 -->
+                <div class="event-card" data-category="nature family">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,miracle,garden" alt="Dubai Miracle Garden">
+                    </div>
+                    <div class="event-content">
+                        <h3>Dubai Miracle Garden</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Al Barsha South, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 9:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 hours</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 75</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="cultural family">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,frame" alt="Dubai Frame">
+                    </div>
+                    <div class="event-content">
+                        <h3>Dubai Frame</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Zabeel Park, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 7:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>1.5 hours</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 50</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="cultural family">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,glow,garden" alt="Dubai Garden Glow">
+                    </div>
+                    <div class="event-content">
+                        <h3>Dubai Garden Glow</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Zabeel Park, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>4:00 PM - 11:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>2.5 hours</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 65</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="adventure">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,helicopter" alt="Helicopter Tour">
+                    </div>
+                    <div class="event-content">
+                        <h3>Helicopter Tour</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Dubai Festival City</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>25 minutes</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 695</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More Attractions - Row 2 -->
+                <div class="event-card" data-category="cultural">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,opera" alt="Dubai Opera">
+                    </div>
+                    <div class="event-content">
+                        <h3>Dubai Opera</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Downtown Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Performance times vary</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>2-3 hours</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">From AED 250</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="adventure">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,zipline" alt="Dubai Zipline">
+                    </div>
+                    <div class="event-content">
+                        <h3>XLine Dubai Marina</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Dubai Marina Mall</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 5:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>1 hour</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 650</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="cultural family">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,etihad,museum" alt="Etihad Museum">
+                    </div>
+                    <div class="event-content">
+                        <h3>Etihad Museum</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Jumeirah 1, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>10:00 AM - 8:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>2 hours</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 25</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="adventure">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,hot,air,balloon" alt="Hot Air Balloon">
+                    </div>
+                    <div class="event-content">
+                        <h3>Hot Air Balloon Ride</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Dubai Desert Conservation Reserve</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>5:00 AM - 9:00 AM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>4 hours</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 995</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More Attractions - Row 3 -->
+                <div class="event-card" data-category="nature family">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,butterfly,garden" alt="Dubai Butterfly Garden">
+                    </div>
+                    <div class="event-content">
+                        <h3>Dubai Butterfly Garden</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Al Barsha South, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>1.5 hours</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 55</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="family adventure">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,img,worlds" alt="IMG Worlds of Adventure">
+                    </div>
+                    <div class="event-content">
+                        <h3>IMG Worlds of Adventure</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>City of Arabia, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>11:00 AM - 8:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>Full day</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 285</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="family nature">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,dolphinarium" alt="Dubai Dolphinarium">
+                    </div>
+                    <div class="event-content">
+                        <h3>Dubai Dolphinarium</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Creek Park, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>10:00 AM - 7:30 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>2 hours</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">AED 140</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Now</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-category="cultural">
+                    <div class="event-image">
+                        <img src="https://source.unsplash.com/random/600x400/?dubai,bastakiya" alt="Al Bastakiya">
+                    </div>
+                    <div class="event-content">
+                        <h3>Al Bastakiya Historical District</h3>
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Al Fahidi, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>3 hours</span>
+                            </div>
+                        </div>
+                        <div class="event-footer">
+                            <div class="event-price">
+                                <span class="price">Free</span>
+                                <span class="per-person">self-guided</span>
+                            </div>
+                            <button class="book-event-btn">
+                                <span>Book Guide</span>
+                                <i class="fas fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more-container">
+                <button class="back-to-main-btn" onclick="window.location.href='events.html'">
+                    <i class="fas fa-arrow-left"></i> Back to Main Attractions
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Beyond Miles Adventures Logo">
+                    <h3>Beyond Miles Adventures</h3>
+                </div>
+                <p>Adventure awaits. Explore. Discover. Conquer.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="index.html#tours">Tours</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+                    <li><i class="fas fa-phone"></i> +254 712 345 678</li>
+                    <li><i class="fas fa-envelope"></i> info@beyondmilesadventures.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Subscribe</h3>
+                <p>Get updates on our latest adventures and exclusive offers.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" aria-label="Subscribe">
+                        <span>Subscribe</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Beyond Miles Adventures. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="js/hero-navbar.js"></script>
+    <script>
+        // Event filter functionality
+        document.querySelectorAll('.filter-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Update active class
+                document.querySelectorAll('.filter-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Get selected filter
+                const filter = this.getAttribute('data-filter');
+                
+                // Filter cards
+                document.querySelectorAll('.event-card').forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'flex';
+                        card.style.opacity = '1';
+                        // Hide category label when showing all
+                        card.classList.remove('show-category');
+                    } else {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        if (categories.includes(filter)) {
+                            card.style.display = 'flex';
+                            card.style.opacity = '1';
+                            // Show category label when filtering
+                            card.classList.add('show-category');
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Book event buttons
+        document.querySelectorAll('.book-event-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                window.location.href = 'booking.html?booking=attraction';
+            });
+        });
+        
+        // Apply smooth transitions for cards
+        document.querySelectorAll('.event-card').forEach(card => {
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease';
+        });
+    </script>
+</body>
+</html>

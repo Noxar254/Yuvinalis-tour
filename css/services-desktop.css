@@ -1,0 +1,72 @@
+/* Desktop Service Card Optimization */
+@media (min-width: 1200px) {
+    .service-card {
+        flex: 0 0 350px;
+        min-height: 420px;
+    }
+    
+    .services-slider {
+        padding: 15px 0 35px;
+    }
+    
+    .service-content {
+        padding: 22px;
+    }
+    
+    .service-features {
+        padding: 18px;
+        margin-bottom: 22px;
+    }
+    
+    .feature-item {
+        padding: 6px 14px;
+    }
+    
+    .feature-item span {
+        font-size: 0.9rem;
+    }
+    
+    .service-btn {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Service Card Layout Fixes */
+.service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.feature-item span {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Ensure optimal display of service cards content */
+.service-content p {
+    margin-bottom: 15px;
+}
+
+.service-btn-container {
+    margin-top: auto;
+}
+
+/* Make sure the cards have proper spacing */
+.services-slider .service-card {
+    margin-right: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Scrollbar styling for browsers that support it */
+@media (min-width: 768px) {
+    .services-slider {
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+}

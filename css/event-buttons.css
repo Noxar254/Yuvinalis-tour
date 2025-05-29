@@ -1,11 +1,11 @@
 /* Book Event Button as anchor link */
 .book-event-btn {
     display: inline-block;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #87CEEB; /* Light blue background */
+    color: white; /* White text for better contrast */
     border: none;
-    border-radius: 25px;
-    padding: 10px 16px;
+    border-radius: 6px; /* Rectangular with slightly rounded corners */
+    padding: 12px 20px;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
@@ -13,10 +13,11 @@
     text-decoration: none;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
 }
 
 .book-event-btn:hover {
-    background-color: #3d8b40;
+    background-color: #7BB3D3; /* Slightly darker light blue on hover */
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     color: white;

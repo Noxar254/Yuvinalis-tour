@@ -678,6 +678,18 @@ img {
     transform: translateY(-3px);
 }
 
+.cta-btn.tertiary {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    color: white;
+    border: none;
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.3);
+}
+
+.cta-btn.tertiary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(46, 204, 113, 0.4);
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {

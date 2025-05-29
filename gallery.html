@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Miles - Travel Gallery</title>
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="images/logo.png" alt="Beyond Miles Logo" class="logo-img">
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#destinations" class="nav-link">Destinations</a>
+                <a href="index.html#hotels" class="nav-link">Hotels</a>
+                <a href="index.html#packages" class="nav-link">Packages</a>
+                <a href="about-us.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero Section -->
+    <section class="gallery-hero">
+        <div class="gallery-hero-content">
+            <h1 class="gallery-hero-title">Our Travel Gallery</h1>
+            <p class="gallery-hero-subtitle">Discover breathtaking moments from around the world through our curated collection</p>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Gallery Filter Section -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-globe"></i>
+                    All Destinations
+                </button>
+                <button class="filter-btn" data-filter="dubai">
+                    <i class="fas fa-city"></i>
+                    Dubai
+                </button>
+                <button class="filter-btn" data-filter="safari">
+                    <i class="fas fa-paw"></i>
+                    Safari
+                </button>
+                <button class="filter-btn" data-filter="mountains">
+                    <i class="fas fa-mountain"></i>
+                    Mountains
+                </button>
+                <button class="filter-btn" data-filter="beaches">
+                    <i class="fas fa-umbrella-beach"></i>
+                    Beaches
+                </button>
+                <button class="filter-btn" data-filter="culture">
+                    <i class="fas fa-mosque"></i>
+                    Culture
+                </button>
+                <button class="filter-btn" data-filter="adventure">
+                    <i class="fas fa-hiking"></i>
+                    Adventure
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid Section -->
+    <section class="gallery-grid">
+        <div class="container">
+            <div class="gallery-container">
+                <!-- Dubai Gallery Items -->
+                <div class="gallery-item" data-category="dubai">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Burj Khalifa Dubai" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Burj Khalifa</h3>
+                                <p>The world's tallest building in Dubai</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Dubai</span>
+                                    <span class="tag">Architecture</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="dubai">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dubai Marina" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Dubai Marina</h3>
+                                <p>Spectacular waterfront skyline</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Dubai</span>
+                                    <span class="tag">Marina</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="dubai culture">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dubai Gold Souk" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Gold Souk</h3>
+                                <p>Traditional markets and culture</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Dubai</span>
+                                    <span class="tag">Culture</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1539650116574-75c0c6d73c6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari Gallery Items -->
+                <div class="gallery-item" data-category="safari">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="African Lion" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Majestic Lions</h3>
+                                <p>Kings of the African savannah</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Safari</span>
+                                    <span class="tag">Wildlife</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="safari">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Elephants Safari" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Elephant Herd</h3>
+                                <p>Gentle giants in their natural habitat</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Safari</span>
+                                    <span class="tag">Elephants</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1551522435-a13afa10f103?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mountain Gallery Items -->
+                <div class="gallery-item" data-category="mountains">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mountain Peaks" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Alpine Peaks</h3>
+                                <p>Breathtaking mountain vistas</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Mountains</span>
+                                    <span class="tag">Alps</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="mountains adventure">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1551524164-687a55dd1126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mountain Hiking" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Mountain Hiking</h3>
+                                <p>Adventure awaits on mountain trails</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Mountains</span>
+                                    <span class="tag">Adventure</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1551524164-687a55dd1126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beach Gallery Items -->
+                <div class="gallery-item" data-category="beaches">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tropical Beach" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Tropical Paradise</h3>
+                                <p>Crystal clear waters and white sand</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Beaches</span>
+                                    <span class="tag">Paradise</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="beaches">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ocean Sunset" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Ocean Sunset</h3>
+                                <p>Magical moments by the sea</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Beaches</span>
+                                    <span class="tag">Sunset</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Culture Gallery Items -->
+                <div class="gallery-item" data-category="culture">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Ancient Temple" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Ancient Temple</h3>
+                                <p>Historical architecture and culture</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Culture</span>
+                                    <span class="tag">History</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adventure Gallery Items -->
+                <div class="gallery-item" data-category="adventure">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Skydiving Adventure" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Skydiving</h3>
+                                <p>Ultimate adrenaline adventure</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Adventure</span>
+                                    <span class="tag">Extreme</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="adventure dubai">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Desert Safari" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Desert Safari</h3>
+                                <p>Thrilling desert adventures</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Adventure</span>
+                                    <span class="tag">Dubai</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional diverse images -->
+                <div class="gallery-item" data-category="culture">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1549144511-f099e773c147?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Traditional Market" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Local Markets</h3>
+                                <p>Authentic cultural experiences</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Culture</span>
+                                    <span class="tag">Local</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1549144511-f099e773c147?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="dubai beaches">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dubai Beach Resort" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Dubai Beach Resort</h3>
+                                <p>Luxury meets paradise</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Dubai</span>
+                                    <span class="tag">Beaches</span>
+                                </div>
+                            </div>                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden Gallery Items (Load More) -->
+                <div class="gallery-item hidden" data-category="adventure">
+                    <div class="gallery-card">
+                        <img data-src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Rock Climbing" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Rock Climbing</h3>
+                                <p>Conquer new heights</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Adventure</span>
+                                    <span class="tag">Sports</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hidden" data-category="culture">
+                    <div class="gallery-card">
+                        <img data-src="https://images.unsplash.com/photo-1539650116574-75c0c6d0e9db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Japanese Temple" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Japanese Temple</h3>
+                                <p>Ancient wisdom and beauty</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Culture</span>
+                                    <span class="tag">Japan</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1539650116574-75c0c6d0e9db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hidden" data-category="beaches">
+                    <div class="gallery-card">
+                        <img data-src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Tropical Paradise" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Tropical Paradise</h3>
+                                <p>Crystal clear waters</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Beaches</span>
+                                    <span class="tag">Tropical</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hidden" data-category="mountains">
+                    <div class="gallery-card">
+                        <img data-src="https://images.unsplash.com/photo-1464822759844-d150baef493e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mountain Lake" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Mountain Lake</h3>
+                                <p>Serene alpine waters</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Mountains</span>
+                                    <span class="tag">Lake</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1464822759844-d150baef493e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hidden" data-category="dubai">
+                    <div class="gallery-card">
+                        <img data-src="https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dubai Marina" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Dubai Marina</h3>
+                                <p>Modern architectural wonder</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Dubai</span>
+                                    <span class="tag">Architecture</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hidden" data-category="safari adventure">
+                    <div class="gallery-card">
+                        <img data-src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Lion Pride" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Lion Pride</h3>
+                                <p>Kings of the savanna</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Safari</span>
+                                    <span class="tag">Wildlife</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hidden" data-category="culture">
+                    <div class="gallery-card">
+                        <img data-src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Traditional Market" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Traditional Market</h3>
+                                <p>Vibrant local culture</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Culture</span>
+                                    <span class="tag">Market</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hidden" data-category="adventure">
+                    <div class="gallery-card">
+                        <img data-src="https://images.unsplash.com/photo-1544737151406-6b997d79b603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Skydiving" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Skydiving</h3>
+                                <p>Ultimate adrenaline rush</p>
+                                <div class="gallery-tags">
+                                    <span class="tag">Adventure</span>
+                                    <span class="tag">Extreme</span>
+                                </div>
+                            </div>
+                            <button class="gallery-view-btn" data-img="https://images.unsplash.com/photo-1544737151406-6b997d79b603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More Section -->
+            <div class="view-more-section">
+                <button class="view-more-btn" id="viewMoreBtn">
+                    <span class="btn-text">View More Images</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="btn-loader">
+                        <div class="loader-spinner"></div>
+                    </div>
+                </button>
+                <div class="gallery-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalImages">12</span>
+                        <span class="stat-label">Photos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Destinations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="gallery-search">
+            <div class="container">
+                <div class="search-box">
+                    <input type="text" id="gallerySearch" placeholder="Search photos by location, category, or tag...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="search-suggestions">
+                    <span class="suggestion-label">Popular searches:</span>
+                    <button class="suggestion-tag" data-search="dubai">Dubai</button>
+                    <button class="suggestion-tag" data-search="safari">Safari</button>
+                    <button class="suggestion-tag" data-search="mountains">Mountains</button>
+                    <button class="suggestion-tag" data-search="beaches">Beaches</button>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Image Modal/Lightbox -->
+    <div class="image-modal" id="imageModal">
+        <div class="modal-backdrop">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="">
+                <div class="modal-info">
+                    <h3 id="modalTitle">Image Title</h3>
+                    <p id="modalDescription">Image Description</p>
+                    <div class="modal-tags" id="modalTags"></div>
+                </div>
+                <div class="modal-navigation">
+                    <button class="modal-nav-btn" id="prevImage">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="modal-nav-btn" id="nextImage">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-action-btn" id="shareBtn" title="Share Image">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="modal-action-btn" id="downloadBtn" title="Download Image">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="modal-action-btn" id="favoriteBtn" title="Add to Favorites">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="share-modal" id="shareModal">
+        <div class="share-backdrop">
+            <div class="share-content">
+                <div class="share-header">
+                    <h3>Share this beautiful destination</h3>
+                    <button class="share-close" id="shareClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="share-options">
+                    <button class="share-btn facebook" data-platform="facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button class="share-btn twitter" data-platform="twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </button>
+                    <button class="share-btn pinterest" data-platform="pinterest">
+                        <i class="fab fa-pinterest"></i>
+                        <span>Pinterest</span>
+                    </button>
+                    <button class="share-btn instagram" data-platform="instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </button>
+                    <button class="share-btn whatsapp" data-platform="whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </button>
+                    <button class="share-btn link" id="copyLinkBtn">
+                        <i class="fas fa-link"></i>
+                        <span>Copy Link</span>
+                    </button>
+                </div>
+                <div class="share-link">
+                    <input type="text" id="shareLink" readonly>
+                    <button class="copy-btn" id="copyBtn">Copy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Your Own Adventure?</h2>
+                <p>Let us help you plan the perfect trip to any of these amazing destinations</p>
+                <div class="cta-buttons">
+                    <a href="index.html#packages" class="cta-btn primary">
+                        <span>Explore Packages</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="index.html#contact" class="cta-btn secondary">
+                        <span>Contact Us</span>
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="Beyond Miles Logo" class="footer-logo">
+                        <p>Creating unforgettable travel experiences that go beyond miles.</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#destinations">Destinations</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@beyondmiles.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, City, Country</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Beyond Miles. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/gallery.js"></script>
+</body>
+</html>

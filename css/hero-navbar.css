@@ -18,6 +18,28 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+
+/* Nav Brand Styles */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-brand img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.nav-brand span {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
 .logo-container {
     display: flex;
     align-items: center;
@@ -736,6 +758,16 @@ body {
     .hero-content {
         max-width: 90%;
     }
+    
+    /* Nav Brand Tablet Styles */
+    .nav-brand img {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .nav-brand span {
+        font-size: 1.2rem;
+    }
 }
 @media (max-width: 480px) {
     .hero {
@@ -759,6 +791,18 @@ body {
         min-width: 90px;
         padding: 0.38rem 0.7rem;
     }
+    
+    /* Nav Brand Mobile Styles */
+    .nav-brand img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .nav-brand span {
+        font-size: 1.1rem;
+    }
+    
+    /* Legacy logo styles for compatibility */
     .logo-img {
         width: 30px;
         height: 30px;

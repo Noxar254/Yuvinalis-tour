@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodations | Hotels and Bedspace in Dubai | Yuvinalis Tourism</title>
+    <meta name="description" content="Find the perfect accommodation in Dubai with Yuvinalis Tourism. From luxury hotels to budget bedspaces, we have options for every traveler.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/hotels.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <style>
+        .accommodations-hero {
+            background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accommodations-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/Burj Khalifa.png') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .accommodations-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            padding: 0 20px;
+        }
+
+        .accommodations-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .accommodations-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .accommodations-main {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+
+        .accommodations-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .accommodations-filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #e1e8ed;
+            border-radius: 25px;
+            color: #5a6c7d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            border-color: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
+        }
+
+        .accommodations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .accommodation-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .accommodation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .accommodation-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .accommodation-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .accommodation-card:hover .accommodation-image img {
+            transform: scale(1.05);
+        }
+
+        .accommodation-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+        }
+
+        .accommodation-price {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            z-index: 2;
+            text-align: center;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        .accommodation-content {
+            padding: 25px;
+        }
+
+        .accommodation-content h3 {
+            font-size: 1.3rem;
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .accommodation-details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .detail-item i {
+            color: #27ae60;
+            margin-right: 10px;
+            width: 18px;
+            text-align: center;
+        }
+
+        .accommodation-amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .amenity-tag {
+            background-color: #f1f1f1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .amenity-tag i {
+            margin-right: 5px;
+            color: #27ae60;
+        }
+
+        .accommodation-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .view-details-btn {
+            flex: 1;
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .view-details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .book-now-btn {
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #3182ce, #4299e1);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .book-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(49, 130, 206, 0.3);
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .section-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .section-intro p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .accommodations-hero h1 {
+                font-size: 2rem;
+            }
+
+            .accommodations-hero p {
+                font-size: 1rem;
+            }
+
+            .accommodations-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .accommodations-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-btn {
+                width: 100%;
+                max-width: 200px;
+                text-align: center;
+            }
+
+            .accommodation-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="full-text">Yuvinalis Tourism</span>
+                    <span class="short-text">YT</span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-controls">
+            <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+                <a href="index.html#services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#visa-processing" class="dropdown-link">Visa Processing</a></li>
+                    <li><a href="index.html#flight-ticketing" class="dropdown-link">Flight Ticketing</a></li>
+                    <li><a href="index.html#hotel-bookings" class="dropdown-link">Hotel Bookings</a></li>
+                    <li><a href="index.html#airport-pickups" class="dropdown-link">Airport Pickups</a></li>
+                    <li><a href="index.html#tour-services" class="dropdown-link">Tour Services</a></li>
+                    <li><a href="index.html#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
+                    <li><a href="index.html#dubai-business-setup" class="dropdown-link">Dubai Business Set Up</a></li>
+                    <li><a href="index.html#freight-services" class="dropdown-link">Freight Services</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="events.html" class="nav-link dropdown-toggle">Events & Hikes <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="dropdown-link">All Events</a></li>
+                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Events</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="tours.html" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#dubai-tours" class="dropdown-link">Dubai Tours</a></li>
+                    <li><a href="index.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
+                    <li><a href="index.html#international-tours" class="dropdown-link">International Tours</a></li>
+                    <li><a href="index.html#maasai-mara-tours" class="dropdown-link">Maasai Mara Tours</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="accommodations.html" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#hotels" class="dropdown-link">Hotels</a></li>
+                    <li><a href="accommodations.html" class="dropdown-link">Bedspaces</a></li>
+                    <li><a href="accommodations.html" class="dropdown-link">All Accommodations</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#freight" class="nav-link dropdown-toggle">Freight <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#dubai-to-kenya" class="dropdown-link">Dubai to Kenya</a></li>
+                    <li><a href="index.html#kenya-to-dubai" class="dropdown-link">Kenya to Dubai</a></li>
+                    <li><a href="index.html#other-countries" class="dropdown-link">Other Countries</a></li>
+                </ul>
+            </li>
+            <li class="book-tour-mobile">
+                <a href="booking.html?booking=tour" class="book-tour-btn-mobile">
+                    <span class="btn-text">Book Tour</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-cta">
+            <a href="booking.html?booking=tour" class="book-tour-btn">
+                <span class="btn-text">Book Tour</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                <div class="btn-shine"></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="accommodations-hero">
+        <div class="accommodations-hero-content">
+            <h1>Dubai Accommodations</h1>
+            <p>Discover the perfect place to stay in Dubai. From luxury hotels to affordable bedspaces, we have options for every budget and preference.</p>
+        </div>
+    </section>
+
+    <!-- Main Accommodations Section -->
+    <section class="accommodations-main">
+        <div class="accommodations-container">
+            <div class="section-intro">
+                <h2>Find Your Perfect Stay</h2>
+                <p>Choose from our carefully selected accommodations in Dubai's most convenient locations</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="accommodations-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i> All Accommodations
+                </button>
+                <button class="filter-btn" data-filter="hotels">
+                    <i class="fas fa-hotel"></i> Hotels
+                </button>
+                <button class="filter-btn" data-filter="bedspace">
+                    <i class="fas fa-bed"></i> Bedspaces
+                </button>
+                <button class="filter-btn" data-filter="luxury">
+                    <i class="fas fa-crown"></i> Luxury
+                </button>
+                <button class="filter-btn" data-filter="budget">
+                    <i class="fas fa-dollar-sign"></i> Budget
+                </button>
+            </div>
+
+            <!-- Accommodations Grid -->
+            <div class="accommodations-grid">
+                <!-- Hotel 1 -->
+                <div class="accommodation-card" data-category="hotels luxury">
+                    <div class="accommodation-image">
+                        <img src="images/Burj Khalifa.png" alt="Downtown Dubai Palace">
+                        <div class="accommodation-badge">Top Rated</div>
+                        <div class="accommodation-price">
+                            <span>AED 450</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">per night</div>
+                        </div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Downtown Dubai Palace</h3>
+                        <div class="accommodation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Downtown Dubai, UAE</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (120 reviews)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>2-4 guests</span>
+                            </div>
+                        </div>
+                        <div class="accommodation-amenities">
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-swimming-pool"></i> Pool</span>
+                            <span class="amenity-tag"><i class="fas fa-utensils"></i> Restaurant</span>
+                            <span class="amenity-tag"><i class="fas fa-car"></i> Parking</span>
+                        </div>
+                        <div class="accommodation-actions">
+                            <a href="booking.html?service=hotel" class="view-details-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 2 -->
+                <div class="accommodation-card" data-category="hotels luxury">
+                    <div class="accommodation-image">
+                        <img src="images/desert safari.png" alt="Dubai Marina Bay Hotel">
+                        <div class="accommodation-badge">Marina View</div>
+                        <div class="accommodation-price">
+                            <span>AED 380</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">per night</div>
+                        </div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Dubai Marina Bay Hotel</h3>
+                        <div class="accommodation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Dubai Marina, UAE</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.7 (185 reviews)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>2-3 guests</span>
+                            </div>
+                        </div>
+                        <div class="accommodation-amenities">
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-swimming-pool"></i> Pool</span>
+                            <span class="amenity-tag"><i class="fas fa-spa"></i> Spa</span>
+                            <span class="amenity-tag"><i class="fas fa-dumbbell"></i> Gym</span>
+                        </div>
+                        <div class="accommodation-actions">
+                            <a href="booking.html?service=hotel" class="view-details-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 3 -->
+                <div class="accommodation-card" data-category="hotels budget">
+                    <div class="accommodation-image">
+                        <img src="images/Logistics.png" alt="Business Bay Executive">
+                        <div class="accommodation-badge">Business Bay</div>
+                        <div class="accommodation-price">
+                            <span>AED 320</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">per night</div>
+                        </div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Business Bay Executive</h3>
+                        <div class="accommodation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Business Bay, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.6 (156 reviews)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>1-2 guests</span>
+                            </div>
+                        </div>
+                        <div class="accommodation-amenities">
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-briefcase"></i> Business Center</span>
+                            <span class="amenity-tag"><i class="fas fa-coffee"></i> Breakfast</span>
+                            <span class="amenity-tag"><i class="fas fa-car"></i> Parking</span>
+                        </div>
+                        <div class="accommodation-actions">
+                            <a href="booking.html?service=hotel" class="view-details-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bedspace 1 -->
+                <div class="accommodation-card" data-category="bedspace budget">
+                    <div class="accommodation-image">
+                        <img src="images/Dhow Cruise.png" alt="Deira Shared Accommodation">
+                        <div class="accommodation-badge">Bedspace</div>
+                        <div class="accommodation-price">
+                            <span>AED 850</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">per month</div>
+                        </div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Deira Shared Accommodation</h3>
+                        <div class="accommodation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Deira, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.5 (92 reviews)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>Shared room</span>
+                            </div>
+                        </div>
+                        <div class="accommodation-amenities">
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-bed"></i> Shared Room</span>
+                            <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span class="amenity-tag"><i class="fas fa-subway"></i> Metro Near</span>
+                        </div>
+                        <div class="accommodation-actions">
+                            <a href="booking.html?service=hotel" class="view-details-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bedspace 2 -->
+                <div class="accommodation-card" data-category="bedspace budget">
+                    <div class="accommodation-image">
+                        <img src="images/Road trip.png" alt="Karama Budget Bedspace">
+                        <div class="accommodation-badge">Bedspace</div>
+                        <div class="accommodation-price">
+                            <span>AED 750</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">per month</div>
+                        </div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Karama Budget Bedspace</h3>
+                        <div class="accommodation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Karama, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.3 (67 reviews)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>Shared room</span>
+                            </div>
+                        </div>
+                        <div class="accommodation-amenities">
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-bed"></i> Shared Room</span>
+                            <span class="amenity-tag"><i class="fas fa-subway"></i> Metro Near</span>
+                            <span class="amenity-tag"><i class="fas fa-shield-alt"></i> Secure</span>
+                        </div>
+                        <div class="accommodation-actions">
+                            <a href="booking.html?service=hotel" class="view-details-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bedspace 3 -->
+                <div class="accommodation-card" data-category="bedspace budget">
+                    <div class="accommodation-image">
+                        <img src="images/background .png" alt="Al Qusais Bedspace">
+                        <div class="accommodation-badge">Monthly</div>
+                        <div class="accommodation-price">
+                            <span>AED 900</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">per month</div>
+                        </div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Al Qusais Comfort Bedspace</h3>
+                        <div class="accommodation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Al Qusais, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.4 (78 reviews)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>Shared room</span>
+                            </div>
+                        </div>
+                        <div class="accommodation-amenities">
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-bed"></i> Shared Room</span>
+                            <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span class="amenity-tag"><i class="fas fa-tv"></i> TV Lounge</span>
+                        </div>
+                        <div class="accommodation-actions">
+                            <a href="booking.html?service=hotel" class="view-details-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo">
+                    <h3>Yuvinalis Tourism</h3>
+                </div>
+                <p>Your trusted gateway to unforgettable travel experiences in Dubai and beyond.</p>                <div class="social-links">
+                    <a href="https://facebook.com/yuvinalistourism" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yuvinalistourism" class="social-icon twitter-custom" aria-label="X (Twitter)" target="_blank">
+                        <img src="images/Xlogo.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://instagram.com/yuvinalistourism" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@yuvinalistourism" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://threads.net/@yuvinalistourism" class="social-icon threads-custom" aria-label="Threads" target="_blank">
+                        <img src="images/Thread Logo.png" alt="Threads">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="accommodations.html">Accommodations</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="visa-services.html">Visa Processing</a></li>
+                    <li><a href="index.html#flight-ticketing">Flight Ticketing</a></li>
+                    <li><a href="accommodations.html">Hotel Bookings</a></li>
+                    <li><a href="index.html#tour-services">Tour Services</a></li>
+                    <li><a href="index.html#dubai-business-setup">Business Setup</a></li>
+                    <li><a href="index.html#freight-services">Freight Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <div class="office-info">
+                        <h4>Dubai Office</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Centurion Star Tower, Deira</p>
+                        <p><i class="fas fa-phone"></i> +971567570931</p>
+                    </div>
+                    <div class="office-info">
+                        <h4>Nairobi Office</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Madonna House, Westlands</p>
+                        <p><i class="fas fa-phone"></i> +254722314217</p>
+                    </div>
+                    <p><i class="fas fa-envelope"></i> info@yuvinalistourism.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yuvinalis Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/hero-navbar.js"></script>
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const accommodationCards = document.querySelectorAll('.accommodation-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    accommodationCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const categories = card.getAttribute('data-category').split(' ');
+                            if (categories.includes(filter)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

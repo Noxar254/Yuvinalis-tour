@@ -180,16 +180,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const tourCards = toursWrapper.querySelectorAll('.tour-card');
         tourCards.forEach((card, index) => {
             // Add staggered entrance animations
-            card.style.animationDelay = `${index * 0.1}s`;
-            
-            // Handle click on card
+            card.style.animationDelay = `${index * 0.1}s`;            // Handle click on card
             card.addEventListener('click', function(e) {
                 // If clicking on the "View Details" button, let the default action happen
                 if (e.target.closest('.view-details-btn')) {
                     return;
                 }
                 
-                // Otherwise, find the view details button and trigger it
+                // Check if we're on a page that should use modal (index.html) vs redirect (tours.html)
+                const isIndexPage = window.location.pathname.endsWith('index.html') || 
+                                  window.location.pathname === '/' || 
+                                  window.location.pathname.endsWith('/');
+                
+                if (isIndexPage) {
+                    // On index page, let event bubble up for modal handling
+                    // Don't prevent default or redirect
+                    return;
+                }
+                
+                // On tours page or other pages, find the view details button and trigger it
                 const viewDetailsBtn = this.querySelector('.view-details-btn');
                 if (viewDetailsBtn) {
                     viewDetailsBtn.click();

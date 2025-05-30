@@ -1,5 +1,7 @@
 // Tour Preview Modal Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Tour preview modal script loaded');
+    
     // Create modal element
     const modal = document.createElement('div');
     modal.className = 'tour-preview-modal';
@@ -65,38 +67,38 @@ document.addEventListener('DOMContentLoaded', function() {
             closeModal();
         }
     });
-    
-    // Get all tour cards
+      // Get all tour cards
     const tourCards = document.querySelectorAll('.tour-card');
-    
-    tourCards.forEach(card => {
-        card.addEventListener('click', function(e) {
+    console.log(`Found ${tourCards.length} tour cards`);
+      tourCards.forEach(card => {        card.addEventListener('click', function(e) {
+            console.log('Tour card clicked:', card.querySelector('h3')?.textContent);
+            
             // Don't show modal if clicking on the view details button
             if (e.target.closest('.view-details-btn')) {
+                console.log('Click was on view details button, ignoring');
                 return;
-            }
-              // Get tour data from the card
-            const tourTitle = card.querySelector('h3').textContent;
-            const tourImage = card.querySelector('.tour-image img').getAttribute('src');
-            const tourBadge = card.querySelector('.tour-badge').textContent;
-            const tourDuration = card.querySelector('.tour-duration span').textContent;
-            const tourLocation = card.querySelector('.detail-item:first-child span').textContent;
-            const tourRating = card.querySelector('.detail-item:nth-child(2) span').textContent;
-            const tourDescription = card.querySelector('.tour-description').textContent;
-            const tourPrice = card.querySelector('.tour-price .current-price').textContent;
+            }try {
+                // Get tour data from the card with null-safe operators
+                const tourTitle = card.querySelector('h3')?.textContent || 'Tour Title';
+                const tourImage = card.querySelector('.tour-image img')?.getAttribute('src') || '';
+                const tourBadge = card.querySelector('.tour-badge')?.textContent || 'Tour';
+                const tourDuration = card.querySelector('.tour-duration span')?.textContent || 'Duration';
+                const tourLocation = card.querySelector('.detail-item:first-child span')?.textContent || 'Location';
+                const tourRating = card.querySelector('.detail-item:nth-child(2) span')?.textContent || 'Rating';
+                const tourDescription = card.querySelector('.tour-description')?.textContent || 'Tour description not available';
+                const tourPrice = card.querySelector('.tour-price .current-price')?.textContent || 'Price on request';
             
-            // Set modal content
-            modal.querySelector('.modal-header h3').textContent = tourTitle;
-            modal.querySelector('.modal-image img').setAttribute('src', tourImage);
-            modal.querySelector('.modal-image img').setAttribute('alt', tourTitle);
-            modal.querySelector('.tour-badge').textContent = tourBadge;
-            modal.querySelector('.tour-duration span').textContent = tourDuration;
-            modal.querySelector('.location').textContent = tourLocation;
-            modal.querySelector('.rating').textContent = tourRating;
-            modal.querySelector('.modal-description').textContent = tourDescription;
-            modal.querySelector('.modal-price').textContent = tourPrice;
-            
-            // Set badge color based on type
+                // Set modal content
+                modal.querySelector('.modal-header h3').textContent = tourTitle;
+                modal.querySelector('.modal-image img').setAttribute('src', tourImage);
+                modal.querySelector('.modal-image img').setAttribute('alt', tourTitle);
+                modal.querySelector('.tour-badge').textContent = tourBadge;
+                modal.querySelector('.tour-duration span').textContent = tourDuration;
+                modal.querySelector('.location').textContent = tourLocation;
+                modal.querySelector('.rating').textContent = tourRating;
+                modal.querySelector('.modal-description').textContent = tourDescription;
+                modal.querySelector('.modal-price').textContent = tourPrice;
+              // Set badge color based on type
             const badge = modal.querySelector('.tour-badge');
             badge.className = 'tour-badge'; // Reset class
             
@@ -122,10 +124,18 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Open modal
             openModal();
+            
+        } catch (error) {
+            console.error('Error loading tour data for modal:', error);
+            // Still try to open modal with default content
+            modal.querySelector('.modal-header h3').textContent = 'Tour Details';
+            modal.querySelector('.modal-description').textContent = 'Tour information is currently unavailable.';
+            openModal();
+        }
         });
     });
-    
-    function openModal() {
+      function openModal() {
+        console.log('Opening modal');
         modal.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent scrolling
     }

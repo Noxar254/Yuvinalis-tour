@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Test</title>
+    <link rel="stylesheet" href="css/tours.css">
+    <link rel="stylesheet" href="css/tour-preview-modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .tour-card {
+            cursor: pointer;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Tour Modal Test Page</h1>
+        <p>Click on the tour card below to test the modal functionality:</p>
+        
+        <!-- Test Tour Card -->
+        <div class="tour-card" data-aos="fade-up" data-aos-duration="800">
+            <div class="tour-image">
+                <img src="images/Krabi, Thailand.jpg" alt="Krabi Thailand" class="pulse-on-hover">
+                <div class="tour-badge">Hot Deal</div>
+                <div class="tour-duration">
+                    <i class="far fa-clock"></i>
+                    <span>3 Days</span>
+                </div>
+            </div>
+            <div class="tour-content">
+                <h3>Krabi, Thailand Test</h3>
+                <div class="tour-details">
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Krabi, Thailand</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9 (143 reviews)</span>
+                    </div>
+                </div>
+                <p class="tour-description">Experience the pristine beaches and stunning limestone cliffs of Thailand's paradise island.</p>
+                <div class="tour-footer">
+                    <div class="tour-price">
+                        <span class="current-price">From AED 3,630</span>
+                    </div>
+                    <a href="tours.html" class="view-details-btn">
+                        <span>View Details</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <button onclick="testModal()" style="padding: 10px 20px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 20px 0;">Test Modal Directly</button>
+        
+        <div id="console-output" style="background: #000; color: #0f0; padding: 10px; font-family: monospace; margin-top: 20px; min-height: 200px; border-radius: 5px;">
+            <div>Console Output:</div>
+        </div>
+    </div>
+
+    <script src="js/tour-preview-modal.js"></script>
+    <script>
+        // Capture console logs and display them
+        const originalLog = console.log;
+        const originalError = console.error;
+        const output = document.getElementById('console-output');
+        
+        function addToOutput(message, type = 'log') {
+            const div = document.createElement('div');
+            div.style.color = type === 'error' ? '#ff5555' : '#0f0';
+            div.textContent = new Date().toLocaleTimeString() + ': ' + message;
+            output.appendChild(div);
+            output.scrollTop = output.scrollHeight;
+        }
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addToOutput(args.join(' '), 'log');
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addToOutput(args.join(' '), 'error');
+        };
+        
+        function testModal() {
+            const modal = document.querySelector('.tour-preview-modal');
+            if (modal) {
+                console.log('Modal found, testing open/close');
+                modal.classList.add('active');
+                setTimeout(() => {
+                    modal.classList.remove('active');
+                    console.log('Modal closed after 3 seconds');
+                }, 3000);
+            } else {
+                console.error('Modal not found!');
+            }
+        }
+        
+        // Log when page loads
+        console.log('Test page loaded');
+    </script>
+</body>
+</html>

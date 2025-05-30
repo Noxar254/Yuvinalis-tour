@@ -2,7 +2,7 @@
 
 /* General spacing and padding reductions */
 .tours-section, .upcoming-events {
-    padding: 40px 0 30px; /* Reduced padding */
+    padding: 35px 0 25px; /* Further reduced padding */
     perspective: 1000px; /* Add perspective for 3D effect */
 }
 
@@ -11,7 +11,7 @@
 }
 
 .tours-section .section-header, .upcoming-events .section-header {
-    margin-bottom: 20px; /* Reduced bottom margin */
+    margin-bottom: 15px; /* Further reduced bottom margin */
 }
 
 /* Compact grid layouts */

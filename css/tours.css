@@ -1,6 +1,6 @@
 /* Tours Section Styles */
 .tours-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background-color: #f9f9f9;
 }
 
@@ -12,7 +12,7 @@
 
 .tours-section .section-header {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     position: relative;
 }
 

@@ -13,17 +13,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
+      <!-- Custom CSS -->
     <link rel="stylesheet" href="css/hero-navbar.css">
     <link rel="stylesheet" href="css/hotels.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/accommodation-animations.css">
     
-    <style>
-        .accommodations-hero {
+    <style>.accommodations-hero {
             background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
             color: white;
-            padding: 120px 0 60px;
+            padding: 80px 0 40px; /* Reduced padding to make it slimmer */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -39,6 +38,12 @@
             background: url('images/Burj Khalifa.png') center/cover no-repeat;
             opacity: 0.1;
             z-index: 0;
+            animation: heroBackground 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes heroBackground {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
 
         .accommodations-hero-content {
@@ -50,20 +55,41 @@
         }
 
         .accommodations-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem; /* Smaller font size */
+            margin-bottom: 0.8rem;
             font-weight: 700;
-        }
-
-        .accommodations-hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            animation: fadeInDown 0.8s ease-out;
+        }        .accommodations-hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
         .accommodations-main {
             padding: 60px 0;
             background-color: #f8f9fa;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .accommodations-container {
@@ -72,12 +98,40 @@
             padding: 0 20px;
         }
 
+        .section-intro {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.2s forwards;
+        }
+
+        .section-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            transform: translateY(-20px);
+            opacity: 0;
+            animation: fadeInDown 0.8s ease-out 0.4s forwards;
+        }
+
+        .section-intro p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+        }
+
         .accommodations-filters {
             display: flex;
             gap: 15px;
             margin-bottom: 40px;
             flex-wrap: wrap;
             justify-content: center;
+            animation: fadeIn 1s ease-out 0.8s forwards;
+            opacity: 0;
         }
 
         .filter-btn {
@@ -99,9 +153,7 @@
             border-color: #27ae60;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
-        }
-
-        .accommodations-grid {
+        }        .accommodations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
@@ -113,8 +165,12 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
             position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.6s ease-out forwards;
+            animation-delay: calc(var(--card-index, 0) * 0.1s);
         }
 
         .accommodation-card:hover {
@@ -268,24 +324,6 @@
             box-shadow: 0 5px 15px rgba(49, 130, 206, 0.3);
         }
 
-        .section-intro {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 50px;
-        }
-
-        .section-intro h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .section-intro p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .accommodations-hero h1 {
@@ -436,27 +474,26 @@
             </div>
 
             <!-- Accommodations Grid -->
-            <div class="accommodations-grid">
-                <!-- Hotel 1 -->
+            <div class="accommodations-grid">                <!-- Hotel 1 -->
                 <div class="accommodation-card" data-category="hotels luxury">
                     <div class="accommodation-image">
-                        <img src="images/Burj Khalifa.png" alt="Downtown Dubai Palace">
-                        <div class="accommodation-badge">Top Rated</div>
+                        <img src="images/Ibis Styles Dubai Deira.jpg" alt="Ibis Styles Dubai Deira">
+                        <div class="accommodation-badge">DoJoin</div>
                         <div class="accommodation-price">
-                            <span>AED 450</span>
+                            <span>AED 279</span>
                             <div style="font-size: 0.8rem; opacity: 0.8;">per night</div>
                         </div>
                     </div>
                     <div class="accommodation-content">
-                        <h3>Downtown Dubai Palace</h3>
+                        <h3>Ibis Styles Dubai Deira</h3>
                         <div class="accommodation-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Downtown Dubai, UAE</span>
+                                <span>Deira, Dubai</span>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-star"></i>
-                                <span>4.8 (120 reviews)</span>
+                                <span>3-star hotel (near Deira City Center Metro)</span>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-users"></i>
@@ -464,10 +501,10 @@
                             </div>
                         </div>
                         <div class="accommodation-amenities">
-                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
-                            <span class="amenity-tag"><i class="fas fa-swimming-pool"></i> Pool</span>
-                            <span class="amenity-tag"><i class="fas fa-utensils"></i> Restaurant</span>
-                            <span class="amenity-tag"><i class="fas fa-car"></i> Parking</span>
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> Free WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-utensils"></i> Two Restaurants</span>
+                            <span class="amenity-tag"><i class="fas fa-umbrella-beach"></i> Alfresco Dining</span>
+                            <span class="amenity-tag"><i class="fas fa-car"></i> Free Parking</span>
                         </div>
                         <div class="accommodation-actions">
                             <a href="booking.html?service=hotel" class="view-details-btn">
@@ -477,70 +514,26 @@
                             <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
                         </div>
                     </div>
-                </div>
-
-                <!-- Hotel 2 -->
+                </div>                <!-- Hotel 2 -->
                 <div class="accommodation-card" data-category="hotels luxury">
                     <div class="accommodation-image">
-                        <img src="images/desert safari.png" alt="Dubai Marina Bay Hotel">
-                        <div class="accommodation-badge">Marina View</div>
+                        <img src="images/IBIS Hotel with AYA Universe Combo.jpg" alt="IBIS Hotel with AYA Universe Combo">
+                        <div class="accommodation-badge">DoJoin</div>
                         <div class="accommodation-price">
-                            <span>AED 380</span>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">per night</div>
+                            <span>AED 125</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">per person</div>
                         </div>
                     </div>
                     <div class="accommodation-content">
-                        <h3>Dubai Marina Bay Hotel</h3>
+                        <h3>IBIS Hotel with AYA Universe Combo</h3>
                         <div class="accommodation-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Dubai Marina, UAE</span>
+                                <span>Wafi City, Dubai</span>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-star"></i>
-                                <span>4.7 (185 reviews)</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-users"></i>
-                                <span>2-3 guests</span>
-                            </div>
-                        </div>
-                        <div class="accommodation-amenities">
-                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
-                            <span class="amenity-tag"><i class="fas fa-swimming-pool"></i> Pool</span>
-                            <span class="amenity-tag"><i class="fas fa-spa"></i> Spa</span>
-                            <span class="amenity-tag"><i class="fas fa-dumbbell"></i> Gym</span>
-                        </div>
-                        <div class="accommodation-actions">
-                            <a href="booking.html?service=hotel" class="view-details-btn">
-                                <span>View Details</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hotel 3 -->
-                <div class="accommodation-card" data-category="hotels budget">
-                    <div class="accommodation-image">
-                        <img src="images/Logistics.png" alt="Business Bay Executive">
-                        <div class="accommodation-badge">Business Bay</div>
-                        <div class="accommodation-price">
-                            <span>AED 320</span>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">per night</div>
-                        </div>
-                    </div>
-                    <div class="accommodation-content">
-                        <h3>Business Bay Executive</h3>
-                        <div class="accommodation-details">
-                            <div class="detail-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Business Bay, Dubai</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-star"></i>
-                                <span>4.6 (156 reviews)</span>
+                                <span>4.5 (163 reviews)</span>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-users"></i>
@@ -549,9 +542,9 @@
                         </div>
                         <div class="accommodation-amenities">
                             <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
-                            <span class="amenity-tag"><i class="fas fa-briefcase"></i> Business Center</span>
+                            <span class="amenity-tag"><i class="fas fa-swimming-pool"></i> Luxury Pool</span>
+                            <span class="amenity-tag"><i class="fas fa-ticket-alt"></i> AYA Universe Entry</span>
                             <span class="amenity-tag"><i class="fas fa-coffee"></i> Breakfast</span>
-                            <span class="amenity-tag"><i class="fas fa-car"></i> Parking</span>
                         </div>
                         <div class="accommodation-actions">
                             <a href="booking.html?service=hotel" class="view-details-btn">
@@ -561,123 +554,153 @@
                             <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
                         </div>
                     </div>
-                </div>
-
-                <!-- Bedspace 1 -->
-                <div class="accommodation-card" data-category="bedspace budget">
+                </div>                <!-- Hotel 3 -->                <div class="accommodation-card" data-category="hotels luxury">
                     <div class="accommodation-image">
-                        <img src="images/Dhow Cruise.png" alt="Deira Shared Accommodation">
+                        <img src="images/25Hours Hotel Dubai One Central.jpg" alt="25Hours Hotel Dubai One Central">
+                        <div class="accommodation-badge">Dojoin Blog</div>
+                        <div class="accommodation-price">
+                            <span>AED 500</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">per night</div>
+                        </div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>25Hours Hotel Dubai One Central</h3>
+                        <div class="accommodation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Near Museum of the Future, Dubai</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.7 (142 reviews)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span>1-3 guests</span>
+                            </div>
+                        </div>
+                        <div class="accommodation-amenities">
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-building"></i> Modern Design</span>
+                            <span class="amenity-tag"><i class="fas fa-map-marked-alt"></i> Central Location</span>
+                            <span class="amenity-tag"><i class="fas fa-utensils"></i> Restaurant</span>
+                        </div>
+                        <div class="accommodation-actions">
+                            <a href="booking.html?service=hotel" class="view-details-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>                <!-- Bedspace 1 -->                <div class="accommodation-card" data-category="bedspace budget">
+                    <div class="accommodation-image">
+                        <img src="images/Al Nahda Executive Single Bed Space.jpeg" alt="Al Nahda Executive Single Bed Space Bedroom">
                         <div class="accommodation-badge">Bedspace</div>
                         <div class="accommodation-price">
-                            <span>AED 850</span>
+                            <span>AED 1,600</span>
                             <div style="font-size: 0.8rem; opacity: 0.8;">per month</div>
                         </div>
                     </div>
                     <div class="accommodation-content">
-                        <h3>Deira Shared Accommodation</h3>
+                        <h3>Al Nahda Executive Single Bed Space</h3>
                         <div class="accommodation-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Deira, Dubai</span>
+                                <span>Al Nahda, Sharjah</span>
                             </div>
                             <div class="detail-item">
-                                <i class="fas fa-star"></i>
-                                <span>4.5 (92 reviews)</span>
+                                <i class="fas fa-building"></i>
+                                <span>Private apartment opposite Sahara Center</span>
                             </div>
                             <div class="detail-item">
                                 <i class="fas fa-users"></i>
-                                <span>Shared room</span>
+                                <span>Single occupancy</span>
+                            </div>
+                        </div>
+                        <div class="accommodation-amenities">
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-bed"></i> Single Bed</span>
+                            <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
+                            <span class="amenity-tag"><i class="fas fa-shopping-cart"></i> Near Mall</span>
+                        </div>
+                        <div class="accommodation-actions">
+                            <a href="booking.html?service=hotel" class="view-details-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>                <!-- Bedspace 2 -->                <div class="accommodation-card" data-category="bedspace budget">
+                    <div class="accommodation-image">
+                        <img src="images/Al Majaz 1 Bed Space.jpg" alt="Al Majaz 1 Bed Space">
+                        <div class="accommodation-badge">Bedspace</div>
+                        <div class="accommodation-price">
+                            <span>Call for Price</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">Flexible rates</div>
+                        </div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Al Majaz 1 Bed Space</h3>
+                        <div class="accommodation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Al Majaz 1, Sharjah</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Near Al Khan Beach (2.2 km)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-fish"></i>
+                                <span>Close to Sharjah Aquarium (2.7 km)</span>
+                            </div>
+                        </div>
+                        <div class="accommodation-amenities">
+                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
+                            <span class="amenity-tag"><i class="fas fa-bed"></i> Shared Room</span>
+                            <span class="amenity-tag"><i class="fas fa-umbrella-beach"></i> Beach Access</span>
+                            <span class="amenity-tag"><i class="fas fa-bus"></i> Public Transport</span>
+                        </div>
+                        <div class="accommodation-actions">
+                            <a href="booking.html?service=hotel" class="view-details-btn">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>                <!-- Bedspace 3 -->                <div class="accommodation-card" data-category="bedspace budget">
+                    <div class="accommodation-image">
+                        <img src="images/Rolla Area Working Ladies Bedspace.jpg" alt="Rolla Area Working Ladies Bedspace">
+                        <div class="accommodation-badge">For Ladies</div>
+                        <div class="accommodation-price">
+                            <span>AED 250-600</span>
+                            <div style="font-size: 0.8rem; opacity: 0.8;">per month</div>
+                        </div>
+                    </div>
+                    <div class="accommodation-content">
+                        <h3>Rolla Area Working Ladies Bedspace</h3>
+                        <div class="accommodation-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Rolla Area, Sharjah</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-female"></i>
+                                <span>For working ladies only</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-home"></i>
+                                <span>Fully furnished spaces</span>
                             </div>
                         </div>
                         <div class="accommodation-amenities">
                             <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
                             <span class="amenity-tag"><i class="fas fa-bed"></i> Shared Room</span>
                             <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
-                            <span class="amenity-tag"><i class="fas fa-subway"></i> Metro Near</span>
-                        </div>
-                        <div class="accommodation-actions">
-                            <a href="booking.html?service=hotel" class="view-details-btn">
-                                <span>View Details</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bedspace 2 -->
-                <div class="accommodation-card" data-category="bedspace budget">
-                    <div class="accommodation-image">
-                        <img src="images/Road trip.png" alt="Karama Budget Bedspace">
-                        <div class="accommodation-badge">Bedspace</div>
-                        <div class="accommodation-price">
-                            <span>AED 750</span>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">per month</div>
-                        </div>
-                    </div>
-                    <div class="accommodation-content">
-                        <h3>Karama Budget Bedspace</h3>
-                        <div class="accommodation-details">
-                            <div class="detail-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Karama, Dubai</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-star"></i>
-                                <span>4.3 (67 reviews)</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-users"></i>
-                                <span>Shared room</span>
-                            </div>
-                        </div>
-                        <div class="accommodation-amenities">
-                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
-                            <span class="amenity-tag"><i class="fas fa-bed"></i> Shared Room</span>
-                            <span class="amenity-tag"><i class="fas fa-subway"></i> Metro Near</span>
                             <span class="amenity-tag"><i class="fas fa-shield-alt"></i> Secure</span>
-                        </div>
-                        <div class="accommodation-actions">
-                            <a href="booking.html?service=hotel" class="view-details-btn">
-                                <span>View Details</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                            <a href="booking.html?service=hotel" class="book-now-btn">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bedspace 3 -->
-                <div class="accommodation-card" data-category="bedspace budget">
-                    <div class="accommodation-image">
-                        <img src="images/background .png" alt="Al Qusais Bedspace">
-                        <div class="accommodation-badge">Monthly</div>
-                        <div class="accommodation-price">
-                            <span>AED 900</span>
-                            <div style="font-size: 0.8rem; opacity: 0.8;">per month</div>
-                        </div>
-                    </div>
-                    <div class="accommodation-content">
-                        <h3>Al Qusais Comfort Bedspace</h3>
-                        <div class="accommodation-details">
-                            <div class="detail-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Al Qusais, Dubai</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-star"></i>
-                                <span>4.4 (78 reviews)</span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-users"></i>
-                                <span>Shared room</span>
-                            </div>
-                        </div>
-                        <div class="accommodation-amenities">
-                            <span class="amenity-tag"><i class="fas fa-wifi"></i> WiFi</span>
-                            <span class="amenity-tag"><i class="fas fa-bed"></i> Shared Room</span>
-                            <span class="amenity-tag"><i class="fas fa-utensils"></i> Kitchen</span>
-                            <span class="amenity-tag"><i class="fas fa-tv"></i> TV Lounge</span>
                         </div>
                         <div class="accommodation-actions">
                             <a href="booking.html?service=hotel" class="view-details-btn">
@@ -758,40 +781,8 @@
     <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-text">Chat with us</span>
-    </a>
-
-    <!-- JavaScript -->
+    </a>    <!-- JavaScript -->
     <script src="js/hero-navbar.js"></script>
-    <script>
-        // Filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const accommodationCards = document.querySelectorAll('.accommodation-card');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
-                    btn.classList.add('active');
-
-                    const filter = btn.getAttribute('data-filter');
-
-                    accommodationCards.forEach(card => {
-                        if (filter === 'all') {
-                            card.style.display = 'block';
-                        } else {
-                            const categories = card.getAttribute('data-category').split(' ');
-                            if (categories.includes(filter)) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    </script>
+    <script src="js/accommodation-animations.js"></script>
 </body>
 </html>

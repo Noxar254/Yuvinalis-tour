@@ -1,0 +1,139 @@
+/* Accommodation Animations CSS */
+
+/* Animation keyframes */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroBackground {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Hero Section */
+.accommodations-hero {
+    background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+    color: white;
+    padding: 80px 0 40px; /* Slimmer padding */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.accommodations-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/Burj Khalifa.png') center/cover no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+    animation: heroBackground 20s infinite alternate ease-in-out;
+}
+
+.accommodations-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+.accommodations-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.accommodations-hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Section Intro Animations */
+.section-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.2s forwards;
+}
+
+.section-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fadeInDown 0.8s ease-out 0.4s forwards;
+}
+
+.section-intro p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.accommodations-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeIn 1s ease-out 0.8s forwards;
+    opacity: 0;
+}
+
+/* Card Animations */
+.accommodation-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Animation classes that will be applied by JavaScript */
+.animate-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.appear {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+/* Animation delay for staggered card appearance */
+.accommodation-card:nth-child(1) { animation-delay: 0.1s; }
+.accommodation-card:nth-child(2) { animation-delay: 0.2s; }
+.accommodation-card:nth-child(3) { animation-delay: 0.3s; }
+.accommodation-card:nth-child(4) { animation-delay: 0.4s; }
+.accommodation-card:nth-child(5) { animation-delay: 0.5s; }
+.accommodation-card:nth-child(6) { animation-delay: 0.6s; }

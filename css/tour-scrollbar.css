@@ -1,0 +1,109 @@
+/* Custom scrollbar for tour sections */
+.tours-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: #ff9500 #f5f5f5;
+}
+
+.tours-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tours-wrapper::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.tours-wrapper::-webkit-scrollbar-thumb {
+    background: #ff9500;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.tours-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #ff5e3a;
+}
+
+/* Enhanced scroll indicator dots */
+.scroll-indicator {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.scroll-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.scroll-dot.active {
+    background-color: #ff9500;
+    transform: scale(1.2);
+}
+
+.scroll-dot:hover {
+    background-color: #ffb347;
+    transform: scale(1.1);
+}
+
+.scroll-dot.active::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 1px solid #ff9500;
+    opacity: 0.5;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}
+
+/* Enhanced scroll arrows */
+.scroll-arrow {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.scroll-arrow:hover {
+    background-color: #ff9500;
+    transform: scale(1.1);
+}
+
+.scroll-arrow:hover i {
+    color: white;
+}
+
+.scroll-arrow i {
+    color: #333;
+    transition: all 0.3s ease;
+}

@@ -9,12 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->      <link rel="stylesheet" href="css/hero-navbar.css">
+    <!-- Custom CSS -->    <link rel="stylesheet" href="css/hero-navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/tours.css">
     <link rel="stylesheet" href="css/mobile-tours.css">
     <link rel="stylesheet" href="css/event-buttons.css">
     <link rel="stylesheet" href="css/tour-modal.css">
+    <link rel="stylesheet" href="css/tour-preview-modal.css">
+    <link rel="stylesheet" href="css/tour-image-animations.css">
+    <link rel="stylesheet" href="css/tour-scrollbar.css">
     <link rel="stylesheet" href="css/tour-buttons.css">
     <style>
         /* Tours Page Specific Styles */
@@ -789,8 +792,12 @@
                 setTimeout(() => {
                     icon.classList.remove('fa-bounce');
                 }, 800);
-            });        });
-    </script>
+            });        });    </script>
+
+    <!-- Enhanced Tour JavaScript -->
+    <script src="js/tour-image-loader.js"></script>
+    <script src="js/tour-preview-modal.js"></script>
+    <script src="js/tours-scroll.js"></script>
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener">

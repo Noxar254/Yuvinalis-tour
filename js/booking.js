@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         message += '. Could you please provide me with more information?';
         
         const encodedMessage = encodeURIComponent(message);
-        whatsappBtn.href = `https://wa.me/254123456789?text=${encodedMessage}`;
+        whatsappBtn.href = `https://wa.me/971561510931?text=${encodedMessage}`;
     }
 
     // Get service display name
@@ -132,10 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Update WhatsApp message when name changes
-    document.getElementById('full-name').addEventListener('input', updateWhatsAppMessage);
-
-    // Handle form submission
-    simpleForm.addEventListener('submit', function(e) {
+    document.getElementById('full-name').addEventListener('input', updateWhatsAppMessage);    // Handle form submission
+    simpleForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         // Get form data
@@ -168,34 +166,49 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Simulate form submission
-        submitForm(data);
+        // Submit form to Google Sheets
+        await submitForm(data);
     });
 
-    // Simulate form submission
-    function submitForm(data) {
+    // Submit form to Google Sheets
+    async function submitForm(data) {
         // Show loading state
         const submitBtn = simpleForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
         submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
         submitBtn.disabled = true;
         
-        // Simulate API call
-        setTimeout(() => {
-            // Hide form and show success message
-            simpleBooking.style.display = 'none';
-            bookingSuccess.style.display = 'block';
+        try {
+            // Submit to Google Sheets using the API
+            const result = await window.GoogleSheetsAPI.submitBookingEnquiry(data);
             
-            // Scroll to success message
-            bookingSuccess.scrollIntoView({ behavior: 'smooth' });
-            
-            // In a real application, you would send the data to your server here
-            console.log('Form data:', data);
-            
-            // Reset button state (in case user goes back)
+            if (result.success) {
+                // Hide form and show success message
+                simpleBooking.style.display = 'none';
+                bookingSuccess.style.display = 'block';
+                
+                // Scroll to success message
+                bookingSuccess.scrollIntoView({ behavior: 'smooth' });
+                
+                // Reset form
+                simpleForm.reset();
+                
+                // Reset tour selection dropdown visibility
+                document.getElementById('tour-selection').style.display = 'none';
+                document.getElementById('tour-type').removeAttribute('required');
+                
+                console.log('Booking enquiry submitted successfully:', data);
+            } else {
+                throw new Error('Submission failed');
+            }
+        } catch (error) {
+            console.error('Error submitting booking enquiry:', error);
+            alert('There was an error submitting your enquiry. Please try again or contact us directly at info@yuvinalistourism.com.');
+        } finally {
+            // Reset button state
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
-        }, 2000);
+        }
     }
 
     // Set minimum date to today

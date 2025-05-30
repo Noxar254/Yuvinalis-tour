@@ -3,9 +3,11 @@
  * Handles form submissions to Google Sheets
  */
 
-class GoogleSheetsAPI {    constructor() {
-        // Google Apps Script Web App URL - Your actual deployment URL
+class GoogleSheetsAPI {    constructor() {        // Google Apps Script Web App URL - Your actual deployment URL
         this.scriptURL = 'https://script.google.com/macros/s/AKfycbxFcqFZN4lF-IfEJJ3wSsSnNZE0dQKXRY7iOfO54ffHzbjzw7HAzWJ6D2uRce7Gu4IV/exec';
+        
+        // Booking form Google Apps Script URL - Deployment URL for booking form handler
+        this.bookingScriptURL = 'https://script.google.com/macros/s/AKfycbwQjM3Gtsm4tMyCX5s1pWVXEAWq0_FOn_ndJ28h7MqOgo6d2OTiatOMGMnsFycEksksYw/exec';
         
         // Production mode is now active - form submissions will be saved to Google Sheets
         this.isProduction = true;
@@ -61,11 +63,68 @@ class GoogleSheetsAPI {    constructor() {
     }
 
     /**
+     * Submit booking enquiry data to Google Sheets
+     * @param {Object} formData - The form data object
+     * @returns {Promise} - Promise that resolves on successful submission
+     */
+    async submitBookingEnquiry(formData) {
+        try {
+            // Add timestamp and form type
+            const submissionData = {
+                ...formData,
+                timestamp: new Date().toISOString(),
+                formType: 'Booking Enquiry',
+                submissionId: this.generateBookingSubmissionId()
+            };
+
+            if (this.isProduction && this.bookingScriptURL !== 'YOUR_BOOKING_SCRIPT_URL_HERE') {
+                // Production: Send to Google Sheets
+                const response = await fetch(this.bookingScriptURL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams(submissionData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.text();
+                console.log('Booking form submitted to Google Sheets:', result);
+                return { success: true, message: 'Booking enquiry submitted successfully' };
+            } else {
+                // Development: Log data and simulate success
+                console.log('BOOKING ENQUIRY SUBMISSION (Development Mode):', submissionData);
+                console.log('Data would be sent to Google Sheets in production');
+                
+                // Simulate network delay
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                return { success: true, message: 'Booking enquiry submitted successfully (dev mode)' };
+            }
+        } catch (error) {
+            console.error('Error submitting booking form:', error);
+            throw new Error('Failed to submit booking enquiry. Please try again.');
+        }
+    }
+
+    /**
      * Generate a unique submission ID
      * @returns {string} - Unique submission ID
      */
     generateSubmissionId() {
         return 'VISA_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+    /**
+     * Generate a unique submission ID for booking enquiries
+     * @returns {string} - Unique submission ID
+     */
+    generateBookingSubmissionId() {
+        return 'BOOKING_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
     }
 
     /**

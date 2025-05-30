@@ -210,4 +210,25 @@
     .scroll-progress {
         display: none;
     }
+    
+    /* Override desktop styles for mobile centering */
+    .hotels-wrapper {
+        perspective: none !important;
+        transform-style: flat !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 0 !important;
+    }
+    
+    .hotel-card {
+        transform: none !important;
+        margin: 0 auto !important;
+        max-width: 400px !important;
+        width: 100% !important;
+    }
+    
+    .hotel-card:hover {
+        transform: translateY(-5px) !important;
+    }
 }

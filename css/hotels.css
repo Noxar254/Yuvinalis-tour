@@ -311,28 +311,48 @@
         padding: 30px 0;
     }
     
+    .hotels-section .container {
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .hotels-scroll-container {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         margin: 20px 0;
     }
     
     .hotels-wrapper {
-        display: block;
-        padding: 0;
-        overflow: visible;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        gap: 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     
     .hotel-card {
-        flex: none;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-        display: block;
+        flex: none !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        display: block !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
     }
     
     .hotel-card:nth-child(n+4) {
-        display: none;
+        display: none !important;
     }
     
     .hotel-image {
@@ -398,8 +418,17 @@
         padding: 20px 0;
     }
     
+    .hotels-section .container {
+        padding: 0 15px;
+    }
+    
+    .hotels-wrapper {
+        gap: 15px !important;
+    }
+    
     .hotel-card {
-        margin-bottom: 15px;
+        max-width: 100% !important;
+        margin: 0 auto !important;
     }
     
     .hotel-image {
@@ -441,6 +470,36 @@
     .mobile-view-all .view-all-btn {
         font-size: 0.9rem;
         padding: 8px 18px;
+    }
+}
+
+/* Extra small screens for better centering */
+@media (max-width: 375px) {
+    .hotels-section .container {
+        padding: 0 10px;
+    }
+    
+    .hotel-card {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    .hotel-content h3 {
+        font-size: 0.95rem;
+    }
+    
+    .hotel-details .detail-item {
+        font-size: 0.75rem;
+    }
+    
+    .hotel-amenities span {
+        font-size: 0.65rem;
+        padding: 2px 5px;
+    }
+    
+    .mobile-view-all .view-all-btn {
+        font-size: 0.85rem;
+        padding: 7px 16px;
     }
 }
 

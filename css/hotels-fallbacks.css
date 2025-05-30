@@ -140,3 +140,27 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+/* Mobile centering override for touch devices */
+@media (max-width: 768px) {
+    .hotels-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        scroll-snap-type: none !important;
+        -webkit-overflow-scrolling: auto !important;
+        overflow: visible !important;
+    }
+    
+    .hotel-card {
+        scroll-snap-align: none !important;
+        margin: 0 auto !important;
+        max-width: 400px !important;
+        width: 100% !important;
+        float: none !important;
+    }
+    
+    .hotels-wrapper::after {
+        display: none !important;
+    }
+}

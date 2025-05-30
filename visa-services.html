@@ -14,70 +14,171 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/hero-navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/services.css">
-    <style>
-        /* Visa Services Page Specific Styles */
+    <link rel="stylesheet" href="css/services.css">    <style>        /* Page Entrance Animation */
+        body {
+            opacity: 0;
+            animation: pageEnter 1.2s ease-out forwards;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes pageEnter {
+            to {
+                opacity: 1;
+            }
+        }/* Visa Services Page Specific Styles */
         .visa-hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/background .png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/visa services.jpg');
             background-size: cover;
             background-position: center;
-            height: 50vh;
+            height: 40vh;
+            min-height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
-        
-        .visa-hero-content {
+
+        .visa-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 197, 253, 0.1));
+            z-index: 1;
+        }
+          .visa-hero-content {
             max-width: 900px;
-            padding: 0 20px;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroContentFadeIn 1.5s 0.5s forwards;
         }
-        
-        .visa-hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+
+        @keyframes heroContentFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+          .visa-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
-        
-        .visa-hero-content p {
-            font-size: 1.2rem;
+
+        .visa-hero-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            transform: translateX(-50%);
+            animation: underlineExpand 1s 1.5s forwards;
+        }
+
+        @keyframes underlineExpand {
+            to {
+                width: 100%;
+            }
+        }
+          .visa-hero-content p {
+            font-size: 1.3rem;
             margin-bottom: 30px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroTextFadeIn 1s 2s forwards;
+            line-height: 1.6;
+        }
+
+        @keyframes heroTextFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }        .visa-types-section {
-            padding: 80px 0;
-            background-color: #f8f9fa;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visa-types-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(147, 197, 253, 0.1) 0%, transparent 50%);
+            z-index: 1;
         }
 
         .visa-types-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 35px;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        .visa-card {
-            background: white;
-            border-radius: 15px;
+            position: relative;
+            z-index: 2;
+        }.visa-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             z-index: 1;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardFadeIn 0.8s forwards;
+        }
+
+        .visa-card:nth-child(1) { animation-delay: 0.1s; }
+        .visa-card:nth-child(2) { animation-delay: 0.2s; }
+        .visa-card:nth-child(3) { animation-delay: 0.3s; }
+        .visa-card:nth-child(4) { animation-delay: 0.4s; }
+        .visa-card:nth-child(5) { animation-delay: 0.5s; }
+        .visa-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes cardFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .visa-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(59, 130, 246, 0.2);
         }
 
         .visa-card::before {
@@ -87,9 +188,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(253, 187, 45, 0.1), rgba(255, 203, 66, 0.1));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(147, 197, 253, 0.05));
             opacity: 0;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.6s ease;
             z-index: -1;
         }
 
@@ -97,10 +198,25 @@
             opacity: 1;
         }
 
+        .visa-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .visa-card:hover::after {
+            left: 100%;
+        }
+
         .visa-card-header {
-            background: linear-gradient(45deg, #FDBB2D, #FFA500);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8, #1e40af);
             color: white;
-            padding: 25px 20px;
+            padding: 30px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -113,23 +229,37 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .visa-card-header h3 {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
+        }        .visa-card-header h3 {
             margin: 0;
             font-size: 1.6rem;
             font-weight: 600;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
             position: relative;
             z-index: 2;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: titleSlideIn 0.8s 0.3s forwards;
+        }
+
+        @keyframes titleSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .visa-card-header .visa-icon {
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: block;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
         }
 
         .visa-card-header .wave {
@@ -138,88 +268,154 @@
             left: 0;
             width: 100%;
             height: 15px;
-            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 134" xmlns="http://www.w3.org/2000/svg"><path d="M0 98.3l50-21.5C100 55.2 200 12.6 300 6.5c100-6 200 24.4 300 33.4 100 9 200-3.6 300-6 100-2.5 200 4.1 250 7.4l50 3.3v94H0z" fill="rgba(255, 255, 255, 0.2)"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 134" xmlns="http://www.w3.org/2000/svg"><path d="M0 98.3l50-21.5C100 55.2 200 12.6 300 6.5c100-6 200 24.4 300 33.4 100 9 200-3.6 300-6 100-2.5 200 4.1 250 7.4l50 3.3v94H0z" fill="rgba(255, 255, 255, 0.3)"/></svg>');
             background-size: 1200px 134px;
             background-repeat: repeat-x;
             opacity: 0.6;
+            animation: waveFlow 4s linear infinite;
         }
 
-        .visa-card-body {
-            padding: 25px;
+        @keyframes waveFlow {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1200px; }
+        }        .visa-card-body {
+            padding: 30px;
+            position: relative;
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
         }
 
         .visa-card-body p {
-            margin-bottom: 20px;
-            color: #555;
+            margin-bottom: 25px;
+            color: #64748b;
             font-size: 1rem;
-            line-height: 1.6;
+            line-height: 1.7;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: textFadeIn 0.8s 0.5s forwards;
+        }
+
+        @keyframes textFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .visa-requirements {
-            margin-bottom: 25px;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            padding-top: 15px;
+            margin-bottom: 30px;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+            padding-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: requirementsFadeIn 0.8s 0.7s forwards;
+        }
+
+        @keyframes requirementsFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .visa-requirements h4 {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-size: 1.1rem;
-            color: #333;
+            color: #1e293b;
             display: flex;
             align-items: center;
+            font-weight: 600;
         }
 
         .visa-requirements h4::before {
             content: '\f00c';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
-            margin-right: 10px;
-            color: #FDBB2D;
+            margin-right: 12px;
+            color: #3b82f6;
             font-size: 0.9rem;
+            animation: checkPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes checkPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
         .visa-requirements ul {
             padding-left: 15px;
             margin-bottom: 15px;
+        }        .visa-requirements li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #64748b;
+            position: relative;
+            padding-left: 30px;
+            list-style: none;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: listItemSlide 0.6s forwards;
         }
 
-        .visa-requirements li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #555;
-            position: relative;
-            padding-left: 25px;
-            list-style: none;
+        .visa-requirements li:nth-child(1) { animation-delay: 0.8s; }
+        .visa-requirements li:nth-child(2) { animation-delay: 0.9s; }
+        .visa-requirements li:nth-child(3) { animation-delay: 1.0s; }
+        .visa-requirements li:nth-child(4) { animation-delay: 1.1s; }
+
+        @keyframes listItemSlide {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .visa-requirements li::before {
             content: '';
             position: absolute;
             left: 0;
-            top: 8px;
-            width: 6px;
-            height: 6px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background-color: #4099ff;
-            box-shadow: 0 0 0 2px rgba(64, 153, 255, 0.2);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            animation: dotPulse 2s ease-in-out infinite;
         }
 
-        .enquire-button {
+        @keyframes dotPulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            }
+            50% { 
+                transform: scale(1.2);
+                box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.1);
+            }
+        }        .enquire-button {
             display: inline-block;
-            background: linear-gradient(45deg, #4099ff, #73b4ff);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
             color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 14px 24px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border: none;
             cursor: pointer;
             width: 100%;
             text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(64, 153, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: buttonFadeIn 0.8s 1.2s forwards;
+        }
+
+        @keyframes buttonFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .enquire-button span {
@@ -229,77 +425,272 @@
         }
 
         .enquire-button i {
-            margin-left: 8px;
+            margin-left: 10px;
             position: relative;
             z-index: 2;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .enquire-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
         }
 
         .enquire-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+            z-index: 3;
+        }
+
+        .enquire-button:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .enquire-button:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .enquire-button:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .enquire-button:hover i {
+            transform: translateX(6px) rotate(15deg);
+        }
+
+        .enquire-button:active {
+            transform: translateY(-2px) scale(0.98);
+        }        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: headerFadeIn 1s forwards;
+        }
+
+        @keyframes headerFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: titleFadeIn 1s 0.2s forwards;
+        }
+
+        @keyframes titleFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header p {
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: descFadeIn 1s 0.4s forwards;
+        }
+
+        @keyframes descFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-line {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            margin: 20px auto 30px;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: scaleX(0);
+            animation: lineFadeIn 1s 0.6s forwards;
+        }
+
+        @keyframes lineFadeIn {
+            to {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        .header-line::after {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #73b4ff, #4099ff);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 1;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            animation: lineShimmer 2s ease-in-out infinite;
         }
 
-        .enquire-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(64, 153, 255, 0.4);
-        }
-
-        .enquire-button:hover::after {
-            transform: translateX(100%);
-        }
-
-        .enquire-button:hover i {
-            transform: translateX(4px);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        .header-line {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #FDBB2D, #FFA500);
-            margin: 15px auto 30px;
-            border-radius: 2px;
-        }
-
-        @media (max-width: 992px) {
+        @keyframes lineShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }        @media (max-width: 992px) {
             .visa-types-container {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            
+            .visa-hero {
+                height: 35vh;
+                min-height: 350px;
+            }
+            
+            .visa-hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .visa-hero-content p {
+                font-size: 1.2rem;
             }
         }
 
         @media (max-width: 768px) {
             .visa-types-container {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .visa-hero {
+                height: 30vh;
+                min-height: 320px;
+            }
+            
+            .visa-hero-content {
+                padding: 30px 20px;
             }
             
             .visa-hero-content h1 {
                 font-size: 2.5rem;
+                margin-bottom: 15px;
             }
+            
+            .visa-hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .visa-card {
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .visa-hero {
+                height: 28vh;
+                min-height: 280px;
+            }
+            
+            .visa-hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .visa-hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Scroll-triggered animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .scroll-animate.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced process section */
+        .visa-process-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visa-process-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(147, 197, 253, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .process-steps {
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-step {
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .process-step.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .process-step:nth-child(1).animate { transition-delay: 0.1s; }
+        .process-step:nth-child(2).animate { transition-delay: 0.2s; }
+        .process-step:nth-child(3).animate { transition-delay: 0.3s; }
+        .process-step:nth-child(4).animate { transition-delay: 0.4s; }
+        .process-step:nth-child(5).animate { transition-delay: 0.5s; }
+
+        .step-icon {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3) !important;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+
+        .process-step:hover .step-icon {
+            transform: translateY(-10px) rotate(5deg) scale(1.1);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4) !important;
         }
     </style>
 </head>
@@ -697,29 +1088,153 @@
                     <a href="index.html#jobs-dubai" class="jobs-btn">Jobs in UAE</a>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
+        </div>        <div class="footer-bottom">
             <p>&copy; 2025 Yuvinalis Tourism. All rights reserved.</p>
-        </div>    </footer>
-
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="js/hero-navbar.js"></script>
     <script>
-        // Add smooth scrolling for anchor links
+        // Enhanced smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
+
+        // Scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    
+                    // Special handling for process steps
+                    if (entry.target.classList.contains('process-step')) {
+                        entry.target.classList.add('animate');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add scroll-animate class to relevant elements
+            const elementsToAnimate = document.querySelectorAll(
+                '.visa-card, .process-step, .section-header'
+            );
+            
+            elementsToAnimate.forEach(el => {
+                if (!el.classList.contains('process-step')) {
+                    el.classList.add('scroll-animate');
+                }
+                observer.observe(el);
+            });
+
+            // Enhanced card hover effects
+            const visaCards = document.querySelectorAll('.visa-card');
+            visaCards.forEach(card => {
+                // Add ripple effect on click
+                card.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const ripple = document.createElement('div');
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s ease-out;
+                        pointer-events: none;
+                        z-index: 100;
+                    `;
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+
+                // Parallax effect on scroll
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.1;
+                    
+                    if (card.getBoundingClientRect().top < window.innerHeight && 
+                        card.getBoundingClientRect().bottom > 0) {
+                        card.style.transform = `translateY(${rate}px)`;
+                    }
+                });
+            });
+
+            // Add staggered animation for visa requirements list items
+            const requirements = document.querySelectorAll('.visa-requirements');
+            requirements.forEach(req => {
+                const listItems = req.querySelectorAll('li');
+                listItems.forEach((item, index) => {
+                    item.style.animationDelay = `${0.8 + (index * 0.1)}s`;
+                });
+            });
+
+            // Enhanced button animations
+            const buttons = document.querySelectorAll('.enquire-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Floating animation for icons
+            const icons = document.querySelectorAll('.visa-icon');
+            icons.forEach((icon, index) => {
+                icon.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+
+        // Add CSS animations dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+            
+            .visa-card {
+                will-change: transform;
+            }
+            
+            .process-step {
+                will-change: transform, opacity;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>

@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>More Dubai Attractions | Beyond Miles Adventures</title>
-    <meta name="description" content="Explore more exciting Dubai attractions and experiences including Dubai Miracle Garden, Ferrari World, and many more must-visit destinations.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Dubai Tours | Beyond Miles Adventures</title>
+    <meta name="description" content="Explore exciting Dubai tours and experiences including Dubai Miracle Garden, Ferrari World, and many more must-visit destinations.">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -21,40 +20,187 @@
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/dubai attraction tour.jpg');
             background-size: cover;
             background-position: center;
-            height: 50vh;
+            height: 15vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
             position: relative;
+            padding: 80px 20px 40px;
         }
         
         .events-hero-content {
             max-width: 900px;
             padding: 0 20px;
+            animation: slideInUp 1s ease-out;
         }
         
         .events-hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 0;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInScale 1.2s ease-out;
         }
-        
-        .events-hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .events-section {
+          .events-section {
             padding: 60px 0;
             background-color: #f9f9f9;
+        }
+        
+        /* Cool Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+          @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 8px 25px rgba(21, 97, 109, 0.4);
+                transform: translateY(-3px) scale(1.05);
+            }
+            50% {
+                box-shadow: 0 12px 35px rgba(21, 97, 109, 0.6);
+                transform: translateY(-3px) scale(1.08);
+            }
+        }
+        
+        /* Enhanced Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Floating Animation for Icons */
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .detail-item i {
+            animation: floatIcon 2s ease-in-out infinite;
+            animation-delay: calc(var(--i) * 0.2s);
+        }
+        
+        /* Button Hover Enhancement */
+        .book-event-btn {
+            background: linear-gradient(135deg, #15616d 0%, #0e4550 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .book-event-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .book-event-btn:hover::before {
+            left: 100%;
+        }
+        
+        .book-event-btn:hover {
+            background: linear-gradient(135deg, #0e4550 0%, #15616d 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(21, 97, 109, 0.3);
+        }
+        
+        /* Enhanced Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: slideInUp 0.8s ease-out 0.3s both;
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #15616d 0%, #43cea2 100%);
+            border-radius: 2px;
+            animation: expandLine 1s ease-out 1s both;
+        }
+        
+        @keyframes expandLine {
+            from { width: 0; }
+            to { width: 60px; }
+        }
+        
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: #15616d;
+            margin-bottom: 15px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #15616d 0%, #43cea2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .container {
@@ -62,10 +208,10 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        .section-header {
+          .section-header {
             text-align: center;
             margin-bottom: 40px;
+            animation: slideInUp 0.8s ease-out 0.3s both;
         }
         
         .section-header h2 {
@@ -81,13 +227,13 @@
             max-width: 700px;
             margin: 0 auto;
         }
-        
-        .filter-options {
+          .filter-options {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 30px;
             gap: 10px;
+            animation: fadeInScale 1s ease-out 0.5s both;
         }
         
         .filter-option {
@@ -97,16 +243,38 @@
             border-radius: 30px;
             color: #15616d;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .filter-option:hover::before {
+            left: 100%;
         }
         
         .filter-option.active, .filter-option:hover {
             background-color: #15616d;
             color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(21, 97, 109, 0.4);
         }
         
-        .events-grid {
+        .filter-option.active {
+            animation: pulseGlow 1.5s infinite alternate;
+        }
+          .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
@@ -118,18 +286,62 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             display: flex;
             flex-direction: column;
             height: 100%;
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+            animation: cardSlideIn 0.8s ease-out forwards;
+            position: relative;
+        }
+        
+        .event-card:nth-child(1) { animation-delay: 0.1s; }
+        .event-card:nth-child(2) { animation-delay: 0.2s; }
+        .event-card:nth-child(3) { animation-delay: 0.3s; }
+        .event-card:nth-child(4) { animation-delay: 0.4s; }
+        .event-card:nth-child(5) { animation-delay: 0.5s; }
+        .event-card:nth-child(6) { animation-delay: 0.6s; }
+        .event-card:nth-child(7) { animation-delay: 0.7s; }
+        .event-card:nth-child(8) { animation-delay: 0.8s; }
+        .event-card:nth-child(9) { animation-delay: 0.9s; }
+        .event-card:nth-child(10) { animation-delay: 1s; }
+        
+        @keyframes cardSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
         
         .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(21, 97, 109, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
         }
         
-        .event-image {
+        .event-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(21, 97, 109, 0.05) 0%, rgba(21, 97, 109, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            border-radius: 10px;
+        }
+        
+        .event-card:hover::after {
+            opacity: 1;
+        }
+          .event-image {
             height: 200px;
             overflow: hidden;
             position: relative;
@@ -144,11 +356,30 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: scale(1.05);
         }
         
         .event-card:hover .event-image img {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(1deg);
+            filter: brightness(1.1) contrast(1.1);
+        }
+        
+        .event-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(21, 97, 109, 0.1) 0%, transparent 50%, rgba(21, 97, 109, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .event-card:hover .event-image::before {
+            opacity: 1;
         }
         
         .event-content {
@@ -212,29 +443,9 @@
             color: #15616d;
             line-height: 1.2;
         }
-        
-        .per-person {
+          .per-person {
             font-size: 0.8rem;
             color: #888;
-        }
-        
-        .book-event-btn {
-            background-color: #15616d;
-            color: white;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: background-color 0.3s, transform 0.2s;
-            font-weight: 500;
-        }
-        
-        .book-event-btn:hover {
-            background-color: #0e4550;
-            transform: translateY(-2px);
         }
         
         .load-more-container {
@@ -293,25 +504,22 @@
         }
     </style>
 </head>
-<body>
-    <!-- Header Section -->
+<body>    <!-- Header Section -->
     <header class="events-hero">
         <div class="events-hero-content">
-            <h1>More Dubai Attractions</h1>
-            <p>Discover additional breathtaking attractions and unforgettable experiences in the vibrant city of Dubai</p>
+            <h1>Dubai Tours</h1>
+            <p>Discover breathtaking tours and unforgettable experiences in the vibrant city of Dubai</p>
         </div>
     </header>
 
     <!-- Events Section -->
-    <section class="events-section">
-        <div class="container">
+    <section class="events-section">        <div class="container">
             <div class="section-header">
-                <h2>Explore More Dubai Attractions</h2>
-                <p>Continue your journey through the wonders of Dubai with these additional must-visit attractions</p>
+                <h2>Explore Dubai Tours</h2>
+                <p>Continue your journey through the wonders of Dubai with these exciting tour experiences</p>
             </div>
-            
-            <div class="filter-options">
-                <div class="filter-option active" data-filter="all">All Attractions</div>
+              <div class="filter-options">
+                <div class="filter-option active" data-filter="all">All Tours</div>
                 <div class="filter-option" data-filter="family">Family-Friendly</div>
                 <div class="filter-option" data-filter="cultural">Cultural</div>
                 <div class="filter-option" data-filter="adventure">Adventure</div>
@@ -792,12 +1000,11 @@
     </footer>
     
     <!-- JavaScript Files -->
-    <script src="js/hero-navbar.js"></script>
-    <script>
-        // Event filter functionality
+    <script src="js/hero-navbar.js"></script>    <script>
+        // Enhanced Event filter functionality
         document.querySelectorAll('.filter-option').forEach(option => {
             option.addEventListener('click', function() {
-                // Update active class
+                // Update active class with animation
                 document.querySelectorAll('.filter-option').forEach(opt => {
                     opt.classList.remove('active');
                 });
@@ -806,22 +1013,41 @@
                 // Get selected filter
                 const filter = this.getAttribute('data-filter');
                 
-                // Filter cards
-                document.querySelectorAll('.event-card').forEach(card => {
+                // Enhanced Filter animation with staggered effect
+                document.querySelectorAll('.event-card').forEach((card, index) => {
                     if (filter === 'all') {
-                        card.style.display = 'flex';
-                        card.style.opacity = '1';
-                        // Hide category label when showing all
-                        card.classList.remove('show-category');
+                        setTimeout(() => {
+                            card.style.display = 'flex';
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px) scale(0.95)';
+                            // Hide category label when showing all
+                            card.classList.remove('show-category');
+                            
+                            // Animate in
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0) scale(1)';
+                            }, 50);
+                        }, index * 100);
                     } else {
                         const categories = card.getAttribute('data-category').split(' ');
                         if (categories.includes(filter)) {
-                            card.style.display = 'flex';
-                            card.style.opacity = '1';
-                            // Show category label when filtering
-                            card.classList.add('show-category');
+                            setTimeout(() => {
+                                card.style.display = 'flex';
+                                card.style.opacity = '0';
+                                card.style.transform = 'translateY(20px) scale(0.95)';
+                                // Show category label when filtering
+                                card.classList.add('show-category');
+                                
+                                // Animate in
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0) scale(1)';
+                                }, 50);
+                            }, index * 100);
                         } else {
                             card.style.opacity = '0';
+                            card.style.transform = 'translateY(-20px) scale(0.9)';
                             setTimeout(() => {
                                 card.style.display = 'none';
                             }, 300);
@@ -831,17 +1057,96 @@
             });
         });
         
-        // Book event buttons
+        // Enhanced Book event buttons with ripple effect
         document.querySelectorAll('.book-event-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                window.location.href = 'booking.html?booking=attraction';
+            btn.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.6);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    pointer-events: none;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+                
+                // Navigate after animation
+                setTimeout(() => {
+                    window.location.href = 'booking.html?booking=attraction';
+                }, 300);
             });
         });
         
-        // Apply smooth transitions for cards
-        document.querySelectorAll('.event-card').forEach(card => {
-            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease';
+        // Scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    
+                    // Add staggered animation for event cards
+                    if (entry.target.classList.contains('event-card')) {
+                        const cards = document.querySelectorAll('.event-card');
+                        const index = Array.from(cards).indexOf(entry.target);
+                        entry.target.style.animationDelay = `${index * 0.1}s`;
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for scroll animations
+        document.querySelectorAll('.event-card, .section-header, .filter-options').forEach(el => {
+            el.classList.add('scroll-reveal');
+            observer.observe(el);
         });
+        
+        // Enhanced card transitions
+        document.querySelectorAll('.event-card').forEach(card => {
+            card.style.transition = 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            
+            // Add floating icon delays
+            const detailItems = card.querySelectorAll('.detail-item i');
+            detailItems.forEach((icon, index) => {
+                icon.style.setProperty('--i', index);
+            });
+        });
+        
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            
+            .book-event-btn {
+                position: relative;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>

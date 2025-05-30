@@ -7,30 +7,27 @@
     <link rel="stylesheet" href="css/hero-navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .booking-hero {
-            background: linear-gradient(135deg, rgba(0, 74, 173, 0.9), rgba(0, 123, 191, 0.8)), url('images/background\ .png');
+    <style>        .booking-hero {
+            background: linear-gradient(135deg, rgba(0, 74, 173, 0.85), rgba(0, 123, 191, 0.75)), url('images/flight\ booking.jpg');
             background-size: cover;
             background-position: center;
-            min-height: 70vh;
+            min-height: 15vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            padding: 100px 20px 80px;
-        }
-
-        .booking-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            padding: 110px 20px 25px;
+        }        .booking-hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.3rem;
             font-weight: 700;
         }
 
         .booking-hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.95;
         }
 
         .booking-section {
@@ -177,11 +174,20 @@
         .enquire-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 74, 173, 0.3);
-        }
-
-        @media (max-width: 768px) {
+        }        @media (max-width: 768px) {
+            .booking-hero {
+                min-height: 12vh;
+                padding: 90px 20px 20px;
+            }
+            
             .booking-hero h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .booking-hero p {
+                font-size: 0.9rem;
+                margin-bottom: 0.3rem;
             }
 
             .booking-content {

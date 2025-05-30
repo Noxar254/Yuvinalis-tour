@@ -23,41 +23,214 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/mobile-events.css">
     <link rel="stylesheet" href="css/event-buttons.css">
-    <style>        /* Events Page Specific Styles */
+    <style>        /* Events Page Specific Styles with Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
+            }
+        }
+        
+        @keyframes backgroundZoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
         .events-hero {
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/dubai attraction tour.jpg');
             background-size: cover;
             background-position: center;
-            height: 50vh;
+            background-attachment: fixed;
+            height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
             position: relative;
+            overflow: hidden;
+            animation: backgroundZoom 20s ease-in-out infinite alternate;
+        }
+        
+        .events-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0, 123, 255, 0.1) 0%, 
+                rgba(255, 193, 7, 0.1) 25%, 
+                rgba(40, 167, 69, 0.1) 50%, 
+                rgba(220, 53, 69, 0.1) 75%, 
+                rgba(102, 16, 242, 0.1) 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .events-hero-content {
             max-width: 900px;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
         
         .events-hero-content h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 15px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: slideInLeft 1.2s ease-out, glow 3s ease-in-out infinite;
+            background: linear-gradient(45deg, #ffffff, #f8f9fa, #e9ecef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        
+        .events-hero-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #007bff, #ffc107, #28a745);
+            border-radius: 2px;
+            animation: float 2s ease-in-out infinite;
         }
         
         .events-hero-content p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1.5s ease-out 0.3s both;
+            line-height: 1.6;
+        }
+        
+        /* Floating particles effect */
+        .events-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px, 80px 80px, 100px 100px;
+            animation: floatParticles 20s linear infinite;
+            pointer-events: none;
+        }
+          @keyframes floatParticles {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        
+        /* Hero stats animation */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            animation: fadeInUp 2s ease-out 0.6s both;
+        }
+        
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffc107;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+          .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #e9ecef;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .events-hero {
+                height: 60vh;
+                background-attachment: scroll;
+            }
+            
+            .events-hero-content h1 {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+            
+            .events-hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-stats {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
         }
         
         .events-filter {
@@ -317,11 +490,23 @@
                 <div class="btn-shine"></div>
             </a>
         </div>
-    </nav>    <!-- Events Hero Section -->
-    <section class="events-hero">
+    </nav>    <!-- Events Hero Section -->    <section class="events-hero">
         <div class="events-hero-content">
             <h1>Dubai Attractions & Experiences</h1>
             <p>Discover the best attractions and experiences Dubai has to offer. From thrilling desert safaris to breathtaking views from the world's tallest buildings.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Attractions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-label">Happy Visitors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">Hours Support</div>
+                </div>            </div>
         </div>
     </section>
 
@@ -1135,8 +1320,43 @@
         </div>    </footer>
     
     <!-- JavaScript Files -->
-    <script src="js/hero-navbar.js"></script>    
-    <script>
+    <script src="js/hero-navbar.js"></script>      <script>
+        // Animated counter function
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + (target === 1000 ? '+' : '');
+                }
+            }
+            updateCounter();
+        }
+        
+        // Initialize counters when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start counter animation after hero animations
+            setTimeout(() => {
+                document.querySelectorAll('.stat-number').forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    animateCounter(counter, target);
+                });            }, 1500);
+            
+            // Parallax effect for hero background
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.events-hero');
+                if (hero && scrolled < hero.offsetHeight) {
+                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+        });
+        
         // Event filter functionality
         document.querySelectorAll('.filter-option').forEach(option => {
             option.addEventListener('click', function() {

@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvinalis Shop - Cart & Checkout</title>
+    <meta name="description" content="Shop for premium travel and adventure gear at Yuvinalis Tourism. Secure checkout with M-Pesa, card, and PayPal payment options.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <style>
+        /* Shop Page Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }        .shop-hero {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(29, 78, 216, 0.8)), url('images/shop.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 0 30px;
+            text-align: center;
+        }        .shop-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .shop-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .shop-main {
+            padding: 60px 0;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Products Grid */
+        .products-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+        }
+
+        .product-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1e293b;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 15px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            border: 2px solid #3b82f6;
+            background: white;
+            color: #3b82f6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 35px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .cart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .cart-count {
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .cart-items {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .cart-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #1e293b;
+        }
+
+        .cart-item-price {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .remove-item {
+            color: #ef4444;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .remove-item:hover {
+            background: #fef2f2;
+        }
+
+        .cart-summary {
+            border-top: 2px solid #f1f5f9;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .summary-row.total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1e293b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 10px;
+            margin-top: 15px;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            margin-top: 30px;
+        }
+
+        .payment-methods {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .payment-method {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .payment-method:hover,
+        .payment-method.selected {
+            border-color: #3b82f6;
+            background: #f8fafc;
+        }
+
+        .payment-method input {
+            margin: 0;
+        }
+
+        .payment-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
+        .mpesa-icon {
+            background: #00c851;
+            color: white;
+        }
+
+        .card-icon {
+            background: #2196f3;
+            color: white;
+        }
+
+        .paypal-icon {
+            background: #ffc439;
+            color: #003087;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .checkout-btn:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+        }
+
+        .empty-cart i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .shop-main {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cart-sidebar {
+                position: static;
+                order: -1;
+            }
+        }        @media (max-width: 768px) {
+            .shop-hero {
+                padding: 90px 0 25px;
+            }
+            
+            .shop-hero h1 {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .shop-main {
+                padding: 40px 0;
+            }
+        }
+
+        /* Loading and Success States */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .error-message {
+            background: #ef4444;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Phone Number Input for M-Pesa */
+        .mpesa-details {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+
+        .mpesa-details.show {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="full-text">Yuvinalis Tourism</span>
+                    <span class="short-text">YT</span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-controls">
+            <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+                <a href="index.html#services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#visa-processing" class="dropdown-link">Visa Processing</a></li>
+                    <li><a href="flight-booking.html" class="dropdown-link">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html" class="dropdown-link">Hotel Booking</a></li>
+                    <li><a href="index.html#airport-pickups" class="dropdown-link">Airport Pickups</a></li>
+                    <li><a href="index.html#tour-services" class="dropdown-link">Tour Services</a></li>
+                    <li><a href="index.html#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
+                    <li><a href="index.html#dubai-business-setup" class="dropdown-link">Dubai Business Set Up</a></li>
+                    <li><a href="freight-services.html" class="dropdown-link">Freight Services</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="events.html" class="nav-link dropdown-toggle">Events & Hikes <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="dropdown-link">All Events</a></li>
+                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Events</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#tours" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#dubai-tours" class="dropdown-link">Dubai Tours</a></li>
+                    <li><a href="index.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
+                    <li><a href="index.html#international-tours" class="dropdown-link">International Tours</a></li>
+                    <li><a href="index.html#maasai-mara-tours" class="dropdown-link">Maasai Mara Tours</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#hotels" class="dropdown-link">Hotels</a></li>
+                    <li><a href="index.html#bedspaces" class="dropdown-link">Bedspaces</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="freight-services.html" class="nav-link dropdown-toggle">Freight <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="freight-services.html#dubai-to-kenya" class="dropdown-link">Dubai to Kenya</a></li>
+                    <li><a href="freight-services.html#kenya-to-dubai" class="dropdown-link">Kenya to Dubai</a></li>
+                    <li><a href="freight-services.html#other-countries" class="dropdown-link">Other Countries</a></li>
+                </ul>
+            </li>
+            <li class="book-tour-mobile">
+                <a href="booking.html?booking=tour" class="book-tour-btn-mobile">
+                    <span class="btn-text">Book Tour</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-cta">
+            <a href="booking.html?booking=tour" class="book-tour-btn">
+                <span class="btn-text">Book Tour</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                <div class="btn-shine"></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="shop-hero">
+        <div class="container">
+            <h1>Yuvinalis Shop</h1>
+            <p>Premium gear for your travel and adventure needs</p>
+        </div>
+    </header>
+
+    <!-- Main Shop Content -->
+    <main class="container">
+        <div class="shop-main">
+            <!-- Products Section -->
+            <section class="products-section">
+                <h2 class="section-title">
+                    <i class="fas fa-shopping-bag"></i>
+                    All Products
+                </h2>
+                
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </section>
+
+            <!-- Cart Sidebar -->
+            <aside class="cart-sidebar">
+                <div class="cart-header">
+                    <h3>Shopping Cart</h3>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+
+                <div class="cart-items" id="cartItems">
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                </div>
+
+                <div class="cart-summary" id="cartSummary" style="display: none;">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">KES 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping:</span>
+                        <span id="shipping">Free</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">KES 0</span>
+                    </div>
+                </div>
+
+                <!-- Payment Section -->
+                <div class="payment-section" id="paymentSection" style="display: none;">
+                    <h4>Payment Method</h4>
+                    <div class="payment-methods">
+                        <label class="payment-method" for="mpesa">
+                            <input type="radio" id="mpesa" name="payment" value="mpesa">
+                            <div class="payment-icon mpesa-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div>
+                                <strong>M-Pesa</strong>
+                                <small>Pay with your mobile money</small>
+                            </div>
+                        </label>
+
+                        <div class="mpesa-details" id="mpesaDetails">
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number:</label>
+                                <input type="tel" id="phoneNumber" placeholder="254XXXXXXXXX" maxlength="12">
+                            </div>
+                        </div>
+
+                        <label class="payment-method" for="card">
+                            <input type="radio" id="card" name="payment" value="card">
+                            <div class="payment-icon card-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div>
+                                <strong>Credit/Debit Card</strong>
+                                <small>Visa, Mastercard accepted</small>
+                            </div>
+                        </label>
+
+                        <label class="payment-method" for="paypal">
+                            <input type="radio" id="paypal" name="payment" value="paypal">
+                            <div class="payment-icon paypal-icon">
+                                <i class="fab fa-paypal"></i>
+                            </div>
+                            <div>
+                                <strong>PayPal</strong>
+                                <small>Pay with your PayPal account</small>
+                            </div>
+                        </label>
+                    </div>
+
+                    <button class="checkout-btn" id="checkoutBtn" disabled>
+                        <i class="fas fa-lock"></i>
+                        Secure Checkout
+                    </button>
+                </div>
+            </aside>
+        </div>
+    </main>    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
+    </a>
+
+    <!-- Footer -->
+    <footer>        
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo">
+                    <h3>Yuvinalis Tourism</h3>
+                </div>
+                <p>Your Gateway to Dubai and Beyond</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/yuvinalistourism" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yuvinalistourism" class="social-icon twitter-custom" aria-label="X (Twitter)" target="_blank">
+                        <img src="./images/Xlogo.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://instagram.com/yuvinalistourism" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@yuvinalistourism" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://threads.net/@yuvinalistourism" class="social-icon threads-custom" aria-label="Threads" target="_blank">
+                        <img src="./images/Thread Logo.png" alt="Threads">
+                    </a>
+                </div>
+            </div>            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="index.html#upcoming-events">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="index.html#get-in-touch">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="visa-services.html">Visa Processing</a></li>
+                    <li><a href="flight-booking.html">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html">Hotel Booking</a></li>
+                    <li><a href="index.html#tour-services">Tour Services</a></li>
+                    <li><a href="index.html#freight-services">Freight Services</a></li>
+                </ul>
+            </div>            
+            <div class="footer-section">
+                <h3>Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="accommodations.html">Dubai Hotels</a></li>
+                    <li><a href="index.html#hotels">Bedspaces</a></li>
+                    <li><a href="events.html">Dubai Tours</a></li>
+                    <li><a href="index.html#dubai-business-setup">Business Setup</a></li>
+                </ul>
+                <!-- Jobs in UAE Button -->
+                <div class="jobs-button-container">
+                    <a href="index.html#jobs-uae" class="jobs-uae-btn">
+                        <i class="fas fa-briefcase"></i>
+                        Jobs in UAE
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yuvinalis Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/hero-navbar.js"></script>
+    <script>
+        // Product data
+        const products = [
+            {
+                id: 1,
+                name: "Yuvinalis Hoodie",
+                price: 2500,
+                image: "images/logo hoodie.jpg",
+                badge: "Best Seller"
+            },
+            {
+                id: 2,
+                name: "Trail Master Sneakers",
+                price: 4800,
+                image: "images/sneakers.png",
+                badge: "New"
+            },
+            {
+                id: 3,
+                name: "Adventure Water Flask",
+                price: 2000,
+                image: "images/water.png",
+                badge: "Popular"
+            },
+            {
+                id: 4,
+                name: "Carbon Trekking Poles",
+                price: 1200,
+                image: "images/poles.png",
+                badge: "Hot Deal"
+            },
+            {
+                id: 5,
+                name: "Swimming Goggles",
+                price: 500,
+                image: "images/Googles.png",
+                badge: "Special"
+            }
+        ];
+
+        // Shopping cart
+        let cart = [];
+
+        // DOM elements
+        const productsGrid = document.getElementById('productsGrid');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartSummary = document.getElementById('cartSummary');
+        const paymentSection = document.getElementById('paymentSection');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const subtotalEl = document.getElementById('subtotal');
+        const totalEl = document.getElementById('total');
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts();
+            updateCartDisplay();
+            setupPaymentMethods();
+            setupCheckout();
+        });
+
+        // Render products
+        function renderProducts() {
+            productsGrid.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="product-badge">${product.badge}</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>${product.name}</h3>
+                        <div class="product-price">KES ${product.price.toLocaleString()}</div>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="changeQuantity(${product.id}, -1)">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" class="quantity-input" id="qty-${product.id}" value="1" min="1" max="10">
+                            <button class="quantity-btn" onclick="changeQuantity(${product.id}, 1)">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                            <span>Add to Cart</span>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Change quantity
+        function changeQuantity(productId, change) {
+            const input = document.getElementById(`qty-${productId}`);
+            const newValue = parseInt(input.value) + change;
+            if (newValue >= 1 && newValue <= 10) {
+                input.value = newValue;
+            }
+        }
+
+        // Add to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const quantity = parseInt(document.getElementById(`qty-${productId}`).value);
+            
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: quantity
+                });
+            }
+            
+            updateCartDisplay();
+            showSuccessMessage('Product added to cart!');
+        }
+
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartDisplay();
+        }
+
+        // Update cart quantity
+        function updateCartQuantity(productId, newQuantity) {
+            if (newQuantity <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+            
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity = newQuantity;
+                updateCartDisplay();
+            }
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                cartSummary.style.display = 'none';
+                paymentSection.style.display = 'none';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">KES ${item.price.toLocaleString()}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn" onclick="updateCartQuantity(${item.id}, ${item.quantity - 1})">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn" onclick="updateCartQuantity(${item.id}, ${item.quantity + 1})">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="remove-item" onclick="removeFromCart(${item.id})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `).join('');
+                
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                subtotalEl.textContent = `KES ${subtotal.toLocaleString()}`;
+                totalEl.textContent = `KES ${subtotal.toLocaleString()}`;
+                
+                cartSummary.style.display = 'block';
+                paymentSection.style.display = 'block';
+            }
+        }
+
+        // Setup payment methods
+        function setupPaymentMethods() {
+            const paymentInputs = document.querySelectorAll('input[name="payment"]');
+            const mpesaDetails = document.getElementById('mpesaDetails');
+            
+            paymentInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    // Remove selected class from all methods
+                    document.querySelectorAll('.payment-method').forEach(method => {
+                        method.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to current method
+                    this.closest('.payment-method').classList.add('selected');
+                    
+                    // Show/hide M-Pesa details
+                    if (this.value === 'mpesa') {
+                        mpesaDetails.classList.add('show');
+                    } else {
+                        mpesaDetails.classList.remove('show');
+                    }
+                    
+                    // Enable checkout button
+                    checkoutBtn.disabled = false;
+                });
+            });
+        }
+
+        // Setup checkout
+        function setupCheckout() {
+            checkoutBtn.addEventListener('click', function() {
+                const selectedPayment = document.querySelector('input[name="payment"]:checked');
+                
+                if (!selectedPayment) {
+                    showErrorMessage('Please select a payment method');
+                    return;
+                }
+                
+                if (cart.length === 0) {
+                    showErrorMessage('Your cart is empty');
+                    return;
+                }
+                
+                // Validate M-Pesa phone number if selected
+                if (selectedPayment.value === 'mpesa') {
+                    const phoneNumber = document.getElementById('phoneNumber').value;
+                    if (!phoneNumber || !phoneNumber.match(/^254\d{9}$/)) {
+                        showErrorMessage('Please enter a valid phone number (254XXXXXXXXX)');
+                        return;
+                    }
+                }
+                
+                // Process checkout
+                processCheckout(selectedPayment.value);
+            });
+        }
+
+        // Process checkout
+        function processCheckout(paymentMethod) {
+            checkoutBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            checkoutBtn.disabled = true;
+            
+            // Simulate payment processing
+            setTimeout(() => {
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                
+                if (paymentMethod === 'mpesa') {
+                    const phoneNumber = document.getElementById('phoneNumber').value;
+                    showSuccessMessage(`M-Pesa payment request sent to ${phoneNumber}. Please check your phone and enter your PIN.`);
+                } else if (paymentMethod === 'card') {
+                    // Redirect to Stripe or other card processor
+                    window.open('https://checkout.stripe.com/pay/test_checkout', '_blank');
+                } else if (paymentMethod === 'paypal') {
+                    // Redirect to PayPal
+                    window.open('https://www.paypal.com/checkout', '_blank');
+                }
+                
+                // Clear cart after successful payment
+                setTimeout(() => {
+                    cart = [];
+                    updateCartDisplay();
+                    showSuccessMessage('Order placed successfully! You will receive a confirmation email shortly.');
+                    checkoutBtn.innerHTML = '<i class="fas fa-lock"></i> Secure Checkout';
+                    checkoutBtn.disabled = true;
+                }, 3000);
+                
+            }, 2000);
+        }
+
+        // Show success message
+        function showSuccessMessage(message) {
+            const messageEl = document.createElement('div');
+            messageEl.className = 'success-message';
+            messageEl.textContent = message;
+            document.querySelector('.cart-sidebar').insertBefore(messageEl, document.querySelector('.cart-header'));
+            
+            setTimeout(() => {
+                messageEl.remove();
+            }, 5000);
+        }
+
+        // Show error message
+        function showErrorMessage(message) {
+            const messageEl = document.createElement('div');
+            messageEl.className = 'error-message';
+            messageEl.textContent = message;
+            document.querySelector('.cart-sidebar').insertBefore(messageEl, document.querySelector('.cart-header'));
+            
+            setTimeout(() => {
+                messageEl.remove();
+            }, 5000);
+        }
+
+        // Handle URL parameters for direct product addition
+        const urlParams = new URLSearchParams(window.location.search);
+        const productParam = urlParams.get('product');
+        if (productParam) {
+            const productId = parseInt(productParam);
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                setTimeout(() => {
+                    addToCart(productId);
+                }, 500);
+            }
+        }
+    </script>
+</body>
+</html>

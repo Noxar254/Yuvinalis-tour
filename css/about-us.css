@@ -218,18 +218,22 @@
 
 .about-btn {
     display: flex;
-    align-items: center;    gap: 8px;
-    padding: 12px 24px;
+    align-items: center;    gap: 6px;
+    padding: 8px 16px;
     border: none;
     border-radius: 5px;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
     position: relative;
     overflow: hidden;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
+    min-width: auto;
+    max-width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .about-btn::before {
@@ -278,6 +282,12 @@
     transition: transform 0.3s ease;
 }
 
+.about-btn span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .about-btn:hover i {
     transform: translateX(5px);
 }
@@ -288,19 +298,21 @@
         grid-template-columns: 1fr;
         gap: 30px;
         text-align: center;
-    }    .about-image {
+    }
+      .about-image {
         order: -1;
-        margin: 0 -20px;
-        width: calc(100% + 40px);
-        padding: 0 10px;
+        margin: 0;
+        width: 100%;
+        padding: 0;
     }
     
     .image-wrapper {
-        max-width: none;
+        max-width: 100%;
         width: 100%;
         margin: 0;
-        border-radius: 8px;
+        border-radius: 12px;
         height: 280px;
+        overflow: hidden;
     }
     
     .image-wrapper img {
@@ -314,55 +326,129 @@
     
     .about-description {
         font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: left;
+        margin-bottom: 25px;
     }
     
+    /* Force mobile grid layout for features */
     .about-features {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto 40px auto;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        max-width: 100%;
+        margin: 0 auto 30px auto;
+    }
+    
+    .feature-item {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .feature-item i {
+        font-size: 24px;
+        padding: 12px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+    
+    .feature-content {
+        flex: 1;
+    }
+    
+    .feature-content h4 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .feature-content p {
+        font-size: 0.85rem;
+        line-height: 1.4;
     }
 
     .about-buttons {
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
-    
-    .about-btn {
+      .about-btn {
         width: 100%;
-        max-width: 280px;
+        max-width: 200px;
         justify-content: center;
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        min-height: 42px;
     }
 }
 
-@media (max-width: 480px) {
-    .about-section {
-        padding: 0 0 40px 0;
+/* Additional Mobile Overrides for Inline Styles */
+@media (max-width: 768px) {
+    /* Override any inline grid styles on mobile */
+    .about-section .about-features[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Ensure proper text alignment on mobile */
+    .about-text {
+        text-align: left;
+    }
+    
+    .about-text .section-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+      /* Improve button touch targets */
+    .about-btn {
+        min-height: 42px;
+        touch-action: manipulation;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra small screens */
+    .about-content {
+        gap: 25px;
+        padding: 0 15px;
     }
     
     .about-image {
-        margin: 0 -15px;
-        width: calc(100% + 30px);
-        padding: 0 8px;
+        margin: 0;
+        padding: 0;
     }
     
     .image-wrapper {
-        height: 220px;
+        height: 240px;
+        border-radius: 10px;
     }
     
     .section-header h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+    
+    .about-description {
+        font-size: 0.95rem;
     }
     
     .feature-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+        padding: 10px;
+        border-radius: 8px;
+    }
+      .feature-item i {
+        font-size: 18px;
+        padding: 8px;
     }
     
+    /* Make buttons even smaller on mobile */
     .about-btn {
-        padding: 12px 24px;
-        font-size: 0.9rem;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        letter-spacing: 0.2px;
+        gap: 4px;
+        max-width: 120px;
     }
 }
 

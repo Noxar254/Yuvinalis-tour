@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Adventure | Beyond Miles</title>
+    <title>Contact Us | Yuvinalis Tourism</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -87,326 +87,203 @@
                 <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
                 <div class="btn-shine"></div>
             </a>
-        </div>
-    </nav><!-- Hero Section -->
+        </div>    </nav>    <!-- Hero Section -->
     <section class="booking-hero">
         <div class="booking-hero-content">
-            <h1>Book Your Next Adventure</h1>
-            <p>From mountain hikes to safari experiences, secure your spot on our incredible journeys</p>
-            <div class="booking-options">
-                <button class="booking-option-btn active" data-form="tour-booking">
-                    <i class="fas fa-globe-africa"></i> Book a Tour
-                </button>
-                <button class="booking-option-btn" data-form="event-booking">
-                    <i class="fas fa-calendar-day"></i> Book an Event
-                </button>
-            </div>
-            <div class="booking-hero-badges">
-                <div class="badge"><i class="fas fa-calendar-check"></i> Easy Booking</div>
-                <div class="badge"><i class="fas fa-users"></i> Small Groups</div>
-                <div class="badge"><i class="fas fa-shield-alt"></i> Safe Adventures</div>
-                <div class="badge"><i class="fas fa-handshake"></i> 100% Satisfaction</div>
-            </div>
+            <h1>Book Our Services</h1>
+            <p>Book your travel services or make an enquiry - we're here to help you plan the perfect trip</p>
         </div>
-    </section>    <!-- Booking Section -->
+    </section><!-- Booking Section -->
     <section class="booking-section">
         <div class="container">
             <div class="booking-container">
-                <!-- Tour Booking Form (visible by default) -->
-                <div class="booking-content" id="tour-booking">
-                    <div class="booking-flex">
-                        <!-- Form Section -->
-                        <div class="booking-form-section">
-                            <div class="form-header">
-                                <h2>Reserve Your Tour</h2>
-                                <p>Fill in your details below to book your adventure</p>
-                            </div>
-                            <form id="tour-form" class="booking-form">
-                                <div class="form-group">
-                                    <label for="tour">Select Tour</label>                                    <select id="tour" name="tour" required>                                        <option value="" disabled selected>Choose your tour adventure</option>
-                                        <!-- Kenya Tours -->
-                                        <optgroup label="Kenya Tours">
-                                            <option value="maasai">Maasai Mara Safari Experience</option>
-                                            <option value="amboseli">Amboseli Kilimanjaro View</option>
-                                            <option value="diani">Diani Beach Coastal Getaway</option>
-                                            <option value="mtkenya">Mt. Kenya Climbing Expedition</option>
-                                            <option value="nakuru">Lake Nakuru National Park</option>
-                                            <option value="naivasha">Lake Naivasha Adventure</option>
-                                            <option value="city">City Explorer Walk</option>
-                                            <option value="nature">Nature Adventure Trail</option>
-                                            <option value="history">Historical Cultural Walk</option>
-                                            <option value="food">Food Tasting Tour</option>
-                                        </optgroup>
-                                        <!-- International Tours -->
-                                        <optgroup label="International Tours">
-                                            <option value="tanzania">Tanzania Explorer Safari</option>
-                                            <option value="uganda">Uganda Gorilla Trekking</option>
-                                            <option value="southafrica">South Africa Explorer</option>
-                                        </optgroup>                                        <!-- Dubai Tours & Attractions -->
-                                        <optgroup label="Dubai Tours & Attractions">
-                                            <option value="desertsafari">Desert Safari</option>
-                                            <option value="creekdhow">Creek Dhow Cruise</option>
-                                            <option value="marinadhow">Marina Dhow Cruise</option>
-                                            <option value="burjkhalifa">Burj Khalifa at the Top</option>
-                                            <option value="dubaitour">Dubai City Tour</option>
-                                            <option value="globalvillage">Global Village</option>
-                                            <option value="atlantis">Atlantis Aquaventure</option>
-                                            <option value="imgworld">IMG Worlds of Adventure</option>
-                                            <option value="dubaiframe">Dubai Frame</option>
-                                            <option value="miraclegarden">Dubai Miracle Garden</option>
-                                            <option value="jetski">Jet Ski Experience</option>
-                                            <option value="wildwadi">Wild Wadi Water Park</option>
-                                            <option value="museumlakesafari">Museum of the Future & Lake Safari</option>
-                                            <option value="dubaioperashow">Dubai Opera Show</option>
-                                            <option value="dubaiaquarium">Dubai Aquarium & Underwater Zoo</option>
-                                            <option value="zabeel">Zabeel Park & Dubai Garden Glow</option>
-                                            <option value="goldenframeart">Golden Frame Art Gallery</option>
-                                            <option value="traditionalsouks">Traditional Souks Tour</option>
-                                            <option value="heliride">Helicopter Ride over Dubai</option>
-                                            <option value="luxuryyacht">Luxury Yacht Party</option>
-                                            <option value="skydiving">Skydiving Experience</option>
-                                            <option value="hotairballoon">Hot Air Balloon Ride</option>
-                                            <option value="privatebeach">Private Beach Experience</option>
-                                            <option value="quadbiking">Quad Biking Adventure</option>
-                                            <option value="camelriding">Camel Riding Experience</option>
-                                            <option value="sandboarding">Sand Boarding</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="tour-date">Date</label>
-                                        <input type="date" id="tour-date" name="date" required min="2025-05-27">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tour-guests">Number of Guests</label>
-                                        <div class="guest-counter">
-                                            <button type="button" class="counter-btn minus"><i class="fas fa-minus"></i></button>
-                                            <input type="number" id="tour-guests" name="guests" value="2" min="1" max="20" readonly>
-                                            <button type="button" class="counter-btn plus"><i class="fas fa-plus"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="tour-name">Full Name</label>
-                                        <input type="text" id="tour-name" name="name" placeholder="Enter your full name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tour-phone">Phone Number</label>
-                                        <input type="tel" id="tour-phone" name="phone" placeholder="Your contact number" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tour-email">Email Address</label>
-                                    <input type="email" id="tour-email" name="email" placeholder="Your email address" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tour-requests">Special Requests</label>
-                                    <textarea id="tour-requests" name="specialRequests" rows="3" placeholder="Any special requirements or requests?"></textarea>
-                                </div>
-                                <div class="form-actions">
-                                    <button type="submit" class="primary-btn">
-                                        <span>Complete Tour Booking</span>
-                                        <i class="fas fa-check-circle"></i>
-                                    </button>
-                                    <a href="https://wa.me/254123456789" class="whatsapp-btn" id="tour-whatsapp-book">
-                                        <i class="fab fa-whatsapp"></i>
-                                        <span>Book via WhatsApp</span>
-                                    </a>
-                                </div>
-                            </form>
+                <!-- Simplified Booking Form -->
+                <div class="booking-content" id="simple-booking">
+                    <div class="simple-booking-form">                        <div class="form-header">
+                            <h2>Book a Service</h2>
+                            <p>Fill in your details below and we'll get back to you with the best options for your requirements</p>
                         </div>
                         
-                        <!-- Tour Details Section -->
-                        <div class="tour-details-section">
-                            <div class="tour-placeholder" id="tour-placeholder">
-                                <div class="placeholder-icon">
-                                    <i class="fas fa-mountain"></i>
-                                </div>
-                                <h2>Tour Details</h2>
-                                <p>Select a tour to see details</p>
+                        <form id="simple-form" class="booking-form">                            <div class="form-group">
+                                <label for="service-type">Service Type *</label>
+                                <select id="service-type" name="serviceType" required>
+                                    <option value="" disabled selected>Select the service you need</option>
+                                    <option value="event-booking">Event Booking</option>
+                                    <option value="tour-booking">Tour Booking</option>
+                                    <option value="flight-booking">Flight Booking</option>
+                                    <option value="hotel-enquiry">Hotel Enquiry</option>
+                                    <option value="general-enquiry">General Enquiry</option>
+                                </select>
                             </div>
-                            <div class="tour-details-content" id="tour-details">
-                                <div class="tour-image">
-                                    <img src="images/background .png" alt="Tour Image" id="tour-img">
+                            
+                            <!-- Tour Selection Dropdown (Hidden by default) -->
+                            <div class="form-group" id="tour-selection" style="display: none;">
+                                <label for="tour-type">Select Tour *</label>
+                                <select id="tour-type" name="tourType">
+                                    <option value="" disabled selected>Choose your tour adventure</option>
+                                    <!-- Dubai Tours & Attractions -->
+                                    <optgroup label="Dubai Tours & Attractions">
+                                        <option value="desert-safari">Desert Safari</option>
+                                        <option value="creek-dhow">Creek Dhow Cruise</option>
+                                        <option value="marina-dhow">Marina Dhow Cruise</option>
+                                        <option value="burj-khalifa">Burj Khalifa at the Top</option>
+                                        <option value="dubai-city-tour">Dubai City Tour</option>
+                                        <option value="global-village">Global Village</option>
+                                        <option value="atlantis">Atlantis Aquaventure</option>
+                                        <option value="img-world">IMG Worlds of Adventure</option>
+                                        <option value="dubai-frame">Dubai Frame</option>
+                                        <option value="miracle-garden">Dubai Miracle Garden</option>
+                                        <option value="jet-ski">Jet Ski Experience</option>
+                                        <option value="wild-wadi">Wild Wadi Water Park</option>
+                                        <option value="museum-future">Museum of the Future & Lake Safari</option>
+                                        <option value="dubai-opera">Dubai Opera Show</option>
+                                        <option value="dubai-aquarium">Dubai Aquarium & Underwater Zoo</option>
+                                        <option value="zabeel-park">Zabeel Park & Dubai Garden Glow</option>
+                                        <option value="golden-frame">Golden Frame Art Gallery</option>
+                                        <option value="traditional-souks">Traditional Souks Tour</option>
+                                        <option value="helicopter-ride">Helicopter Ride over Dubai</option>
+                                        <option value="luxury-yacht">Luxury Yacht Party</option>
+                                        <option value="skydiving">Skydiving Experience</option>
+                                        <option value="hot-air-balloon">Hot Air Balloon Ride</option>
+                                        <option value="private-beach">Private Beach Experience</option>
+                                        <option value="quad-biking">Quad Biking Adventure</option>
+                                        <option value="camel-riding">Camel Riding Experience</option>
+                                        <option value="sand-boarding">Sand Boarding</option>
+                                    </optgroup>
+                                    <!-- Domestic Tours (Kenya) -->
+                                    <optgroup label="Domestic Tours (Kenya)">
+                                        <option value="maasai-mara">Maasai Mara Safari Experience</option>
+                                        <option value="amboseli">Amboseli Kilimanjaro View</option>
+                                        <option value="diani-beach">Diani Beach Coastal Getaway</option>
+                                        <option value="mount-kenya">Mt. Kenya Climbing Expedition</option>
+                                        <option value="lake-nakuru">Lake Nakuru National Park</option>
+                                        <option value="lake-naivasha">Lake Naivasha Adventure</option>
+                                        <option value="city-explorer">City Explorer Walk</option>
+                                        <option value="nature-trail">Nature Adventure Trail</option>
+                                        <option value="historical-walk">Historical Cultural Walk</option>
+                                        <option value="food-tour">Food Tasting Tour</option>
+                                    </optgroup>
+                                    <!-- International Tours -->
+                                    <optgroup label="International Tours">
+                                        <option value="tanzania-safari">Tanzania Explorer Safari</option>
+                                        <option value="uganda-gorilla">Uganda Gorilla Trekking</option>
+                                        <option value="south-africa">South Africa Explorer</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="full-name">Full Name *</label>
+                                    <input type="text" id="full-name" name="fullName" placeholder="Enter your full name" required>
                                 </div>
-                                <h2 class="tour-title" id="tour-title">Tour Title</h2>
-                                <div class="tour-description" id="tour-desc">
-                                    Select a tour to see description
-                                </div>
-                                <div class="tour-info">
-                                    <h3>Tour Details</h3>
-                                    <div class="info-item">
-                                        <i class="fas fa-clock"></i>
-                                        <span id="tour-duration">Duration</span>
-                                    </div>
-                                    <div class="info-item">
-                                        <i class="fas fa-users"></i>
-                                        <span id="tour-group">Group Size</span>
-                                    </div>
-                                    <div class="info-item">
-                                        <i class="fas fa-calendar-alt"></i>
-                                        <span id="tour-availability">Availability</span>
-                                    </div>
-                                    <h3>Highlights</h3>
-                                    <div id="tour-highlights"></div>
-                                    <h3>What's Included</h3>
-                                    <div id="tour-includes"></div>
-                                </div>
-                                <div class="tour-price" id="tour-price">
-                                    Select a tour to see pricing
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Your contact number" required>
                                 </div>
                             </div>
-                        </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="Your email address" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="preferred-date">Preferred Date (Optional)</label>
+                                    <input type="date" id="preferred-date" name="preferredDate" min="2025-05-27">
+                                </div>
+                                <div class="form-group">
+                                    <label for="number-of-people">Number of People (Optional)</label>
+                                    <input type="number" id="number-of-people" name="numberOfPeople" min="1" max="50" placeholder="1">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message / Requirements *</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Please describe your requirements, preferred destinations, budget, or any specific requests..." required></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="primary-btn">
+                                    <span>Send Enquiry</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                                <a href="https://wa.me/254123456789" class="whatsapp-btn" id="whatsapp-contact">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>Contact via WhatsApp</span>
+                                </a>
+                            </div>
+                        </form>
                     </div>
-                </div>
-
-                <!-- Event Booking Form (hidden by default) -->
-                <div class="booking-content" id="event-booking" style="display: none;">
-                    <div class="booking-flex">
-                        <!-- Form Section -->
-                        <div class="booking-form-section">
-                            <div class="form-header">
-                                <h2>Book Your Event</h2>
-                                <p>Secure your spot for our upcoming events and hikes</p>
+                    
+                    <!-- Service Information Panel -->
+                    <div class="service-info-panel">
+                        <div class="info-header">
+                            <div class="info-icon">
+                                <i class="fas fa-concierge-bell"></i>
                             </div>
-                            <form id="event-form" class="booking-form">
-                                <div class="form-group">
-                                    <label for="event">Select Event</label>                                    <select id="event" name="event" required>
-                                        <option value="" disabled selected>Choose your event</option>
-                                        <!-- Kenya Events -->
-                                        <optgroup label="Kenya Adventures">
-                                            <option value="kilimanjaro">Kilimanjaro Base Camp Trek</option>
-                                            <option value="aberdare">Aberdare Forest Adventure</option>
-                                            <option value="mombasa">Mombasa Coastal Trail</option>
-                                            <option value="mtkenya">Mount Kenya Summit Challenge</option>
-                                            <option value="hiking">Weekend Hiking Experience</option>
-                                            <option value="teambuilding">Corporate Team Building</option>
-                                        </optgroup>
-                                        <!-- Dubai Events -->
-                                        <optgroup label="Dubai Experiences">
-                                            <option value="desertsafarievent">Dubai Desert Safari</option>
-                                            <option value="burjkhalifaevent">Burj Khalifa At The Top</option>
-                                            <option value="marinadhowevent">Marina Dhow Cruise</option>
-                                            <option value="globalvillageevent">Global Village Experience</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="event-date">Event Date</label>
-                                        <select id="event-date" name="eventDate" required>
-                                            <option value="" disabled selected>Select available date</option>
-                                            <!-- Event dates will be populated by JavaScript -->
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="event-guests">Number of Participants</label>
-                                        <div class="guest-counter">
-                                            <button type="button" class="counter-btn minus"><i class="fas fa-minus"></i></button>
-                                            <input type="number" id="event-guests" name="guests" value="1" min="1" max="10" readonly>
-                                            <button type="button" class="counter-btn plus"><i class="fas fa-plus"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="event-name">Full Name</label>
-                                        <input type="text" id="event-name" name="name" placeholder="Enter your full name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="event-phone">Phone Number</label>
-                                        <input type="tel" id="event-phone" name="phone" placeholder="Your contact number" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="event-email">Email Address</label>
-                                    <input type="email" id="event-email" name="email" placeholder="Your email address" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="fitness-level">Fitness Level</label>
-                                    <select id="fitness-level" name="fitnessLevel">
-                                        <option value="beginner">Beginner - New to hiking/outdoor activities</option>
-                                        <option value="intermediate" selected>Intermediate - Some experience</option>
-                                        <option value="advanced">Advanced - Regular hiker/Very active</option>
-                                        <option value="expert">Expert - Experienced mountaineer/athlete</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="event-requests">Special Requirements</label>
-                                    <textarea id="event-requests" name="specialRequests" rows="3" placeholder="Any special requirements or medical conditions we should know about?"></textarea>
-                                </div>
-                                <div class="form-actions">
-                                    <button type="submit" class="primary-btn">
-                                        <span>Complete Event Booking</span>
-                                        <i class="fas fa-check-circle"></i>
-                                    </button>
-                                    <a href="https://wa.me/254123456789" class="whatsapp-btn" id="event-whatsapp-book">
-                                        <i class="fab fa-whatsapp"></i>
-                                        <span>Book via WhatsApp</span>
-                                    </a>
-                                </div>
-                            </form>
+                            <h3>Our Services</h3>
+                            <p>We're here to help you plan the perfect travel experience</p>
                         </div>
                         
-                        <!-- Event Details Section -->
-                        <div class="tour-details-section">
-                            <div class="tour-placeholder" id="event-placeholder">
-                                <div class="placeholder-icon">
-                                    <i class="fas fa-calendar-day"></i>
-                                </div>
-                                <h2>Event Details</h2>
-                                <p>Select an event to see details</p>
+                        <div class="service-cards">
+                            <div class="service-card">
+                                <i class="fas fa-calendar-day"></i>
+                                <h4>Event Booking</h4>
+                                <p>Exciting events, hikes, and adventure activities</p>
                             </div>
-                            <div class="tour-details-content" id="event-details">
-                                <div class="tour-image">
-                                    <img src="images/background .png" alt="Event Image" id="event-img">
-                                    <div class="event-date-badge">
-                                        <span class="month" id="event-month">May</span>
-                                        <span class="day" id="event-day">28</span>
-                                    </div>
-                                </div>
-                                <h2 class="tour-title" id="event-title">Event Title</h2>
-                                <div class="tour-description" id="event-desc">
-                                    Select an event to see description
-                                </div>
-                                <div class="tour-info">
-                                    <h3>Event Details</h3>
-                                    <div class="info-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span id="event-location">Location</span>
-                                    </div>
-                                    <div class="info-item">
-                                        <i class="fas fa-clock"></i>
-                                        <span id="event-time">Time</span>
-                                    </div>
-                                    <div class="info-item">
-                                        <i class="fas fa-users"></i>
-                                        <span id="event-participants">Participants</span>
-                                    </div>
-                                    <div class="info-item">
-                                        <i class="fas fa-hiking"></i>
-                                        <span id="event-difficulty">Difficulty</span>
-                                    </div>
-                                    <h3>What to Bring</h3>
-                                    <div id="event-items"></div>
-                                </div>
-                                <div class="tour-price" id="event-price">
-                                    Select an event to see pricing
-                                </div>
+                            
+                            <div class="service-card">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h4>Tour Booking</h4>
+                                <p>Dubai tours, Kenya safaris, and international destinations</p>
+                            </div>
+                            
+                            <div class="service-card">
+                                <i class="fas fa-plane"></i>
+                                <h4>Flight Booking</h4>
+                                <p>Best deals on domestic and international flights</p>
+                            </div>
+                            
+                            <div class="service-card">
+                                <i class="fas fa-hotel"></i>
+                                <h4>Hotel Enquiry</h4>
+                                <p>Hotels, resorts, and accommodation bookings</p>
+                            </div>
+                            
+                            <div class="service-card">
+                                <i class="fas fa-info-circle"></i>
+                                <h4>General Enquiry</h4>
+                                <p>Any other travel-related questions or services</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h4>Quick Contact</h4>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 123 456 789</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@yuvinalistourism.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Available 24/7</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Success Message (Hidden by default) -->
-                <div class="booking-success" id="booking-success">
+                <div class="booking-success" id="booking-success" style="display: none;">
                     <div class="success-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h2>Booking Successful!</h2>
-                    <p>Thank you for booking with Beyond Miles Adventures. We've sent a confirmation email with all the details. Our team will contact you shortly to finalize arrangements.</p>
+                    <h2>Enquiry Sent Successfully!</h2>
+                    <p>Thank you for contacting Yuvinalis Tourism. We've received your enquiry and our team will get back to you within 24 hours with personalized recommendations.</p>
                     <div class="success-actions">
                         <a href="index.html" class="return-btn">
                             <i class="fas fa-home"></i>

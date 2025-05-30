@@ -31,9 +31,8 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
-    
-    .booking-hero {
-        padding: 60px 0;
+      .booking-hero {
+        padding: 30px 0;
     }
     
     .booking-hero h1 {
@@ -64,9 +63,8 @@
     .form-header h2 {
         font-size: 1.5rem;
     }
-    
-    .booking-hero {
-        padding: 50px 0;
+      .booking-hero {
+        padding: 25px 0;
     }
     
     .booking-hero h1 {
@@ -157,20 +155,25 @@
         font-size: 0.95rem;
         padding: 0 10px;
     }
-    
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
     }
     
     .whatsapp-float i {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        animation: none; /* Disable bounce animation on mobile for better performance */
     }
     
     .whatsapp-text {
-        display: none;
+        display: none !important;
+    }
+    
+    .whatsapp-float::before {
+        animation: none; /* Disable pulse animation on mobile */
     }
     
     .tour-title {

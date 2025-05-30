@@ -75,8 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.target.closest('.view-details-btn')) {
                 return;
             }
-            
-            // Get tour data from the card
+              // Get tour data from the card
             const tourTitle = card.querySelector('h3').textContent;
             const tourImage = card.querySelector('.tour-image img').getAttribute('src');
             const tourBadge = card.querySelector('.tour-badge').textContent;
@@ -84,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const tourLocation = card.querySelector('.detail-item:first-child span').textContent;
             const tourRating = card.querySelector('.detail-item:nth-child(2) span').textContent;
             const tourDescription = card.querySelector('.tour-description').textContent;
-            const tourPrice = card.querySelector('.tour-price span').textContent;
+            const tourPrice = card.querySelector('.tour-price .current-price').textContent;
             
             // Set modal content
             modal.querySelector('.modal-header h3').textContent = tourTitle;

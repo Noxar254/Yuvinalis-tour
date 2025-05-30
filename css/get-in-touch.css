@@ -407,20 +407,21 @@
     background: linear-gradient(135deg, #000 0%, #333 100%);
 }
 
-/* Custom image-based social media icons */
+/* Custom image-based social media icons - Simple visible images */
 .social-icon.twitter-custom,
 .social-icon.threads-custom {
-    background: transparent !important;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: #fff !important;
+    border: 2px solid #ddd;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .social-icon.twitter-custom:hover,
 .social-icon.threads-custom:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: rgba(255, 255, 255, 0.6);
+    background: #f8f9fa !important;
+    border-color: #007bff;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
 }
 
 .social-icon.twitter-custom::before,
@@ -432,21 +433,35 @@
 .social-icon.threads-custom img {
     width: 24px !important;
     height: 24px !important;
-    filter: brightness(0) invert(1) !important;
+    filter: none !important;
     transition: all 0.3s ease;
+    opacity: 1;
 }
 
 .social-icon.twitter-custom:hover img,
 .social-icon.threads-custom:hover img {
-    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)) !important;
+    filter: none !important;
     transform: scale(1.1);
 }
 
-/* Footer social icons - smaller size */
+/* Footer social icons - smaller size and white filter effect */
+footer .social-icon.twitter-custom,
+footer .social-icon.threads-custom {
+    background: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+footer .social-icon.twitter-custom:hover,
+footer .social-icon.threads-custom:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
 footer .social-icon.twitter-custom img,
 footer .social-icon.threads-custom img {
     width: 16px !important;
     height: 16px !important;
+    filter: brightness(0) invert(1) !important;
 }
 
 /* Responsive Design */

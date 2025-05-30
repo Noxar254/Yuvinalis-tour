@@ -229,6 +229,25 @@
                 font-size: 1.5rem;
             }
         }
+        
+        /* Remove extra spacing and WhatsApp button */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        footer {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        
+        .whatsapp-float {
+            display: none !important;
+        }
+        
+        html, body {
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body>
@@ -1113,15 +1132,10 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Yuvinalis Tourism. All rights reserved.</p>
-        </div>
-    </footer>
+        </div>    </footer>
     
     <!-- JavaScript Files -->
-    <script src="js/hero-navbar.js"></script>    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
+    <script src="js/hero-navbar.js"></script>    
     <script>
         // Event filter functionality
         document.querySelectorAll('.filter-option').forEach(option => {

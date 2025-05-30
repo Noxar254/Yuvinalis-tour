@@ -1,6 +1,8 @@
 /* Gallery Page Styles */
 :root {
-    --primary-gradient: linear-gradient(45deg, #FDBB2D, #FFA500);
+    --primary-gradient: linear-gradient(45deg, #4facfe, #00c6fb);
+    --accent-gradient: linear-gradient(45deg, #667eea, #764ba2);
+    --warm-accent: linear-gradient(45deg, #ffeaa7, #74b9ff);
     --secondary-gradient: linear-gradient(45deg, #4099ff, #73b4ff);
     --text-dark: #333;
     --text-light: #666;

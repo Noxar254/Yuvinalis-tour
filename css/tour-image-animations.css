@@ -74,15 +74,18 @@
     top: 8px;
     right: 8px;
     z-index: 2;
-    padding: 2px 6px;
-    border-radius: 8px;
+    padding: 1px 4px;
+    border-radius: 6px;
     font-weight: 600;
-    font-size: 9px;
-    letter-spacing: 0.2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    font-size: 8px;
+    letter-spacing: 0.1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     text-transform: uppercase;
     white-space: nowrap;
-    line-height: 1.2;
+    line-height: 1.1;
+    display: inline-block;
+    min-width: auto;
+    width: fit-content;
 }
 
 .tour-card:hover .tour-badge {
@@ -167,23 +170,25 @@
     bottom: 8px;
     left: 8px;
     z-index: 2;
-    padding: 2px 6px;
-    border-radius: 8px;
+    padding: 1px 4px;
+    border-radius: 6px;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 1px;
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     white-space: nowrap;
-    line-height: 1.2;
+    line-height: 1.1;
+    width: fit-content;
+    min-width: auto;
 }
 
 .tour-duration i {
-    font-size: 8px;
+    font-size: 7px;
 }
 
 .tour-card:hover .tour-duration {

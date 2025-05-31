@@ -182,6 +182,169 @@
                 padding: 40px 20px;
             }
         }
+
+        /* Enhanced WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 10000;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border-radius: 50%;
+            animation: pulse-ring 2s infinite;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+            width: auto;
+            padding: 0 20px;
+            border-radius: 35px;
+        }
+
+        .whatsapp-float i {
+            font-size: 2rem;
+            position: relative;
+            z-index: 2;
+            animation: bounce 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-text {
+            opacity: 0;
+            margin-left: 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            max-width: 0;
+            overflow: hidden;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+            margin-left: 10px;
+            max-width: 120px;
+        }
+
+        .whatsapp-float:hover i {
+            font-size: 1.6rem;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-3px);
+            }
+            60% {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Mobile responsive styles for WhatsApp button */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            }
+
+            .whatsapp-float:hover {
+                width: 55px;
+                padding: 0;
+                border-radius: 50%;
+            }
+
+            .whatsapp-float i {
+                font-size: 1.8rem;
+                animation: none; /* Disable bounce animation on mobile for better performance */
+            }
+
+            .whatsapp-text {
+                display: none !important;
+            }
+
+            .whatsapp-float::before {
+                animation-duration: 3s; /* Slower pulse on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .whatsapp-float i {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            .whatsapp-float,
+            .whatsapp-float::before,
+            .whatsapp-float i {
+                animation: none !important;
+                transition: none !important;
+            }
+            
+            .whatsapp-float:hover {
+                transform: none !important;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .whatsapp-float {
+                border: 3px solid #ffffff;
+                background: #25d366 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1158,10 +1321,10 @@
     <!-- Enhanced Tour JavaScript -->
     <script src="js/tour-image-loader.js"></script>
     <script src="js/tour-preview-modal.js"></script>
-    <script src="js/tours-scroll.js"></script>
-
-    <!-- WhatsApp Float Button -->    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank">
+    <script src="js/tours-scroll.js"></script>    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat with us</span>
     </a>
 </body>
 </html>

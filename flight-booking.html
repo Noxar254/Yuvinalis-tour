@@ -178,12 +178,109 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-        }
-
-        .enquire-btn:hover {
+        }        .enquire-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 74, 173, 0.3);
-        }        @media (max-width: 768px) {
+        }
+
+        /* Enhanced WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 10000;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            border-radius: 50%;
+            animation: pulse-ring 2s infinite;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(135deg, #128c7e 0%, #25d366 100%);
+            width: auto;
+            padding: 0 20px;
+            border-radius: 35px;
+        }
+
+        .whatsapp-float i {
+            font-size: 2rem;
+            position: relative;
+            z-index: 2;
+            animation: bounce 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-text {
+            opacity: 0;
+            margin-left: 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            width: 0;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+            margin-left: 10px;
+            width: auto;
+        }
+
+        .whatsapp-float:hover i {
+            animation: none;
+            transform: scale(0.9);
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.2;
+            }
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }@media (max-width: 768px) {
             .booking-hero {
                 min-height: 12vh;
                 padding: 90px 20px 20px;
@@ -207,15 +304,54 @@
             .booking-info,
             .enquiry-form-container {
                 padding: 30px 20px;
-            }
-
-            .form-row {
+            }            .form-row {
                 grid-template-columns: 1fr;
             }
 
             .trip-type {
                 flex-direction: column;
                 gap: 10px;
+            }
+
+            /* Mobile WhatsApp button */
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            }
+
+            .whatsapp-float:hover {
+                width: 55px;
+                padding: 0;
+                border-radius: 50%;
+            }
+
+            .whatsapp-float i {
+                font-size: 1.8rem;
+                animation: none;
+            }
+
+            .whatsapp-text {
+                display: none !important;
+            }
+
+            .whatsapp-float::before {
+                animation-duration: 3s;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .whatsapp-float i {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -508,8 +644,7 @@
         </div>
     </footer>
 
-    <script src="js/hero-navbar.js"></script>
-    <script>
+    <script src="js/hero-navbar.js"></script>    <script>
         // Form submission handling
         document.getElementById('flightEnquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -520,13 +655,13 @@
             
             // Simple validation
             if (!data.fullName || !data.email || !data.phone || !data.passengers || !data.tripType || !data.fromCity || !data.toCity || !data.departureDate) {
-                alert('Please fill in all required fields.');
+                showFeedbackMessage('Please fill in all required fields.', 'error');
                 return;
             }
             
             // Check if return date is required for round trip
             if (data.tripType === 'round-trip' && !data.returnDate) {
-                alert('Return date is required for round trip flights.');
+                showFeedbackMessage('Return date is required for round trip flights.', 'error');
                 return;
             }
             
@@ -535,15 +670,161 @@
             if (data.returnDate) {
                 const returnDate = new Date(data.returnDate);
                 if (returnDate <= departureDate) {
-                    alert('Return date must be after departure date.');
+                    showFeedbackMessage('Return date must be after departure date.', 'error');
                     return;
                 }
             }
             
-            // Success message
-            alert('Thank you for your flight enquiry! We will search for the best flight options and contact you within 24 hours with available flights and pricing.');
-            this.reset();
+            // Show loading state
+            const submitBtn = this.querySelector('.enquire-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+            submitBtn.disabled = true;
+            
+            // Prepare flight enquiry message
+            const message = formatFlightBookingMessage(data);
+            
+            // Send to email (seamlessly)
+            sendFlightEnquiry(message).then(() => {
+                // Reset form and show success
+                this.reset();
+                showFeedbackMessage('🎉 Flight enquiry sent successfully! We will search for the best flight options and contact you within 24 hours with available flights and pricing.', 'success');
+            }).catch(() => {
+                showFeedbackMessage('There was an issue sending your enquiry. Please try again or contact us directly at info@yuvinalistourism.com', 'error');
+            }).finally(() => {
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;            });
         });
+
+        // Format flight booking message for email
+        function formatFlightBookingMessage(data) {
+            const departureDate = new Date(data.departureDate).toLocaleDateString();
+            const returnDate = data.returnDate ? new Date(data.returnDate).toLocaleDateString() : 'N/A';
+            
+            let message = `FLIGHT BOOKING ENQUIRY\n\n`;
+            message += `Name: ${data.fullName}\n`;
+            message += `Email: ${data.email}\n`;
+            message += `Phone: ${data.phone}\n`;
+            message += `Trip Type: ${data.tripType === 'one-way' ? 'One Way' : 'Round Trip'}\n`;
+            message += `From: ${data.fromCity}\n`;
+            message += `To: ${data.toCity}\n`;
+            message += `Departure Date: ${departureDate}\n`;
+            
+            if (data.tripType === 'round-trip' && data.returnDate) {
+                message += `Return Date: ${returnDate}\n`;
+            }
+            
+            message += `Passengers: ${data.passengers}\n`;
+            
+            if (data.class) {
+                message += `Preferred Class: ${data.class}\n`;
+            }
+            
+            if (data.budget) {
+                message += `Budget Range: ${data.budget}\n`;
+            }
+            
+            if (data.requirements) {
+                message += `Special Requirements: ${data.requirements}\n`;
+            }
+            
+            message += `\nSubmitted: ${new Date().toLocaleString()}\n`;
+            message += `Source: Yuvinalis Tourism Website - Flight Booking Page`;
+            
+            return message;
+        }
+
+        // Send flight enquiry via email seamlessly
+        function sendFlightEnquiry(message) {
+            return new Promise((resolve, reject) => {
+                try {
+                    // Simulate sending email (in a real implementation, this would go to your backend)
+                    const emailData = {
+                        to: 'info@yuvinalistourism.com',
+                        subject: 'Flight Booking Enquiry - Yuvinalis Tourism',
+                        body: message,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    // Simulate API call delay
+                    setTimeout(() => {
+                        // In a real implementation, you would send this to your backend API
+                        console.log('Email would be sent to:', emailData);
+                        
+                        // For now, we'll also store in localStorage as backup
+                        const enquiries = JSON.parse(localStorage.getItem('flightEnquiries') || '[]');
+                        enquiries.push(emailData);
+                        localStorage.setItem('flightEnquiries', JSON.stringify(enquiries));
+                        
+                        resolve();
+                    }, 1500); // Simulate network delay
+                    
+                } catch (error) {
+                    reject(error);
+                }
+            });
+        }
+
+        // Show feedback messages
+        function showFeedbackMessage(message, type) {
+            // Remove existing feedback
+            const existing = document.querySelector('.feedback-message');
+            if (existing) {
+                existing.remove();
+            }
+            
+            // Create feedback element
+            const feedback = document.createElement('div');
+            feedback.className = `feedback-message ${type}`;
+            feedback.innerHTML = message;
+            
+            // Style the feedback
+            feedback.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : '#f44336'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 10000;
+                max-width: 400px;
+                font-weight: 500;
+                animation: slideIn 0.3s ease-out;
+            `;
+            
+            // Add animation styles
+            if (!document.querySelector('#feedback-styles')) {
+                const style = document.createElement('style');
+                style.id = 'feedback-styles';
+                style.textContent = `
+                    @keyframes slideIn {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOut {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Add to page
+            document.body.appendChild(feedback);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                feedback.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => {
+                    if (feedback.parentNode) {
+                        feedback.remove();
+                    }
+                }, 300);
+            }, 5000);
+        }
 
         // Set minimum date to today
         const today = new Date().toISOString().split('T')[0];

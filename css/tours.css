@@ -425,10 +425,27 @@
     .tours-section {
         padding: 60px 0;
     }
-    
-    .tours-wrapper {
+      .tours-wrapper {
         grid-auto-columns: 85%;
         gap: 15px;
+        overflow-x: auto;
+        overflow-y: hidden; /* Prevent vertical scrolling */
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* Hide scrollbar on Firefox */
+        -ms-overflow-style: none; /* Hide scrollbar on IE/Edge */
+        height: auto; /* Allow natural height */
+        max-height: none; /* Remove any height restrictions */
+    }
+    
+    /* Hide scrollbar on webkit browsers */
+    .tours-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .tour-card {
+        min-height: 420px;
+        scroll-snap-align: center; /* Better snap alignment */
+        flex-shrink: 0; /* Prevent cards from shrinking */
     }
     
     .tour-card {
@@ -457,12 +474,41 @@
 @media (max-width: 576px) {
     .tours-section {
         padding: 40px 0;
+        overflow-x: hidden; /* Prevent horizontal page scroll */
+    }
+    
+    .tours-scroll-container {
+        overflow: hidden; /* Contain the scroll within the container */
     }
     
     .tours-wrapper {
         grid-auto-columns: 90%;
         gap: 15px;
         padding: 5px 0 15px;
+        overflow-x: auto;
+        overflow-y: hidden; /* Explicitly prevent vertical scrolling */
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none; /* Hide scrollbar */
+        -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+        height: auto; /* Natural height */
+        display: grid; /* Ensure grid display */
+        grid-auto-flow: column; /* Horizontal flow */
+    }
+    
+    /* Hide webkit scrollbars */
+    .tours-wrapper::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    
+    .tour-card {
+        scroll-snap-align: center;
+        flex-shrink: 0;
+        width: auto; /* Let grid handle width */
+        min-width: 0; /* Allow shrinking if needed */
+        display: flex;
+        flex-direction: column;
     }
     
     .tour-image {

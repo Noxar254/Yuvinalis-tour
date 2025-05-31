@@ -145,25 +145,41 @@
 .events-cta-buttons {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
-    margin: 30px auto;
-    max-width: 320px;
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .view-all-events-btn {
-    display: block;
-    max-width: 320px;
-    margin: 30px auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
     padding: 15px 25px;
     background-color: #2ecc71;
     color: #ffffff;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 10px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
     transition: all 0.3s ease;
     border: none;
     box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    min-height: 50px;
 }
 
 .view-all-events-btn.secondary {
@@ -200,6 +216,7 @@
         gap: 20px;
         max-width: 700px;
         margin: 40px auto;
+        padding: 0 20px;
     }
     
     .view-all-events-btn {
@@ -207,12 +224,53 @@
         font-size: 1.1em;
         flex: 1;
         max-width: 280px;
+        min-height: 55px;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .events-cta-buttons {
+        margin: 30px auto;
+        gap: 18px;
+        padding: 0 20px;
+    }
+    
+    .view-all-events-btn {
+        width: 100%;
+        max-width: 400px;
+        padding: 15px 25px;
+        font-size: 1rem;
+        min-height: 52px;
     }
 }
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
     .events-cta-buttons {
+        margin: 25px auto;
+        gap: 15px;
+        padding: 0 15px;
+        max-width: 100%;
+    }
+    
+    .view-all-events-btn {
+        width: 100%;
+        margin: 0;
+        padding: 14px 20px;
+        font-size: 1rem;
+        border-radius: 10px;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 375px) {
+    .events-cta-buttons {
+        padding: 0 10px;
         margin: 20px auto;
         gap: 12px;
     }
@@ -220,17 +278,10 @@
     .view-all-events-btn {
         width: 100%;
         margin: 0;
-        padding: 12px 20px;
-    }
-}
-
-/* Extra small screens */
-@media screen and (max-width: 375px) {
-    .view-all-events-btn {
-        width: calc(100% - 30px);
-        margin: 15px auto;
         padding: 12px 15px;
         font-size: 0.9em;
+        min-height: 48px;
+        border-radius: 8px;
     }
 }
 

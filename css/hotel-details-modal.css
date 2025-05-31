@@ -1,0 +1,402 @@
+/* Hotel Details Modal Styles */
+.hotel-details-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.hotel-details-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hotel-details-modal .modal-content {
+    background: #fff;
+    border-radius: 16px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+    position: relative;
+}
+
+.hotel-details-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 0;
+    border-bottom: none;
+}
+
+.hotel-details-modal .modal-header h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-transform: none;
+}
+
+.hotel-details-modal .modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #95a5a6;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.hotel-details-modal .modal-close:hover {
+    background-color: #ecf0f1;
+    color: #e74c3c;
+    transform: scale(1.1);
+}
+
+.hotel-details-modal .modal-body {
+    padding: 0 24px 24px;
+}
+
+.hotel-details-modal .modal-image {
+    position: relative;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.hotel-details-modal .modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hotel-details-modal .hotel-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hotel-details-modal .hotel-badge.all-inclusive {
+    background: linear-gradient(45deg, #e74c3c, #c0392b);
+}
+
+.hotel-details-modal .hotel-badge.beachside {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+}
+
+.hotel-details-modal .hotel-badge.mountain {
+    background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+}
+
+.hotel-details-modal .hotel-badge.premium {
+    background: linear-gradient(45deg, #f39c12, #e67e22);
+}
+
+.hotel-details-modal .hotel-price {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.95);    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.hotel-details-modal .hotel-price .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #27ae60;
+    display: block;
+}
+
+.hotel-details-modal .hotel-price .per-night {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.hotel-details-modal .modal-details {
+    display: grid;
+    gap: 24px;
+}
+
+.hotel-details-modal .modal-detail-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.hotel-details-modal .modal-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #34495e;
+}
+
+.hotel-details-modal .modal-detail-item i {
+    color: #27ae60;
+    font-size: 1rem;
+}
+
+.hotel-details-modal .hotel-amenities h4,
+.hotel-details-modal .hotel-description h4,
+.hotel-details-modal .hotel-features h4 {
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.hotel-details-modal .amenities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hotel-details-modal .amenities-list span {
+    background: #ecf0f1;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hotel-details-modal .amenities-list span i {
+    color: #27ae60;
+}
+
+.hotel-details-modal .description-text {
+    margin: 0;
+    line-height: 1.6;
+    color: #34495e;
+    font-size: 0.95rem;
+}
+
+.hotel-details-modal .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.hotel-details-modal .features-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    color: #34495e;
+}
+
+.hotel-details-modal .features-list li i {
+    color: #27ae60;
+    font-size: 0.8rem;
+}
+
+.hotel-details-modal .modal-footer {
+    background: #f8f9fa;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ecf0f1;
+    border-radius: 0 0 16px 16px;
+}
+
+.hotel-details-modal .modal-price-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hotel-details-modal .total-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+.hotel-details-modal .price-note {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.hotel-details-modal .modal-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.hotel-details-modal .modal-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.hotel-details-modal .modal-btn.primary {
+    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.hotel-details-modal .modal-btn.primary:hover {
+    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.hotel-details-modal .modal-btn.secondary {
+    background: #ecf0f1;
+    color: #34495e;
+    border: 1px solid #bdc3c7;
+}
+
+.hotel-details-modal .modal-btn.secondary:hover {
+    background: #d5dbdb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-details-modal .modal-btn i {
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hotel-details-modal.active {
+        padding: 10px;
+    }
+    
+    .hotel-details-modal .modal-content {
+        max-height: 95vh;
+        border-radius: 12px;
+    }
+    
+    .hotel-details-modal .modal-header {
+        padding: 16px 16px 0;
+    }
+    
+    .hotel-details-modal .modal-header h3 {
+        font-size: 1.4rem;
+    }
+    
+    .hotel-details-modal .modal-body {
+        padding: 0 16px 16px;
+    }
+    
+    .hotel-details-modal .modal-image {
+        height: 200px;
+        margin-bottom: 16px;
+    }
+    
+    .hotel-details-modal .modal-detail-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .hotel-details-modal .modal-footer {
+        padding: 16px;
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .hotel-details-modal .modal-actions {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hotel-details-modal .modal-btn {
+        flex: 1;
+        justify-content: center;
+        min-width: 120px;
+    }
+    
+    .hotel-details-modal .features-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .hotel-details-modal .amenities-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hotel-details-modal .modal-actions {
+        flex-direction: column;
+    }
+    
+    .hotel-details-modal .modal-btn {
+        width: 100%;
+    }
+    
+    .hotel-details-modal .hotel-price {
+        position: static;
+        margin: 16px 0 0 0;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        padding: 12px;
+    }
+    
+    .hotel-details-modal .modal-image {
+        height: 180px;
+    }
+}

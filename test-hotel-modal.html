@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Modal Test</title>
+    <link rel="stylesheet" href="css/hotels.css">
+    <link rel="stylesheet" href="css/hotel-details-modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .test-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h2>Hotel Modal Test</h2>
+        <p>Click the "View Details" button below to test the hotel modal:</p>
+        
+        <!-- Test Hotel Card -->
+        <div class="hotel-card" data-aos="fade-up" tabindex="0">
+            <div class="hotel-image">
+                <img src="images/Danat Al Ain Resort.jpg" alt="Danat Al Ain Resort" data-src="images/Danat Al Ain Resort.jpg">
+                <div class="hotel-badge">All-Inclusive</div>
+                <div class="hotel-price">
+                    <span>AED 739</span>
+                    <span class="per-night">per night</span>
+                </div>
+            </div>
+            <div class="hotel-content">
+                <h3>Danat Al Ain Resort</h3>
+                <div class="hotel-details">
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Al Ain, UAE</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.8 (120 reviews)</span>
+                    </div>
+                    <div class="hotel-amenities">
+                        <span><i class="fas fa-wifi"></i> WiFi</span>
+                        <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                        <span><i class="fas fa-utensils"></i> All-Inclusive</span>
+                    </div>
+                </div>
+                <a href="booking.html?service=hotel" class="view-details-btn">
+                    <span>View Details</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/hotel-details-modal.js"></script>
+</body>
+</html>

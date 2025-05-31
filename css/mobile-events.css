@@ -142,6 +142,14 @@
 }
 
 /* View All Events Button Styles */
+.events-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px auto;
+    max-width: 320px;
+}
+
 .view-all-events-btn {
     display: block;
     max-width: 320px;
@@ -156,6 +164,17 @@
     transition: all 0.3s ease;
     border: none;
     box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+.view-all-events-btn.secondary {
+    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(253, 187, 45, 0.3);
+}
+
+.view-all-events-btn.secondary:hover {
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+    box-shadow: 0 6px 20px rgba(253, 187, 45, 0.4);
 }
 
 .view-all-events-btn i {
@@ -175,17 +194,32 @@
 
 /* Desktop Styles */
 @media screen and (min-width: 769px) {
-    .view-all-events-btn {
+    .events-cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        max-width: 700px;
         margin: 40px auto;
+    }
+    
+    .view-all-events-btn {
+        margin: 0;
         font-size: 1.1em;
+        flex: 1;
+        max-width: 280px;
     }
 }
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-    .view-all-events-btn {
-        width: calc(100% - 40px);
+    .events-cta-buttons {
         margin: 20px auto;
+        gap: 12px;
+    }
+    
+    .view-all-events-btn {
+        width: 100%;
+        margin: 0;
         padding: 12px 20px;
     }
 }

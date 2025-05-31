@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SKXCDD5XXS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SKXCDD5XXS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Tour Packages | Yuvinalis Tourism</title>
+    <meta name="description" content="Explore our curated Dubai and international tour packages with Yuvinalis Tourism. From desert safaris to international holiday packages, find your perfect adventure.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/tours.css">
+    <link rel="stylesheet" href="css/mobile-tours.css">
+    <link rel="stylesheet" href="css/event-buttons.css">
+    <link rel="stylesheet" href="css/tour-modal.css">
+    <link rel="stylesheet" href="css/tour-image-animations.css">
+    <link rel="stylesheet" href="css/tour-scrollbar.css">
+    <link rel="stylesheet" href="css/tour-buttons.css">
+    <link rel="stylesheet" href="css/scroll-fix.css">
+      <style>
+        /* Dubai Packages Page Specific Styles & Animations */
+        
+        /* Keyframe animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+          @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80% {
+                transform: translateY(0) scale(1);
+            }
+            10% {
+                transform: translateY(-10px) scale(1.05);
+            }
+            30% {
+                transform: translateY(-5px) scale(1.02);
+            }
+            50% {
+                transform: translateY(-3px) scale(1.01);
+            }
+        }
+        
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-10deg) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }        .packages-hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Museum-of-the-Future.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            animation: fadeInScale 1.2s ease-out;
+            overflow: hidden;
+        }
+        
+        .packages-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+            animation-delay: 2s;
+        }        .packages-hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+            z-index: 2;
+            animation: slideInFromBottom 1s ease-out 0.5s both;
+        }
+        
+        .packages-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1.2s ease-out 0.7s both;
+            position: relative;
+        }
+        
+        .packages-hero h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #FDBB2D, #FFA500);
+            border-radius: 2px;
+            animation: scaleX 0.8s ease-out 1.5s both;
+        }
+        
+        @keyframes scaleX {
+            to {
+                transform: translateX(-50%) scaleX(1);
+            }
+        }
+        
+        .packages-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+          /* Scroll-triggered animations */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Enhanced loading animations */
+        .packages-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+        
+        /* Package content animations */
+        .package-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .package-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .package-card:hover .package-content h3 {
+            color: #FFA500;
+        }
+        
+        /* Source tag animations */
+        .source-tag {
+            display: inline-flex;
+            align-items: center;
+            background: #f5f7fa;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+            transform: scale(0.9);
+            animation: fadeInScale 0.4s ease-out 1.5s both;
+        }
+        
+        .source-tag:hover {
+            background: #e8f4f8;
+            transform: scale(1);
+        }
+        
+        /* Price animation */
+        .package-price {
+            display: flex;
+            flex-direction: column;
+            animation: fadeInLeft 0.6s ease-out 1.8s both;
+        }
+        
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            transition: color 0.3s ease;
+        }
+          .package-card:hover .price {
+            color: #27ae60;
+        }
+        
+        /* Additional animation classes */
+        .animate-in {
+            animation: bounceIn 0.8s ease-out forwards !important;
+        }
+        
+        .packages-hero-content.animate-in {
+            animation: slideInFromBottom 1s ease-out forwards !important;
+        }
+        
+        /* Enhanced package grid animations */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            perspective: 1000px;
+        }
+        
+        .package-card {
+            transform-style: preserve-3d;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-20px) scale(1.03) rotateX(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Loading state animations */
+        @keyframes skeleton {
+            0% {
+                background-position: -200px 0;
+            }
+            100% {
+                background-position: calc(200px + 100%) 0;
+            }
+        }
+        
+        .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
+            background-size: 400px 100%;
+            animation: skeleton 1.5s ease-in-out infinite;
+        }
+          .package-category {
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .package-category:nth-child(1) { animation-delay: 0.2s; }
+        .package-category:nth-child(2) { animation-delay: 0.4s; }
+        .package-category:nth-child(3) { animation-delay: 0.6s; }
+        .package-category:nth-child(4) { animation-delay: 0.8s; }
+        .package-category:nth-child(5) { animation-delay: 1s; }
+        .package-category:nth-child(6) { animation-delay: 1.2s; }
+          .category-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+        
+        .category-header h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            animation: fadeInUp 0.6s ease-out 0.5s both;
+        }
+        
+        .category-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #FDBB2D, #FFA500);
+            border-radius: 2px;
+            animation: scaleX 0.8s ease-out 1s both;
+        }
+        
+        .category-header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 0.6s ease-out 0.7s both;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }          .package-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            animation: bounceIn 0.8s ease-out forwards;
+            position: relative;
+        }
+        
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(253, 187, 45, 0.1), rgba(255, 165, 0, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .package-card:hover::before {
+            opacity: 1;
+        }
+        
+        .package-card:nth-child(1) { animation-delay: 0.1s; }
+        .package-card:nth-child(2) { animation-delay: 0.2s; }
+        .package-card:nth-child(3) { animation-delay: 0.3s; }
+        .package-card:nth-child(4) { animation-delay: 0.4s; }
+        .package-card:nth-child(5) { animation-delay: 0.5s; }
+        .package-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .package-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }          .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .package-card:hover .package-image img {
+            transform: scale(1.2) rotate(2deg);
+        }          .package-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+            z-index: 2;
+            transform: scale(0);
+            animation: fadeInScale 0.6s ease-out 0.8s both, pulse 3s infinite 2s;
+        }
+        
+        .package-duration {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .package-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .package-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .package-highlights {
+            margin-bottom: 15px;
+        }
+        
+        .package-highlights p {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .source-tag {
+            display: inline-flex;
+            align-items: center;
+            background: #f5f7fa;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .package-footer {
+            margin-top: auto;
+            border-top: 1px solid #f1f1f1;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .package-price {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .price-note {
+            font-size: 0.8rem;
+            color: #95a5a6;
+        }          .view-package-btn {
+            background: linear-gradient(45deg, #FDBB2D, #FFA500);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+        
+        .view-package-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .view-package-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #FFA500, #FDBB2D);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .view-package-btn:hover::before {
+            left: 100%;
+        }
+        
+        .view-package-btn:hover::after {
+            opacity: 1;
+        }
+        
+        .view-package-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 165, 0, 0.5);
+        }
+        
+        .view-package-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .view-package-btn:hover i {
+            transform: translateX(3px);
+        }
+          .popular-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 8px 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(45deg) translateX(20px) translateY(-10px);
+            width: 150px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: slideInFromBottom 0.6s ease-out 1.2s both;
+            z-index: 3;
+        }
+        
+        .package-card:hover .popular-tag {
+            animation: pulse 0.8s ease-in-out;
+        }.category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: -webkit-linear-gradient(45deg, #FDBB2D, #FFA500);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rotateIn 0.8s ease-out 0.2s both, float 3s ease-in-out infinite 2s;
+            display: inline-block;
+        }
+        
+        .category-icon:hover {
+            animation: rotateIn 0.8s ease-out 0.2s both, pulse 0.6s ease-in-out;
+        }
+          /* Responsive Styles */
+        @media (max-width: 992px) {
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+                perspective: 800px;
+            }
+            
+            .packages-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .package-card:hover {
+                transform: translateY(-15px) scale(1.02) rotateX(3deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .packages-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .packages-hero p {
+                font-size: 1rem;
+            }
+            
+            .category-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .category-icon {
+                font-size: 2rem;
+            }
+            
+            .package-card:hover {
+                transform: translateY(-10px) scale(1.01);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+                perspective: 600px;
+            }
+            
+            .packages-hero {
+                height: 50vh;
+            }
+            
+            .packages-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .package-image {
+                height: 200px;
+            }
+            
+            .package-card:hover {
+                transform: translateY(-8px) scale(1.01);
+            }
+            
+            /* Reduced motion for mobile */
+            @media (prefers-reduced-motion: reduce) {
+                .package-card:hover {
+                    transform: translateY(-5px);
+                }
+                
+                .category-icon {
+                    animation: none;
+                }
+                
+                .package-badge {
+                    animation: none;
+                }
+            }
+        }
+        
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus states for accessibility */
+        .view-package-btn:focus {
+            outline: 3px solid #FDBB2D;
+            outline-offset: 2px;
+        }
+        
+        .package-card:focus-within {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="full-text">Yuvinalis Tourism</span>
+                    <span class="short-text">YT</span>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-controls">
+            <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+                <a href="index.html#services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="visa-services.html" class="dropdown-link">Visa Processing</a></li>
+                    <li><a href="flight-booking.html" class="dropdown-link">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html" class="dropdown-link">Hotel Booking</a></li>
+                    <li><a href="index.html#airport-pickups" class="dropdown-link">Airport Pickups</a></li>
+                    <li><a href="index.html#tour-services" class="dropdown-link">Tour Services</a></li>
+                    <li><a href="index.html#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
+                    <li><a href="index.html#dubai-business-setup" class="dropdown-link">Dubai Business Set Up</a></li>
+                    <li><a href="index.html#freight-services" class="dropdown-link">Freight Services</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#events" class="nav-link dropdown-toggle">Events & Hikes <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="dropdown-link">All Events</a></li>
+                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Events</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#tours" class="nav-link dropdown-toggle active">Tours <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#dubai-tours" class="dropdown-link">Dubai Tours</a></li>
+                    <li><a href="index.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
+                    <li><a href="index.html#international-tours" class="dropdown-link">International Tours</a></li>
+                    <li><a href="index.html#maasai-mara-tours" class="dropdown-link">Maasai Mara Tours</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="accommodations.html" class="dropdown-link">Hotels</a></li>
+                    <li><a href="index.html#bedspaces" class="dropdown-link">Bedspaces</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#freight" class="nav-link dropdown-toggle">Freight <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#dubai-to-kenya" class="dropdown-link">Dubai to Kenya</a></li>
+                    <li><a href="index.html#kenya-to-dubai" class="dropdown-link">Kenya to Dubai</a></li>
+                    <li><a href="index.html#other-countries" class="dropdown-link">Other Countries</a></li>
+                </ul>
+            </li>
+            <li class="book-tour-mobile">
+                <a href="booking.html?booking=tour" class="book-tour-btn-mobile">
+                    <span class="btn-text">Book Tour</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-cta">
+            <a href="booking.html?booking=tour" class="book-tour-btn">
+                <span class="btn-text">Book Tour</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                <div class="btn-shine"></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="packages-hero">
+        <div class="packages-hero-content">
+            <h1>Dubai & International Tour Packages</h1>
+            <p>Discover unforgettable experiences from desert adventures to international escapes with our carefully curated tour packages</p>
+        </div>
+    </section>
+
+    <div class="packages-container">
+        <!-- International Holiday Packages -->
+        <div id="international-packages" class="package-category">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h2>International Holiday Packages</h2>
+                <p>Explore the world with our exclusive international tour packages offering the perfect blend of adventure, culture, and relaxation</p>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- Package 1 - Bosnia -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/Armenia Explorer Package.jpg" alt="Bosnia Eid al-Adha Package">
+                        <div class="package-badge">Featured</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>6 Days</span>
+                        </div>
+                        <div class="popular-tag">Most Popular</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Eid al-Adha in Bosnia – 6 Days of Scenic Wonder & Culture</h3>
+                        <div class="package-highlights">
+                            <p>Explore Sarajevo, Mostar, and the mountains with 4★ accommodations and private tours. Experience the rich culture and breathtaking landscapes of Bosnia.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+10</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 2,100</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="bosnia">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 2 - Uzbekistan -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/Almaty Adventure.jpg" alt="Uzbekistan Silk Road Journey">
+                        <div class="package-badge">Ancient Route</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>7 Days</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Uzbekistan's Golden Triangle: Ancient Silk Road Journey 2025</h3>
+                        <div class="package-highlights">
+                            <p>Visit Tashkent, Samarkand, and Bukhara with scenic experiences. Discover the architectural wonders and rich history of the Silk Road.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+2</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 4,150</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="uzbekistan">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 3 - Moscow -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/8 Days in Majestic Moscow.jpg" alt="Moscow Summer Escape">
+                        <div class="package-badge">Summer 2025</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>8 Days</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>8 Days in Majestic Moscow – Summer Escape with Hotel & Tours</h3>
+                        <div class="package-highlights">
+                            <p>Discover Russia's iconic landmarks with guided city tours and comfortable stays. Experience the grandeur of Moscow's architecture and vibrant culture.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+1</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 5,150</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="moscow">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 4 - Poland -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/UK Tour Package.jpg" alt="Poland Kraków & Zakopane">
+                        <div class="package-badge">Cultural</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>7 Nights</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Discover Poland: 7-Night Adventure in Kraków & Zakopane</h3>
+                        <div class="package-highlights">
+                            <p>A scenic journey through historic cities and mountain escapes with tours and transfers. Experience Poland's rich heritage and natural beauty.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+10</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 6,150</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="poland">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 5 - Jordan -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/Day Jordan Heritage Tour.jpg" alt="Jordan Heritage Tour">
+                        <div class="package-badge">Heritage</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>4 Days</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>4-Day Jordan Heritage Tour: Petra, Dead Sea & Ancient Cities</h3>
+                        <div class="package-highlights">
+                            <p>Experience Jordan's rich heritage, including Petra and the Dead Sea. Explore ancient wonders and natural phenomena in this compact yet comprehensive tour.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">Contact for Price</span>
+                                <span class="price-note">per person</span>
+                            </div>                            <button class="view-package-btn" data-package="jordan">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 6 - Spain -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/Spain Explorer.jpeg" alt="Spain Cultural Discovery">
+                        <div class="package-badge">Cultural</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>8 Days</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Spain Cultural Discovery: Madrid, Barcelona & Seville</h3>
+                        <div class="package-highlights">
+                            <p>Discover Spain's vibrant culture, stunning architecture, and rich history. From the bustling streets of Madrid to the artistic charm of Barcelona and the Andalusian beauty of Seville.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+5</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 5,850</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="spain">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Desert Safari Experiences -->
+        <div id="desert-safari" class="package-category">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-dune"></i>
+                </div>
+                <h2>Desert Safari Experiences</h2>
+                <p>Experience the thrill of Dubai's golden desert with our range of safari adventures, from dune bashing to traditional entertainment</p>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- Desert Safari 1 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/desert safari.png" alt="Royal Desert Safari">
+                        <div class="package-badge">Premium</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>6 Hours</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Royal Desert Safari in 4x4 Car & Live BBQ Dinner</h3>
+                        <div class="package-highlights">
+                            <p>Dune bashing, live entertainment, and a short camel ride. Experience the thrill of the desert with a luxurious twist.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+1</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 159</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="royal-desert">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desert Safari 2 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/desert safari.png" alt="Luxury Desert Safari">
+                        <div class="package-badge">VIP</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>7 Hours</span>
+                        </div>
+                        <div class="popular-tag">Best Value</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Luxury 4x4 Pick Up and Drop Off with Evening Desert Safari</h3>
+                        <div class="package-highlights">
+                            <p>Hotel pickup, dune bashing, international buffet, and live entertainment. The ultimate desert experience with all the comforts.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+7</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 155</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="luxury-desert">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desert Safari 3 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/quad bikes.jpg" alt="Quad Bike Desert Safari">
+                        <div class="package-badge">Adventure</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>5 Hours</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Standard Evening Desert Safari + 15mins Quad Bike Ride</h3>
+                        <div class="package-highlights">
+                            <p>All-inclusive desert safari adventure with dinner buffet, dune bashing, and the added thrill of a quad bike experience.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+6</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 240</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="quad-desert">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desert Safari 4 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/desert safari.png" alt="Self-drive Desert Safari">
+                        <div class="package-badge">Budget</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>4 Hours</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Self-drive Package with Evening Desert Safari</h3>
+                        <div class="package-highlights">
+                            <p>BBQ dinner, dune bashing, and live entertainment. Perfect for those looking for a more economical desert experience without compromising on the fun.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+1</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price"><del>AED 60</del> AED 44</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="self-drive-desert">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Yacht Tours -->
+        <div id="yacht-tours" class="package-category">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-ship"></i>
+                </div>
+                <h2>Yacht Tours</h2>
+                <p>Sail in style along Dubai's stunning coastline with our luxury yacht experiences offering incredible views of the city's skyline</p>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- Yacht Tour 1 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/Yacht party.jpg" alt="Sightseeing Yacht Tour">
+                        <div class="package-badge">Popular</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>2 Hours</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>2 Hours Sightseeing Yacht Tour</h3>
+                        <div class="package-highlights">
+                            <p>Dubai Marina tour with luxury amenities. Cruise along the spectacular Dubai coastline and see iconic landmarks from a unique perspective.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+2</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price"><del>AED 99</del> AED 70</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="sightseeing-yacht">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Yacht Tour 2 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/Yacht party.jpg" alt="Yacht with Slide">
+                        <div class="package-badge">Leisure</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>3 Hours</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>3 Hours Yacht with Slide and Swim - Sharing Yacht</h3>
+                        <div class="package-highlights">
+                            <p>Weekend yacht party with swimming and sightseeing. Enjoy a fun-filled experience with water activities and stunning views of Dubai's coastline.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price"><del>AED 200</del> AED 99</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="slide-yacht">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- City Tours -->
+        <div id="city-tours" class="package-category">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-city"></i>
+                </div>
+                <h2>City Tours</h2>
+                <p>Discover the iconic landmarks and hidden gems of Dubai with our guided city tour experiences</p>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- City Tour 1 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/dubai mall.jpg" alt="Dubai Sightseeing">
+                        <div class="package-badge">Comprehensive</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Full Day</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Dubai City Sightseeing</h3>
+                        <div class="package-highlights">
+                            <p>Hop-on hop-off tour covering Dubai's iconic landmarks. Explore the city at your own pace with the flexibility to visit the attractions that interest you most.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 230</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="city-sightseeing">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- City Tour 2 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/dubai attraction tour.jpg" alt="Dubai Treasures">
+                        <div class="package-badge">Half-Day</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>4 Hours</span>
+                        </div>
+                        <div class="popular-tag">Best Seller</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Unveil Dubai's Treasures: Half-Day City Highlights Adventure</h3>
+                        <div class="package-highlights">
+                            <p>Visit Burj Al Arab, Gold Souk, and more. A perfect introduction to Dubai's most famous attractions in a convenient half-day format.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+11</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 84</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="dubai-treasures">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Nature & Adventure Tours -->
+        <div id="nature-adventure" class="package-category">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-mountain"></i>
+                </div>
+                <h2>Nature & Adventure Tours</h2>
+                <p>Escape the city and explore the natural beauty surrounding Dubai with our adventure tours</p>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- Nature Tour 1 -->
+                <div class="package-card">                    <div class="package-image">
+                        <img src="images/hatta Mountain.jpg" alt="Hatta Mountain Escape">
+                        <div class="package-badge">Private</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>Full Day</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Private Hatta Mountain Escape Tour from Dubai</h3>
+                        <div class="package-highlights">
+                            <p>Explore Hatta's natural beauty with a private vehicle and driver. Discover mountain landscapes, heritage village, and the turquoise Hatta Dam.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                                <span class="source-tag">+1</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">Contact for Price</span>
+                                <span class="price-note">private tour</span>
+                            </div>
+                            <button class="view-package-btn" data-package="hatta-mountain">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Aerial Tours -->
+        <div id="aerial-tours" class="package-category">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-helicopter"></i>
+                </div>
+                <h2>Aerial Tours</h2>
+                <p>Experience Dubai from a breathtaking perspective with our exclusive aerial tours</p>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- Aerial Tour 1 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="images/helicopter tour.jpg" alt="Helicopter Dubai Tour">
+                        <div class="package-badge">Luxury</div>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i>
+                            <span>20 Minutes</span>
+                        </div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Helicopter Dubai Tour</h3>
+                        <div class="package-highlights">
+                            <p>Experience Dubai from a new perspective with a helicopter ride. Soar above the iconic landmarks and get a bird's-eye view of this amazing city.</p>
+                            <div class="source-tags">
+                                <span class="source-tag"><i class="fas fa-tag"></i> DoJoin</span>
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price">From AED 715</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <button class="view-package-btn" data-package="helicopter-tour">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Modal -->
+    <div class="tour-modal-overlay">
+        <div class="tour-modal">
+            <button class="close-modal" title="Close modal"><i class="fas fa-times"></i></button>
+            <div class="tour-modal-content">
+                <div class="tour-modal-header">
+                    <img src="" alt="Tour Image" id="modal-tour-image">
+                    <div class="tour-modal-badge" id="modal-tour-badge"></div>
+                </div>
+                <div class="tour-modal-body">
+                    <h2 id="modal-tour-title"></h2>
+                    <div class="tour-modal-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="modal-tour-duration"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="modal-tour-location"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span id="modal-tour-group-size"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span id="modal-tour-availability"></span>
+                        </div>
+                    </div>
+                    <div class="tour-modal-description">
+                        <h3>Tour Description</h3>
+                        <p id="modal-tour-description"></p>
+                    </div>
+                    <div class="tour-modal-highlights">
+                        <h3>Highlights</h3>
+                        <ul id="modal-tour-highlights"></ul>
+                    </div>
+                    <div class="tour-modal-price">
+                        <div class="price-label">Price:</div>
+                        <div class="price-value" id="modal-tour-price"></div>
+                    </div>
+                    <div class="tour-modal-footer">
+                        <a href="booking.html?booking=package" class="book-tour-btn" id="modal-book-tour-btn">Book This Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo">
+                    <h3>Yuvinalis Tourism</h3>
+                </div>
+                <p>Your Gateway to Dubai and Beyond</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/yuvinalistourism" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yuvinalistourism" class="social-icon twitter-custom" aria-label="X (Twitter)" target="_blank" rel="noopener">
+                        <img src="./images/Xlogo.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://instagram.com/yuvinalistourism" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@yuvinalistourism" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://threads.net/@yuvinalistourism" class="social-icon threads-custom" aria-label="Threads" target="_blank" rel="noopener">
+                        <img src="./images/Thread Logo.png" alt="Threads">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="index.html#upcoming-events">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="index.html#get-in-touch">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="visa-services.html">Visa Processing</a></li>
+                    <li><a href="flight-booking.html">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html">Hotel Booking</a></li>
+                    <li><a href="index.html#tour-services">Tour Services</a></li>
+                    <li><a href="index.html#freight-services">Freight Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="accommodations.html">Dubai Hotels</a></li>
+                    <li><a href="index.html#hotels">Bedspaces</a></li>
+                    <li><a href="events.html">Dubai Tours</a></li>
+                    <li><a href="index.html#dubai-business-setup">Business Setup</a></li>
+                </ul>
+                <!-- Jobs in UAE Button -->
+                <div class="jobs-button-container">
+                    <a href="index.html#jobs-uae" class="jobs-uae-btn">
+                        <i class="fas fa-briefcase"></i>
+                        Jobs in UAE
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yuvinalis Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="js/hero-navbar.js"></script>
+      <!-- Package Modal JavaScript -->
+    <script>
+        // Scroll-triggered animations
+        function handleScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Add staggered animation for package cards
+                        if (entry.target.classList.contains('package-card')) {
+                            const cards = entry.target.parentElement.querySelectorAll('.package-card');
+                            cards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.style.animationDelay = `${index * 0.1}s`;
+                                    card.classList.add('animate-in');
+                                }, index * 100);
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe package categories and cards
+            document.querySelectorAll('.package-category, .package-card').forEach(el => {
+                el.classList.add('fade-in-on-scroll');
+                observer.observe(el);
+            });
+        }
+        
+        // Enhanced button interactions
+        function addButtonInteractions() {
+            document.querySelectorAll('.view-package-btn').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.08)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+            });
+        }
+        
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            handleScrollAnimations();
+            addButtonInteractions();
+            
+            // Add smooth reveal animation to hero content
+            setTimeout(() => {
+                document.querySelector('.packages-hero-content').classList.add('animate-in');
+            }, 500);
+        });
+        
+        // Tour package details
+        const packageData = {            'bosnia': {
+                title: 'Eid al-Adha in Bosnia – 6 Days of Scenic Wonder & Culture',
+                image: 'images/Armenia Explorer Package.jpg',
+                badge: 'Featured',
+                duration: '6 Days',
+                location: 'Sarajevo, Mostar & Mountains, Bosnia',
+                groupSize: 'Small groups available',
+                availability: 'Eid al-Adha 2025',
+                description: 'Experience the beauty and cultural richness of Bosnia during the special Eid al-Adha celebration. This 6-day journey takes you through the historic streets of Sarajevo, the iconic bridge of Mostar, and the stunning mountain landscapes that make Bosnia a hidden European gem.',
+                highlights: [
+                    'Stay in comfortable 4★ accommodations throughout your journey',
+                    'Enjoy private guided tours with knowledgeable local experts',
+                    'Visit the historic Mostar Bridge and Old Town',
+                    'Explore Sarajevo\'s rich multicultural heritage',
+                    'Experience traditional Bosnian cuisine and hospitality',
+                    'Discover breathtaking mountain scenery and natural landscapes'
+                ],
+                price: 'From AED 2,100 per person'
+            },
+            'royal-desert': {
+                title: 'Royal Desert Safari in 4x4 Car & Live BBQ Dinner',
+                image: 'images/desert safari.png',
+                badge: 'Premium',
+                duration: '6 Hours',
+                location: 'Dubai Desert',
+                groupSize: 'Up to 6 people per vehicle',
+                availability: 'Daily',
+                description: 'Experience the ultimate desert adventure with our royal desert safari. Enjoy thrilling dune bashing in a 4x4 vehicle, followed by a traditional Bedouin camp experience with live entertainment and a delicious BBQ dinner under the stars.',
+                highlights: [
+                    'Professional 4x4 dune bashing experience',
+                    'Camel riding and sandboarding',
+                    'Traditional henna painting and falcon photography',
+                    'Live cultural entertainment (belly dance, fire show)',
+                    'Unlimited BBQ dinner with vegetarian options',
+                    'Comfortable transportation from Dubai hotels'
+                ],
+                price: 'From AED 159 per person'
+            },            'helicopter-tour': {
+                title: 'Helicopter Dubai Tour',
+                image: 'images/helicopter tour.jpg',
+                badge: 'Luxury',
+                duration: '20 Minutes',
+                location: 'Dubai Skyline',
+                groupSize: 'Up to 5 passengers',
+                availability: 'Daily (weather permitting)',
+                description: 'Soar above Dubai\'s iconic landmarks and witness the city\'s breathtaking transformation from the sky. This helicopter tour offers unparalleled views of the Burj Khalifa, Palm Jumeirah, and Dubai\'s stunning coastline.',
+                highlights: [
+                    'Aerial views of Burj Khalifa and Dubai Fountain',
+                    'Stunning perspectives of Palm Jumeirah',
+                    'Dubai Marina and JBR coastline from above',
+                    'Professional pilot commentary',
+                    'Safety briefing and equipment provided',
+                    'Photo opportunities of a lifetime'
+                ],
+                price: 'From AED 715 per person'
+            },
+            'sightseeing-yacht': {
+                title: '2 Hours Sightseeing Yacht Tour',
+                image: 'images/Yacht party.jpg',
+                badge: 'Popular',
+                duration: '2 Hours',
+                location: 'Dubai Marina',
+                groupSize: 'Sharing yacht (up to 20 people)',
+                availability: 'Daily departures',
+                description: 'Cruise along Dubai\'s spectacular coastline aboard a luxury yacht. Enjoy stunning views of iconic landmarks including Burj Al Arab, Atlantis, and the Dubai Marina skyline while relaxing on deck with refreshments.',
+                highlights: [
+                    'Panoramic views of Dubai\'s iconic skyline',
+                    'Professional crew and safety equipment',
+                    'Complimentary refreshments on board',
+                    'Photo opportunities with Dubai landmarks',
+                    'Air-conditioned cabin and sun deck access',
+                    'Dubai Marina pickup and drop-off'                ],
+                price: 'From AED 70 per person (Special Offer)'
+            },
+            'spain': {
+                title: 'Spain Cultural Discovery: Madrid, Barcelona & Seville',
+                image: 'images/Spain Explorer.jpeg',
+                badge: 'Cultural',
+                duration: '8 Days',
+                location: 'Madrid, Barcelona, Seville, Spain',
+                groupSize: 'Small groups available',
+                availability: 'Year-round departures',
+                description: 'Embark on an unforgettable journey through Spain\'s most captivating cities. Experience the royal grandeur of Madrid, the artistic charm of Barcelona, and the Andalusian beauty of Seville in this comprehensive cultural discovery tour.',
+                highlights: [
+                    'Explore the magnificent Prado Museum and Royal Palace in Madrid',
+                    'Marvel at Gaudí\'s architectural masterpieces in Barcelona',
+                    'Discover the historic Alcázar and Cathedral in Seville',
+                    'Experience authentic flamenco shows and Spanish cuisine',
+                    'Comfortable 4★ hotel accommodations throughout',
+                    'Professional English-speaking guides'
+                ],
+                price: 'From AED 5,850 per person'
+            }
+        };
+        
+        // Package modal functionality
+        document.querySelectorAll('.view-package-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const packageId = this.getAttribute('data-package');
+                const packageInfo = packageData[packageId] || {
+                    title: 'Package Information Coming Soon',
+                    image: 'images/Burj Khalifa.png',
+                    badge: 'Featured',
+                    duration: 'Multiple Options',
+                    location: 'Dubai & Beyond',
+                    groupSize: 'Various Options',
+                    availability: 'Contact for details',
+                    description: 'Full details for this package are being updated. Please contact our team for the most current information and booking availability.',
+                    highlights: [
+                        'Personalized itinerary options',
+                        'Professional guides and services',
+                        'Quality accommodations',
+                        'Unique experiences'
+                    ],
+                    price: 'Contact for pricing'
+                };
+                
+                // Populate modal with package data
+                document.getElementById('modal-tour-image').src = packageInfo.image;
+                document.getElementById('modal-tour-image').alt = packageInfo.title;
+                document.getElementById('modal-tour-badge').textContent = packageInfo.badge;
+                document.getElementById('modal-tour-title').textContent = packageInfo.title;
+                document.getElementById('modal-tour-duration').textContent = packageInfo.duration;
+                document.getElementById('modal-tour-location').textContent = packageInfo.location;
+                document.getElementById('modal-tour-group-size').textContent = packageInfo.groupSize;
+                document.getElementById('modal-tour-availability').textContent = packageInfo.availability;
+                document.getElementById('modal-tour-description').textContent = packageInfo.description;
+                
+                // Clear and populate highlights
+                const highlightsList = document.getElementById('modal-tour-highlights');
+                highlightsList.innerHTML = '';
+                packageInfo.highlights.forEach(highlight => {
+                    const li = document.createElement('li');
+                    li.textContent = highlight;
+                    highlightsList.appendChild(li);
+                });
+                
+                document.getElementById('modal-tour-price').textContent = packageInfo.price;
+                
+                // Show modal
+                document.querySelector('.tour-modal-overlay').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close modal functionality
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.querySelector('.tour-modal-overlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        document.querySelector('.tour-modal-overlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Prevent modal close when clicking inside modal content
+        document.querySelector('.tour-modal').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/971561510931" class="whatsapp-float" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

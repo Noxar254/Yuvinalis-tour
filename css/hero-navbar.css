@@ -226,6 +226,21 @@ body {
     transform: translate(-50%, -50%);
     z-index: -2;
     object-fit: cover;
+    filter: brightness(1.1) contrast(1.05) saturate(1.1);
+    transition: filter 0.3s ease;
+    opacity: 0;
+    animation: fadeInVideo 2s ease-in-out 0.5s forwards;
+}
+
+@keyframes fadeInVideo {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 /* Video Overlay */
@@ -235,7 +250,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(120deg, rgba(67,206,162,0.7) 0%, rgba(24,90,157,0.7) 100%);
+    background: linear-gradient(120deg, rgba(67,206,162,0.3) 0%, rgba(24,90,157,0.4) 100%);
     z-index: -1;
 }
 
@@ -243,7 +258,7 @@ body {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.1);
     z-index: 1;
 }
 .hero-content {
@@ -251,14 +266,19 @@ body {
     z-index: 2;
     max-width: 700px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 1rem;
     letter-spacing: 2px;
-    text-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    text-shadow: 0 4px 24px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4);
     line-height: 1.1;
     white-space: nowrap;
 }
@@ -266,7 +286,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 2rem;
     font-weight: 400;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);
 }
 .cta-buttons {
     display: flex;
@@ -782,6 +802,17 @@ body {
     }
     .hero-content {
         max-width: 90%;
+        padding: 1.5rem 1rem;
+        background: rgba(255, 255, 255, 0.08);
+    }
+    
+    /* Adjust video overlay for mobile for better clarity */
+    .hero-video-overlay {
+        background: linear-gradient(120deg, rgba(67,206,162,0.25) 0%, rgba(24,90,157,0.35) 100%);
+    }
+    
+    .hero::after {
+        background: rgba(0,0,0,0.05);
     }
     
     /* Nav Brand Tablet Styles */
@@ -797,10 +828,26 @@ body {
 @media (max-width: 480px) {
     .hero {
         min-height: 65vh;
-    }
-    .hero-content {
+    }    .hero-content {
         max-width: 95%;
         padding: 0 0.5rem;
+    }
+    
+    /* Enhanced video clarity for small screens */
+    .hero-video-overlay {
+        background: linear-gradient(120deg, rgba(67,206,162,0.2) 0%, rgba(24,90,157,0.3) 100%);
+    }
+    
+    .hero::after {
+        background: rgba(0,0,0,0.03);
+    }
+    
+    /* Disable backdrop filter on very small screens for performance */
+    .hero-content {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
     }
     .hero h1 {
         font-size: 2.2rem;
@@ -962,4 +1009,31 @@ body {
 /* Smooth scroll behavior */
 html {
     scroll-behavior: smooth;
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .hero-video {
+        animation: none;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .upcoming-events {
+        animation: none;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .section-header {
+        animation: none;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .event-card {
+        animation: none;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }

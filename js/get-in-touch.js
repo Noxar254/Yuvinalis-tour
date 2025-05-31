@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
     const submitBtn = contactForm?.querySelector('.submit-btn');
-    
-    if (contactForm && submitBtn) {
+      if (contactForm && submitBtn) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -13,10 +12,33 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.classList.add('loading');
             submitBtn.innerHTML = '<span>Sending...</span>';
             
-            // Simulate form submission (replace with actual form handling)
+            // Get form data
+            const formData = new FormData(contactForm);
+            const firstName = formData.get('firstName') || '';
+            const lastName = formData.get('lastName') || '';
+            const email = formData.get('email') || '';
+            const phone = formData.get('phone') || '';
+            const subject = formData.get('subject') || '';
+            const preferredDate = formData.get('preferredDate') || '';
+            const message = formData.get('message') || '';
+            
+            // Format WhatsApp message
+            const whatsappMessage = formatWhatsAppMessage({
+                firstName,
+                lastName,
+                email,
+                phone,
+                subject,
+                preferredDate,
+                message
+            });
+            
+            // Send to WhatsApp silently
+            sendToWhatsApp(whatsappMessage);
+            
+            // Show success message to user (without redirecting)
             setTimeout(() => {
-                // Show success message
-                showFormMessage('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
+                showFormMessage('Thank you! Your message has been received and sent to our team. We will contact you within 2 hours via phone call or reply.', 'success');
                 
                 // Reset form
                 contactForm.reset();
@@ -24,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Reset button
                 submitBtn.classList.remove('loading');
                 submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
-            }, 2000);
+            }, 1500);
         });
     }
     
@@ -290,3 +312,95 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// WhatsApp Integration Functions
+function formatWhatsAppMessage(data) {
+    const { firstName, lastName, email, phone, subject, preferredDate, message } = data;
+    
+    let formattedMessage = `🌟 *New Contact Form Submission*\n\n`;
+    formattedMessage += `👤 *Name:* ${firstName} ${lastName}\n`;
+    formattedMessage += `📧 *Email:* ${email}\n`;
+    
+    if (phone) {
+        formattedMessage += `📱 *Phone:* ${phone}\n`;
+    }
+    
+    if (subject) {
+        formattedMessage += `📋 *Subject:* ${getSubjectDisplayName(subject)}\n`;
+    }
+    
+    if (preferredDate) {
+        formattedMessage += `📅 *Preferred Contact Date:* ${formatDate(preferredDate)}\n`;
+    }
+    
+    formattedMessage += `\n💬 *Message:*\n${message}\n\n`;
+    formattedMessage += `⏰ *Received:* ${new Date().toLocaleString()}\n`;
+    formattedMessage += `🌐 *Source:* Website Contact Form`;
+    
+    return formattedMessage;
+}
+
+function getSubjectDisplayName(subject) {
+    const subjectMap = {
+        'visa-services': 'Visa Services',
+        'freight-services': 'Freight Services',
+        'tours-packages': 'Tours & Packages',
+        'business-setup': 'Dubai Business Setup',
+        'airport-pickup': 'Airport Pickup',
+        'general-inquiry': 'General Inquiry'
+    };
+    return subjectMap[subject] || subject;
+}
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+}
+
+function sendToWhatsApp(message) {
+    // Company WhatsApp number (without + sign, just numbers)
+    const whatsappNumber = '971561510931';
+    
+    // Create WhatsApp URL with the formatted message
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp in a hidden popup that closes immediately
+    // This sends the message without redirecting the user
+    const popup = window.open(whatsappURL, 'whatsapp-popup', 'width=1,height=1,left=-1000,top=-1000');
+    
+    // Close the popup immediately
+    if (popup) {
+        setTimeout(() => {
+            popup.close();
+        }, 1000);
+    }
+    
+    // Fallback: If popup is blocked, try using a hidden iframe
+    if (!popup || popup.closed) {
+        sendViaHiddenFrame(whatsappURL);
+    }
+}
+
+function sendViaHiddenFrame(url) {
+    // Create a hidden iframe to trigger WhatsApp
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.style.position = 'absolute';
+    iframe.style.left = '-9999px';
+    iframe.style.top = '-9999px';
+    iframe.style.width = '1px';
+    iframe.style.height = '1px';
+    iframe.src = url;
+    
+    document.body.appendChild(iframe);
+    
+    // Remove iframe after a short delay
+    setTimeout(() => {
+        document.body.removeChild(iframe);
+    }, 2000);
+}

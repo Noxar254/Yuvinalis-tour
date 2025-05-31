@@ -20,22 +20,6 @@ footer::before {
     z-index: 1;
 }
 
-.footer-container {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.footer-section {
-    display: flex;
-    flex-direction: column;
-}
-
 .footer-logo {
     display: flex;
     align-items: center;
@@ -259,87 +243,141 @@ footer::before {
     transform: translateX(3px);
 }
 
+/* Footer Bottom Section */
 .footer-bottom {
-    position: relative;
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+    margin-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 10px 0;
-    margin-top: 20px;
-    margin-bottom: 0;
     text-align: center;
-    background: rgba(0, 0, 0, 0.2);
 }
 
 .footer-bottom p {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
     margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 /* Jobs in UAE Button Styling */
 .jobs-button-container {
-    margin-top: 15px;
-    padding-top: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    width: 100%;
 }
 
 .jobs-uae-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #f1c40f, #f39c12);
-    color: #2c3e50;
-    padding: 8px 16px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 8px rgba(241, 196, 15, 0.3);
-    border: 2px solid transparent;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    min-width: 120px;
     justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e, #ffd700);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 160px;
+    width: 100%;
+    max-width: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.jobs-uae-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.jobs-uae-btn:hover::before {
+    left: 100%;
 }
 
 .jobs-uae-btn:hover {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #e55a2b, #e6851a, #e6c200);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    color: #ffffff;
 }
 
 .jobs-uae-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(241, 196, 15, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
 }
 
 .jobs-uae-btn i {
-    font-size: 12px;
+    font-size: 14px;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.jobs-uae-btn:hover i {
+    animation: bounce 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
 }
 
 /* Responsive adjustments for Jobs button */
 @media (max-width: 768px) {
     .jobs-uae-btn {
-        font-size: 12px;
-        padding: 6px 12px;
-        min-width: 100px;
+        font-size: 13px;
+        padding: 10px 20px;
+        min-width: 140px;
+        max-width: 180px;
+        gap: 8px;
     }
     
     .jobs-button-container {
-        margin-top: 10px;
+        margin-top: 15px;
         text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     .jobs-uae-btn {
-        font-size: 11px;
-        padding: 5px 10px;
-        min-width: 90px;
+        font-size: 12px;
+        padding: 8px 16px;
+        min-width: 120px;
+        max-width: 150px;
         gap: 6px;
     }
+}
+
+/* Desktop specific styling - Default Layout */
+.footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer navigation sections wrapper - hidden on desktop by default */
+.footer-nav-sections {
+    display: none;
 }
 
 /* Responsive Design */
@@ -352,32 +390,48 @@ footer::before {
 
 @media (max-width: 576px) {
     footer {
-        padding: 60px 0 0;
+        padding: 40px 0 0;
     }
 
     .footer-container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 25px;
     }
 
-    .footer-section {
+    /* Hide the desktop navigation sections on mobile */
+    .footer-container > .footer-section:nth-child(2),
+    .footer-container > .footer-section:nth-child(3),
+    .footer-container > .footer-section:nth-child(4) {
+        display: none;
+    }
+
+    /* Show the horizontal navigation wrapper on mobile */
+    .footer-nav-sections {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        width: 100%;
+        margin-top: 10px;
+    }/* Company info section stays at top with center alignment */
+    .footer-section:first-child {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .footer-section:first-child .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-section:first-child p {
         text-align: center;
     }
 
-    .footer-section h3::after {
+    .footer-section:first-child h3::after {
         left: 50%;
         transform: translateX(-50%);
     }
 
     .social-links {
-        justify-content: center;
-    }
-
-    .footer-links a {
-        justify-content: center;
-    }
-
-    .contact-info li {
         justify-content: center;
     }
 
@@ -395,5 +449,93 @@ footer::before {
 
     .subscribe-form button {
         width: 100%;
+    }
+
+    /* Mobile navigation sections styling */
+    .footer-nav-sections .footer-section {
+        text-align: center;
+    }
+
+    .footer-nav-sections .footer-section h3 {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+
+    .footer-nav-sections .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+    }
+
+    .footer-nav-sections .footer-section .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .footer-nav-sections .footer-section .footer-links li {
+        margin-bottom: 0;
+    }
+
+    .footer-nav-sections .footer-section .footer-links a {
+        font-size: 0.8rem;
+        justify-content: center;
+        padding: 3px 0;
+        line-height: 1.3;
+    }
+
+    /* Jobs button adjustments for mobile horizontal layout */
+    .footer-nav-sections .jobs-button-container {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .footer-nav-sections .jobs-uae-btn {
+        font-size: 10px;
+        padding: 6px 12px;
+        min-width: 90px;
+        max-width: 100px;
+        gap: 4px;
+        border-radius: 6px;
+    }
+}
+
+/* Additional optimization for very small screens */
+@media (max-width: 480px) {
+    .footer-nav-sections {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .footer-nav-sections .footer-section h3 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-nav-sections .footer-section .footer-links a {
+        font-size: 0.75rem;
+        padding: 2px 0;
+    }
+
+    .footer-nav-sections .jobs-uae-btn {
+        font-size: 9px;
+        padding: 5px 10px;
+        min-width: 80px;
+        max-width: 90px;
+        gap: 3px;
+    }
+}
+
+/* Mobile adjustments for footer bottom */
+@media (max-width: 576px) {
+    .footer-bottom {
+        padding: 12px 0;
+        margin-top: 20px;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.8rem;
+        padding: 0 15px;
+        line-height: 1.4;
     }
 }

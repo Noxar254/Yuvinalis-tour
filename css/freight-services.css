@@ -98,7 +98,7 @@
 }
 
 .ship-now-btn {
-    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    background: linear-gradient(45deg, #87CEEB, #5DADE2);
     color: #fff;
     border: none;
     padding: 12px 20px;
@@ -114,9 +114,9 @@
 }
 
 .ship-now-btn:hover {
-    background: linear-gradient(45deg, #FFA500, #FDBB2D);
+    background: linear-gradient(45deg, #5DADE2, #3498DB);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(253, 187, 45, 0.3);
+    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.3);
 }
 
 .ship-now-btn i {

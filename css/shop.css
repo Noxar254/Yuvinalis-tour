@@ -23,9 +23,6 @@
 }
 
 .shop-section .view-all-btn {
-    position: absolute;
-    right: 0;
-    top: 10px;
     background: #4CAF50;
     color: #fff;
     text-decoration: none;
@@ -54,6 +51,24 @@
 
 .shop-section .view-all-btn:hover i {
     transform: translateX(4px);
+}
+
+/* Bottom View All Button */
+.bottom-view-all {
+    display: block;
+    text-align: center;
+    margin: 30px auto 0;
+    max-width: 220px;
+}
+
+.bottom-view-all .view-all-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Hide mobile button on desktop */
+.mobile-view-all {
+    display: none;
 }
 
 .shop-scroll-container {
@@ -256,7 +271,7 @@
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
-    .shop-section .view-all-btn {
+    .bottom-view-all {
         display: none;
     }
 

@@ -1,31 +1,68 @@
+# Yuvinalis Tourism - Robots.txt
+# Optimized for Search Engine Crawling
+
 User-agent: *
 Allow: /
 
-# Important pages for crawling
+# Priority pages for indexing
 Allow: /index.html
 Allow: /tours.html
 Allow: /visa-services.html
+Allow: /accommodations.html
 Allow: /apply-visa.html
 Allow: /flight-booking.html
 Allow: /hotel-booking.html
 Allow: /booking.html
+Allow: /dubai-packages.html
 Allow: /events.html
 Allow: /gallery.html
 Allow: /shop.html
 Allow: /plan-your-travel.html
+Allow: /freight-services.html
+Allow: /about-us.html
+Allow: /more-attractions.html
 
-# Allow CSS and JS files
+# Allow essential directories
 Allow: /css/
 Allow: /js/
 Allow: /images/
+Allow: /fonts/
+Allow: /assets/
 
-# Block any test or development files
+# Block development and test files
 Disallow: /test-*
 Disallow: /*test*
 Disallow: /*.py$
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /admin/
+Disallow: /private/
+
+# Block non-essential file types
+Disallow: /*.log$
+Disallow: /*.tmp$
+Disallow: /*.bak$
+
+# Allow common search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
 
 # Sitemap location
 Sitemap: https://yuvinalistourism.com/sitemap.xml
 
-# Crawl delay (optional - helps prevent server overload)
+# Crawl delay to prevent server overload
 Crawl-delay: 1
+
+# Cache directive for performance
+Host: yuvinalistourism.com

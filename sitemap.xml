@@ -1,49 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   
-  <!-- Main Pages -->
+  <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://yuvinalistourism.com/</loc>
     <lastmod>2025-06-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/dubai-banner.jpg</image:loc>
-      <image:caption>Dubai Tours and Travel Services</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/dubai%20video.mp4</image:loc>
+      <image:caption>Yuvinalis Tourism - Your Gateway to Dubai and Beyond</image:caption>
+      <image:title>Dubai Tours and Travel Services</image:title>
     </image:image>
-  </url>
-  
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/office%20image.jpg</image:loc>
+      <image:caption>Yuvinalis Tourism Office - Professional Travel Services</image:caption>
+      <image:title>Travel Agency Office</image:title>
+    </image:image>
+  </url>  
+  <!-- Core Service Pages -->
   <url>
     <loc>https://yuvinalistourism.com/tours.html</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/dubai-tours-banner.jpg</image:loc>
-      <image:caption>Dubai Tours and Packages</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/Krabi%20Thailand.jpg</image:loc>
+      <image:caption>International Tours - Krabi Thailand</image:caption>
+      <image:title>Dubai Tours and Packages</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/Maasai%20Mara%20Safari.jpg</image:loc>
+      <image:caption>Domestic Tours - Maasai Mara Safari</image:caption>
+      <image:title>Safari Tours and Wildlife Experiences</image:title>
     </image:image>
   </url>
   
   <url>
     <loc>https://yuvinalistourism.com/visa-services.html</loc>
     <lastmod>2025-06-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/visa-services-banner.jpg</image:loc>
-      <image:caption>Dubai Visa Services</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/apply%20visa.jpg</image:loc>
+      <image:caption>Dubai Visa Services - Fast Processing</image:caption>
+      <image:title>Visa Application Services</image:title>
     </image:image>
   </url>
   
+  <url>
+    <loc>https://yuvinalistourism.com/accommodations.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/Danat%20Al%20Ain%20Resort.jpg</image:loc>
+      <image:caption>Luxury Hotels - Danat Al Ain Resort</image:caption>
+      <image:title>Premium UAE Accommodations</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/Flamingo%20Beach%20Hotel.jpg</image:loc>
+      <image:caption>Beachside Hotels - Flamingo Beach Hotel</image:caption>
+      <image:title>Beach Resort Accommodations</image:title>
+    </image:image>
+  </url>
+    <!-- Booking & Service Pages -->
   <url>
     <loc>https://yuvinalistourism.com/apply-visa.html</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/apply-visa.jpg</image:loc>
-      <image:caption>Apply for Dubai Visa</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/apply%20visa.jpg</image:loc>
+      <image:caption>Apply for Dubai Visa - Fast Processing Service</image:caption>
+      <image:title>Dubai Visa Application Form</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/visa%20services.jpg</image:loc>
+      <image:caption>Professional Visa Services for UAE</image:caption>
+      <image:title>UAE Visa Processing Services</image:title>
     </image:image>
   </url>
   
@@ -53,8 +90,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/flight-booking.jpg</image:loc>
-      <image:caption>Dubai Flight Booking</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/flight%20booking.jpg</image:loc>
+      <image:caption>Book Your Dubai Flight Online - Best Prices</image:caption>
+      <image:title>Dubai Flight Booking Service</image:title>
     </image:image>
   </url>
   
@@ -64,8 +102,31 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/hotel-booking.jpg</image:loc>
-      <image:caption>Dubai Hotel Booking</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/hotel%20booking.jpg</image:loc>
+      <image:caption>Dubai Hotel Reservations - Premium Accommodations</image:caption>
+      <image:title>Dubai Hotel Booking Service</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/dubai-packages.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/desert%20safari.png</image:loc>
+      <image:caption>Dubai Desert Safari Package - Adventure Tours</image:caption>
+      <image:title>Dubai Desert Safari Experience</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/dubai%20city%20tour.jpg</image:loc>
+      <image:caption>Dubai City Tour Package - Explore Dubai</image:caption>
+      <image:title>Dubai City Tour and Sightseeing</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/Burj%20Khalifa.png</image:loc>
+      <image:caption>Burj Khalifa Tour Package - World's Tallest Building</image:caption>
+      <image:title>Burj Khalifa Dubai Attraction</image:title>
     </image:image>
   </url>
   
@@ -75,8 +136,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/kenya-hiking-banner.jpg</image:loc>
-      <image:caption>Adventure Events and Hiking Tours Kenya</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/Kenya%20Safari.jpg</image:loc>
+      <image:caption>Adventure Events and Kenya Safari Tours</image:caption>
+      <image:title>Kenya Safari Adventure Events</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/hatta%20Mountain.jpg</image:loc>
+      <image:caption>Hatta Mountain Adventure Tours</image:caption>
+      <image:title>Hatta Mountain Hiking Events</image:title>
     </image:image>
   </url>
   
@@ -86,19 +153,27 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/booking-banner.jpg</image:loc>
-      <image:caption>Book Dubai Tours and Services</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/booking%20page.jpg</image:loc>
+      <image:caption>Book Dubai Tours and Travel Services Online</image:caption>
+      <image:title>Dubai Tourism Booking Platform</image:title>
     </image:image>
   </url>
   
+  <!-- Content & Information Pages -->
   <url>
     <loc>https://yuvinalistourism.com/gallery.html</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/gallery-banner.jpg</image:loc>
-      <image:caption>Dubai Travel Gallery</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/gallery.jpg</image:loc>
+      <image:caption>Dubai Travel Photo Gallery - Customer Experiences</image:caption>
+      <image:title>Dubai Tourism Photo Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/dubai%20attraction%20tour.jpg</image:loc>
+      <image:caption>Dubai Attractions Tour Gallery</image:caption>
+      <image:title>Dubai Tourist Attractions</image:title>
     </image:image>
   </url>
   
@@ -108,8 +183,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/shop-banner.jpg</image:loc>
+      <image:loc>https://yuvinalistourism.com/images/shop.jpg</image:loc>
       <image:caption>Travel Gear and Equipment Shop</image:caption>
+      <image:title>Dubai Travel Accessories Shop</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/logo%20hoodie.jpg</image:loc>
+      <image:caption>Yuvinalis Tourism Branded Merchandise</image:caption>
+      <image:title>Travel Agency Merchandise</image:title>
     </image:image>
   </url>
   
@@ -119,8 +200,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://yuvinalistourism.com/images/travel-planning-banner.jpg</image:loc>
-      <image:caption>Dubai Travel Planner Tool</image:caption>
+      <image:loc>https://yuvinalistourism.com/images/Road%20trip.png</image:loc>
+      <image:caption>Dubai Travel Planning Tool and Itinerary Builder</image:caption>
+      <image:title>Dubai Trip Planning Service</image:title>
     </image:image>
   </url>
   
@@ -129,6 +211,16 @@
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/cargo%20plane.png</image:loc>
+      <image:caption>International Freight and Logistics Services</image:caption>
+      <image:title>Cargo and Freight Solutions</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/cargo%20area.jpg</image:loc>
+      <image:caption>Professional Cargo Handling Area</image:caption>
+      <image:title>Freight Services Infrastructure</image:title>
+    </image:image>
   </url>
   
   <url>
@@ -136,13 +228,39 @@
     <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/about%20us.png</image:loc>
+      <image:caption>About Yuvinalis Tourism - Professional Travel Agency</image:caption>
+      <image:title>Yuvinalis Tourism Company Profile</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/our%20office.jpg</image:loc>
+      <image:caption>Yuvinalis Tourism Office Location</image:caption>
+      <image:title>Travel Agency Office</image:title>
+    </image:image>
   </url>
   
+  <!-- Additional Content Pages -->
   <url>
-    <loc>https://yuvinalistourism.com/dubai-packages.html</loc>
+    <loc>https://yuvinalistourism.com/more-attractions.html</loc>
     <lastmod>2025-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/dubai%20mall.jpg</image:loc>
+      <image:caption>Dubai Mall - World's Largest Shopping Mall</image:caption>
+      <image:title>Dubai Mall Tourist Attraction</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/miracle%20garden%20dubai.jpg</image:loc>
+      <image:caption>Dubai Miracle Garden - Floral Paradise</image:caption>
+      <image:title>Dubai Miracle Garden Attraction</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/Museum%20of%20the%20future.jpg</image:loc>
+      <image:caption>Museum of the Future Dubai - Innovation Hub</image:caption>
+      <image:title>Dubai Museum of the Future</image:title>
+    </image:image>
   </url>
   
 </urlset>

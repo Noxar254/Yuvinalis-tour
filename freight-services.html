@@ -15,6 +15,7 @@
     <title>Freight Services - Yuvinalis Tourism</title>
     <link rel="stylesheet" href="css/hero-navbar.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/freight-services-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>        .freight-hero {
             background: linear-gradient(135deg, rgba(52, 73, 94, 0.85), rgba(44, 62, 80, 0.75)), url('images/cargo\ area.jpg');
@@ -702,10 +703,9 @@
 
     <!-- Services Section -->
     <section class="services-section">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
-                <h2 style="color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px;">Our Freight Services</h2>
-                <p style="color: #666; font-size: 1.1rem;">Professional cargo shipping with competitive rates and reliable delivery</p>
+        <div class="container">            <div class="section-header">
+                <h2>Our Freight Services</h2>
+                <p>Professional cargo shipping with competitive rates and reliable delivery</p>
             </div>
 
             <div class="services-grid">
@@ -815,7 +815,7 @@
                         </div>
                     </div>
 
-                    <h3 style="color: #2c3e50; margin-bottom: 20px;">Shipment Timeline</h3>
+                    <h3 class="shipment-timeline-header">Shipment Timeline</h3>
                     <div class="tracking-timeline" id="trackingTimeline">
                         <!-- Timeline items will be inserted here -->
                     </div>
@@ -826,10 +826,9 @@
 
     <!-- Quote Form Section -->
     <section class="quote-section" id="quote-form">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
-                <h2 style="color: #2c3e50; font-size: 2.2rem; margin-bottom: 10px;">Get a Quote</h2>
-                <p style="color: #666; font-size: 1.1rem;">Fill out the form below and we'll provide you with a competitive freight quote</p>
+        <div class="container">            <div class="section-header">
+                <h2>Get a Quote</h2>
+                <p>Fill out the form below and we'll provide you with a competitive freight quote</p>
             </div>
 
             <form class="quote-form" id="freightQuoteForm">
@@ -938,13 +937,13 @@
                 </div>
                 <p>Your Gateway to Dubai and Beyond</p>
                 <div class="social-links">
-                    <a href="https://facebook.com/yuvinalistourism" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/yuvinalistourism" class="social-icon twitter-custom" aria-label="X (Twitter)" target="_blank">
+                    <a href="https://facebook.com/yuvinalistourism" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yuvinalistourism" class="social-icon twitter-custom" aria-label="X (Twitter)" target="_blank" rel="noopener">
                         <img src="./images/Xlogo.png" alt="X (Twitter)">
                     </a>
-                    <a href="https://instagram.com/yuvinalistourism" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://tiktok.com/@yuvinalistourism" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://threads.net/@yuvinalistourism" class="social-icon threads-custom" aria-label="Threads" target="_blank">
+                    <a href="https://instagram.com/yuvinalistourism" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@yuvinalistourism" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://threads.net/@yuvinalistourism" class="social-icon threads-custom" aria-label="Threads" target="_blank" rel="noopener">
                         <img src="./images/Thread Logo.png" alt="Threads">
                     </a>
                 </div>            </div>
@@ -1227,7 +1226,7 @@
                         <div class="info-value">${data.estimatedDelivery}</div>
                     </div>
                 </div>
-                <h3 style="color: #2c3e50; margin-bottom: 20px;">Shipment Timeline</h3>
+                <h3 class="shipment-timeline-header">Shipment Timeline</h3>
                 <div class="tracking-timeline">${timeline.innerHTML}</div>
             `;
             trackingResult.classList.add('show');
@@ -1301,56 +1300,54 @@
                 minute: '2-digit'
             });
 
-            return `
-                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8f9fa; padding: 20px;">
-                    <div style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <h2 style="color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px;">
+            return `                <div class="email-template">
+                    <div class="email-container">
+                        <h2 class="email-header">
                             🚚 New Freight Quote Request
                         </h2>
                         
-                        <div style="background: #e8f4fd; padding: 15px; border-radius: 8px; margin: 20px 0;">
-                            <p style="margin: 0; color: #2c3e50;"><strong>Submitted:</strong> ${currentDate}</p>
+                        <div class="submission-info">
+                            <p><strong>Submitted:</strong> ${currentDate}</p>
                         </div>
-
-                        <h3 style="color: #3498db; margin-top: 25px;">👤 Customer Information</h3>
-                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                            <tr><td style="padding: 8px 0; color: #666; width: 40%;"><strong>Name:</strong></td><td style="color: #2c3e50;">${data.senderName}</td></tr>
-                            <tr><td style="padding: 8px 0; color: #666;"><strong>Email:</strong></td><td style="color: #2c3e50;">${data.senderEmail}</td></tr>
-                            <tr><td style="padding: 8px 0; color: #666;"><strong>Phone:</strong></td><td style="color: #2c3e50;">${data.senderPhone}</td></tr>
-                            ${data.company ? `<tr><td style="padding: 8px 0; color: #666;"><strong>Company:</strong></td><td style="color: #2c3e50;">${data.company}</td></tr>` : ''}
+                        
+                        <h3 class="customer-info-header">👤 Customer Information</h3>
+                        <table class="info-table">
+                            <tr><td><strong>Name:</strong></td><td>${data.senderName}</td></tr>
+                            <tr><td><strong>Email:</strong></td><td>${data.senderEmail}</td></tr>
+                            <tr><td><strong>Phone:</strong></td><td>${data.senderPhone}</td></tr>                            ${data.company ? `<tr><td><strong>Company:</strong></td><td>${data.company}</td></tr>` : ''}
                         </table>
 
-                        <h3 style="color: #3498db; margin-top: 25px;">📍 Shipping Details</h3>
-                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                            <tr><td style="padding: 8px 0; color: #666; width: 40%;"><strong>From:</strong></td><td style="color: #2c3e50;">${getLocationName(data.originCity)}</td></tr>
-                            <tr><td style="padding: 8px 0; color: #666;"><strong>To:</strong></td><td style="color: #2c3e50;">${getLocationName(data.destinationCity)}</td></tr>
-                            <tr><td style="padding: 8px 0; color: #666;"><strong>Cargo Type:</strong></td><td style="color: #2c3e50;">${data.cargoType}</td></tr>
-                            <tr><td style="padding: 8px 0; color: #666;"><strong>Shipment Type:</strong></td><td style="color: #2c3e50;">${data.shipmentType}</td></tr>
+                        <h3 class="section-header-email">📍 Shipping Details</h3>
+                        <table class="section-table">
+                            <tr><td><strong>From:</strong></td><td>${getLocationName(data.originCity)}</td></tr>
+                            <tr><td><strong>To:</strong></td><td>${getLocationName(data.destinationCity)}</td></tr>
+                            <tr><td><strong>Cargo Type:</strong></td><td>${data.cargoType}</td></tr>
+                            <tr><td><strong>Shipment Type:</strong></td><td>${data.shipmentType}</td></tr>
                         </table>
 
-                        <h3 style="color: #3498db; margin-top: 25px;">📦 Package Information</h3>
-                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                            <tr><td style="padding: 8px 0; color: #666; width: 40%;"><strong>Weight:</strong></td><td style="color: #2c3e50;">${data.weight} kg</td></tr>
-                            ${data.dimensions ? `<tr><td style="padding: 8px 0; color: #666;"><strong>Dimensions:</strong></td><td style="color: #2c3e50;">${data.dimensions} cm</td></tr>` : ''}
+                        <h3 class="section-header-email">📦 Package Information</h3>
+                        <table class="section-table">
+                            <tr><td><strong>Weight:</strong></td><td>${data.weight} kg</td></tr>
+                            ${data.dimensions ? `<tr><td><strong>Dimensions:</strong></td><td>${data.dimensions} cm</td></tr>` : ''}
                         </table>
 
                         ${data.notes ? `
-                        <h3 style="color: #3498db; margin-top: 25px;">📝 Additional Notes</h3>
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db;">
-                            <p style="margin: 0; color: #2c3e50; line-height: 1.6;">${data.notes}</p>
+                        <h3 class="section-header-email">📝 Additional Notes</h3>
+                        <div class="notes-section">
+                            <p>${data.notes}</p>
                         </div>
                         ` : ''}
 
-                        <div style="background: #e8f4fd; padding: 20px; border-radius: 8px; margin-top: 30px; text-align: center;">
-                            <h4 style="color: #2c3e50; margin: 0 0 10px 0;">⚡ Quick Actions</h4>
-                            <p style="margin: 0; color: #666;">
-                                <strong>Email:</strong> <a href="mailto:${data.senderEmail}" style="color: #3498db;">${data.senderEmail}</a><br>
-                                <strong>Call:</strong> <a href="tel:${data.senderPhone}" style="color: #3498db;">${data.senderPhone}</a><br>
-                                <strong>WhatsApp:</strong> <a href="https://wa.me/${data.senderPhone.replace(/\D/g, '')}" style="color: #25d366;">Send Message</a>
+                        <div class="quick-actions">
+                            <h4>⚡ Quick Actions</h4>
+                            <p>
+                                <strong>Email:</strong> <a href="mailto:${data.senderEmail}">${data.senderEmail}</a><br>
+                                <strong>Call:</strong> <a href="tel:${data.senderPhone}">${data.senderPhone}</a><br>
+                                <strong>WhatsApp:</strong> <a href="https://wa.me/${data.senderPhone.replace(/\D/g, '')}">Send Message</a>
                             </p>
                         </div>
 
-                        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e9ecef; text-align: center; color: #666; font-size: 12px;">
+                        <div class="footer">
                             <p>This freight quote request was submitted through yuvinalistourism.com</p>
                         </div>
                     </div>
@@ -1560,13 +1557,9 @@ ${data.notes ? `📝 *Additional Notes:*\n${data.notes}` : ''}
 
             // Create message element
             const messageDiv = document.createElement('div');
-            messageDiv.className = `form-message form-${type}`;
-            messageDiv.innerHTML = `
-                <div style="padding: 15px 20px; border-radius: 8px; margin: 20px 0; border: 2px solid; ${type === 'success' ? 
-                    'background: #d4edda; color: #155724; border-color: #c3e6cb;' : 
-                    'background: #f8d7da; color: #721c24; border-color: #f5c6cb;'
-                }">
-                    <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-triangle'}" style="margin-right: 10px;"></i>
+            messageDiv.className = `form-message form-${type}`;            messageDiv.innerHTML = `
+                <div class="notification ${type}">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-triangle'}"></i>
                     ${message}
                 </div>
             `;

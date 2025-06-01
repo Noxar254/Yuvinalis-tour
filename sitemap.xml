@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Pages -->
+  <url>
+    <loc>https://yuvinalistourism.com/</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/dubai-banner.jpg</image:loc>
+      <image:caption>Dubai Tours and Travel Services</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/tours.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/dubai-tours-banner.jpg</image:loc>
+      <image:caption>Dubai Tours and Packages</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/visa-services.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/visa-services-banner.jpg</image:loc>
+      <image:caption>Dubai Visa Services</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/apply-visa.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/apply-visa.jpg</image:loc>
+      <image:caption>Apply for Dubai Visa</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/flight-booking.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/flight-booking.jpg</image:loc>
+      <image:caption>Dubai Flight Booking</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/hotel-booking.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/hotel-booking.jpg</image:loc>
+      <image:caption>Dubai Hotel Booking</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/events.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/kenya-hiking-banner.jpg</image:loc>
+      <image:caption>Adventure Events and Hiking Tours Kenya</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/booking.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/booking-banner.jpg</image:loc>
+      <image:caption>Book Dubai Tours and Services</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/gallery.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/gallery-banner.jpg</image:loc>
+      <image:caption>Dubai Travel Gallery</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/shop.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/shop-banner.jpg</image:loc>
+      <image:caption>Travel Gear and Equipment Shop</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/plan-your-travel.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://yuvinalistourism.com/images/travel-planning-banner.jpg</image:loc>
+      <image:caption>Dubai Travel Planner Tool</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/freight-services.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/about-us.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuvinalistourism.com/dubai-packages.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+</urlset>

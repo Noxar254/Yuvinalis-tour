@@ -123,17 +123,39 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         }
     };
-    
-    // Close modal function
+      // Close modal function
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
+        // Re-enable scrolling on the main page
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        
+        // Restore scroll position on mobile
+        if (window.scrollPosition !== undefined) {
+            window.scrollTo(0, window.scrollPosition);
+        }
     }
     
     // Open modal function
     function openModal() {
-        modal.classList.add('active');
+        // Store current scroll position for mobile
+        window.scrollPosition = window.pageYOffset;
+        
+        // Prevent background scrolling on mobile
         document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${window.scrollPosition}px`;
+        document.body.style.width = '100%';
+        
+        modal.classList.add('active');
+        
+        // Focus management for accessibility
+        const firstFocusableElement = modal.querySelector('.modal-close');
+        if (firstFocusableElement) {
+            setTimeout(() => firstFocusableElement.focus(), 100);
+        }
     }
     
     // Close modal when clicking on close button or outside the modal
@@ -161,72 +183,68 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove any existing event listeners
             const newButton = button.cloneNode(true);
             button.parentNode.replaceChild(newButton, button);
-            
-            newButton.addEventListener('click', function(e) {
+              newButton.addEventListener('click', function(e) {
                 e.preventDefault();
-                e.stopPropagation();            
-            const hotelCard = newButton.closest('.hotel-card');
-            if (!hotelCard) return;
-            
-            try {
-                // Get hotel data from the card
-                const hotelTitle = hotelCard.querySelector('h3')?.textContent || 'Hotel Name';
-                const hotelImage = hotelCard.querySelector('.hotel-image img')?.getAttribute('src') || '';
-                const hotelBadge = hotelCard.querySelector('.hotel-badge')?.textContent || 'Hotel';
-                const hotelPrice = hotelCard.querySelector('.hotel-price span:first-child')?.textContent || 'Price on request';
-                const hotelLocation = hotelCard.querySelector('.detail-item:first-child span')?.textContent || 'Location';
-                const hotelRating = hotelCard.querySelector('.detail-item:nth-child(2) span')?.textContent || 'Rating';
+                e.stopPropagation();
                 
-                // Get amenities
-                const amenitiesElements = hotelCard.querySelectorAll('.hotel-amenities span');
-                const amenities = Array.from(amenitiesElements).map(el => el.innerHTML).join('');
-                
-                // Get detailed information from our data
-                const hotelInfo = hotelData[hotelTitle] || {
-                    description: 'Experience luxury and comfort at this exceptional hotel with premium amenities and exceptional service.',
-                    features: ['Premium accommodations', 'Exceptional service', 'Modern facilities', 'Prime location']
-                };
-                
-                // Set modal content
-                modal.querySelector('.modal-header h3').textContent = hotelTitle;
-                modal.querySelector('.modal-image img').setAttribute('src', hotelImage);
-                modal.querySelector('.modal-image img').setAttribute('alt', hotelTitle);
-                modal.querySelector('.hotel-badge').textContent = hotelBadge;
-                modal.querySelector('.price').textContent = hotelPrice;
-                modal.querySelector('.location').textContent = hotelLocation;
-                modal.querySelector('.rating').textContent = hotelRating;
-                modal.querySelector('.amenities-list').innerHTML = amenities;
-                modal.querySelector('.description-text').textContent = hotelInfo.description;
-                modal.querySelector('.total-price').textContent = hotelPrice;
-                
-                // Set features list
-                const featuresList = modal.querySelector('.features-list');
-                featuresList.innerHTML = hotelInfo.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('');
-                
-                // Set badge color based on type
-                const badgeElement = modal.querySelector('.hotel-badge');
-                badgeElement.className = 'hotel-badge';
-                if (hotelBadge.toLowerCase().includes('all-inclusive')) {
-                    badgeElement.classList.add('all-inclusive');
-                } else if (hotelBadge.toLowerCase().includes('beachside') || hotelBadge.toLowerCase().includes('oceanfront')) {
-                    badgeElement.classList.add('beachside');
-                } else if (hotelBadge.toLowerCase().includes('mountain')) {
-                    badgeElement.classList.add('mountain');
-                } else {
-                    badgeElement.classList.add('premium');
+                const hotelCard = newButton.closest('.hotel-card');
+                if (!hotelCard) return;                
+                try {
+                    // Get hotel data from the card
+                    const hotelTitle = hotelCard.querySelector('h3')?.textContent || 'Hotel Name';
+                    const hotelImage = hotelCard.querySelector('.hotel-image img')?.getAttribute('src') || '';
+                    const hotelBadge = hotelCard.querySelector('.hotel-badge')?.textContent || 'Hotel';
+                    const hotelPrice = hotelCard.querySelector('.hotel-price span:first-child')?.textContent || 'Price on request';
+                    const hotelLocation = hotelCard.querySelector('.detail-item:first-child span')?.textContent || 'Location';
+                    const hotelRating = hotelCard.querySelector('.detail-item:nth-child(2) span')?.textContent || 'Rating';                    
+                    // Get amenities
+                    const amenitiesElements = hotelCard.querySelectorAll('.hotel-amenities span');
+                    const amenities = Array.from(amenitiesElements).map(el => el.innerHTML).join('');
+                    
+                    // Get detailed information from our data
+                    const hotelInfo = hotelData[hotelTitle] || {
+                        description: 'Experience luxury and comfort at this exceptional hotel with premium amenities and exceptional service.',
+                        features: ['Premium accommodations', 'Exceptional service', 'Modern facilities', 'Prime location']
+                    };
+                    
+                    // Set modal content
+                    modal.querySelector('.modal-header h3').textContent = hotelTitle;
+                    modal.querySelector('.modal-image img').setAttribute('src', hotelImage);                    modal.querySelector('.modal-image img').setAttribute('alt', hotelTitle);
+                    modal.querySelector('.hotel-badge').textContent = hotelBadge;
+                    modal.querySelector('.price').textContent = hotelPrice;
+                    modal.querySelector('.location').textContent = hotelLocation;
+                    modal.querySelector('.rating').textContent = hotelRating;
+                    modal.querySelector('.amenities-list').innerHTML = amenities;
+                    modal.querySelector('.description-text').textContent = hotelInfo.description;
+                    modal.querySelector('.total-price').textContent = hotelPrice;
+                    
+                    // Set features list
+                    const featuresList = modal.querySelector('.features-list');
+                    featuresList.innerHTML = hotelInfo.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('');
+                    
+                    // Set badge color based on type
+                    const badgeElement = modal.querySelector('.hotel-badge');
+                    badgeElement.className = 'hotel-badge';
+                    if (hotelBadge.toLowerCase().includes('all-inclusive')) {
+                        badgeElement.classList.add('all-inclusive');
+                    } else if (hotelBadge.toLowerCase().includes('beachside') || hotelBadge.toLowerCase().includes('oceanfront')) {
+                        badgeElement.classList.add('beachside');
+                    } else if (hotelBadge.toLowerCase().includes('mountain')) {                        badgeElement.classList.add('mountain');
+                    } else {
+                        badgeElement.classList.add('premium');
+                    }
+                    
+                    // Update booking link with hotel information
+                    const bookingBtn = modal.querySelector('.modal-btn.primary');
+                    bookingBtn.href = `booking.html?service=hotel&hotel=${encodeURIComponent(hotelTitle)}`;
+                    
+                    // Open modal
+                    openModal();
+                    
+                    console.log('Hotel modal opened for:', hotelTitle);
+                } catch (error) {
+                    console.error('Error opening hotel modal:', error);
                 }
-                
-                // Update booking link with hotel information
-                const bookingBtn = modal.querySelector('.modal-btn.primary');
-                bookingBtn.href = `booking.html?service=hotel&hotel=${encodeURIComponent(hotelTitle)}`;
-                
-                // Open modal
-                openModal();
-                
-                console.log('Hotel modal opened for:', hotelTitle);
-                  } catch (error) {
-                console.error('Error opening hotel modal:', error);
-            }
             });
         });
     }
@@ -256,3 +274,56 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(hotelsSection, { childList: true, subtree: true });
     }
 });
+
+// Mobile viewport height fix for iOS Safari
+function setVhProperty() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Set initial viewport height
+setVhProperty();
+
+// Update on window resize and orientation change
+window.addEventListener('resize', setVhProperty);
+window.addEventListener('orientationchange', () => {
+    setTimeout(setVhProperty, 100);
+});
+
+// Touch gesture support for mobile
+    let touchStartY = 0;
+    let touchEndY = 0;
+    let isDragging = false;
+    
+    modal.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+        isDragging = false;
+    }, { passive: true });
+    
+    modal.addEventListener('touchmove', function(e) {
+        if (e.target === modal) {
+            touchEndY = e.touches[0].clientY;
+            const deltaY = touchEndY - touchStartY;
+            
+            // If swiping down significantly, start indicating close gesture
+            if (deltaY > 50) {
+                isDragging = true;
+                modal.style.opacity = Math.max(0.5, 1 - (deltaY / 300));
+            }
+        }
+    }, { passive: true });
+    
+    modal.addEventListener('touchend', function(e) {
+        if (e.target === modal && isDragging) {
+            const deltaY = touchEndY - touchStartY;
+            
+            // If swiped down more than 100px, close modal
+            if (deltaY > 100) {
+                closeModal();
+            } else {
+                // Reset opacity if not closing
+                modal.style.opacity = '';
+            }
+        }
+        isDragging = false;
+    }, { passive: true });

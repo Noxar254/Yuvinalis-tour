@@ -1,0 +1,176 @@
+/* Freight Services page styling */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.shipment-timeline-header {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Email template styles */
+.email-template {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 20px;
+}
+
+.email-template .email-container {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.email-template .email-header {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.email-template .submission-info {
+    background: #e8f4fd;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.email-template .submission-info p {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.email-template .customer-info-header {
+    color: #3498db;
+    margin-top: 25px;
+}
+
+.email-template .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.email-template .info-table td {
+    padding: 8px 0;
+    color: #666;
+}
+
+.email-template .info-table td:first-child {
+    width: 40%;
+}
+
+.email-template .info-table td:last-child {
+    color: #2c3e50;
+}
+
+/* Additional email template styling */
+.email-template .section-header-email {
+    color: #3498db;
+    margin-top: 25px;
+}
+
+.email-template .section-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.email-template .section-table td {
+    padding: 8px 0;
+    color: #666;
+}
+
+.email-template .section-table td:first-child {
+    width: 40%;
+}
+
+.email-template .section-table td:last-child {
+    color: #2c3e50;
+}
+
+.email-template .notes-section {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.email-template .notes-section p {
+    margin: 0;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.email-template .quick-actions {
+    background: #e8f4fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.email-template .quick-actions h4 {
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+}
+
+.email-template .quick-actions p {
+    margin: 0;
+    color: #666;
+}
+
+.email-template .quick-actions a {
+    color: #3498db;
+}
+
+.email-template .quick-actions a[href^="https://wa.me"] {
+    color: #25d366;
+}
+
+.email-template .footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+}
+
+/* Notification styles */
+.notification {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 2px solid;
+}
+
+.notification.success {
+    background: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.notification.error {
+    background: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.notification i {
+    margin-right: 10px;
+}

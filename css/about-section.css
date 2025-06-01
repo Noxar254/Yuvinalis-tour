@@ -1,0 +1,44 @@
+/* About Section Styles */
+.about-content .about-image {
+    max-height: 400px;
+}
+
+.about-content .image-wrapper {
+    max-height: 400px;
+}
+
+.about-content .image-wrapper img {
+    object-fit: cover;
+    height: 400px;
+}
+
+.about-content .image-overlay {
+    background: linear-gradient(45deg, rgba(253, 187, 45, 0.9), rgba(255, 203, 66, 0.9));
+}
+
+.about-content .header-line {
+    background: linear-gradient(90deg, #FDBB2D, #FFA500);
+}
+
+.about-content .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.about-content .about-btn.primary {
+    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    box-shadow: 0 8px 25px rgba(253, 187, 45, 0.3);
+}
+
+/* Gallery button specific styling */
+.about-btn.gallery-btn {
+    background: linear-gradient(45deg, #4099ff, #73b4ff);
+    color: white;
+    border: none;
+    box-shadow: 0 8px 25px rgba(64, 153, 255, 0.3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}

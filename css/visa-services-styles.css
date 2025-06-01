@@ -1,0 +1,118 @@
+/* Visa Services page styling */
+.visa-cta-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.visa-apply-btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(253, 187, 45, 0.3);
+    transition: all 0.3s ease;
+}
+
+.visa-apply-btn i {
+    margin-right: 8px;
+}
+
+.enquire-button-visa {
+    margin-top: 10px;
+    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+}
+
+.visa-process-section {
+    padding: 100px 0;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.visa-process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.step-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    color: white;
+    font-size: 35px;
+    box-shadow: 0 10px 25px rgba(253, 187, 45, 0.3);
+    transition: all 0.3s ease;
+}
+
+.process-step h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.process-step p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.step-line {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: calc(50% + 30px);
+    height: 3px;
+    background: linear-gradient(90deg, rgba(253, 187, 45, 0.8), rgba(255, 165, 0, 0.8));
+    display: none;
+}
+
+/* Background decorations */
+.background-decoration:nth-child(1) {
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, rgba(253, 187, 45, 0.1), rgba(255, 203, 66, 0.1));
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.background-decoration:nth-child(2) {
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, rgba(64, 153, 255, 0.1), rgba(115, 180, 255, 0.1));
+    border-radius: 50%;
+    z-index: 1;
+}

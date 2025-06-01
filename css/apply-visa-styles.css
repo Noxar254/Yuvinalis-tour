@@ -1,0 +1,17 @@
+/* Apply Visa form styling */
+.form-section-header {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.visa-section-header {
+    margin: 20px 0;
+    color: #333;
+}
+
+.contact-item-bold {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #333;
+}

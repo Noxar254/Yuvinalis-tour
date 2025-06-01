@@ -1,0 +1,8 @@
+/* Booking Page Inline Styles */
+.form-group#tour-selection {
+    display: none;
+}
+
+.booking-success#booking-success {
+    display: none;
+}

@@ -120,7 +120,169 @@
             padding: 80px 0;
             background-color: #f9f9f9;
         }
-          .application-container {
+          /* Job Seekers Promotional Section */
+        .job-seekers-promo {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/booking page.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 15px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .promo-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            color: white;
+        }
+
+        .promo-icon {
+            flex: 0 0 auto;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .promo-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .promo-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .promo-text h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .promo-text p {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.95;
+            line-height: 1.4;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .promo-action {
+            flex: 0 0 auto;
+        }
+
+        .job-seekers-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            border: none;
+        }
+
+        .job-seekers-btn:hover {
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+        }
+
+        .job-seekers-btn i {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .job-seekers-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Responsive design for promotional section */
+        @media (max-width: 992px) {
+            .promo-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+            
+            .promo-text {
+                text-align: center;
+            }
+            
+            .promo-text h3 {
+                font-size: 1.3rem;
+            }
+            
+            .promo-text p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .job-seekers-promo {
+                padding: 12px 0;
+                background-attachment: scroll;
+            }
+            
+            .promo-content {
+                gap: 10px;
+            }
+            
+            .promo-icon {
+                padding: 10px;
+            }
+            
+            .promo-icon i {
+                font-size: 1.5rem;
+            }
+            
+            .promo-text h3 {
+                font-size: 1.2rem;
+            }
+            
+            .promo-text p {
+                font-size: 0.85rem;
+            }
+            
+            .job-seekers-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .promo-container {
+                padding: 0 15px;
+            }
+            
+            .promo-text h3 {
+                font-size: 1.1rem;
+            }
+            
+            .promo-text p {
+                font-size: 0.8rem;
+            }
+        }
+        
+        .application-container {
             display: flex;
             flex-direction: column-reverse;
             flex-wrap: wrap;
@@ -500,8 +662,7 @@
                 padding: 12px 25px;
                 font-size: 1rem;
             }
-        }
-        
+        }        
         /* ...existing code... */
     </style>
 </head>
@@ -589,6 +750,25 @@
         <div class="visa-application-hero-content">
             <h1>Apply for Visa</h1>
             <p>Fast, reliable, and hassle-free visa application process for your UAE travel needs</p>
+        </div>
+    </section>    <!-- Job Seekers Package Promotional Section -->
+    <section class="job-seekers-promo">
+        <div class="promo-container">
+            <div class="promo-content">
+                <div class="promo-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="promo-text">
+                    <h3>Looking for Jobs in Dubai?</h3>
+                    <p>Get comprehensive job placement support with visa assistance and career guidance</p>
+                </div>
+                <div class="promo-action">
+                    <a href="job-seekers.html" class="job-seekers-btn">
+                        <span>View Job Packages</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 

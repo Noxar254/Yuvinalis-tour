@@ -11,52 +11,46 @@
     </script>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Primary Meta Tags -->
-    <title>Adventure Events & Hiking Tours Kenya | Beyond Miles Adventures - Yuvinalis Tourism</title>
-    <meta name="title" content="Adventure Events & Hiking Tours Kenya | Beyond Miles Adventures - Yuvinalis Tourism">
-    <meta name="description" content="Join exciting adventure events and hiking tours in Kenya. Experience Mount Kenya, Aberdares, Hell's Gate, and more with Beyond Miles Adventures. Book your outdoor adventure today!">
-    <meta name="keywords" content="Kenya hiking tours, adventure events Kenya, Mount Kenya hiking, outdoor adventures Kenya, hiking tours Nairobi, Kenya nature walks, adventure tourism Kenya, mountain climbing Kenya, hiking events, outdoor activities Kenya">
+    <!-- Primary Meta Tags -->    <title>Dubai Attractions & Experiences | Yuvinalis Tourism</title>
+    <meta name="title" content="Dubai Attractions & Experiences | Yuvinalis Tourism"><meta name="description" content="Discover Dubai's top attractions and experiences. Desert safaris, cruises, theme parks and more with Yuvinalis Tourism.">
+    <meta name="keywords" content="Dubai attractions, desert safari, dhow cruise, Dubai tours, theme parks Dubai, Dubai experiences, Dubai tourism">
     <meta name="author" content="Yuvinalis Tourism">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yuvinalistourism.com/events.html">
-    <meta property="og:title" content="Adventure Events & Hiking Tours Kenya | Beyond Miles Adventures">
-    <meta property="og:description" content="Join exciting adventure events and hiking tours in Kenya. Experience Mount Kenya, Aberdares, Hell's Gate, and more outdoor adventures.">
-    <meta property="og:image" content="https://yuvinalistourism.com/images/kenya-hiking-banner.jpg">
+    <meta property="og:url" content="https://yuvinalistourism.com/events.html">    <meta property="og:title" content="Dubai Attractions & Experiences | Yuvinalis Tourism">
+    <meta property="og:description" content="Discover Dubai's top attractions and experiences. Desert safaris, cruises, theme parks and more.">
+    <meta property="og:image" content="https://yuvinalistourism.com/images/dubai-attractions.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yuvinalistourism.com/events.html">
-    <meta property="twitter:title" content="Adventure Events & Hiking Tours Kenya | Beyond Miles Adventures">
-    <meta property="twitter:description" content="Join exciting adventure events and hiking tours in Kenya. Experience outdoor adventures with professional guides.">
-    <meta property="twitter:image" content="https://yuvinalistourism.com/images/kenya-hiking-banner.jpg">
+    <meta property="twitter:url" content="https://yuvinalistourism.com/events.html">    <meta property="twitter:title" content="Dubai Attractions & Experiences | Yuvinalis Tourism">
+    <meta property="twitter:description" content="Discover Dubai's top attractions. Desert safaris, cruises, theme parks and more.">
+    <meta property="twitter:image" content="https://yuvinalistourism.com/images/dubai-attractions.jpg">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://yuvinalistourism.com/events.html">
     
-    <!-- Structured Data for Events -->
-    <script type="application/ld+json">
+    <!-- Structured Data for Events -->    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TouristAttraction",
-      "name": "Beyond Miles Adventures - Kenya Hiking Tours",
-      "description": "Adventure events and hiking tours in Kenya's most beautiful locations",
+      "name": "Dubai Attractions & Experiences - Yuvinalis Tourism",
+      "description": "Top Dubai attractions and experiences including desert safaris, cruises, and theme parks",
       "provider": {
         "@type": "TravelAgency",
         "name": "Yuvinalis Tourism"
       },
       "location": {
         "@type": "Place",
-        "name": "Kenya",
+        "name": "Dubai, UAE",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "KE"
+          "addressCountry": "AE"
         }
       },
-      "touristType": ["Adventure", "Nature", "Hiking", "Outdoor"],
-      "hasMap": "https://maps.google.com/kenya-hiking-locations"
+      "touristType": ["Adventure", "Culture", "Family", "Sightseeing"]
     }
     </script>
     <!-- Font Awesome -->
@@ -539,10 +533,10 @@
     </nav>    <!-- Events Hero Section -->    <section class="events-hero">
         <div class="events-hero-content">
             <h1>Dubai Attractions & Experiences</h1>
-            <p>Discover the best attractions and experiences Dubai has to offer. From thrilling desert safaris to breathtaking views from the world's tallest buildings.</p>
+            <p>Discover Dubai's top attractions and unforgettable experiences.</p>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-number" data-target="18">0</div>
                     <div class="stat-label">Attractions</div>
                 </div>
                 <div class="stat-item">
@@ -558,18 +552,16 @@
 
     <!-- Events Filter Section -->
     <section class="events-filter">
-        <div class="filter-container">
-            <div class="filter-options">
-                <div class="filter-option active"><i class="fas fa-calendar-alt"></i> All Attractions</div>
-                <div class="filter-option"><i class="fas fa-umbrella-beach"></i> Desert Experiences</div>
-                <div class="filter-option"><i class="fas fa-water"></i> Water Activities</div>
-                <div class="filter-option"><i class="fas fa-building"></i> City Tours</div>
-                <div class="filter-option"><i class="fas fa-dharmachakra"></i> Cruises</div>
-                <div class="filter-option"><i class="fas fa-ticket-alt"></i> Theme Parks</div>
-            </div>
-            <div class="search-container">
+        <div class="filter-container">            <div class="filter-options">
+                <div class="filter-option active" data-filter="all"><i class="fas fa-calendar-alt"></i> All Attractions</div>
+                <div class="filter-option" data-filter="desert"><i class="fas fa-umbrella-beach"></i> Desert Experiences</div>
+                <div class="filter-option" data-filter="water"><i class="fas fa-water"></i> Water Activities</div>
+                <div class="filter-option" data-filter="city"><i class="fas fa-building"></i> City Tours</div>
+                <div class="filter-option" data-filter="cruise"><i class="fas fa-dharmachakra"></i> Cruises</div>
+                <div class="filter-option" data-filter="theme-park"><i class="fas fa-ticket-alt"></i> Theme Parks</div>
+            </div>            <div class="search-container">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search attractions by name, location, or price...">
+                <input type="text" id="attraction-search" placeholder="Search attractions...">
             </div>
         </div>
     </section><!-- Events List Section -->
@@ -579,9 +571,8 @@
                 <!-- Dubai Attractions -->
                 <div class="month-header">
                     <h2>Popular Dubai Attractions</h2>
-                </div>
-                  <!-- Event Card 1 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 1 -->
+                <div class="event-card" data-category="desert" data-name="desert safari" data-location="dubai desert conservation reserve">
                     <div class="event-image">
                         <img src="images/desert safari.png" alt="Desert Safari">
                         <div class="event-date">
@@ -590,7 +581,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Desert Safari</h3>                        <div class="event-details">
+                        <h3>Desert Safari</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Dubai Desert Conservation Reserve</span>
@@ -614,9 +605,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 2 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 2 -->
+                <div class="event-card" data-category="cruise water" data-name="creek dhow cruise" data-location="dubai creek">
                     <div class="event-image">
                         <img src="images/Dhow Cruise.png" alt="Creek Dhow Cruise">
                         <div class="event-date">
@@ -625,7 +615,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Creek Dhow Cruise</h3>                        <div class="event-details">
+                        <h3>Creek Dhow Cruise</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Dubai Creek</span>
@@ -649,9 +639,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 3 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 3 -->
+                <div class="event-card" data-category="cruise water" data-name="marina dhow cruise" data-location="dubai marina">
                     <div class="event-image">
                         <img src="images/Dhow Cruise.png" alt="Marina Dhow Cruise">
                         <div class="event-date">
@@ -660,7 +649,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Marina Dhow Cruise</h3>                        <div class="event-details">
+                        <h3>Marina Dhow Cruise</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Dubai Marina</span>
@@ -684,9 +673,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 4 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 4 -->
+                <div class="event-card" data-category="cruise water" data-name="marina lotus cruise" data-location="dubai marina">
                     <div class="event-image">
                         <img src="images/marina lotus.jpg" alt="Marina Lotus Cruise">
                         <div class="event-date">
@@ -695,7 +683,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Marina Lotus 3Hrs Cruise</h3>                        <div class="event-details">
+                        <h3>Marina Lotus 3Hrs Cruise</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Dubai Marina</span>
@@ -719,9 +707,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 5 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 5 -->
+                <div class="event-card" data-category="city" data-name="private dubai city tour" data-location="dubai uae">
                     <div class="event-image">
                         <img src="images/dubai city tour.jpg" alt="Dubai City Tour">
                         <div class="event-date">
@@ -730,7 +717,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Private Dubai City Tour</h3>                        <div class="event-details">
+                        <h3>Private Dubai City Tour</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Dubai, UAE</span>
@@ -754,9 +741,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 6 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 6 -->
+                <div class="event-card" data-category="theme-park" data-name="global village" data-location="global village dubai">
                     <div class="event-image">
                         <img src="images/Global-Village.jpg" alt="Global Village">
                         <div class="event-date">
@@ -765,7 +751,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Global Village</h3>                        <div class="event-details">
+                        <h3>Global Village</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Global Village, Dubai</span>
@@ -794,9 +780,8 @@
                 <!-- More Attractions -->
                 <div class="month-header">
                     <h2>Premium Experiences</h2>
-                </div>
-                  <!-- Event Card 7 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 7 -->
+                <div class="event-card" data-category="water cruise" data-name="private yacht party" data-location="dubai marina yacht club">
                     <div class="event-image">
                         <img src="images/Yacht party.jpg" alt="Private Yacht Party">
                         <div class="event-date">
@@ -805,7 +790,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Private Yacht Party</h3>                        <div class="event-details">
+                        <h3>Private Yacht Party</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Dubai Marina Yacht Club</span>
@@ -829,9 +814,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 8 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 8 -->
+                <div class="event-card" data-category="city" data-name="burj khalifa at the top" data-location="downtown dubai">
                     <div class="event-image">
                         <img src="images/Burj Khalifa.png" alt="Burj Khalifa">
                         <div class="event-date">
@@ -840,7 +824,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Burj Khalifa at the Top</h3>                        <div class="event-details">
+                        <h3>Burj Khalifa at the Top</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Downtown Dubai</span>
@@ -863,9 +847,8 @@
                                 <i class="fas fa-calendar-plus"></i>
                             </a>
                         </div>
-                    </div>                </div>
-                  <!-- Event Card 9 -->
-                <div class="event-card">
+                    </div>                </div>                <!-- Event Card 9 -->
+                <div class="event-card" data-category="water" data-name="mamzar jetski" data-location="al mamzar beach park">
                     <div class="event-image">
                         <img src="images/jestski.jpg" alt="Mamzar Jetski">
                         <div class="event-date">
@@ -874,7 +857,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Mamzar Jetski</h3>                        <div class="event-details">
+                        <h3>Mamzar Jetski</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Al Mamzar Beach Park</span>
@@ -899,9 +882,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 10 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 10 -->
+                <div class="event-card" data-category="water" data-name="jumeira jetski" data-location="jumeirah beach">
                     <div class="event-image">
                         <img src="images/jestski.jpg" alt="Jumeira Jetski">
                         <div class="event-date">
@@ -910,7 +892,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Jumeira Jetski</h3>                        <div class="event-details">
+                        <h3>Jumeira Jetski</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Jumeirah Beach</span>
@@ -935,9 +917,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 11 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 11 -->
+                <div class="event-card" data-category="water" data-name="jetcar experience" data-location="dubai marina">
                     <div class="event-image">
                         <img src="images/jetcar.jpg" alt="Jetcar">
                         <div class="event-date">
@@ -946,7 +927,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Jetcar Experience</h3>                        <div class="event-details">
+                        <h3>Jetcar Experience</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Dubai Marina</span>
@@ -976,9 +957,8 @@
                 <!-- Theme Parks & Attractions -->
                 <div class="month-header">
                     <h2>Theme Parks & Attractions</h2>
-                </div>
-                  <!-- Event Card 12 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 12 -->
+                <div class="event-card" data-category="theme-park" data-name="img world of adventure" data-location="city of arabia dubai">
                     <div class="event-image">
                         <img src="images/IMG world.jpg" alt="IMG World of Adventure">
                         <div class="event-date">
@@ -987,7 +967,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>IMG World of Adventure</h3>                        <div class="event-details">
+                        <h3>IMG World of Adventure</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>City of Arabia, Dubai</span>
@@ -1012,9 +992,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 13 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 13 -->
+                <div class="event-card" data-category="theme-park water" data-name="atlantis aquaventure" data-location="palm jumeirah dubai">
                     <div class="event-image">
                         <img src="images/aquaventure atlantis.jpeg" alt="Atlantis Aquaventure">
                         <div class="event-date">
@@ -1023,7 +1002,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Atlantis Aquaventure</h3>                        <div class="event-details">
+                        <h3>Atlantis Aquaventure</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Palm Jumeirah, Dubai</span>
@@ -1047,9 +1026,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 14 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 14 -->
+                <div class="event-card" data-category="theme-park water" data-name="wild wadi water park" data-location="jumeirah dubai">
                     <div class="event-image">
                         <img src="images/wild wadi.jpg" alt="Wild Wadi Water Park">
                         <div class="event-date">
@@ -1058,7 +1036,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Wild Wadi Water Park</h3>                        <div class="event-details">
+                        <h3>Wild Wadi Water Park</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Jumeirah, Dubai</span>
@@ -1088,9 +1066,8 @@
                 <!-- Cultural Attractions -->
                 <div class="month-header">
                     <h2>Cultural Attractions</h2>
-                </div>
-                  <!-- Event Card 15 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 15 -->
+                <div class="event-card" data-category="city" data-name="museum of the future" data-location="sheikh zayed road dubai">
                     <div class="event-image">
                         <img src="images/Museum of the future.jpg" alt="Museum of the Future">
                         <div class="event-date">
@@ -1099,7 +1076,7 @@
                         </div>
                     </div>
                     <div class="event-content">
-                        <h3>Museum of the Future</h3>                        <div class="event-details">
+                        <h3>Museum of the Future</h3><div class="event-details">
                             <div class="detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
                                 <span>Sheikh Zayed Road, Dubai</span>
@@ -1123,9 +1100,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 16 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 16 -->
+                <div class="event-card" data-category="city" data-name="dubai frame" data-location="zabeel park dubai">
                     <div class="event-image">
                         <img src="images/dubai frame.jpg" alt="Dubai Frame">
                         <div class="event-date">
@@ -1158,9 +1134,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                  <!-- Event Card 17 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 17 -->
+                <div class="event-card" data-category="city theme-park" data-name="green planet" data-location="city walk dubai">
                     <div class="event-image">
                         <img src="images/green planet.jpg" alt="Green Planet">
                         <div class="event-date">
@@ -1198,9 +1173,8 @@
                 <!-- Observation Decks -->
                 <div class="month-header">
                     <h2>Observation Experiences</h2>
-                </div>
-                  <!-- Event Card 18 -->
-                <div class="event-card">
+                </div>                <!-- Event Card 18 -->
+                <div class="event-card" data-category="city" data-name="sky view observatory" data-location="downtown dubai">
                     <div class="event-image">
                         <img src="images/sky view observatory.jpg" alt="Sky View Observatory">
                         <div class="event-date">
@@ -1452,15 +1426,223 @@
                 }
             });
         });
-        
-        // Event filter functionality
-        document.querySelectorAll('.filter-option').forEach(option => {
-            option.addEventListener('click', function() {
-                document.querySelectorAll('.filter-option').forEach(opt => {
-                    opt.classList.remove('active');
+          // Event filter and search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterOptions = document.querySelectorAll('.filter-option');
+            const searchInput = document.getElementById('attraction-search');
+            const eventCards = document.querySelectorAll('.event-card');
+            const monthHeaders = document.querySelectorAll('.month-header');
+            
+            // Filter functionality
+            filterOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Update active filter button
+                    filterOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const selectedFilter = this.getAttribute('data-filter');
+                    filterAttractions(selectedFilter, searchInput.value);
+                    
+                    // Add animation effect
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
                 });
-                this.classList.add('active');
-                // Filter logic would go here
+            });
+            
+            // Search functionality with debouncing
+            let searchTimeout;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    const activeFilter = document.querySelector('.filter-option.active').getAttribute('data-filter');
+                    filterAttractions(activeFilter, this.value);
+                }, 300);
+            });
+            
+            // Filter function
+            function filterAttractions(filter, searchTerm) {
+                const searchLower = searchTerm.toLowerCase().trim();
+                let visibleCardsCount = 0;
+                let currentSectionVisible = false;
+                let currentSection = null;
+                
+                eventCards.forEach(card => {
+                    const category = card.getAttribute('data-category') || '';
+                    const name = card.getAttribute('data-name') || '';
+                    const location = card.getAttribute('data-location') || '';
+                    
+                    // Check filter match
+                    const filterMatch = filter === 'all' || category.includes(filter);
+                    
+                    // Check search match
+                    const searchMatch = searchTerm === '' || 
+                        name.toLowerCase().includes(searchLower) ||
+                        location.toLowerCase().includes(searchLower) ||
+                        category.toLowerCase().includes(searchLower);
+                    
+                    // Show/hide card with animation
+                    if (filterMatch && searchMatch) {
+                        showCard(card);
+                        visibleCardsCount++;
+                        currentSectionVisible = true;
+                    } else {
+                        hideCard(card);
+                    }
+                });
+                
+                // Handle section headers visibility
+                let currentHeader = null;
+                eventCards.forEach(card => {
+                    // Find the previous month header
+                    let prevElement = card.previousElementSibling;
+                    while (prevElement && !prevElement.classList.contains('month-header')) {
+                        prevElement = prevElement.previousElementSibling;
+                    }
+                    
+                    if (prevElement && prevElement.classList.contains('month-header')) {
+                        if (currentHeader !== prevElement) {
+                            currentHeader = prevElement;
+                            // Check if any cards in this section are visible
+                            let hasVisibleCards = false;
+                            let nextElement = prevElement.nextElementSibling;
+                            while (nextElement && !nextElement.classList.contains('month-header')) {
+                                if (nextElement.classList.contains('event-card') && 
+                                    nextElement.style.display !== 'none') {
+                                    hasVisibleCards = true;
+                                    break;
+                                }
+                                nextElement = nextElement.nextElementSibling;
+                            }
+                            
+                            // Show/hide header based on visible cards
+                            if (hasVisibleCards) {
+                                currentHeader.style.display = 'block';
+                                currentHeader.style.opacity = '1';
+                            } else {
+                                currentHeader.style.display = 'none';
+                            }
+                        }
+                    }
+                });
+                
+                // Show no results message if needed
+                showNoResultsMessage(visibleCardsCount, filter, searchTerm);
+                
+                // Update counter animation
+                updateStatsCounter(visibleCardsCount);
+            }
+            
+            function showCard(card) {
+                card.style.display = 'block';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                // Trigger animation
+                requestAnimationFrame(() => {
+                    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                });
+            }
+            
+            function hideCard(card) {
+                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(-20px)';
+                
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+            
+            function showNoResultsMessage(count, filter, searchTerm) {
+                // Remove existing no results message
+                const existingMessage = document.querySelector('.no-results-message');
+                if (existingMessage) {
+                    existingMessage.remove();
+                }
+                
+                if (count === 0) {
+                    const eventsGrid = document.querySelector('.events-grid');
+                    const noResultsDiv = document.createElement('div');
+                    noResultsDiv.className = 'no-results-message';
+                    noResultsDiv.innerHTML = `
+                        <div style="text-align: center; padding: 60px 20px; color: #666;">
+                            <i class="fas fa-search" style="font-size: 4rem; margin-bottom: 20px; color: #ddd;"></i>
+                            <h3 style="margin-bottom: 10px; color: #333;">No attractions found</h3>
+                            <p style="margin-bottom: 20px;">
+                                ${searchTerm ? `No results for "${searchTerm}"` : `No ${filter} attractions available`}
+                            </p>
+                            <button onclick="clearFilters()" style="
+                                background: linear-gradient(45deg, #15616d, #78c6a3);
+                                color: white;
+                                border: none;
+                                padding: 12px 24px;
+                                border-radius: 25px;
+                                cursor: pointer;
+                                font-weight: 500;
+                                transition: transform 0.2s ease;
+                            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fas fa-refresh"></i> Clear Filters
+                            </button>
+                        </div>
+                    `;
+                    eventsGrid.appendChild(noResultsDiv);
+                }
+            }
+            
+            function updateStatsCounter(count) {
+                const statNumber = document.querySelector('.stat-number[data-target="18"]');
+                if (statNumber) {
+                    animateCounter(statNumber, count, 800);
+                }
+            }
+            
+            // Clear filters function (global)
+            window.clearFilters = function() {
+                // Reset filter buttons
+                filterOptions.forEach(opt => opt.classList.remove('active'));
+                filterOptions[0].classList.add('active'); // Set "All Attractions" as active
+                
+                // Clear search input
+                searchInput.value = '';
+                
+                // Show all attractions
+                filterAttractions('all', '');
+                
+                // Remove no results message
+                const noResultsMessage = document.querySelector('.no-results-message');
+                if (noResultsMessage) {
+                    noResultsMessage.remove();
+                }
+            };
+            
+            // Enhanced search with suggestions
+            searchInput.addEventListener('focus', function() {
+                this.style.boxShadow = '0 0 15px rgba(21, 97, 109, 0.3)';
+                this.style.borderColor = '#15616d';
+            });
+            
+            searchInput.addEventListener('blur', function() {
+                this.style.boxShadow = 'none';
+                this.style.borderColor = '#ddd';
+            });
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Ctrl/Cmd + F to focus search
+                if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+                
+                // Escape to clear search
+                if (e.key === 'Escape' && document.activeElement === searchInput) {
+                    searchInput.value = '';
+                    filterAttractions('all', '');
+                }
             });
         });
           // Load more button functionality

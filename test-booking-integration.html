@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
@@ -66,7 +66,7 @@
 </head>
 <body>
     <div class="test-container">
-        <h1>🧪 Booking Integration Test</h1>
+        <h1>ðŸ§ª Booking Integration Test</h1>
         <p>This page will test the booking form integration with Google Sheets.</p>
         
         <div class="test-section">
@@ -90,13 +90,13 @@
         <hr style="margin: 30px 0;">
         
         <div class="instructions">
-            <h3>📋 Next Steps:</h3>
+            <h3>ðŸ“‹ Next Steps:</h3>
             <ol>
                 <li>Click "Test API Connection" to verify the Google Apps Script is accessible</li>
                 <li>Click "Submit Test Booking" to send sample data to your Google Sheet</li>
                 <li>Check your Google Sheets to see if the data appears</li>
                 <li>Check your email (info@yuvinalistourism.com) for the notification</li>
-                <li>If everything works, the booking form is ready for live use! 🎉</li>
+                <li>If everything works, the booking form is ready for live use! ðŸŽ‰</li>
             </ol>
         </div>
     </div>
@@ -129,12 +129,12 @@
                 
                 if (response.ok || response.status === 405) {
                     // 405 Method Not Allowed is expected for GET request on POST endpoint
-                    showResult('api-result', '✅ API Connection Successful! Google Apps Script is accessible.', true);
+                    showResult('api-result', 'âœ… API Connection Successful! Google Apps Script is accessible.', true);
                 } else {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
             } catch (error) {
-                showResult('api-result', `❌ API Connection Failed: ${error.message}`, false);
+                showResult('api-result', `âŒ API Connection Failed: ${error.message}`, false);
             }
         }
         
@@ -156,12 +156,12 @@
                 const result = await window.GoogleSheetsAPI.submitBookingEnquiry(testData);
                 
                 if (result.success) {
-                    showResult('booking-result', '✅ Test Booking Submitted Successfully! Check your Google Sheets and email for the data.', true);
+                    showResult('booking-result', 'âœ… Test Booking Submitted Successfully! Check your Google Sheets and email for the data.', true);
                 } else {
                     throw new Error(result.message || 'Unknown error');
                 }
             } catch (error) {
-                showResult('booking-result', `❌ Booking Submission Failed: ${error.message}`, false);
+                showResult('booking-result', `âŒ Booking Submission Failed: ${error.message}`, false);
             }
         }
         
@@ -170,14 +170,14 @@
                 const scriptURL = window.GoogleSheetsAPI.bookingScriptURL;
                 
                 if (scriptURL === 'YOUR_BOOKING_SCRIPT_URL_HERE') {
-                    showResult('url-result', '❌ Script URL not configured. Please update the booking script URL.', false);
+                    showResult('url-result', 'âŒ Script URL not configured. Please update the booking script URL.', false);
                 } else if (scriptURL.includes('script.google.com')) {
-                    showResult('url-result', `✅ Script URL is configured correctly: ${scriptURL}`, true);
+                    showResult('url-result', `âœ… Script URL is configured correctly: ${scriptURL}`, true);
                 } else {
-                    showResult('url-result', `⚠️ Script URL looks unusual: ${scriptURL}`, false);
+                    showResult('url-result', `âš ï¸ Script URL looks unusual: ${scriptURL}`, false);
                 }
             } catch (error) {
-                showResult('url-result', `❌ Error checking script URL: ${error.message}`, false);
+                showResult('url-result', `âŒ Error checking script URL: ${error.message}`, false);
             }
         }
         
@@ -188,3 +188,5 @@
     </script>
 </body>
 </html>
+
+

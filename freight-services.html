@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
@@ -644,37 +644,35 @@
                     <li><a href="index.html#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
                     <li><a href="index.html#dubai-business-setup" class="dropdown-link">Dubai Business Set Up</a></li>
                     <li><a href="freight-services.html" class="dropdown-link">Freight Services</a></li>
+                    <li><a href="job-seekers.html" class="dropdown-link">Job Seekers</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="index.html#events" class="nav-link dropdown-toggle">Events & Hikes <i class="fas fa-chevron-down"></i></a>
+                <a href="index.html#events" class="nav-link dropdown-toggle">Events and Tours <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="events.html" class="dropdown-link">All Events</a></li>
-                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Events</a></li>
+                    <li><a href="events.html" class="dropdown-link">All Tours and Events</a></li>
+                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Tours and Events</a></li>
                 </ul>
-            </li>
-            <li class="nav-item dropdown">
+            </li>            <li class="nav-item dropdown">
                 <a href="index.html#tours" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="index.html#dubai-tours" class="dropdown-link">Dubai Tours</a></li>
-                    <li><a href="index.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
-                    <li><a href="index.html#international-tours" class="dropdown-link">International Tours</a></li>
-                    <li><a href="index.html#maasai-mara-tours" class="dropdown-link">Maasai Mara Tours</a></li>
+                    <li><a href="events.html" class="dropdown-link">Dubai Tours</a></li>
+                    <li><a href="tours.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
+                    <li><a href="tours.html#international-tours" class="dropdown-link">International Tours</a></li>
+                    <li><a href="tours.html#featured-tours" class="dropdown-link">Maasai Mara Tours</a></li>
                 </ul>
-            </li>
-            <li class="nav-item dropdown">
+            </li><li class="nav-item dropdown">
                 <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="accommodations.html" class="dropdown-link">Hotels</a></li>
-                    <li><a href="index.html#bedspaces" class="dropdown-link">Bedspaces</a></li>
+                    <li><a href="accommodations.html" class="dropdown-link">Luxury Hotels</a></li>
+                    <li><a href="accommodations.html" class="dropdown-link">Shared Rooms</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a href="index.html#freight" class="nav-link dropdown-toggle">Freight <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="index.html#dubai-to-kenya" class="dropdown-link">Dubai to Kenya</a></li>
-                    <li><a href="index.html#kenya-to-dubai" class="dropdown-link">Kenya to Dubai</a></li>
-                    <li><a href="index.html#other-countries" class="dropdown-link">Other Countries</a></li>
+                <a href="freight-services.html" class="nav-link dropdown-toggle">Freight <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">                    <li><a href="freight-services.html#dubai-to-kenya" class="dropdown-link">Dubai to Kenya</a></li>
+                    <li><a href="freight-services.html#kenya-to-dubai" class="dropdown-link">Kenya to Dubai</a></li>
+                    <li><a href="freight-services.html#other-countries" class="dropdown-link">Other Countries</a></li>
                 </ul>
             </li>
             <li class="book-tour-mobile">
@@ -699,10 +697,8 @@
             <h1>Freight Services</h1>
             <p>Reliable cargo shipping solutions between Dubai, Kenya, and worldwide destinations</p>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section">
+    </section>    <!-- Services Section -->
+    <section class="services-section" id="freight-services">
         <div class="container">            <div class="section-header">
                 <h2>Our Freight Services</h2>
                 <p>Professional cargo shipping with competitive rates and reliable delivery</p>
@@ -710,7 +706,7 @@
 
             <div class="services-grid">
                 <!-- Dubai to Kenya -->
-                <div class="service-card">
+                <div class="service-card" id="dubai-to-kenya">
                     <div class="service-icon">
                         <i class="fas fa-plane"></i>
                     </div>
@@ -730,7 +726,7 @@
                 </div>
 
                 <!-- Kenya to Dubai -->
-                <div class="service-card">
+                <div class="service-card" id="kenya-to-dubai">
                     <div class="service-icon">
                         <i class="fas fa-shipping-fast"></i>
                     </div>
@@ -750,7 +746,7 @@
                 </div>
 
                 <!-- Worldwide Shipping -->
-                <div class="service-card">
+                <div class="service-card" id="other-countries">
                     <div class="service-icon">
                         <i class="fas fa-globe"></i>
                     </div>
@@ -1274,16 +1270,16 @@
             // Send email seamlessly in background using multiple methods
             sendEmailInBackground(data).then((success) => {
                 if (success) {
-                    showFormMessage('✅ Quote request submitted successfully! We will contact you within 24 hours with a competitive quote.', 'success');
+                    showFormMessage('âœ… Quote request submitted successfully! We will contact you within 24 hours with a competitive quote.', 'success');
                 } else {
-                    showFormMessage('✅ Request received! We will contact you within 24 hours with your quote.', 'success');
+                    showFormMessage('âœ… Request received! We will contact you within 24 hours with your quote.', 'success');
                 }
                 this.reset();
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
             }).catch((error) => {
                 console.error('Submission error:', error);
-                showFormMessage('✅ Request received! We will contact you within 24 hours with your quote.', 'success');
+                showFormMessage('âœ… Request received! We will contact you within 24 hours with your quote.', 'success');
                 this.reset();
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
@@ -1303,21 +1299,21 @@
             return `                <div class="email-template">
                     <div class="email-container">
                         <h2 class="email-header">
-                            🚚 New Freight Quote Request
+                            ðŸšš New Freight Quote Request
                         </h2>
                         
                         <div class="submission-info">
                             <p><strong>Submitted:</strong> ${currentDate}</p>
                         </div>
                         
-                        <h3 class="customer-info-header">👤 Customer Information</h3>
+                        <h3 class="customer-info-header">ðŸ‘¤ Customer Information</h3>
                         <table class="info-table">
                             <tr><td><strong>Name:</strong></td><td>${data.senderName}</td></tr>
                             <tr><td><strong>Email:</strong></td><td>${data.senderEmail}</td></tr>
                             <tr><td><strong>Phone:</strong></td><td>${data.senderPhone}</td></tr>                            ${data.company ? `<tr><td><strong>Company:</strong></td><td>${data.company}</td></tr>` : ''}
                         </table>
 
-                        <h3 class="section-header-email">📍 Shipping Details</h3>
+                        <h3 class="section-header-email">ðŸ“ Shipping Details</h3>
                         <table class="section-table">
                             <tr><td><strong>From:</strong></td><td>${getLocationName(data.originCity)}</td></tr>
                             <tr><td><strong>To:</strong></td><td>${getLocationName(data.destinationCity)}</td></tr>
@@ -1325,21 +1321,21 @@
                             <tr><td><strong>Shipment Type:</strong></td><td>${data.shipmentType}</td></tr>
                         </table>
 
-                        <h3 class="section-header-email">📦 Package Information</h3>
+                        <h3 class="section-header-email">ðŸ“¦ Package Information</h3>
                         <table class="section-table">
                             <tr><td><strong>Weight:</strong></td><td>${data.weight} kg</td></tr>
                             ${data.dimensions ? `<tr><td><strong>Dimensions:</strong></td><td>${data.dimensions} cm</td></tr>` : ''}
                         </table>
 
                         ${data.notes ? `
-                        <h3 class="section-header-email">📝 Additional Notes</h3>
+                        <h3 class="section-header-email">ðŸ“ Additional Notes</h3>
                         <div class="notes-section">
                             <p>${data.notes}</p>
                         </div>
                         ` : ''}
 
                         <div class="quick-actions">
-                            <h4>⚡ Quick Actions</h4>
+                            <h4>âš¡ Quick Actions</h4>
                             <p>
                                 <strong>Email:</strong> <a href="mailto:${data.senderEmail}">${data.senderEmail}</a><br>
                                 <strong>Call:</strong> <a href="tel:${data.senderPhone}">${data.senderPhone}</a><br>
@@ -1523,28 +1519,28 @@
             return locations[code] || code;
         }        // Format WhatsApp message for admin notifications
         function formatWhatsAppMessage(data) {
-            return `🚚 *FREIGHT QUOTE REQUEST*
+            return `ðŸšš *FREIGHT QUOTE REQUEST*
 
-👤 *Customer Details:*
-• Name: ${data.senderName}
-• Email: ${data.senderEmail}
-• Phone: ${data.senderPhone}
-${data.company ? `• Company: ${data.company}` : ''}
+ðŸ‘¤ *Customer Details:*
+â€¢ Name: ${data.senderName}
+â€¢ Email: ${data.senderEmail}
+â€¢ Phone: ${data.senderPhone}
+${data.company ? `â€¢ Company: ${data.company}` : ''}
 
-📍 *Shipping Details:*
-• From: ${getLocationName(data.originCity)}
-• To: ${getLocationName(data.destinationCity)}
-• Cargo Type: ${data.cargoType}
-• Shipment Type: ${data.shipmentType}
+ðŸ“ *Shipping Details:*
+â€¢ From: ${getLocationName(data.originCity)}
+â€¢ To: ${getLocationName(data.destinationCity)}
+â€¢ Cargo Type: ${data.cargoType}
+â€¢ Shipment Type: ${data.shipmentType}
 
-📦 *Package Info:*
-• Weight: ${data.weight} kg
-${data.dimensions ? `• Dimensions: ${data.dimensions} cm` : ''}
+ðŸ“¦ *Package Info:*
+â€¢ Weight: ${data.weight} kg
+${data.dimensions ? `â€¢ Dimensions: ${data.dimensions} cm` : ''}
 
-${data.notes ? `📝 *Additional Notes:*\n${data.notes}` : ''}
+${data.notes ? `ðŸ“ *Additional Notes:*\n${data.notes}` : ''}
 
-⏰ Submitted: ${new Date().toLocaleString()}
-🌐 Via: yuvinalistourism.com`;
+â° Submitted: ${new Date().toLocaleString()}
+ðŸŒ Via: yuvinalistourism.com`;
         }
 
         // Show form messages
@@ -1593,3 +1589,5 @@ ${data.notes ? `📝 *Additional Notes:*\n${data.notes}` : ''}
     </script>
 </body>
 </html>
+
+

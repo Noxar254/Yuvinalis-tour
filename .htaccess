@@ -1,0 +1,71 @@
+# Clean URLs with meaningful paths
+RewriteEngine On
+
+# Custom URL mappings for clean, meaningful URLs
+# Redirect old .html URLs to new clean URLs (301 redirects for SEO)
+RewriteRule ^apply-visa\.html$ /visa/ [R=301,L]
+RewriteRule ^visa-services\.html$ /visa-services/ [R=301,L]
+RewriteRule ^flight-booking\.html$ /flights/ [R=301,L]
+RewriteRule ^hotel-booking\.html$ /hotels/ [R=301,L]
+RewriteRule ^accommodations\.html$ /accommodations/ [R=301,L]
+RewriteRule ^events\.html$ /events/ [R=301,L]
+RewriteRule ^tours\.html$ /tours/ [R=301,L]
+RewriteRule ^dubai-packages\.html$ /packages/ [R=301,L]
+RewriteRule ^gallery\.html$ /gallery/ [R=301,L]
+RewriteRule ^about-us\.html$ /about/ [R=301,L]
+RewriteRule ^plan-your-travel\.html$ /plan/ [R=301,L]
+RewriteRule ^booking\.html$ /booking/ [R=301,L]
+RewriteRule ^shop\.html$ /shop/ [R=301,L]
+RewriteRule ^freight-services\.html$ /freight/ [R=301,L]
+RewriteRule ^job-seekers\.html$ /jobs/ [R=301,L]
+RewriteRule ^more-attractions\.html$ /attractions/ [R=301,L]
+RewriteRule ^hatta-road-trip-details\.html$ /hatta-trip/ [R=301,L]
+
+# Map clean URLs to actual HTML files
+RewriteRule ^visa/?$ apply-visa.html [L]
+RewriteRule ^visa-services/?$ visa-services.html [L]
+RewriteRule ^flights/?$ flight-booking.html [L]
+RewriteRule ^hotels/?$ hotel-booking.html [L]
+RewriteRule ^accommodations/?$ accommodations.html [L]
+RewriteRule ^events/?$ events.html [L]
+RewriteRule ^tours/?$ tours.html [L]
+RewriteRule ^packages/?$ dubai-packages.html [L]
+RewriteRule ^gallery/?$ gallery.html [L]
+RewriteRule ^about/?$ about-us.html [L]
+RewriteRule ^plan/?$ plan-your-travel.html [L]
+RewriteRule ^booking/?$ booking.html [L]
+RewriteRule ^shop/?$ shop.html [L]
+RewriteRule ^freight/?$ freight-services.html [L]
+RewriteRule ^jobs/?$ job-seekers.html [L]
+RewriteRule ^attractions/?$ more-attractions.html [L]
+RewriteRule ^hatta-trip/?$ hatta-road-trip-details.html [L]
+
+# Force HTTPS (optional - remove if not using SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Cache control for better performance
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+</IfModule>
+
+# Compress files for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>

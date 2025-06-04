@@ -400,12 +400,10 @@ style.textContent = `
             transform: scale(4);
             opacity: 0;
         }
-    }
-
-    .scroll-to-top {
+    }    .scroll-to-top {
         position: fixed;
         bottom: 30px;
-        right: 30px;
+        left: 30px;
         background: linear-gradient(45deg, #FDBB2D, #FFA500);
         color: white;
         border: none;

@@ -267,7 +267,125 @@ document.addEventListener('DOMContentLoaded', function() {
         messageTextarea.maxLength = maxLength;
         updateCharCount();
     }
+    
+    // Initialize directions functionality
+    initDirectionsButtons();
 });
+
+// Directions Button Functionality
+function initDirectionsButtons() {
+    const directionsButtons = document.querySelectorAll('.directions-btn');
+    
+    directionsButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Add visual feedback
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+            
+            // Track analytics (if available)
+            if (typeof gtag !== 'undefined') {
+                const office = this.href.includes('7AAjBostzo9LjpPv9') ? 'Nairobi' : 'Dubai';
+                gtag('event', 'get_directions', {
+                    'event_category': 'User Interaction',
+                    'event_label': `${office} Office Directions`,
+                    'office_location': office
+                });
+            }
+            
+            // Show toast notification
+            showDirectionsToast();
+        });
+    });
+}
+
+// Show toast notification when directions are requested
+function showDirectionsToast() {
+    // Check if toast already exists
+    let existingToast = document.querySelector('.directions-toast');
+    if (existingToast) {
+        existingToast.remove();
+    }
+    
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = 'directions-toast';
+    toast.innerHTML = `
+        <div class="toast-content">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>Opening directions in your preferred map app...</span>
+        </div>
+    `;
+    
+    // Add toast styles
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        z-index: 10000;
+        font-size: 0.9rem;
+        font-weight: 500;
+        animation: slideInUp 0.3s ease-out;
+        max-width: 300px;
+    `;
+    
+    // Add animation keyframes if not already present
+    if (!document.querySelector('#toast-animations')) {
+        const style = document.createElement('style');
+        style.id = 'toast-animations';
+        style.textContent = `
+            @keyframes slideInUp {
+                from {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+            
+            .directions-toast .toast-content {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .directions-toast i {
+                font-size: 1.1rem;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Append to body
+    document.body.appendChild(toast);
+    
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+        toast.style.animation = 'fadeOut 0.3s ease-out';
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 300);
+    }, 3000);
+}
 
 // Helper function to copy contact info
 function copyToClipboard(text) {

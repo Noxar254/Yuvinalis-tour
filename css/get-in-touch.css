@@ -185,6 +185,7 @@
     overflow: hidden;
     margin-top: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .office-map iframe {
@@ -192,6 +193,74 @@
     border-radius: 10px;
     width: 100%;
     height: 150px;
+}
+
+/* Map Overlay and Directions Button */
+.map-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.directions-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    color: #fff;
+    text-decoration: none;
+}
+
+.directions-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+}
+
+.directions-btn i {
+    font-size: 0.9rem;
+}
+
+.directions-btn span {
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Responsive adjustments for directions button */
+@media (max-width: 768px) {
+    .directions-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        border-radius: 3px;
+    }
+    
+    .directions-btn span {
+        display: none;
+    }
+    
+    .directions-btn i {
+        font-size: 1rem;
+    }
+    
+    .map-overlay {
+        bottom: 8px;
+        right: 8px;
+    }
 }
 
 /* Contact Form */

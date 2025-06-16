@@ -53,8 +53,7 @@
         "@type": "City",
         "name": "Dubai",
         "addressCountry": "AE"
-      },
-      "amenityFeature": [
+      },      "amenityFeature": [
         {
           "@type": "LocationFeatureSpecification",
           "name": "Free WiFi"
@@ -68,7 +67,28 @@
           "name": "Fitness Center"
         }
       ],
-      "priceRange": "$$-$$$$"
+      "priceRange": "$$-$$$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Hotel Booking Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Dubai Hotel Reservations",
+              "description": "Professional hotel booking services for Dubai"
+            },
+            "priceCurrency": "AED",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "89"
+      }
     }
     </script>
     <link rel="stylesheet" href="css/hero-navbar.css">

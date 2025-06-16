@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai City Tour - Every Friday | Summer Experience | Yuvinalis Tourism</title>
+    <meta name="description" content="Discover Dubai's iconic landmarks in our 8-hour summer city tour. Every Friday 10AM-6PM. Visit Dubai Frame, Museum of Future, Burj Khalifa, Palm Jumeirah & more. Only AED 45!">
+    <meta name="keywords" content="Dubai city tour, Dubai attractions, Dubai Frame, Burj Khalifa, Palm Jumeirah, Dubai tourism, summer tour Dubai">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/hero-navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }        /* Hero Section */
+        .hero-section {
+            height: 40vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/city tour dubai.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 600px;
+            padding: 0 20px;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Remove all other hero styles since we're simplifying *//* Remove floating particles styles since we're removing them */
+          /* Quick Info Bar */
+        .quick-info {
+            background: linear-gradient(45deg, #007BFF, #0056B3);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .quick-info-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .quick-info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .quick-info-item i {
+            font-size: 1.5rem;
+            color: #FFD700;
+        }        /* Main Content */
+        .main-content {
+            padding: 40px 0 20px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #FF6B6B, #007BFF);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }/* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(45deg, #FF6B6B, #007BFF);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .feature-list li i {
+            color: #28a745;
+            font-size: 1.2rem;
+        }        /* Attractions Section */
+        .attractions-section {
+            background: white;
+            padding: 30px 0 40px;
+        }
+
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }.attraction-card {
+            background: white;
+            color: #333;
+            border-radius: 15px;
+            padding: 0;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .attraction-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .attraction-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102,126,234,0.8) 0%, rgba(118,75,162,0.8) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .attraction-card:hover .attraction-overlay {
+            opacity: 1;
+        }
+
+        .attraction-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .attraction-content {
+            padding: 20px;
+        }
+
+        .attraction-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .attraction-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .attraction-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.4;
+        }        /* Call to Action Section */
+        .final-cta {
+            background: linear-gradient(135deg, #FF6B6B, #007BFF);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }        .final-cta-button {
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: 3px solid white;
+            border-radius: 8px;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .final-cta-button:hover {
+            background: white;
+            color: #FF6B6B;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section { height: 30vh; }
+            .hero-title { font-size: 2.5rem; letter-spacing: 1px; }
+            .section-title { font-size: 2rem; }
+            .quick-info-content { flex-direction: column; gap: 15px; }
+            .final-cta-buttons { flex-direction: column; align-items: center; }
+            .final-cta h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>    <!-- Navigation -->
+    <nav class="navbar">        <div class="nav-brand">
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="full-text">Yuvinalis Tourism</span>
+                    <span class="short-text">YT</span>
+                </div>            </div>
+        </div><div class="mobile-controls">
+            <div class="nav-toggle" id="nav-toggle" aria-label="Open navigation" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="nav-menu" id="nav-menu">            <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>            <li class="nav-item"><a href="index.html#about" class="nav-link">About Us</a></li>
+            <li class="nav-item dropdown">
+                <a href="index.html#services" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>                <ul class="dropdown-menu">
+                    <li><a href="index.html#visa-processing" class="dropdown-link">Visa Processing</a></li>
+                    <li><a href="flight-booking.html" class="dropdown-link">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html" class="dropdown-link">Hotel Booking</a></li>
+                    <li><a href="index.html#airport-pickups" class="dropdown-link">Airport Pickups</a></li>
+                    <li><a href="index.html#tour-services" class="dropdown-link">Tour Services</a></li>
+                    <li><a href="index.html#travel-insurance" class="dropdown-link">Travel Insurance</a></li>
+                    <li><a href="index.html#dubai-business-setup" class="dropdown-link">Dubai Business Set Up</a></li>
+                    <li><a href="index.html#freight-services" class="dropdown-link">Freight Services</a></li>
+                    <li><a href="job-seekers.html" class="dropdown-link">Job Seekers</a></li>
+                </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="index.html#events" class="nav-link dropdown-toggle">Events and Tours <i class="fas fa-chevron-down"></i></a>                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="dropdown-link">All Tours and Events</a></li>
+                    <li><a href="index.html#upcoming-events" class="dropdown-link">Upcoming Tours and Events</a></li>
+                </ul>
+            </li>            <li class="nav-item dropdown">
+                <a href="index.html#tours" class="nav-link dropdown-toggle">Tours <i class="fas fa-chevron-down"></i></a>                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="dropdown-link">Dubai Tours</a></li>
+                    <li><a href="tours.html#domestic-tours" class="dropdown-link">Domestic Tours</a></li>
+                    <li><a href="tours.html#international-tours" class="dropdown-link">International Tours</a></li>
+                    <li><a href="tours.html#featured-tours" class="dropdown-link">Maasai Mara Tours</a></li>
+                </ul>
+            </li>            <li class="nav-item dropdown">
+                <a href="index.html#hotels" class="nav-link dropdown-toggle">Hotels <i class="fas fa-chevron-down"></i></a>                <ul class="dropdown-menu">                    <li><a href="accommodations.html" class="dropdown-link">Luxury Hotels</a></li>
+                    <li><a href="accommodations.html" class="dropdown-link">Shared Rooms</a></li>
+</ul></li>            <li class="nav-item dropdown">
+                <a href="index.html#freight-services" class="nav-link dropdown-toggle">Freight <i class="fas fa-chevron-down"></i></a>                <ul class="dropdown-menu">
+                    <li><a href="freight-services.html#dubai-to-kenya" class="dropdown-link">Dubai to Kenya</a></li>
+                    <li><a href="freight-services.html#kenya-to-dubai" class="dropdown-link">Kenya to Dubai</a></li>
+                    <li><a href="freight-services.html#other-countries" class="dropdown-link">Other Countries</a></li>
+                </ul>
+            </li><li class="book-tour-mobile">
+                <a href="booking.html?booking=tour" class="book-tour-btn-mobile">
+                    <span class="btn-text">Book Tour</span>
+                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                </a>
+            </li>        </ul>
+        <div class="nav-cta">
+            <a href="booking.html?booking=tour" class="book-tour-btn">
+                <span class="btn-text">Book Tour</span>
+                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                <div class="btn-shine"></div>
+            </a>
+        </div>
+    </nav>    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Dubai City Tour</h1>
+        </div>
+    </section>
+
+    <!-- Quick Info Bar -->
+    <section class="quick-info">
+        <div class="quick-info-content">
+            <div class="quick-info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Every Friday</span>
+            </div>
+            <div class="quick-info-item">
+                <i class="fas fa-clock"></i>
+                <span>8 Hours (10 AM - 6 PM)</span>
+            </div>
+            <div class="quick-info-item">
+                <i class="fas fa-sun"></i>
+                <span>Summer Experience</span>
+            </div>
+            <div class="quick-info-item">
+                <i class="fas fa-users"></i>
+                <span>Open to Everyone</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="main-content">        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">8hrs Summer Dubai City Tour</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Every Friday starting from 10AM till 6PM - AED 45</p>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="feature-title">Inclusives</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-water"></i> Complimentary chilled bottle water</li>
+                        <li><i class="fas fa-clock"></i> 10-15 minutes stop at every attraction</li>
+                        <li><i class="fas fa-camera"></i> Complimentary photo shoots</li>
+                        <li><i class="fas fa-utensils"></i> 1 hour lunch break at KFC/McDonald's</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Attractions</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-bridge"></i> Pass through Al Maktoum Bridge</li>
+                        <li><i class="fas fa-square"></i> Dubai Frame</li>
+                        <li><i class="fas fa-rocket"></i> Museum of the Future</li>
+                        <li><i class="fas fa-road"></i> Pass through Sheikh Zayed</li>
+                        <li><i class="fas fa-building"></i> Passby Burj Khalifa & Dubai Mall</li>
+                        <li><i class="fas fa-tree"></i> Palm Jumeirah (Man-Made Island)</li>
+                        <li><i class="fas fa-hotel"></i> Burj Al Arab (7 Star Hotel)</li>
+                        <li><i class="fas fa-umbrella-beach"></i> Jumeirah Beach (1hr Swimming) Optional</li>
+                        <li><i class="fas fa-ship"></i> Abra Ticket</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section class="attractions-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Iconic Attractions</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Visit Dubai's most famous landmarks in one amazing day</p>            <div class="attractions-grid">                <div class="attraction-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="attraction-image" style="background-image: url('images/Al Maktoum Bridge.jpg');">
+                        <div class="attraction-overlay">
+                            <div class="attraction-icon"><i class="fas fa-bridge"></i></div>
+                        </div>
+                    </div>
+                    <div class="attraction-content">
+                        <div class="attraction-name">Al Maktoum Bridge</div>
+                        <div class="attraction-description">Drive through Dubai's architectural marvel</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="attraction-image" style="background-image: url('images/dubai frame.jpg');">
+                        <div class="attraction-overlay">
+                            <div class="attraction-icon"><i class="fas fa-square"></i></div>
+                        </div>
+                    </div>
+                    <div class="attraction-content">
+                        <div class="attraction-name">Dubai Frame</div>
+                        <div class="attraction-description">The world's largest picture frame</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="attraction-image" style="background-image: url('images/Museum of the future.jpg');">
+                        <div class="attraction-overlay">
+                            <div class="attraction-icon"><i class="fas fa-rocket"></i></div>
+                        </div>
+                    </div>
+                    <div class="attraction-content">
+                        <div class="attraction-name">Museum of the Future</div>
+                        <div class="attraction-description">Dubai's most innovative attraction</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="attraction-image" style="background-image: url('images/Sheikh Zayed Road.jpg');">
+                        <div class="attraction-overlay">
+                            <div class="attraction-icon"><i class="fas fa-road"></i></div>
+                        </div>
+                    </div>
+                    <div class="attraction-content">
+                        <div class="attraction-name">Sheikh Zayed Road</div>
+                        <div class="attraction-description">Drive through Dubai's financial district</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="attraction-image" style="background-image: url('images/Burj Khalifa.png');">
+                        <div class="attraction-overlay">
+                            <div class="attraction-icon"><i class="fas fa-building"></i></div>
+                        </div>
+                    </div>
+                    <div class="attraction-content">
+                        <div class="attraction-name">Burj Khalifa & Dubai Mall</div>
+                        <div class="attraction-description">World's tallest building & largest mall</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="attraction-image" style="background-image: url('images/Palm Jumeirah.jpg');">
+                        <div class="attraction-overlay">
+                            <div class="attraction-icon"><i class="fas fa-tree"></i></div>
+                        </div>
+                    </div>
+                    <div class="attraction-content">
+                        <div class="attraction-name">Palm Jumeirah</div>
+                        <div class="attraction-description">The iconic man-made island</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="attraction-image" style="background-image: url('images/Burj Al Arab.webp');">
+                        <div class="attraction-overlay">
+                            <div class="attraction-icon"><i class="fas fa-hotel"></i></div>
+                        </div>
+                    </div>
+                    <div class="attraction-content">
+                        <div class="attraction-name">Burj Al Arab</div>
+                        <div class="attraction-description">The world's only 7-star hotel</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card" data-aos="zoom-in" data-aos-delay="800">
+                    <div class="attraction-image" style="background-image: url('images/Jumeirah Beach.jpg');">
+                        <div class="attraction-overlay">
+                            <div class="attraction-icon"><i class="fas fa-umbrella-beach"></i></div>
+                        </div>
+                    </div>
+                    <div class="attraction-content">
+                        <div class="attraction-name">Jumeirah Beach</div>
+                        <div class="attraction-description">1-hour swimming (optional)</div>
+                    </div>
+                </div>
+
+                <div class="attraction-card" data-aos="zoom-in" data-aos-delay="900">
+                    <div class="attraction-image" style="background-image: url('images/Dhow Cruise.png');">
+                        <div class="attraction-overlay">
+                            <div class="attraction-icon"><i class="fas fa-ship"></i></div>
+                        </div>
+                    </div>
+                    <div class="attraction-content">
+                        <div class="attraction-name">Abra Experience</div>
+                        <div class="attraction-description">Traditional boat ride included</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready for Your Dubai Adventure?</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Join us every Friday for an unforgettable journey through Dubai's most iconic destinations</p>
+            
+            <div class="final-cta-buttons" data-aos="fade-up" data-aos-delay="400">                <a href="tel:+971561510931" class="final-cta-button">
+                    <i class="fas fa-phone"></i>
+                    Call Now to Book
+                </a>                <a href="https://wa.me/971561510931?text=Hi%2C%20I%20want%20to%20book%20the%20Dubai%20City%20Tour" class="final-cta-button">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Booking
+                </a>
+                <a href="booking.html" class="final-cta-button">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Now
+                </a>
+            </div>
+        </div>
+    </section>    <!-- Footer -->
+    <footer>        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Yuvinalis Tourism Logo">
+                    <h3>Yuvinalis Tourism</h3>
+                </div>
+                <p>Your Gateway to Dubai and Beyond</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/yuvinalistourism" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/yuvinalistourism" class="social-icon twitter-custom" aria-label="X (Twitter)" target="_blank" rel="noopener">
+                        <img src="./images/Xlogo.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://instagram.com/yuvinalistourism" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@yuvinalistourism" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://threads.net/@yuvinalistourism" class="social-icon threads-custom" aria-label="Threads" target="_blank" rel="noopener">
+                        <img src="./images/Thread Logo.png" alt="Threads">
+                    </a>
+                </div>            </div>
+            
+            <!-- Desktop navigation sections -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="index.html#upcoming-events">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="index.html#get-in-touch">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="visa-services.html">Visa Processing</a></li>
+                    <li><a href="flight-booking.html">Flight Booking</a></li>
+                    <li><a href="hotel-booking.html">Hotel Booking</a></li>
+                    <li><a href="index.html#tour-services">Tour Services</a></li>
+                    <li><a href="index.html#freight-services">Freight Services</a></li>
+                </ul>
+            </div>              <div class="footer-section">
+                <h3>Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="accommodations.html">Dubai Hotels</a></li>
+                    <li><a href="index.html#tours">Domestic Tours</a></li>
+                    <li><a href="index.html#tours">International Tours</a></li>
+                    <li><a href="events.html">Dubai Tours</a></li>
+                    <li><a href="index.html#dubai-business-setup">Business Setup</a></li>
+                </ul>
+                <!-- Jobs in UAE Button -->
+                <div class="jobs-button-container">
+                    <a href="job-seekers.html" class="jobs-uae-btn">
+                        <i class="fas fa-briefcase"></i>
+                        Jobs in UAE
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile navigation sections wrapper (hidden on desktop) -->
+            <div class="footer-nav-sections">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="index.html#upcoming-events">Events</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="index.html#get-in-touch">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="visa-services.html">Visa Processing</a></li>
+                        <li><a href="flight-booking.html">Flight Booking</a></li>
+                        <li><a href="hotel-booking.html">Hotel Booking</a></li>
+                        <li><a href="index.html#tour-services">Tour Services</a></li>
+                        <li><a href="index.html#freight-services">Freight Services</a></li>
+                    </ul>
+                </div>                <div class="footer-section">
+                    <h3>Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="accommodations.html">Dubai Hotels</a></li>
+                        <li><a href="index.html#tours">Domestic Tours</a></li>
+                        <li><a href="index.html#tours">International Tours</a></li>
+                        <li><a href="events.html">Dubai Tours</a></li>
+                        <li><a href="index.html#dubai-business-setup">Business Setup</a></li>
+                    </ul>
+                    <!-- Jobs in UAE Button -->
+                    <div class="jobs-button-container">
+                        <a href="job-seekers.html" class="jobs-uae-btn">
+                            <i class="fas fa-briefcase"></i>
+                            Jobs in UAE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yuvinalis Tourism. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/hero-navbar.js"></script>
+    <script>        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-section');
+            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        });
+    </script>
+</body>
+</html>

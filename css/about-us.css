@@ -9,8 +9,8 @@
 
 .about-content {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
     align-items: stretch;
     position: relative;
     z-index: 2;
@@ -24,16 +24,19 @@
     transform: translateX(-50px);
     transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .image-wrapper {
     position: relative;
-    border-radius: 20px;
+    border-radius: 0;
     overflow: hidden;
     transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
     height: 100%;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
+    width: 100%;
 }
 
 .image-wrapper:hover {
@@ -94,7 +97,7 @@
 }
 
 .about-text {
-    padding: 20px 0;
+    padding: 40px 40px 40px 60px;
     opacity: 0;
     transform: translateX(50px);
     transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
@@ -212,70 +215,72 @@
 
 .about-buttons {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-btn {
     display: flex;
-    align-items: center;    gap: 6px;
-    padding: 8px 16px;
+    align-items: center;    
+    gap: 10px;
+    padding: 15px 20px;
     border: none;
-    border-radius: 5px;
-    font-size: 0.85rem;
+    border-radius: 0;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
     position: relative;
-    overflow: hidden;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    overflow: visible;
+    text-transform: none;
+    letter-spacing: 0px;
     min-width: auto;
-    max-width: 160px;
+    max-width: none;
     white-space: nowrap;
     text-overflow: ellipsis;
+    background: transparent;
+    box-shadow: none;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
 }
 
 .about-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.about-btn:hover::before {
-    left: 100%;
+    display: none;
 }
 
 .about-btn.primary {
-    background: linear-gradient(45deg, #27ae60, #2ecc71);
-    color: white;
-    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+    background: transparent;
+    color: #2c3e50;
+    box-shadow: none;
+    border-bottom: 2px solid #27ae60;
+    border-radius: 0;
 }
 
 .about-btn.primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(39, 174, 96, 0.4);
-    background: linear-gradient(45deg, #2ecc71, #27ae60);
+    transform: translateY(-2px);
+    box-shadow: none;
+    background: transparent;
+    color: #27ae60;
+    border-bottom-color: #27ae60;
 }
 
 .about-btn.secondary {
     background: transparent;
-    color: #27ae60;
-    border: 2px solid #27ae60;
-    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.2);
+    color: #666;
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid #666;
+    border-radius: 0;
 }
 
 .about-btn.secondary:hover {
-    transform: translateY(-3px);
-    background: #27ae60;
-    color: white;
-    border-color: #27ae60;
-    box-shadow: 0 12px 35px rgba(39, 174, 96, 0.3);
+    transform: translateY(-2px);
+    background: transparent;
+    color: #27ae60;
+    border-bottom-color: #666;
+    box-shadow: none;
 }
 
 .about-btn i {
@@ -296,7 +301,7 @@
 @media (max-width: 768px) {
     .about-content {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 0;
         text-align: center;
     }
       .about-image {
@@ -310,7 +315,7 @@
         max-width: 100%;
         width: 100%;
         margin: 0;
-        border-radius: 12px;
+        border-radius: 0;
         height: 280px;
         overflow: hidden;
     }
@@ -318,6 +323,10 @@
     .image-wrapper img {
         height: 100%;
         object-position: center;
+    }
+    
+    .about-text {
+        padding: 30px 20px;
     }
     
     .section-header h2 {
@@ -371,18 +380,23 @@
         justify-content: center;
         flex-direction: row;
         align-items: center;
-        gap: 15px;
+        gap: 30px;
         flex-wrap: wrap;
+        margin-top: 20px;
     }
       .about-btn {
         width: auto;
         max-width: none;
-        flex: 1;
-        max-width: 160px;
+        flex: none;
         justify-content: center;
-        padding: 10px 16px;
-        font-size: 0.85rem;
-        min-height: 42px;
+        padding: 12px 15px;
+        font-size: 1rem;
+        margin-right: 0;
+        text-align: center;
+    }
+    
+    .about-btn:last-child {
+        margin-right: 0;
     }
 }
 
@@ -404,7 +418,6 @@
     }
       /* Improve button touch targets */
     .about-btn {
-        min-height: 42px;
         touch-action: manipulation;
     }
 }
@@ -412,8 +425,8 @@
 @media (max-width: 576px) {
     /* Extra small screens */
     .about-content {
-        gap: 25px;
-        padding: 0 15px;
+        gap: 0;
+        padding: 0;
     }
     
     .about-image {
@@ -423,7 +436,11 @@
     
     .image-wrapper {
         height: 240px;
-        border-radius: 10px;
+        border-radius: 0;
+    }
+    
+    .about-text {
+        padding: 25px 15px;
     }
     
     .section-header h2 {
@@ -443,13 +460,25 @@
         padding: 8px;
     }
     
-    /* Make buttons even smaller on mobile */
+    /* Make buttons clean on mobile */
     .about-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        letter-spacing: 0.2px;
-        gap: 4px;
-        max-width: 120px;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        letter-spacing: 0px;
+        gap: 8px;
+        margin-right: 0;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .about-btn:last-child {
+        margin-right: 0;
+    }
+    
+    .about-buttons {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
     }
 }
 

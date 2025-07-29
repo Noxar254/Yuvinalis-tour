@@ -1,15 +1,20 @@
 /* About Section Styles */
 .about-content .about-image {
-    max-height: 400px;
+    max-height: none;
+    height: 100%;
 }
 
 .about-content .image-wrapper {
-    max-height: 400px;
+    max-height: none;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .about-content .image-wrapper img {
     object-fit: cover;
-    height: 400px;
+    height: 100%;
+    width: 100%;
 }
 
 .about-content .image-overlay {
@@ -27,18 +32,39 @@
 }
 
 .about-content .about-btn.primary {
-    background: linear-gradient(45deg, #FDBB2D, #FFA500);
-    box-shadow: 0 8px 25px rgba(253, 187, 45, 0.3);
+    background: transparent;
+    color: #2c3e50;
+    box-shadow: none;
+    border-bottom: 2px solid #FDBB2D;
+    border-radius: 0;
+}
+
+.about-content .about-btn.primary:hover {
+    transform: translateX(5px);
+    box-shadow: none;
+    background: transparent;
+    color: #FDBB2D;
+    border-bottom-color: #2c3e50;
 }
 
 /* Gallery button specific styling */
 .about-btn.gallery-btn {
-    background: linear-gradient(45deg, #4099ff, #73b4ff);
-    color: white;
+    background: transparent;
+    color: #666;
     border: none;
-    box-shadow: 0 8px 25px rgba(64, 153, 255, 0.3);
+    box-shadow: none;
+    border-bottom: 2px solid #666;
+    border-radius: 0;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 8px;
+}
+
+.about-btn.gallery-btn:hover {
+    transform: translateX(5px);
+    background: transparent;
+    color: #4099ff;
+    border-bottom-color: #4099ff;
+    box-shadow: none;
 }

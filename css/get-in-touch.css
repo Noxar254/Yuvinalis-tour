@@ -34,7 +34,7 @@
 .get-in-touch-section .section-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+    background: linear-gradient(135deg, #3467eb 0%, #5b87f5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -80,13 +80,13 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #ffd700 0%, #87ceeb 100%);
+    background: linear-gradient(90deg, #3467eb 0%, #5b87f5 100%);
 }
 
 .office-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-color: #ffd700;
+    border-color: #3467eb;
 }
 
 .office-header {
@@ -100,7 +100,7 @@
 .office-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+    background: linear-gradient(135deg, #3467eb 0%, #5b87f5 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -135,7 +135,7 @@
 
 .office-address i {
     font-size: 1.2rem;
-    color: #87ceeb;
+    color: #3467eb;
     margin-right: 12px;
     margin-top: 2px;
     flex-shrink: 0;
@@ -161,7 +161,7 @@
 
 .contact-item i {
     font-size: 1rem;
-    color: #ffd700;
+    color: #3467eb;
     margin-right: 12px;
     margin-top: 2px;
     width: 16px;
@@ -207,29 +207,29 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #007bff;
+    background: #3467eb;
     color: #fff;
     padding: 8px 12px;
     border-radius: 4px;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(52, 103, 235, 0.3);
     transition: all 0.3s ease;
     border: 2px solid transparent;
 }
 
 .directions-btn:hover {
-    background: #0056b3;
+    background: #2654d9;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(52, 103, 235, 0.4);
     color: #fff;
     text-decoration: none;
 }
 
 .directions-btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 2px 6px rgba(52, 103, 235, 0.3);
 }
 
 .directions-btn i {
@@ -280,7 +280,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #87ceeb 0%, #ffd700 100%);
+    background: linear-gradient(90deg, #3467eb 0%, #5b87f5 100%);
 }
 
 .contact-form-header {
@@ -339,8 +339,8 @@
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #ffd700;
-    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+    border-color: #3467eb;
+    box-shadow: 0 0 0 3px rgba(52, 103, 235, 0.1);
 }
 
 .form-group textarea {
@@ -351,7 +351,7 @@
 .submit-btn {
     width: 100%;
     padding: 15px 30px;
-    background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+    background: linear-gradient(135deg, #3467eb 0%, #5b87f5 100%);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -368,7 +368,7 @@
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(52, 103, 235, 0.3);
 }
 
 .submit-btn i {
@@ -393,7 +393,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #ffd700 0%, #87ceeb 100%);
+    background: linear-gradient(90deg, #3467eb 0%, #5b87f5 100%);
 }
 
 .social-header h3 {
@@ -536,70 +536,241 @@ footer .social-icon.threads-custom img {
 /* Responsive Design */
 @media (max-width: 768px) {
     .get-in-touch-section {
-        padding: 40px 0;
+        padding: 30px 0 20px;
+        background: #f8faff;
+    }
+    
+    .get-in-touch-section .container {
+        padding: 0 8px;
+        max-width: none;
+    }
+    
+    .get-in-touch-section .section-header {
+        margin-bottom: 20px;
+        padding: 0 8px;
     }
     
     .get-in-touch-section .section-header h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        color: #3467eb;
+        margin-bottom: 6px;
+    }
+    
+    .get-in-touch-section .section-header p {
+        font-size: 0.95rem;
+        color: #64748b;
     }
     
     .offices-container {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 8px;
+        margin-bottom: 20px;
     }
     
     .office-card {
-        padding: 20px;
+        padding: 15px;
+        border-radius: 0;
+        margin: 0 8px 8px 8px;
+        box-shadow: 0 2px 8px rgba(52, 103, 235, 0.08);
+        border: 1px solid #e0e7ff;
+    }
+    
+    .office-card:hover {
+        border-color: #3467eb;
+        box-shadow: 0 6px 20px rgba(52, 103, 235, 0.15);
+    }
+    
+    .office-card::before {
+        height: 3px;
+    }
+    
+    .office-header {
+        margin-bottom: 15px;
+        padding-bottom: 12px;
+    }
+    
+    .office-header h3 {
+        font-size: 1.2rem;
+        color: #3467eb;
+    }
+    
+    .office-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+    }
+    
+    .office-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .office-address {
+        padding: 12px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        background: #f8faff;
+    }
+    
+    .office-map iframe {
+        height: 120px;
     }
     
     .form-row {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
+        margin-bottom: 15px;
     }
     
-    .contact-form-container,
-    .social-media-container {
-        padding: 25px 20px;
+    .contact-form-container {
+        padding: 20px 15px;
+        border-radius: 0;
+        margin: 0 8px 8px 8px;
+        box-shadow: 0 2px 8px rgba(52, 103, 235, 0.08);
+        border: 1px solid #e0e7ff;
     }
     
-    .social-icons {
-        gap: 15px;
+    .contact-form-container::before {
+        height: 3px;
     }
     
-    .social-icon {
-        width: 50px;
-        height: 50px;
+    .contact-form-header h3 {
+        font-size: 1.4rem;
+        color: #3467eb;
     }
     
-    .social-icon i {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .get-in-touch-section .container {
-        padding: 0 15px;
-    }
-    
-    .office-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-    
-    .office-icon {
-        margin-right: 0;
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
     }
     
     .form-group input,
     .form-group select,
     .form-group textarea {
         padding: 10px 12px;
+        border-radius: 6px;
+        font-size: 0.95rem;
     }
     
     .submit-btn {
-        padding: 12px 25px;
+        padding: 12px 24px;
         font-size: 1rem;
+        border-radius: 6px;
+        margin-top: 15px;
+    }
+    
+    .social-media-container {
+        padding: 20px 15px;
+        border-radius: 0;
+        margin: 0 8px 8px 8px;
+        box-shadow: 0 2px 8px rgba(52, 103, 235, 0.08);
+        border: 1px solid #e0e7ff;
+    }
+    
+    .social-media-container::before {
+        height: 3px;
+    }
+    
+    .social-header h3 {
+        font-size: 1.3rem;
+        color: #3467eb;
+    }
+    
+    .social-icons {
+        gap: 12px;
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-icon i {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .get-in-touch-section .container {
+        padding: 0 4px;
+    }
+    
+    .office-card {
+        margin: 0 4px 8px 4px;
+        padding: 12px;
+    }
+    
+    .office-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+    
+    .office-icon {
+        margin-right: 0;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .office-icon i {
+        font-size: 1rem;
+    }
+    
+    .office-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .office-address {
+        padding: 10px;
+        margin-bottom: 12px;
+    }
+    
+    .office-map iframe {
+        height: 100px;
+    }
+    
+    .contact-form-container {
+        margin: 0 4px 8px 4px;
+        padding: 15px 12px;
+    }
+    
+    .contact-form-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .submit-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .social-media-container {
+        margin: 0 4px 8px 4px;
+        padding: 15px 12px;
+    }
+    
+    .social-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .social-icons {
+        gap: 10px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-icon i {
+        font-size: 1.1rem;
     }
 }
 

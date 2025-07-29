@@ -27,7 +27,7 @@
     position: absolute;
     right: 0;
     top: 10px;
-    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    background: linear-gradient(45deg, #3467eb, #5b87f5);
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -39,13 +39,13 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(253, 187, 45, 0.3);
+    box-shadow: 0 2px 8px rgba(52, 103, 235, 0.3);
 }
 
 .freight-services-section .view-all-btn:hover {
-    background: linear-gradient(45deg, #FFA500, #FDBB2D);
+    background: linear-gradient(45deg, #2654d9, #3467eb);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(253, 187, 45, 0.4);
+    box-shadow: 0 4px 12px rgba(52, 103, 235, 0.4);
 }
 
 .freight-services-section .view-all-btn i {
@@ -87,7 +87,7 @@
 
 /* Adjustments for the freight cards */
 .freight-card .product-badge {
-    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    background: linear-gradient(45deg, #3467eb, #5b87f5);
 }
 
 .freight-card .product-info p {
@@ -97,43 +97,73 @@
     line-height: 1.5;
 }
 
-.ship-now-btn {
-    background: linear-gradient(45deg, #87CEEB, #5DADE2);
+.ship-now-btn,
+.buy-now-btn.ship-now-btn {
+    background: linear-gradient(45deg, #3467eb, #5b87f5);
     color: #fff;
     border: none;
     padding: 12px 20px;
-    border-radius: 4px;
+    border-radius: 0;
     font-weight: 600;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     gap: 8px;
     transition: all 0.3s ease;
     margin-top: 15px;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.ship-now-btn:hover {
-    background: linear-gradient(45deg, #5DADE2, #3498DB);
+.ship-now-btn:hover,
+.buy-now-btn.ship-now-btn:hover {
+    background: linear-gradient(45deg, #2654d9, #3467eb);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(135, 206, 235, 0.3);
+    box-shadow: 0 5px 15px rgba(52, 103, 235, 0.3);
 }
 
-.ship-now-btn i {
+.ship-now-btn i,
+.buy-now-btn.ship-now-btn i {
     font-size: 1rem;
+}
+
+/* Mobile specific styles for ship-now button */
+@media (max-width: 768px) {
+    .ship-now-btn,
+    .buy-now-btn.ship-now-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        margin-top: 0;
+        border-radius: 0;
+        text-align: center !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    
+    .ship-now-btn i,
+    .buy-now-btn.ship-now-btn i {
+        font-size: 0.9rem;
+    }
 }
 
 /* Override scroll arrow colors for freight section */
 .freight-services-section .scroll-arrow {
-    border: 2px solid #FDBB2D;
+    border: 2px solid #3467eb;
 }
 
 .freight-services-section .scroll-arrow:hover {
-    background: linear-gradient(45deg, #FDBB2D, #FFA500);
+    background: linear-gradient(45deg, #3467eb, #5b87f5);
 }
 
 .freight-services-section .scroll-arrow i {
-    color: #FDBB2D;
+    color: #3467eb;
 }
 
 .freight-services-section .scroll-arrow:hover i {
@@ -147,33 +177,211 @@
     }
 }
 
-/* Mobile - Vertical layout */
+/* Mobile - Vertical layout with edge-to-edge cards */
 @media (max-width: 768px) {
-    .freight-services-section .view-all-btn {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin: 15px auto 0;
-        display: inline-flex;
+    .freight-services-section {
+        padding: 30px 0 20px;
+        background: #f8faff;
+    }
+    
+    .freight-services-section .container {
+        padding: 0 8px;
     }
     
     .freight-services-section .section-header {
         text-align: center;
+        padding: 0 8px;
+        margin-bottom: 16px;
+    }
+    
+    .freight-services-section .section-header h2 {
+        font-size: 1.6rem;
+        color: #3467eb;
+        margin-bottom: 6px;
+        font-weight: 700;
+    }
+    
+    .freight-services-section .section-header p {
+        font-size: 0.95rem;
+        color: #64748b;
+        margin-bottom: 0;
+    }
+    
+    .freight-services-section .view-all-btn {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 12px auto 0;
+        display: inline-flex;
+        background: linear-gradient(45deg, #3467eb, #5b87f5);
+        box-shadow: 0 2px 8px rgba(52, 103, 235, 0.3);
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .freight-services-section .view-all-btn:hover {
+        background: linear-gradient(45deg, #2654d9, #3467eb);
+        box-shadow: 0 4px 12px rgba(52, 103, 235, 0.4);
     }
     
     .freight-services-section .shop-wrapper {
         flex-direction: column;
-        align-items: center;
-        padding: 0 20px;
+        align-items: stretch;
+        padding: 0;
+        gap: 4px;
     }
     
     .freight-services-section .freight-card {
+        width: calc(100% - 16px);
+        max-width: none;
+        margin: 0 8px 4px 8px;
+        border-radius: 0;
+        min-height: 180px;
+        background: #fff;
+        border: 1px solid #e0e7ff;
+        box-shadow: 0 2px 8px rgba(52, 103, 235, 0.08);
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .freight-services-section .freight-card:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(52, 103, 235, 0.15);
+        border-color: #3467eb;
+    }
+    
+    .freight-services-section .freight-card .product-image {
+        height: 120px;
+        border-radius: 0;
+        overflow: hidden;
+    }
+    
+    .freight-services-section .freight-card .product-image img {
         width: 100%;
-        max-width: 400px;
-        margin-bottom: 20px;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .freight-services-section .freight-card:hover .product-image img {
+        transform: scale(1.02);
+    }
+    
+    .freight-services-section .freight-card .product-content {
+        padding: 12px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .freight-services-section .freight-card .product-content h3 {
+        font-size: 1.05rem;
+        color: #3467eb;
+        margin-bottom: 6px;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+    
+    .freight-services-section .freight-card .product-info {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .freight-services-section .freight-card .product-info p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        color: #64748b;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        flex-grow: 1;
+    }
+    
+    .freight-services-section .freight-card .product-badge {
+        background: linear-gradient(45deg, #3467eb, #5b87f5);
+        color: #fff;
+        font-size: 0.7rem;
+        padding: 3px 8px;
+        top: 6px;
+        right: 6px;
+        border-radius: 0;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+    
+    .freight-services-section .ship-now-btn,
+    .freight-services-section .buy-now-btn.ship-now-btn {
+        width: 100%;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        background: linear-gradient(45deg, #3467eb, #5b87f5);
+        border-radius: 0;
+        margin-top: 8px;
+        font-weight: 600;
+        text-align: center !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px;
+        box-sizing: border-box;
+    }
+    
+    .freight-services-section .ship-now-btn:hover,
+    .freight-services-section .buy-now-btn.ship-now-btn:hover {
+        background: linear-gradient(45deg, #2654d9, #3467eb);
+        transform: translateY(-1px);
     }
     
     .freight-services-section .scroll-arrow {
         display: none;
+    }
+}
+
+/* Extra small screens optimization */
+@media (max-width: 480px) {
+    .freight-services-section .container {
+        padding: 0 4px;
+    }
+    
+    .freight-services-section .freight-card {
+        width: calc(100% - 8px);
+        margin: 0 4px 4px 4px;
+        min-height: 160px;
+    }
+    
+    .freight-services-section .freight-card .product-image {
+        height: 100px;
+    }
+    
+    .freight-services-section .freight-card .product-content {
+        padding: 10px;
+    }
+    
+    .freight-services-section .freight-card .product-content h3 {
+        font-size: 1rem;
+    }
+    
+    .freight-services-section .freight-card .product-info p {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .freight-services-section .ship-now-btn,
+    .freight-services-section .buy-now-btn.ship-now-btn {
+        padding: 7px 12px;
+        font-size: 0.8rem;
+        border-radius: 0;
+        text-align: center !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px;
+        width: 100% !important;
+        box-sizing: border-box;
     }
 }

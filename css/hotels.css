@@ -17,21 +17,21 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    background: linear-gradient(135deg, #3467eb 0%, #4a7bef 100%);
     color: #fff;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
-    border-radius: 6px;
+    border-radius: 0;
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 4px 15px rgba(52, 103, 235, 0.3);
     margin-top: 10px;
 }
 
 .hotels-section .section-header .view-all-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+    box-shadow: 0 6px 20px rgba(52, 103, 235, 0.4);
 }
 
 .hotels-section .section-header .view-all-btn i {
@@ -74,7 +74,7 @@
 .hotel-card {
     flex: 0 0 300px;
     background-color: #fff;
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -127,14 +127,14 @@
     position: absolute;
     top: 15px;
     left: 15px;
-    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    background: linear-gradient(45deg, #3467eb, #4a7bef);
     color: white;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 0.8rem;
     font-weight: 600;
     z-index: 2;
-    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 2px 8px rgba(52, 103, 235, 0.3);
 }
 
 .airbnb-card .hotel-badge {
@@ -149,7 +149,7 @@
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 0;
     z-index: 2;
     text-align: center;
     font-weight: 600;
@@ -193,7 +193,7 @@
 }
 
 .hotel-details .detail-item i {
-    color: #27ae60;
+    color: #3467eb;
     margin-right: 8px;
     width: 16px;
     text-align: center;
@@ -209,7 +209,7 @@
 .hotel-amenities span {
     background-color: #f1f1f1;
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: 0;
     font-size: 0.8rem;
     color: #555;
     display: inline-flex;
@@ -218,16 +218,16 @@
 
 .hotel-amenities i {
     margin-right: 5px;
-    color: #27ae60;
+    color: #3467eb;
 }
 
 .hotel-card .view-details-btn {
     margin-top: 15px;
     padding: 8px 16px;
-    background: linear-gradient(45deg, #27ae60, #2ecc71);
+    background: linear-gradient(45deg, #3467eb, #4a7bef);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 0;
     font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
@@ -236,12 +236,12 @@
     justify-content: center;
     gap: 8px;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(39, 174, 96, 0.2);
+    box-shadow: 0 3px 10px rgba(52, 103, 235, 0.2);
 }
 
 .hotel-card .view-details-btn:hover {
-    background: linear-gradient(45deg, #2ecc71, #27ae60);
-    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+    background: linear-gradient(45deg, #4a7bef, #3467eb);
+    box-shadow: 0 5px 15px rgba(52, 103, 235, 0.3);
     transform: translateY(-2px);
 }
 
@@ -258,13 +258,13 @@
     width: 40px;
     height: 40px;
     background-color: #fff;
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    color: #27ae60;
+    color: #3467eb;
     position: absolute;
     z-index: 5;
     transition: all 0.3s ease;
@@ -279,9 +279,9 @@
 }
 
 .scroll-arrow:hover {
-    background-color: #27ae60;
+    background-color: #3467eb;
     color: white;
-    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 5px 15px rgba(52, 103, 235, 0.3);
 }
 
 .scroll-indicator {
@@ -301,8 +301,8 @@
 
 .scroll-dot.active {
     width: 20px;
-    border-radius: 10px;
-    background-color: #27ae60;
+    border-radius: 0;
+    background-color: #3467eb;
 }
 
 /* Mobile Responsive Styles */
@@ -371,6 +371,18 @@
         font-size: 0.75rem;
     }
     
+    .hotel-card .view-details-btn {
+        margin-top: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 8px 20px;
+        border-radius: 0;
+        width: calc(100% - 20px);
+        font-size: 0.9rem;
+        font-weight: 500;
+        height: 36px;
+    }
+    
     .scroll-arrow {
         display: none;
     }
@@ -389,19 +401,19 @@
         display: inline-flex;
         align-items: center;
         padding: 10px 20px;
-        background: linear-gradient(45deg, #27ae60, #2ecc71);
+        background: linear-gradient(45deg, #3467eb, #4a7bef);
         color: white;
         text-decoration: none;
-        border-radius: 6px;
+        border-radius: 0;
         font-weight: 600;
         gap: 8px;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(39, 174, 96, 0.2);
+        box-shadow: 0 4px 15px rgba(52, 103, 235, 0.2);
     }
     
     .mobile-view-all .view-all-btn:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+        box-shadow: 0 6px 20px rgba(52, 103, 235, 0.3);
     }
     
     .mobile-view-all .view-all-btn i {
@@ -464,7 +476,14 @@
     
     .hotel-card .view-details-btn {
         font-size: 0.85rem;
-        padding: 7px 14px;
+        padding: 7px 18px;
+        margin-top: 12px;
+        margin-left: 8px;
+        margin-right: 8px;
+        border-radius: 0;
+        width: calc(100% - 16px);
+        font-weight: 500;
+        height: 32px;
     }
     
     .mobile-view-all .view-all-btn {
@@ -495,6 +514,18 @@
     .hotel-amenities span {
         font-size: 0.65rem;
         padding: 2px 5px;
+    }
+    
+    .hotel-card .view-details-btn {
+        font-size: 0.8rem;
+        padding: 6px 16px;
+        margin-top: 10px;
+        margin-left: 6px;
+        margin-right: 6px;
+        border-radius: 0;
+        width: calc(100% - 12px);
+        font-weight: 500;
+        height: 30px;
     }
     
     .mobile-view-all .view-all-btn {

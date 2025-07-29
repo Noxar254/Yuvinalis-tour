@@ -177,6 +177,16 @@
         .tour-card {
             margin-bottom: 0;
             height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .tour-card.filtering {
+            opacity: 0.5;
+            transform: scale(0.95);
+        }
+        
+        .tours-section {
+            transition: all 0.3s ease;
         }
         
         .tours-by-month {
@@ -509,19 +519,19 @@
 
     <div class="tours-page-container">        <!-- Tour Filters -->
         <div class="tours-filter">
-            <div class="filter-option active"><i class="fas fa-globe"></i> All Tours</div>
-            <div class="filter-option"><i class="fas fa-map-marker-alt"></i> Domestic</div>
-            <div class="filter-option"><i class="fas fa-plane"></i> International</div>
-            <div class="filter-option"><i class="fas fa-paw"></i> Wildlife Safari</div>
-            <div class="filter-option"><i class="fas fa-water"></i> Beach Getaway</div>
-            <div class="filter-option"><i class="fas fa-mountain"></i> Mountain Climbing</div>
+            <div class="filter-option active" data-filter="all"><i class="fas fa-globe"></i> All Tours</div>
+            <div class="filter-option" data-filter="domestic"><i class="fas fa-map-marker-alt"></i> Domestic</div>
+            <div class="filter-option" data-filter="international"><i class="fas fa-plane"></i> International</div>
+            <div class="filter-option" data-filter="wildlife-safari"><i class="fas fa-paw"></i> Wildlife Safari</div>
+            <div class="filter-option" data-filter="beach-getaway"><i class="fas fa-water"></i> Beach Getaway</div>
+            <div class="filter-option" data-filter="mountain-climbing"><i class="fas fa-mountain"></i> Mountain Climbing</div>
         </div>
 
         <!-- Featured Tours Section -->
         <section id="featured-tours">
             <h2 class="month-heading">Featured Tours</h2>
             <div class="tours-grid">                <!-- Tour Card 1 - Maasai Mara -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="domestic wildlife-safari">
                     <div class="tour-image">
                         <img src="images/Maasai Mara Safari Adventure.jpg" alt="Maasai Mara Safari">
                         <div class="tour-badge">Popular</div>
@@ -557,7 +567,7 @@
                         </div>
                     </div>
                 </div>                <!-- Tour Card 2 - Amboseli -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="domestic wildlife-safari">
                     <div class="tour-image">
                         <img src="images/Amboseli Kilimanjaro View.jpg" alt="Amboseli National Park">
                         <div class="tour-badge">Featured</div>
@@ -593,7 +603,7 @@
                         </div>
                     </div>
                 </div>                <!-- Tour Card 3 - Diani Beach -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="domestic beach-getaway">
                     <div class="tour-image">
                         <img src="images/Diani Beach Getaway.jpg" alt="Diani Beach Getaway">
                         <div class="tour-badge">Hot Deal</div>
@@ -629,7 +639,7 @@
                         </div>
                     </div>
                 </div>                <!-- Maasai Culture Tour -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="domestic">
                     <div class="tour-image">
                         <img src="images/massai_tribal.jpg" alt="Maasai Culture Experience">
                         <div class="tour-badge">Cultural</div>
@@ -673,7 +683,7 @@
         <section id="domestic-tours" class="tours-by-month">
             <h2 class="month-heading">Domestic Tours</h2>
             <div class="tours-grid">                <!-- Mt. Kenya -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="domestic mountain-climbing">
                     <div class="tour-image">
                         <img src="images/Mt. Kenya Expedition.jpg" alt="Mt. Kenya Climbing Tour">
                         <div class="tour-badge">Adventure</div>
@@ -709,7 +719,7 @@
                         </div>
                     </div>
                 </div>                <!-- Lake Nakuru Tour -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="domestic wildlife-safari">
                     <div class="tour-image">
                         <img src="images/lake-nakuru-flamingos.jpg" alt="Lake Nakuru Tour">
                         <div class="tour-badge">Wildlife</div>
@@ -745,7 +755,7 @@
                         </div>
                     </div>
                 </div>                <!-- Naivasha Weekend Retreat -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="domestic">
                     <div class="tour-image">
                         <img src="images/Naivasha Weekend Retreat.jpg" alt="Naivasha Weekend Retreat">
                         <div class="tour-badge">Weekend</div>
@@ -788,7 +798,7 @@
         <section id="international-tours" class="tours-by-month">
             <h2 class="month-heading">International Tours</h2>
             <div class="tours-grid">                <!-- Tanzania Safari -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international wildlife-safari">
                     <div class="tour-image">
                         <img src="images/Kenya Safari.jpg" alt="Tanzania Safari">
                         <div class="tour-badge">International</div>
@@ -824,7 +834,7 @@
                         </div>
                     </div>
                 </div>                <!-- Uganda Gorilla Tracking -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international wildlife-safari">
                     <div class="tour-image">
                         <img src="images/Uganda Gorilla Tracking.jpg" alt="Uganda Gorilla Tracking">
                         <div class="tour-badge">Premium</div>
@@ -860,7 +870,7 @@
                         </div>
                     </div>
                 </div>                <!-- South Africa Explorer -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international">
                     <div class="tour-image">
                         <img src="images/south african explore.jpg" alt="South Africa Explorer">
                         <div class="tour-badge">New</div>
@@ -898,7 +908,7 @@
                 </div>
 
                 <!-- Japan Cherry Blossom Tour -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international">
                     <div class="tour-image">
                         <img src="images/Japan Cherry Blossom Tour.jpg" alt="Japan Cherry Blossom Tour">
                         <div class="tour-badge">Seasonal</div>
@@ -937,7 +947,7 @@
                 </div>
 
                 <!-- Bali Luxury Getaway -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international beach-getaway">
                     <div class="tour-image">
                         <img src="images/Bali Luxury Getaway.jpg" alt="Bali Luxury Getaway">
                         <div class="tour-badge">Luxury</div>
@@ -976,7 +986,7 @@
                 </div>
 
                 <!-- Thailand Krabi Adventure -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international beach-getaway">
                     <div class="tour-image">
                         <img src="images/Krabi, Thailand.jpg" alt="Krabi Thailand Adventure">
                         <div class="tour-badge">Adventure</div>
@@ -1021,7 +1031,7 @@
             <h2 class="month-heading">European Tours</h2>
             <div class="tours-grid">
                 <!-- Spain Explorer -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international">
                     <div class="tour-image">
                         <img src="images/Spain Explorer.jpeg" alt="Spain Explorer Tour">
                         <div class="tour-badge">Cultural</div>
@@ -1060,7 +1070,7 @@
                 </div>
 
                 <!-- UK Tour Package -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international">
                     <div class="tour-image">
                         <img src="images/UK Tour Package.jpg" alt="UK Tour Package">
                         <div class="tour-badge">Heritage</div>
@@ -1099,7 +1109,7 @@
                 </div>
 
                 <!-- Armenia Explorer -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international">
                     <div class="tour-image">
                         <img src="images/Armenia Explorer Package.jpg" alt="Armenia Explorer Package">
                         <div class="tour-badge">Hidden Gem</div>
@@ -1144,7 +1154,7 @@
             <h2 class="month-heading">Central Asia Adventures</h2>
             <div class="tours-grid">
                 <!-- Almaty Adventure -->
-                <div class="tour-card">
+                <div class="tour-card" data-category="international mountain-climbing">
                     <div class="tour-image">
                         <img src="images/Almaty Adventure.jpg" alt="Almaty Adventure Tour">
                         <div class="tour-badge">Adventure</div>
@@ -1349,25 +1359,74 @@
         // Tour filter functionality
         document.querySelectorAll('.filter-option').forEach(option => {
             option.addEventListener('click', function() {
+                // Remove active class from all options
                 document.querySelectorAll('.filter-option').forEach(opt => {
                     opt.classList.remove('active');
                 });
+                
+                // Add active class to clicked option
                 this.classList.add('active');
                 
-                // Add animation effect to tour cards
+                // Get filter value
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Get all tour cards
                 const tourCards = document.querySelectorAll('.tour-card');
+                
+                // Filter tour cards
                 tourCards.forEach(card => {
-                    card.style.opacity = '0.7';
-                    card.style.transform = 'scale(0.95)';
+                    const cardCategories = card.getAttribute('data-category') || '';
+                    
+                    // Hide card with animation
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.8)';
+                    card.style.transition = 'all 0.3s ease';
+                    
                     setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
+                        if (filterValue === 'all' || cardCategories.includes(filterValue)) {
+                            // Show card
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            // Hide card
+                            card.style.display = 'none';
+                        }
                     }, 300);
                 });
                 
-                // Filter logic would go here
+                // Update section visibility
+                updateSectionVisibility(filterValue);
             });
         });
+        
+        // Function to show/hide sections based on filter
+        function updateSectionVisibility(filterValue) {
+            const sections = document.querySelectorAll('.tours-by-month, #featured-tours');
+            
+            sections.forEach(section => {
+                const sectionCards = section.querySelectorAll('.tour-card');
+                let hasVisibleCards = false;
+                
+                setTimeout(() => {
+                    sectionCards.forEach(card => {
+                        const cardCategories = card.getAttribute('data-category') || '';
+                        if (filterValue === 'all' || cardCategories.includes(filterValue)) {
+                            hasVisibleCards = true;
+                        }
+                    });
+                    
+                    // Show/hide section based on whether it has visible cards
+                    if (hasVisibleCards) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                }, 350);
+            });
+        }
         
         // Load more button functionality
         document.querySelector('.load-more-btn').addEventListener('click', function() {
